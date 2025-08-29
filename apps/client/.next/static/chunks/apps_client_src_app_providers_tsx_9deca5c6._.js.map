@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/MIS/ncar/apps/client/src/app/providers.tsx"],"sourcesContent":["\r\n\"use client\";\r\n\r\nimport { ReactNode, useState } from \"react\";\r\nimport { QueryClient, QueryClientProvider } from \"@tanstack/react-query\";\r\n\r\nexport default function Providers({ children }: { children: ReactNode }) {\r\n    // keep QueryClient stable across re-renders\r\n    const [queryClient] = useState(() => new QueryClient());\r\n\r\n    return <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>;\r\n}\r\n"],"names":[],"mappings":";;;;;AAGA;AACA;AAAA;;;AAHA;;;AAKe,SAAS,UAAU,KAAqC;QAArC,EAAE,QAAQ,EAA2B,GAArC;;IAC9B,4CAA4C;IAC5C,MAAM,CAAC,YAAY,GAAG,IAAA,2LAAQ;8BAAC,IAAM,IAAI,iNAAW;;IAEpD,qBAAO,+MAAC,kOAAmB;QAAC,QAAQ;kBAAc;;;;;;AACtD;GALwB;KAAA","debugId":null}}]
+}
