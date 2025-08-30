@@ -2,8 +2,8 @@
 "use client"
 
 import { useState } from "react"
-import IncidentTable from "@/features/incidents/components/IncidentTable"
-import IncidentModal from "@/features/incidents/components/IncidentModal"
+import IncidentTable from "@/features/incidents/components/IncidentReport"
+import IncidentModal from "@/features/incidentsModal/components/IncidentModal"
 import { Button } from "@/components/ui/button"
 import {
     Dialog,

@@ -27,6 +27,9 @@ import { Calendar as CalendarIcon } from "lucide-react";
 import { cn } from "@/lib/utils"
 import { format } from "date-fns";
 
+import { IncidentDetailsDrawer } from "@/features/incidentsDrawer/components/IncidentDetails";
+import { IncidentIssuesDrawer } from "@/features/incidentsDrawer/components/IncidentIssues";
+
 const departments = [
     { code: "01", name: "PRESIDENT" },
     { code: "40", name: "HUMAN RESOURCE AND ADMIN" },
@@ -307,41 +310,30 @@ export default function IncidentModal({
                 />
             </div>
 
-            <div className="my-6 w-full grid grid-cols-1 md:grid-cols-2 gap-4">
-                {/* Radio Group */}
-                <div className="p-4 border rounded-lg w-full bg-white">
-                    <Label className="mb-4 ">
-                        Module of Purchase
-                    </Label>
-                    <RadioGroup
-                        defaultValue="Imported"
-                        value={purchaseModule}
-                        onValueChange={setPurchaseModule}
-                        className="flex flex-row gap-12  "
-                    >
-                        <div className="flex items-center space-x-2 text-">
-                            <RadioGroupItem value="Imported" id="imported" />
-                            <Label htmlFor="imported" className="font-normal">Imported</Label>
-                        </div>
-                        <div className="flex items-center space-x-2">
-                            <RadioGroupItem value="Local" id="local" />
-                            <Label htmlFor="local" className="font-normal">Local</Label>
-                        </div>
-                    </RadioGroup>
-                </div>
 
-                {/* Checkbox */}
-                <div className="p-4  w-full  flex items-center space-x-2">
-                    <Checkbox
-                        id="similar-nc"
-                        checked={similarNC}
-                        onCheckedChange={(checked) => setSimilarNC(!!checked)}
-                    />
-                    <Label htmlFor="similar-nc">
-                        Similar NC Exist or Could Potentially Occur
-                    </Label>
-                </div>
+            {/* Radio Group */}
+            <div className="p-4 border rounded-lg w-full bg-white">
+                <Label className="mb-4 ">
+                    Module of Purchase
+                </Label>
+                <RadioGroup
+                    defaultValue="Imported"
+                    value={purchaseModule}
+                    onValueChange={setPurchaseModule}
+                    className="flex flex-row gap-12  "
+                >
+                    <div className="flex items-center space-x-2 text-">
+                        <RadioGroupItem value="Imported" id="imported" />
+                        <Label htmlFor="imported" className="font-normal">Imported</Label>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                        <RadioGroupItem value="Local" id="local" />
+                        <Label htmlFor="local" className="font-normal">Local</Label>
+                    </div>
+                </RadioGroup>
             </div>
+
+
 
             {/* Type of Delivery */}
             <div className="p-4 border rounded-lg w-full bg-white">
@@ -368,23 +360,8 @@ export default function IncidentModal({
                 </RadioGroup>
             </div>
 
-            {/* Status */}
-            {/* <div className="space-y-2">
-                <Label htmlFor="status">Status</Label>
-                <Select
-                    value={form.status}
-                    onValueChange={(value) => handleChange("status", value)}
-                >
-                    <SelectTrigger>
-                        <SelectValue placeholder="Select status" />
-                    </SelectTrigger>
-                    <SelectContent>
-                        <SelectItem value="Open">Open</SelectItem>
-                        <SelectItem value="Ongoing">Ongoing</SelectItem>
-                        <SelectItem value="Closed">Closed</SelectItem>
-                    </SelectContent>
-                </Select>
-            </div> */}
+            <IncidentDetailsDrawer />
+            <IncidentIssuesDrawer />
 
             <DialogFooter>
                 <Button type="button" variant="outline" onClick={onClose}>

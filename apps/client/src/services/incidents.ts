@@ -1,19 +1,24 @@
-import type { Incident } from "@ncar/types";
+// services/incidents.ts
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
+import { api } from "@/lib/axios"
+import { IncidentDetails } from "@/types/incidentDetails"
 
-export async function fetchIncidents(): Promise<Incident[]> {
-  const res = await fetch(`${API_URL}/incidents`);
-  if (!res.ok) throw new Error("Failed to fetch incidents");
-  return res.json();
+export const fetchIncidents = async (): Promise<IncidentDetails[]> => {
+  const { data } = await api.get("/incidents")
+  return data
 }
 
-export async function createIncident(data: Omit<Incident, "refNo" | "createdAt">): Promise<Incident> {
-  const res = await fetch(`${API_URL}/incidents`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(data),
-  });
-  if (!res.ok) throw new Error("Failed to create incident");
-  return res.json();
+export const createIncident = async (incident: IncidentDetails) => {
+  const { data } = await api.post("/incidents", incident)
+  return data
+}
+
+export const updateIncident = async (incident: IncidentDetails) => {
+  const { data } = await api.put(`/incidents/${incident.id}`, incident)
+  return data
+}
+
+export const deleteIncident = async (id: string) => {
+  await api.delete(`/incidents/${id}`)
+  return id
 }
