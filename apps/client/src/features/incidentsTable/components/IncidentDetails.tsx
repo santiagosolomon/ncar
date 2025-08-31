@@ -1,4 +1,4 @@
-//incidentsTable/IncidentDetails.tsx
+// features/incidentsTable/components/IncidentDetails.tsx
 
 "use client"
 
@@ -12,36 +12,44 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { MoreHorizontal, X, Save, Trash2, Pencil, Plus } from "lucide-react"
+import {
+  useIncidents,
+  useAddIncident,
+  useUpdateIncident,
+  useDeleteIncident,
+} from "@/hooks/useIncidentQueries"
+import { useIncidentStore } from "@/store/incidentStore"
 
-interface IncidentDetailsTableProps {
-  data: IncidentDetails[]
-}
 
-type RowMode = "view" | "edit" | "delete-confirm" | "add"
+export function IncidentDetailsTable({}) {
+  const { data: incidents = [], isLoading } = useIncidents()
+  const addIncident = useAddIncident()
+  const updateIncident = useUpdateIncident()
+  const deleteIncident = useDeleteIncident()
 
-export function IncidentDetailsTable({ data }: IncidentDetailsTableProps) {
-  const [rows, setRows] = useState(data)
-  const [rowModes, setRowModes] = useState<Record<string, RowMode>>({})
+  const { rowModes, setMode, reset } = useIncidentStore()
   const [newRow, setNewRow] = useState<IncidentDetails | null>(null)
 
-  const startEdit = (id: string) => setRowModes({ ...rowModes, [id]: "edit" })
-  const startDelete = (id: string) =>
-    setRowModes({ ...rowModes, [id]: "delete-confirm" })
-  const cancel = (id: string) =>
-    setRowModes({ ...rowModes, [id]: "view" })
-  const save = (id: string, updated: IncidentDetails) => {
-    setRows(rows.map(r => (r.id === id ? updated : r)))
-    setRowModes({ ...rowModes, [id]: "view" })
+  // ---- Row Actions ----
+  const startEdit = (id: string) => setMode(id, "edit")
+  const startDelete = (id: string) => setMode(id, "delete-confirm")
+  const cancel = (id: string) => reset(id)
+
+  const save = (incident: IncidentDetails) => {
+    updateIncident.mutate(incident, {
+      onSuccess: () => reset(incident.id!),
+    })
   }
+
   const confirmDelete = (id: string) => {
-    setRows(rows.filter(r => r.id !== id))
-    const { [id]: _, ...rest } = rowModes
-    setRowModes(rest)
+    deleteIncident.mutate(id, {
+      onSuccess: () => reset(id),
+    })
   }
 
   const startAdd = () => {
     setNewRow({
-      id: crypto.randomUUID(),
+      id: undefined, // backend will generate _id
       type: "",
       deviation: "",
       description: "",
@@ -57,22 +65,21 @@ export function IncidentDetailsTable({ data }: IncidentDetailsTableProps) {
   const cancelAdd = () => setNewRow(null)
   const saveAdd = () => {
     if (newRow) {
-      setRows([...rows, newRow])
-      setNewRow(null)
+      addIncident.mutate(newRow, {
+        onSuccess: () => setNewRow(null),
+      })
     }
   }
 
   const renderCell = (incident: IncidentDetails, field: keyof IncidentDetails) => {
-    const mode = rowModes[incident.id]
-    if (mode === "edit" || mode === "add") {
+    const mode = rowModes[incident.id!] // `id` comes from Mongo as `_id`
+    if (mode === "edit") {
       return (
         <input
           className="border rounded px-2 py-1 w-full text-sm"
-          value={incident[field]}
+          value={incident[field] || ""}
           onChange={e =>
-            setRows(rows.map(r =>
-              r.id === incident.id ? { ...r, [field]: e.target.value } : r
-            ))
+            updateIncident.mutate({ ...incident, [field]: e.target.value })
           }
         />
       )
@@ -80,18 +87,18 @@ export function IncidentDetailsTable({ data }: IncidentDetailsTableProps) {
     return incident[field]
   }
 
+  if (isLoading) {
+    return <div className="p-4">Loading incidents...</div>
+  }
+
   return (
     <div>
       <div className="flex justify-end mb-2">
-        <Button
-          size="sm"
-          variant="outline"
-          onClick={startAdd}
-          disabled={!!newRow}
-        >
-          <Plus className="w-4 h-4 " /> Add 
+        <Button size="sm" variant="outline" onClick={startAdd} disabled={!!newRow}>
+          <Plus className="w-4 h-4 " /> Add
         </Button>
       </div>
+
       <div className="overflow-x-auto">
         <table className="min-w-full border text-sm text-left">
           <thead className="bg-gray-100">
@@ -110,8 +117,8 @@ export function IncidentDetailsTable({ data }: IncidentDetailsTableProps) {
             </tr>
           </thead>
           <tbody>
-            {rows.map(row => {
-              const mode = rowModes[row.id] || "view"
+            {incidents.map(row => {
+              const mode = rowModes[row.id!] || "view"
               return (
                 <tr key={row.id} className="odd:bg-white even:bg-gray-50">
                   <td className="px-2 py-2 border">{renderCell(row, "type")}</td>
@@ -133,10 +140,10 @@ export function IncidentDetailsTable({ data }: IncidentDetailsTableProps) {
                           </Button>
                         </DropdownMenuTrigger>
                         <DropdownMenuContent>
-                          <DropdownMenuItem onClick={() => startEdit(row.id)}>
+                          <DropdownMenuItem onClick={() => startEdit(row.id!)}>
                             <Pencil className="w-4 h-4 mr-2" /> Edit
                           </DropdownMenuItem>
-                          <DropdownMenuItem onClick={() => startDelete(row.id)}>
+                          <DropdownMenuItem onClick={() => startDelete(row.id!)}>
                             <Trash2 className="w-4 h-4 mr-2" /> Delete
                           </DropdownMenuItem>
                         </DropdownMenuContent>
@@ -144,36 +151,20 @@ export function IncidentDetailsTable({ data }: IncidentDetailsTableProps) {
                     )}
                     {mode === "edit" && (
                       <div className="flex gap-2">
-                        <Button
-                          size="icon"
-                          variant="ghost"
-                          onClick={() => save(row.id, row)}
-                        >
+                        <Button size="icon" variant="ghost" onClick={() => save(row)}>
                           <Save className="w-4 h-4 text-green-600" />
                         </Button>
-                        <Button
-                          size="icon"
-                          variant="ghost"
-                          onClick={() => cancel(row.id)}
-                        >
+                        <Button size="icon" variant="ghost" onClick={() => cancel(row.id!)}>
                           <X className="w-4 h-4 text-red-600" />
                         </Button>
                       </div>
                     )}
                     {mode === "delete-confirm" && (
                       <div className="flex gap-2">
-                        <Button
-                          size="icon"
-                          variant="ghost"
-                          onClick={() => confirmDelete(row.id)}
-                        >
+                        <Button size="icon" variant="ghost" onClick={() => confirmDelete(row.id!)}>
                           <Trash2 className="w-4 h-4 text-red-600" />
                         </Button>
-                        <Button
-                          size="icon"
-                          variant="ghost"
-                          onClick={() => cancel(row.id)}
-                        >
+                        <Button size="icon" variant="ghost" onClick={() => cancel(row.id!)}>
                           <X className="w-4 h-4" />
                         </Button>
                       </div>
@@ -182,96 +173,31 @@ export function IncidentDetailsTable({ data }: IncidentDetailsTableProps) {
                 </tr>
               )
             })}
+
             {newRow && (
-              <tr key={newRow.id} className="bg-yellow-50">
-                <td className="px-2 py-2 border">
-                  <input
-                    className="border rounded px-2 py-1 w-full text-sm"
-                    value={newRow.type}
-                    onChange={e =>
-                      setNewRow({ ...newRow, type: e.target.value })
-                    }
-                  />
-                </td>
-                <td className="px-2 py-2 border">
-                  <input
-                    className="border rounded px-2 py-1 w-full text-sm"
-                    value={newRow.deviation}
-                    onChange={e =>
-                      setNewRow({ ...newRow, deviation: e.target.value })
-                    }
-                  />
-                </td>
-                <td className="px-2 py-2 border">
-                  <input
-                    className="border rounded px-2 py-1 w-full text-sm"
-                    value={newRow.description}
-                    onChange={e =>
-                      setNewRow({ ...newRow, description: e.target.value })
-                    }
-                  />
-                </td>
-                <td className="px-2 py-2 border">
-                  <input
-                    className="border rounded px-2 py-1 w-full text-sm"
-                    value={newRow.sku}
-                    onChange={e => setNewRow({ ...newRow, sku: e.target.value })}
-                  />
-                </td>
-                <td className="px-2 py-2 border">
-                  <input
-                    className="border rounded px-2 py-1 w-full text-sm"
-                    value={newRow.details}
-                    onChange={e =>
-                      setNewRow({ ...newRow, details: e.target.value })
-                    }
-                  />
-                </td>
-                <td className="px-2 py-2 border">
-                  <input
-                    className="border rounded px-2 py-1 w-full text-sm"
-                    value={newRow.outOfTotal}
-                    onChange={e =>
-                      setNewRow({ ...newRow, outOfTotal: e.target.value })
-                    }
-                  />
-                </td>
-                <td className="px-2 py-2 border">
-                  <input
-                    className="border rounded px-2 py-1 w-full text-sm"
-                    value={newRow.poNo}
-                    onChange={e =>
-                      setNewRow({ ...newRow, poNo: e.target.value })
-                    }
-                  />
-                </td>
-                <td className="px-2 py-2 border">
-                  <input
-                    className="border rounded px-2 py-1 w-full text-sm"
-                    value={newRow.lotNo}
-                    onChange={e =>
-                      setNewRow({ ...newRow, lotNo: e.target.value })
-                    }
-                  />
-                </td>
-                <td className="px-2 py-2 border">
-                  <input
-                    className="border rounded px-2 py-1 w-full text-sm"
-                    value={newRow.containerNo}
-                    onChange={e =>
-                      setNewRow({ ...newRow, containerNo: e.target.value })
-                    }
-                  />
-                </td>
-                <td className="px-2 py-2 border">
-                  <input
-                    className="border rounded px-2 py-1 w-full text-sm"
-                    value={newRow.billOfLandingNo}
-                    onChange={e =>
-                      setNewRow({ ...newRow, billOfLandingNo: e.target.value })
-                    }
-                  />
-                </td>
+              <tr key="new" className="bg-yellow-50">
+                {[
+                  "type",
+                  "deviation",
+                  "description",
+                  "sku",
+                  "details",
+                  "outOfTotal",
+                  "poNo",
+                  "lotNo",
+                  "containerNo",
+                  "billOfLandingNo",
+                ].map(field => (
+                  <td key={field} className="px-2 py-2 border">
+                    <input
+                      className="border rounded px-2 py-1 w-full text-sm"
+                      value={(newRow as any)[field]}
+                      onChange={e =>
+                        setNewRow({ ...newRow, [field]: e.target.value })
+                      }
+                    />
+                  </td>
+                ))}
                 <td className="px-2 py-2 border">
                   <div className="flex gap-2">
                     <Button size="icon" variant="ghost" onClick={saveAdd}>

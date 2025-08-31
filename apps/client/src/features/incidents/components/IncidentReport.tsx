@@ -1,3 +1,5 @@
+//IncidentReport.tsx
+
 "use client";
 
 import { Incident } from "@ncar/types";
@@ -23,8 +25,6 @@ export default function IncidentTable({ data }: Props) {
           <TableRow>
             <TableHead>Ref. No.</TableHead>
             <TableHead>Description</TableHead>
-            <TableHead>Classification</TableHead>
-            <TableHead>Status</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
@@ -32,7 +32,18 @@ export default function IncidentTable({ data }: Props) {
             <TableRow key={incident.refNo}>
               <TableCell>{incident.refNo}</TableCell>
               <TableCell>{incident.description}</TableCell>
-              <TableCell>{incident.classification}</TableCell>
+
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </div>
+  );
+}
+
+
+
+{/* <TableCell>{incident.classification}</TableCell>
               <TableCell>
                 <Badge
                   variant={
@@ -49,12 +60,4 @@ export default function IncidentTable({ data }: Props) {
                   }
                 >
                   {incident.status}
-                </Badge>
-              </TableCell>
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </div>
-  );
-}
+                </Badge> </TableCell> */}

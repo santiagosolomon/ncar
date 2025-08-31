@@ -1,3 +1,5 @@
+//incidentsModal/incidentModal.tsx
+
 "use client"
 
 import * as React from "react";
@@ -28,7 +30,7 @@ import { cn } from "@/lib/utils"
 import { format } from "date-fns";
 
 import { IncidentDetailsDrawer } from "@/features/incidentsDrawer/components/IncidentDetails";
-import { IncidentIssuesDrawer } from "@/features/incidentsDrawer/components/IncidentIssues";
+// import { IncidentIssuesDrawer } from "@/features/incidentsDrawer/components/IncidentIssues";
 
 const departments = [
     { code: "01", name: "PRESIDENT" },
@@ -208,7 +210,7 @@ export default function IncidentModal({
             </div>
 
             {/* Departments Affected */}
-            <div className="space-y-2 my-6">
+            {/* <div className="space-y-2 my-6">
                 <Label>Departments Affected</Label>
                 <div className="grid grid-cols-2 gap-2">
                     {[
@@ -234,7 +236,7 @@ export default function IncidentModal({
                         </Label>
                     ))}
                 </div>
-            </div>
+            </div> */}
 
             {/* Other Fields */}
             <div className="grid grid-cols-2 gap-4">
@@ -361,7 +363,7 @@ export default function IncidentModal({
             </div>
 
             <IncidentDetailsDrawer />
-            <IncidentIssuesDrawer />
+            {/* <IncidentIssuesDrawer /> */}
 
             <DialogFooter>
                 <Button type="button" variant="outline" onClick={onClose}>
