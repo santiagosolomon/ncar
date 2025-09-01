@@ -1,0 +1,11 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Start Backend Server",
+			"type": "shell",
+			"command": "cd apps/server && npm install && npm run dev",
+			"group": "none"
+		}
+	]
+}

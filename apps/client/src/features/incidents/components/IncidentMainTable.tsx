@@ -2,7 +2,7 @@
 
 "use client";
 
-import { Incident } from "@ncar/types";
+import { IncidentForm } from "@/types/incidentModal";
 import {
   Table,
   TableBody,
@@ -14,10 +14,10 @@ import {
 import { Badge } from "@/components/ui/badge";
 
 interface Props {
-  data: Incident[];
+  data: Array<IncidentForm & { _id: string }>;
 }
 
-export default function IncidentTable({ data }: Props) {
+export default function IncidentMainTable({ data }: Props) {
   return (
     <div className="w-full overflow-x-auto rounded-lg border shadow-sm">
       <Table>
@@ -29,9 +29,10 @@ export default function IncidentTable({ data }: Props) {
         </TableHeader>
         <TableBody>
           {data.map((incident) => (
-            <TableRow key={incident.refNo}>
+            <TableRow key={incident._id}>
               <TableCell>{incident.refNo}</TableCell>
               <TableCell>{incident.description}</TableCell>
+              
 
             </TableRow>
           ))}

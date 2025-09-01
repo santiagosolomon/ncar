@@ -2,8 +2,10 @@
 
 "use client"
 
-import * as React from "react";
+import * as React from "react"
 import { useState } from "react"
+
+import { useAddIncident } from "@/hooks/useIncidentQueries"
 
 import { DialogFooter } from "@/components/ui/dialog"
 import { Button } from "@/components/ui/button"
@@ -18,19 +20,17 @@ import {
 } from "@/components/ui/select"
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
 import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from "@/components/ui/command"
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { Checkbox } from "@/components/ui/checkbox"
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { Textarea } from "@/components/ui/textarea"
-import { Calendar } from "@/components/ui/calendar";
+import { Calendar } from "@/components/ui/calendar"
 
 import { MoreHorizontal } from "lucide-react"
-import { Calendar as CalendarIcon } from "lucide-react";
+import { Calendar as CalendarIcon } from "lucide-react"
 
 import { cn } from "@/lib/utils"
-import { format } from "date-fns";
+import { format } from "date-fns"
 
-import { IncidentDetailsDrawer } from "@/features/incidentsDrawer/components/IncidentDetails";
-// import { IncidentIssuesDrawer } from "@/features/incidentsDrawer/components/IncidentIssues";
+import { IncidentForm } from "@/types/incidentModal"   // ✅ use shared type
 
 const departments = [
     { code: "01", name: "PRESIDENT" },
@@ -56,38 +56,50 @@ const departments = [
 ]
 
 interface Props {
-    form: {
-        description: string
-        classification: string
-        status: string
-        natureOfException: string
-        auditFinding: string
-        reportingDepartment: string
-        reportingEmployee: string
-        supportDocs: string
-        concernDepartment: string
-        supplier: string
-        customerDepartment: string
-
-    }
-    handleChange: (field: string, value: string) => void
-    handleSubmit: (e: React.FormEvent) => void
     onClose: () => void
-    isPending: boolean
 }
 
-export default function IncidentModal({
-    form,
-    handleChange,
-    handleSubmit,
-    onClose,
-    isPending,
-}: Props) {
-    const [purchaseModule, setPurchaseModule] = React.useState("Imported");
-    const [selected, setSelected] = React.useState("supplier");
-    const [similarNC, setSimilarNC] = React.useState(false);
-    const [date, setDate] = React.useState<Date>();
+export default function IncidentModal({ onClose }: Props) {
+    const defaultForm: IncidentForm = {
+        refNo: 0,
+        description: "",
+        natureOfException: "",
+        auditFinding: "",
+        reportingDepartment: "",
+        reportingEmployee: "",
+        concernType: "supplier",
+        concernName: "",
+        customerDepartment: "",
+        moduleOfPurchase: "Imported",
+        typeOfDelivery: "indent",
+        date: undefined,
+    };
+
+    const [form, setForm] = useState<IncidentForm>(defaultForm)
+
+
     const [open, setOpen] = useState(false)
+    const [date, setDate] = useState<Date>()
+
+    const { mutate, isPending } = useAddIncident()
+
+    const handleChange = (field: keyof IncidentForm, value: string) => {
+        setForm((prev) => ({ ...prev, [field]: value }))
+    }
+
+    const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault()
+        mutate(
+            { ...form, date }, // ✅ only data from IncidentForm
+            {
+                onSuccess: () => {
+                    onClose()
+                    setForm(defaultForm)
+                    setDate(undefined)
+                },
+            }
+        )
+    }
 
     return (
         <form onSubmit={handleSubmit} className="space-y-4">
@@ -179,12 +191,8 @@ export default function IncidentModal({
                             <SelectValue placeholder="Select audit finding" />
                         </SelectTrigger>
                         <SelectContent>
-                            <SelectItem value="Major Non-Conformity">
-                                Major Non-Conformity
-                            </SelectItem>
-                            <SelectItem value="Minor Non-Conformity">
-                                Minor Non-Conformity
-                            </SelectItem>
+                            <SelectItem value="Major Non-Conformity">Major Non-Conformity</SelectItem>
+                            <SelectItem value="Minor Non-Conformity">Minor Non-Conformity</SelectItem>
                             <SelectItem value="Observations for Improvement">
                                 Observations for Improvement
                             </SelectItem>
@@ -194,7 +202,6 @@ export default function IncidentModal({
                         </SelectContent>
                     </Select>
                 </div>
-
             </div>
 
             {/* Description/Support Documents */}
@@ -202,41 +209,12 @@ export default function IncidentModal({
                 <Label htmlFor="supportDocs">Description / Support Documents</Label>
                 <Textarea
                     id="supportDocs"
-                    value={form.supportDocs}
-                    onChange={(e) => handleChange("supportDocs", e.target.value)}
+                    value={form.description}
+                    onChange={(e) => handleChange("description", e.target.value)}
                     placeholder="Add description or list of support documents..."
                     rows={4}
                 />
             </div>
-
-            {/* Departments Affected */}
-            {/* <div className="space-y-2 my-6">
-                <Label>Departments Affected</Label>
-                <div className="grid grid-cols-2 gap-2">
-                    {[
-                        "President",
-                        "Human Resource and Admin",
-                        "Logistics",
-                        "Purchasing",
-                        "Business/Product Development",
-                        "Pharma Business Unit",
-                        "Audit/Finance & Accounting",
-                    ].map((dept) => (
-                        <Label
-                            key={dept}
-                            className="flex items-center space-x-2 cursor-pointer font-normal"
-                        >
-                            <Checkbox
-                                checked={form.concernDepartment === dept}
-                                onCheckedChange={() =>
-                                    handleChange("concernDepartment", dept)
-                                }
-                            />
-                            <span className="text-sm">{dept}</span>
-                        </Label>
-                    ))}
-                </div>
-            </div> */}
 
             {/* Other Fields */}
             <div className="grid grid-cols-2 gap-4">
@@ -244,15 +222,18 @@ export default function IncidentModal({
                 <div className="space-y-2 w-full">
                     <Label htmlFor="role">Select Type</Label>
                     <Select
-                        defaultValue="supplier"
-                        onValueChange={(val) => setSelected(val)}
+                        value={form.concernType}
+                        onValueChange={(value) => {
+                            handleChange("concernType", value as 'supplier' | 'customer' | 'department');
+                            handleChange("concernName", "");
+                        }}
                     >
                         <SelectTrigger id="role" className="w-full">
                             <SelectValue placeholder="Select option" />
                         </SelectTrigger>
                         <SelectContent>
-                            <SelectItem value="supplier">Supplier</SelectItem>
                             <SelectItem value="customer">Customer</SelectItem>
+                            <SelectItem value="supplier">Supplier</SelectItem>
                             <SelectItem value="department">Department</SelectItem>
                         </SelectContent>
                     </Select>
@@ -296,51 +277,55 @@ export default function IncidentModal({
                 />
             </div>
 
-            {/* Supplier Name */}
+            {/* Supplier/Customer/Department Name */}
             <div className="space-y-2">
-                <Label htmlFor="input">
-                    {selected === "supplier"
+                <Label htmlFor="concernName">
+                    {form.concernType === "supplier"
                         ? "Supplier Name"
-                        : selected === "customer"
+                        : form.concernType === "customer"
                             ? "Customer Name"
                             : "Department Name"}
                 </Label>
                 <Input
-                    id="input"
+                    id="concernName"
                     type="text"
-                    placeholder={`Enter ${selected} name`}
+                    placeholder={`Enter ${form.concernType} name`}
+                    value={form.concernName}
+                    onChange={(e) => handleChange("concernName", e.target.value)}
                 />
             </div>
 
-
             {/* Radio Group */}
             <div className="p-4 border rounded-lg w-full bg-white">
-                <Label className="mb-4 ">
-                    Module of Purchase
-                </Label>
+                <Label className="mb-4 ">Module of Purchase</Label>
                 <RadioGroup
-                    defaultValue="Imported"
-                    value={purchaseModule}
-                    onValueChange={setPurchaseModule}
-                    className="flex flex-row gap-12  "
+                    value={form.moduleOfPurchase}
+                    onValueChange={(value) => handleChange("moduleOfPurchase", value as 'Imported' | 'Local')}
+                    className="flex flex-row gap-12"
                 >
-                    <div className="flex items-center space-x-2 text-">
+                    <div className="flex items-center space-x-2">
                         <RadioGroupItem value="Imported" id="imported" />
-                        <Label htmlFor="imported" className="font-normal">Imported</Label>
+                        <Label htmlFor="imported" className="font-normal">
+                            Imported
+                        </Label>
                     </div>
                     <div className="flex items-center space-x-2">
                         <RadioGroupItem value="Local" id="local" />
-                        <Label htmlFor="local" className="font-normal">Local</Label>
+                        <Label htmlFor="local" className="font-normal">
+                            Local
+                        </Label>
                     </div>
                 </RadioGroup>
             </div>
 
-
-
-            {/* Type of Delivery */}
+            {/* Delivery Type */}
             <div className="p-4 border rounded-lg w-full bg-white">
                 <Label className="mb-4 ">Type of Delivery</Label>
-                <RadioGroup defaultValue="indent" className="flex flex-row gap-12 ">
+                <RadioGroup
+                    value={form.typeOfDelivery}
+                    onValueChange={(value) => handleChange("typeOfDelivery", value)}
+                    className="flex flex-row gap-12"
+                >
                     <div className="flex items-center space-x-2">
                         <RadioGroupItem value="indent" id="indent" />
                         <Label htmlFor="indent" className="font-normal">
@@ -362,8 +347,7 @@ export default function IncidentModal({
                 </RadioGroup>
             </div>
 
-            <IncidentDetailsDrawer />
-            {/* <IncidentIssuesDrawer /> */}
+            {/* <IncidentDetailsDrawer /> */}
 
             <DialogFooter>
                 <Button type="button" variant="outline" onClick={onClose}>

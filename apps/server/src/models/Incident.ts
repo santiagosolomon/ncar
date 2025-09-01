@@ -2,27 +2,79 @@
 
 import { Schema, model } from "mongoose"
 
-const incidentSchema = new Schema({
-    reportingDepartment: String,
-    reportingEmployee: String,
-    natureOfException: String,
-    auditFinding: String,
-    supportDocs: String,
-    concernDepartment: String,
-    customerDepartment: String,
-    supplier: String,
-    status: { type: String, default: "Open" },
-    date: Date,
-    type: String,
-    deviation: String,
-    description: String,
-    sku: String,
-    details: String,
-    outOfTotal: String,
-    poNo: String,
-    lotNo: String,
-    containerNo: String,
-    billOfLandingNo: String,
-}, { timestamps: true })
+// Counter for auto-incrementing refNo
+const counterSchema = new Schema({
+    _id: { type: String, required: true },
+    seq: { type: Number, default: 0 }
+});
 
-export const Incident = model("Incident", incidentSchema)
+const Counter = model('Counter', counterSchema);
+
+// Initialize counter if it doesn't exist
+async function initializeCounter() {
+    try {
+        await Counter.deleteMany({}); // Clear existing counters
+        await Counter.create({ _id: 'incidentCounter', seq: 0 });
+        console.log('Counter initialized successfully');
+    } catch (error) {
+        console.error('Error initializing counter:', error);
+    }
+}
+
+// Call initialization
+initializeCounter();
+
+const incidentSchema = new Schema({
+    refNo: { type: Number, unique: true },
+    description: { type: String, required: true },
+    reportingDepartment: { type: String, required: true },
+    reportingEmployee: { type: String, required: true },
+    natureOfException: { type: String, required: true },
+    auditFinding: { type: String, required: true },
+    concernType: { type: String, required: true, enum: ['customer', 'supplier', 'department'] },
+    concernName: { type: String, required: true },
+    customerDepartment: String,
+    moduleOfPurchase: { type: String, required: true, enum: ['Imported', 'Local'] },
+    typeOfDelivery: { type: String, required: true, enum: ['indent', 'exstock', 'forward'] },
+    date: { type: Date, required: true },
+}, {
+    timestamps: true,
+    strict: true, // This ensures no extra fields are saved
+    id: false // This prevents Mongoose from creating a virtual 'id' getter
+});
+
+// Add pre-save hook for auto-incrementing refNo
+incidentSchema.pre('save', async function(next) {
+    if (this.isNew) {
+        let attempts = 0;
+        const maxAttempts = 5;
+        
+        while (attempts < maxAttempts) {
+            try {
+                const counter = await Counter.findByIdAndUpdate(
+                    'incidentCounter',
+                    { $inc: { seq: 1 } },
+                    { new: true, upsert: true }
+                );
+                
+                // Check if refNo already exists
+                const existingIncident = await Incident.findOne({ refNo: counter.seq });
+                if (!existingIncident) {
+                    this.refNo = counter.seq;
+                    return next();
+                }
+                
+                // If refNo exists, try again
+                attempts++;
+            } catch (error) {
+                return next(error as Error);
+            }
+        }
+        
+        // If we've exhausted all attempts
+        return next(new Error('Could not generate unique refNo after multiple attempts'));
+    }
+    next();
+});
+
+export const Incident = model("Incident", incidentSchema);

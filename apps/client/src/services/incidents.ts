@@ -1,21 +1,27 @@
 // services/incidents.ts
 
 import { api } from "@/lib/axios"
-import { IncidentDetails } from "@/types/incidentDetails"
+import { IncidentForm } from "@/types/incidentModal" 
 
-export const fetchIncidents = async (): Promise<IncidentDetails[]> => {
+interface IncidentResponse extends IncidentForm {
+  _id: string;
+  createdAt: string;
+  updatedAt: string;
+}
+
+export const fetchIncidents = async (): Promise<IncidentResponse[]> => {
   const { data } = await api.get("/incidents")
   return data
 }
 
-export const createIncident = async (incident: IncidentDetails) => {
+export const createIncident = async (incident: IncidentForm) => {
   const { data } = await api.post("/incidents", incident)
-  return data
+  return data as IncidentResponse
 }
 
-export const updateIncident = async (incident: IncidentDetails) => {
-  const { data } = await api.put(`/incidents/${incident.id}`, incident)
-  return data
+export const updateIncident = async (incident: IncidentResponse) => {
+  const { data } = await api.put(`/incidents/${incident._id}`, incident)
+  return data as IncidentResponse
 }
 
 export const deleteIncident = async (id: string) => {

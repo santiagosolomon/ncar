@@ -2,7 +2,7 @@
 
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query"
 import { fetchIncidents, createIncident, updateIncident, deleteIncident } from "@/services/incidents"
-import { IncidentDetails } from "@/types/incidentDetails"
+import { IncidentForm } from "@/types/incidentModal" 
 
 export const useIncidents = () =>
   useQuery({ queryKey: ["incidents"], queryFn: fetchIncidents })
