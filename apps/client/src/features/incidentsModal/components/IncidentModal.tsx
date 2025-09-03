@@ -3,9 +3,11 @@
 "use client"
 
 import * as React from "react"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
-import { useAddIncident } from "@/hooks/useIncidentQueries"
+import { useAddIncident, useUpdateIncident } from "@/hooks/useIncidentQueries"
+
+import { IncidentDetailsDrawer } from "@/features/incidentsDrawer/components/IncidentDetails"
 
 import { DialogFooter } from "@/components/ui/dialog"
 import { Button } from "@/components/ui/button"
@@ -28,9 +30,11 @@ import { MoreHorizontal } from "lucide-react"
 import { Calendar as CalendarIcon } from "lucide-react"
 
 import { cn } from "@/lib/utils"
-import { format } from "date-fns"
+import { format, set } from "date-fns"
 
 import { IncidentForm } from "@/types/incidentModal"   // ✅ use shared type
+import { IncidentDetails } from "@/types/incidentModal"
+import { is } from "date-fns/locale"
 
 const departments = [
     { code: "01", name: "PRESIDENT" },
@@ -57,48 +61,42 @@ const departments = [
 
 interface Props {
     onClose: () => void
+    form: IncidentForm
+    setForm: React.Dispatch<React.SetStateAction<IncidentForm>>
+    editingId: string
+    defaultForm: IncidentForm
+    // initialData?: IncidentForm & { _id: string }  // ✅ use shared type
 }
 
-export default function IncidentModal({ onClose }: Props) {
-    const defaultForm: IncidentForm = {
-        refNo: 0,
-        description: "",
-        natureOfException: "",
-        auditFinding: "",
-        reportingDepartment: "",
-        reportingEmployee: "",
-        concernType: "supplier",
-        concernName: "",
-        customerDepartment: "",
-        moduleOfPurchase: "Imported",
-        typeOfDelivery: "indent",
-        date: undefined,
-    };
-
-    const [form, setForm] = useState<IncidentForm>(defaultForm)
-
-
+export default function IncidentModal({ onClose, form, setForm, editingId, defaultForm }: Props) {
     const [open, setOpen] = useState(false)
-    const [date, setDate] = useState<Date>()
 
-    const { mutate, isPending } = useAddIncident()
+    const { mutate: addIncident, isPending: isAdding } = useAddIncident()
+    const { mutate: updateIncident, isPending: isUpdating } = useUpdateIncident()
 
-    const handleChange = (field: keyof IncidentForm, value: string) => {
+    const handleChange = (field: keyof IncidentForm, value: any) => {
         setForm((prev) => ({ ...prev, [field]: value }))
+    }
+
+    // ✅ update incidentDetails directly
+    const setIncidentDetails = (updater: (prev: IncidentDetails[]) => IncidentDetails[]) => {
+        setForm(prev => ({ ...prev, incidentDetails: updater(prev.incidentDetails) }))
     }
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault()
-        mutate(
-            { ...form, date }, // ✅ only data from IncidentForm
-            {
-                onSuccess: () => {
-                    onClose()
-                    setForm(defaultForm)
-                    setDate(undefined)
-                },
-            }
-        )
+        const payload = { ...form }
+        if (editingId) {
+            updateIncident(
+                { id: editingId, data: payload },
+                { onSuccess: () => { setForm(defaultForm); onClose() } }
+            )
+        } else {
+            addIncident(
+                payload,
+                { onSuccess: () => { setForm(defaultForm); onClose() } }
+            )
+        }
     }
 
     return (
@@ -247,19 +245,19 @@ export default function IncidentModal({ onClose }: Props) {
                                 variant={"outline"}
                                 className={cn(
                                     "w-full justify-start text-left font-normal",
-                                    !date && "text-muted-foreground"
+                                    !form.date && "text-muted-foreground"
                                 )}
                             >
                                 <CalendarIcon className="mr-2 h-4 w-4" />
-                                {date ? format(date, "PPP") : <span>Pick a date</span>}
+                                {form.date ? format(form.date, "PPP") : <span>Pick a date</span>}
                             </Button>
                         </PopoverTrigger>
                         <PopoverContent className="w-auto p-0" align="start">
                             <Calendar
                                 className="w-[300px]"
                                 mode="single"
-                                selected={date}
-                                onSelect={setDate}
+                                selected={form.date}
+                                onSelect={(d) => handleChange("date", d ?? undefined)}
                                 initialFocus
                             />
                         </PopoverContent>
@@ -347,14 +345,14 @@ export default function IncidentModal({ onClose }: Props) {
                 </RadioGroup>
             </div>
 
-            {/* <IncidentDetailsDrawer /> */}
+            <IncidentDetailsDrawer details={form.incidentDetails} setDetails={setIncidentDetails} />
 
             <DialogFooter>
-                <Button type="button" variant="outline" onClick={onClose}>
+                <Button type="button" variant="outline" onClick={onClose} className="cursor-pointer">
                     Cancel
                 </Button>
-                <Button type="submit" disabled={isPending}>
-                    {isPending ? "Saving..." : "Submit"}
+                <Button type="submit" disabled={isAdding || isUpdating} className="cursor-pointer">
+                    {isAdding || isUpdating ? "Saving..." : "Submit"}
                 </Button>
             </DialogFooter>
         </form>

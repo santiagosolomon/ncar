@@ -1,4 +1,4 @@
-//IncidentReport.tsx
+//IncidenMainTable.tsx
 
 "use client";
 
@@ -15,9 +15,10 @@ import { Badge } from "@/components/ui/badge";
 
 interface Props {
   data: Array<IncidentForm & { _id: string }>;
+  onRowClick: (incident: IncidentForm & { _id: string }) => void
 }
 
-export default function IncidentMainTable({ data }: Props) {
+export default function IncidentMainTable({ data, onRowClick }: Props) {
   return (
     <div className="w-full overflow-x-auto rounded-lg border shadow-sm">
       <Table>
@@ -29,11 +30,9 @@ export default function IncidentMainTable({ data }: Props) {
         </TableHeader>
         <TableBody>
           {data.map((incident) => (
-            <TableRow key={incident._id}>
+            <TableRow key={incident._id} className="cursor-pointer hover:bg-gray-50" onClick={() => onRowClick(incident)}>
               <TableCell>{incident.refNo}</TableCell>
               <TableCell>{incident.description}</TableCell>
-              
-
             </TableRow>
           ))}
         </TableBody>

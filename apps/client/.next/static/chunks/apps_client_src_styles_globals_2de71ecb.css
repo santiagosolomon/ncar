@@ -791,6 +791,18 @@
     width: calc(var(--spacing) * 10);
   }
 
+  .w-14 {
+    width: calc(var(--spacing) * 14);
+  }
+
+  .w-15 {
+    width: calc(var(--spacing) * 15);
+  }
+
+  .w-28 {
+    width: calc(var(--spacing) * 28);
+  }
+
   .w-72 {
     width: calc(var(--spacing) * 72);
   }
@@ -1663,6 +1675,12 @@
       .hover\:bg-destructive\/90:hover {
         background-color: color-mix(in oklab, var(--destructive) 90%, transparent);
       }
+    }
+  }
+
+  @media (hover: hover) {
+    .hover\:bg-gray-50:hover {
+      background-color: var(--color-gray-50);
     }
   }
 

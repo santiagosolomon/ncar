@@ -1,37 +1,43 @@
-// //incidentsDrawer/IncidentDetails.tsx
+//incidentsDrawer/IncidentDetails.tsx
 
-// "use client"
+"use client"
 
-// import {
-//   Drawer,
-//   DrawerContent,
-//   DrawerHeader,
-//   DrawerTitle,
-//   DrawerTrigger,
-// } from "@/components/ui/drawer"
-// import { Button } from "@/components/ui/button"
-// import { IncidentDetailsTable } from "@/features/incidentsTable/components/IncidentDetails"
-// import { useIncidents } from "@/hooks/useIncidentQueries"
+import {
+  Drawer,
+  DrawerContent,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger,
+} from "@/components/ui/drawer"
+import { Button } from "@/components/ui/button"
+import { IncidentDetailsTable } from "@/features/incidentsTable/components/IncidentDetails"
+import { useIncidents } from "@/hooks/useIncidentQueries"
+import { IncidentDetails } from "@/types/incidentModal"
 
-// export function IncidentDetailsDrawer() {
-//   const { data: incidents = [], isLoading } = useIncidents()
+interface Props {
+  details: IncidentDetails[]
+  setDetails: (updater: (prev: IncidentDetails[]) => IncidentDetails[]) => void
+}
 
-//   return (
-//     <Drawer>
-//       <DrawerTrigger asChild>
-//         <Button variant="outline">View Incidents</Button>
-//       </DrawerTrigger>
-//       <DrawerContent className="p-6">
-//         <DrawerHeader>
-//           <DrawerTitle>Incident Details</DrawerTitle>
-//         </DrawerHeader>
-//         {isLoading ? (
-//           <p>Loading...</p>
-//         ) : (
-//           <IncidentDetailsTable />
-//         )}
-//       </DrawerContent>
-//     </Drawer>
-//   )
-// }
+export function IncidentDetailsDrawer({ details, setDetails }: Props) {
+  const { data: incidents = [], isLoading } = useIncidents()
+
+  return (
+    <Drawer>
+      <DrawerTrigger asChild>
+        <Button variant="outline">View Incidents</Button>
+      </DrawerTrigger>
+      <DrawerContent className="p-6">
+        <DrawerHeader>
+          <DrawerTitle>Incident Details</DrawerTitle>
+        </DrawerHeader>
+        {isLoading ? (
+          <p>Loading...</p>
+        ) : (
+          <IncidentDetailsTable details={details} setDetails={setDetails} />
+        )}
+      </DrawerContent>
+    </Drawer>
+  )
+}
 

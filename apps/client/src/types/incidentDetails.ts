@@ -1,5 +1,8 @@
-// export interface IncidentDetails {
-//     id: string
+//types/incidentDetails.ts
+
+// export interface IncidentDetails {  
+//     _id?: string; 
+//     tempId?: string;
 //     type: string
 //     deviation: string
 //     description: string
@@ -9,5 +12,5 @@
 //     poNo: string
 //     lotNo: string
 //     containerNo: string
-//     billOfLandingNo: string
+//     ladingNo: string
 // }

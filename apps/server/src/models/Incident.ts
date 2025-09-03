@@ -1,6 +1,7 @@
 // models/Incident.ts
 
 import { Schema, model } from "mongoose"
+import { incidentDetailsSchema } from "./IncidentDetails";
 
 // Counter for auto-incrementing refNo
 const counterSchema = new Schema({
@@ -13,9 +14,15 @@ const Counter = model('Counter', counterSchema);
 // Initialize counter if it doesn't exist
 async function initializeCounter() {
     try {
-        await Counter.deleteMany({}); // Clear existing counters
-        await Counter.create({ _id: 'incidentCounter', seq: 0 });
-        console.log('Counter initialized successfully');
+        // Check if counter exists first
+        const existingCounter = await Counter.findById('incidentCounter');
+        if (!existingCounter) {
+            // Only create if it doesn't exist
+            await Counter.create({ _id: 'incidentCounter', seq: 0 });
+            console.log('Counter initialized successfully');
+        } else {
+            console.log('Counter already exists, using existing counter');
+        }
     } catch (error) {
         console.error('Error initializing counter:', error);
     }
@@ -26,17 +33,19 @@ initializeCounter();
 
 const incidentSchema = new Schema({
     refNo: { type: Number, unique: true },
-    description: { type: String, required: true },
-    reportingDepartment: { type: String, required: true },
-    reportingEmployee: { type: String, required: true },
-    natureOfException: { type: String, required: true },
-    auditFinding: { type: String, required: true },
-    concernType: { type: String, required: true, enum: ['customer', 'supplier', 'department'] },
-    concernName: { type: String, required: true },
+    description: { type: String },
+    reportingDepartment: { type: String },
+    reportingEmployee: { type: String },
+    natureOfException: { type: String },
+    auditFinding: { type: String },
+    concernType: { type: String, enum: ['customer', 'supplier', 'department'] },
+    concernName: { type: String },
     customerDepartment: String,
-    moduleOfPurchase: { type: String, required: true, enum: ['Imported', 'Local'] },
-    typeOfDelivery: { type: String, required: true, enum: ['indent', 'exstock', 'forward'] },
-    date: { type: Date, required: true },
+    moduleOfPurchase: { type: String, enum: ['Imported', 'Local'] },
+    typeOfDelivery: { type: String, enum: ['indent', 'exstock', 'forward'] },
+    date: { type: Date },
+    incidentDetails: [incidentDetailsSchema]
+
 }, {
     timestamps: true,
     strict: true, // This ensures no extra fields are saved
@@ -44,11 +53,11 @@ const incidentSchema = new Schema({
 });
 
 // Add pre-save hook for auto-incrementing refNo
-incidentSchema.pre('save', async function(next) {
+incidentSchema.pre('save', async function (next) {
     if (this.isNew) {
         let attempts = 0;
         const maxAttempts = 5;
-        
+
         while (attempts < maxAttempts) {
             try {
                 const counter = await Counter.findByIdAndUpdate(
@@ -56,21 +65,21 @@ incidentSchema.pre('save', async function(next) {
                     { $inc: { seq: 1 } },
                     { new: true, upsert: true }
                 );
-                
+
                 // Check if refNo already exists
                 const existingIncident = await Incident.findOne({ refNo: counter.seq });
                 if (!existingIncident) {
                     this.refNo = counter.seq;
                     return next();
                 }
-                
+
                 // If refNo exists, try again
                 attempts++;
             } catch (error) {
                 return next(error as Error);
             }
         }
-        
+
         // If we've exhausted all attempts
         return next(new Error('Could not generate unique refNo after multiple attempts'));
     }
