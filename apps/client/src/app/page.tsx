@@ -61,6 +61,7 @@ export default function HomePage() {
   }
 
   const handleClose = () => {
+    setForm(defaultForm)
     setEditingIncident(null)
     setIsOpen(false)
   }
