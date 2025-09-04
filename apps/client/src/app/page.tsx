@@ -31,6 +31,7 @@ const defaultForm: IncidentForm = {
   typeOfDelivery: "indent",
   date: undefined,
   incidentDetails: [],
+  incidentIssues: [],
 }
 
 export default function HomePage() {

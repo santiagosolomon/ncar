@@ -14,17 +14,17 @@ import { IncidentDetailsTable } from "@/features/incidentsTable/components/Incid
 import { useIncidents } from "@/hooks/useIncidentQueries"
 import { IncidentDetails } from "@/types/incidentModal"
 
-interface Props {
+interface IncidentDetailsDrawerProps {
   details: IncidentDetails[]
   setDetails: (updater: (prev: IncidentDetails[]) => IncidentDetails[]) => void
 }
 
-export function IncidentDetailsDrawer({ details, setDetails }: Props) {
+export function IncidentDetailsDrawer({ details, setDetails }: IncidentDetailsDrawerProps) {
   const { data: incidents = [], isLoading } = useIncidents()
 
   return (
     <Drawer>
-      <DrawerTrigger asChild>
+      <DrawerTrigger className="cursor-pointer" asChild>
         <Button variant="outline">View Incidents</Button>
       </DrawerTrigger>
       <DrawerContent className="p-6">

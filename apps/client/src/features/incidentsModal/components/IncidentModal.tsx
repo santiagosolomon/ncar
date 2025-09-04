@@ -7,8 +7,6 @@ import { useState, useEffect } from "react"
 
 import { useAddIncident, useUpdateIncident } from "@/hooks/useIncidentQueries"
 
-import { IncidentDetailsDrawer } from "@/features/incidentsDrawer/components/IncidentDetails"
-
 import { DialogFooter } from "@/components/ui/dialog"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -34,7 +32,13 @@ import { format, set } from "date-fns"
 
 import { IncidentForm } from "@/types/incidentModal"   // ✅ use shared type
 import { IncidentDetails } from "@/types/incidentModal"
+import { IncidentIssues } from "@/types/incidentModal"
+
+import { IncidentDetailsDrawer } from "@/features/incidentsDrawer/components/IncidentDetails"
+import { IncidentIssuesDrawer } from "@/features/incidentsDrawer/components/IncidentIssues"
+
 import { is } from "date-fns/locale"
+
 
 const departments = [
     { code: "01", name: "PRESIDENT" },
@@ -81,6 +85,9 @@ export default function IncidentModal({ onClose, form, setForm, editingId, defau
     // ✅ update incidentDetails directly
     const setIncidentDetails = (updater: (prev: IncidentDetails[]) => IncidentDetails[]) => {
         setForm(prev => ({ ...prev, incidentDetails: updater(prev.incidentDetails) }))
+    }
+    const setIncidentIssues = (updater: (prev: IncidentIssues[]) => IncidentIssues[]) => {
+        setForm(prev => ({ ...prev, incidentIssues: updater(prev.incidentIssues) }))
     }
 
     const handleSubmit = (e: React.FormEvent) => {
@@ -346,6 +353,7 @@ export default function IncidentModal({ onClose, form, setForm, editingId, defau
             </div>
 
             <IncidentDetailsDrawer details={form.incidentDetails} setDetails={setIncidentDetails} />
+            <IncidentIssuesDrawer details={form.incidentIssues} setDetails={setIncidentIssues} />
 
             <DialogFooter>
                 <Button type="button" variant="outline" onClick={onClose} className="cursor-pointer">

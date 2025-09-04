@@ -82,7 +82,7 @@ export function IncidentDetailsTable({ details, setDetails }: Props) {
                 className="border rounded px-2 py-1 w-full text-sm"
                 value={(draftRow as any)[field] ?? ""}
                 onChange={e =>
-                    setDraftRow(prev => ({ ...prev!, [field]: e.target.value }))
+                    setDraftRow(prev => ({ ...draftRow, [field]: e.target.value }))
                 }
             />
         )
@@ -91,7 +91,7 @@ export function IncidentDetailsTable({ details, setDetails }: Props) {
     return (
         <div>
             <div className="flex justify-end mb-2">
-                <Button size="sm" variant="outline" onClick={startAdd} disabled={!!newRow}>
+                <Button size="sm" variant="outline" className="cursor-pointer" onClick={startAdd} disabled={!!newRow}>
                     <Plus className="w-4 h-4" /> Add
                 </Button>
             </div>
@@ -203,14 +203,15 @@ export function IncidentDetailsTable({ details, setDetails }: Props) {
                                         </td>
                                     ))}
                                 <td className="px-2 py-2 border">
-                                    <div className="flex gap-2">
-                                        <Button size="icon" variant="ghost" onClick={saveAdd}>
+                                    <div className="flex">
+                                        <Button size="icon" variant="ghost" onClick={saveAdd} className="cursor-pointer">
                                             <Check className="w-4 h-4 text-green-600" />
                                         </Button>
                                         <Button
                                             size="icon"
                                             variant="ghost"
                                             onClick={() => setNewRow(null)}
+                                            className="cursor-pointer"
                                         >
                                             <X className="w-4 h-4 text-red-600" />
                                         </Button>

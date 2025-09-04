@@ -2,6 +2,7 @@
 
 import { Schema, model } from "mongoose"
 import { incidentDetailsSchema } from "./IncidentDetails";
+import { incidentIssuesSchema } from "./IncidentIssues";
 
 // Counter for auto-incrementing refNo
 const counterSchema = new Schema({
@@ -44,7 +45,8 @@ const incidentSchema = new Schema({
     moduleOfPurchase: { type: String, enum: ['Imported', 'Local'] },
     typeOfDelivery: { type: String, enum: ['indent', 'exstock', 'forward'] },
     date: { type: Date },
-    incidentDetails: [incidentDetailsSchema]
+    incidentDetails: [incidentDetailsSchema],
+    incidentIssues: [incidentIssuesSchema],
 
 }, {
     timestamps: true,
