@@ -2990,9 +2990,6 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modul
 var __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$drawer$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/apps/client/src/components/ui/drawer.tsx [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/apps/client/src/components/ui/button.tsx [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$features$2f$incidentsTable$2f$components$2f$IncidentDetails$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/apps/client/src/features/incidentsTable/components/IncidentDetails.tsx [app-client] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$hooks$2f$useIncidentQueries$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/apps/client/src/hooks/useIncidentQueries.ts [app-client] (ecmascript)");
-;
-var _s = __turbopack_context__.k.signature();
 "use client";
 ;
 ;
@@ -3000,8 +2997,6 @@ var _s = __turbopack_context__.k.signature();
 ;
 function IncidentDetailsDrawer(param) {
     let { details, setDetails } = param;
-    _s();
-    const { data: incidents = [], isLoading } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$hooks$2f$useIncidentQueries$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useIncidents"])();
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$drawer$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Drawer"], {
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$drawer$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["DrawerTrigger"], {
@@ -3036,19 +3031,13 @@ function IncidentDetailsDrawer(param) {
                         lineNumber: 31,
                         columnNumber: 9
                     }, this),
-                    isLoading ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                        children: "Loading..."
-                    }, void 0, false, {
-                        fileName: "[project]/apps/client/src/features/incidentsDrawer/components/IncidentDetails.tsx",
-                        lineNumber: 35,
-                        columnNumber: 11
-                    }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$features$2f$incidentsTable$2f$components$2f$IncidentDetails$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["IncidentDetailsTable"], {
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$features$2f$incidentsTable$2f$components$2f$IncidentDetails$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["IncidentDetailsTable"], {
                         details: details,
                         setDetails: setDetails
                     }, void 0, false, {
                         fileName: "[project]/apps/client/src/features/incidentsDrawer/components/IncidentDetails.tsx",
-                        lineNumber: 37,
-                        columnNumber: 11
+                        lineNumber: 36,
+                        columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
@@ -3063,11 +3052,6 @@ function IncidentDetailsDrawer(param) {
         columnNumber: 5
     }, this);
 }
-_s(IncidentDetailsDrawer, "G2J8L2JM0KLekG5qVpBWdfQdkUM=", false, function() {
-    return [
-        __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$hooks$2f$useIncidentQueries$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useIncidents"]
-    ];
-});
 _c = IncidentDetailsDrawer;
 var _c;
 __turbopack_context__.k.register(_c, "IncidentDetailsDrawer");

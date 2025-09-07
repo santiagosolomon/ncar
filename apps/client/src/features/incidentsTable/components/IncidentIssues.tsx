@@ -3,7 +3,7 @@
 "use client"
 
 import { useState } from "react"
-import { IncidentIssues } from "@/types/incidentModal"
+import { IncidentIssues } from "@/types/incidentIssues"
 import { Button } from "@/components/ui/button"
 import {
     DropdownMenu,

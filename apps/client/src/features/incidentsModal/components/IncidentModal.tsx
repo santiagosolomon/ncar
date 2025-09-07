@@ -31,11 +31,13 @@ import { cn } from "@/lib/utils"
 import { format, set } from "date-fns"
 
 import { IncidentForm } from "@/types/incidentModal"   // ✅ use shared type
-import { IncidentDetails } from "@/types/incidentModal"
-import { IncidentIssues } from "@/types/incidentModal"
+import { IncidentDetails } from "@/types/incidentDetails"
+import { IncidentIssues } from "@/types/incidentIssues"
+import { IncidentActions } from "@/types/IncidentActions"
 
 import { IncidentDetailsDrawer } from "@/features/incidentsDrawer/components/IncidentDetails"
 import { IncidentIssuesDrawer } from "@/features/incidentsDrawer/components/IncidentIssues"
+import { IncidentActionsDrawer } from "@/features/incidentsDrawer/components/IncidentActions"
 
 import { is } from "date-fns/locale"
 
@@ -88,6 +90,9 @@ export default function IncidentModal({ onClose, form, setForm, editingId, defau
     }
     const setIncidentIssues = (updater: (prev: IncidentIssues[]) => IncidentIssues[]) => {
         setForm(prev => ({ ...prev, incidentIssues: updater(prev.incidentIssues) }))
+    }
+    const setIncidentActions = (updater: (prev: IncidentActions[]) => IncidentActions[]) => {
+        setForm(prev => ({ ...prev, incidentActions: updater(prev.incidentActions) }))
     }
 
     const handleSubmit = (e: React.FormEvent) => {
@@ -354,6 +359,7 @@ export default function IncidentModal({ onClose, form, setForm, editingId, defau
 
             <IncidentDetailsDrawer details={form.incidentDetails} setDetails={setIncidentDetails} />
             <IncidentIssuesDrawer details={form.incidentIssues} setDetails={setIncidentIssues} />
+            <IncidentActionsDrawer details={form.incidentActions} setDetails={setIncidentActions} />
 
             <DialogFooter>
                 <Button type="button" variant="outline" onClick={onClose} className="cursor-pointer">

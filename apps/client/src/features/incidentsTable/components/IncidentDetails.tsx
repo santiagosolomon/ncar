@@ -1,9 +1,9 @@
-// // features/incidentsTable/components/IncidentDetails.tsx
+// features/incidentsTable/components/IncidentDetails.tsx
 
 "use client"
 
 import { useState } from "react"
-import { IncidentDetails } from "@/types/incidentModal"
+import { IncidentDetails } from "@/types/incidentDetails"
 import { Button } from "@/components/ui/button"
 import {
     DropdownMenu,

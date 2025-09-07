@@ -1,11 +1,15 @@
 // hooks/useIncidentQueries.ts
 
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query"
-import { fetchIncidents, createIncident, updateIncident, deleteIncident } from "@/services/incidents"
+import { fetchIncidents, createIncident, updateIncident, deleteIncident, PaginatedIncidentResponse } from "@/services/incidents"
 import { IncidentForm } from "@/types/incidentModal" 
 
-export const useIncidents = () =>
-  useQuery({ queryKey: ["incidents"], queryFn: fetchIncidents })
+export const useIncidents = (page: number, limit: number) =>
+  useQuery<PaginatedIncidentResponse>({
+    queryKey: ["incidents", page, limit],
+    queryFn: () => fetchIncidents(page, limit),
+
+  })
 
 export const useAddIncident = () => {
   const qc = useQueryClient()

@@ -3,9 +3,16 @@
 import { api } from "@/lib/axios"
 import { IncidentForm, IncidentResponse } from "@/types/incidentModal" 
 
+export interface PaginatedIncidentResponse {
+  data: Array<IncidentForm & { _id: string }>
+  total: number
+  page: number
+  totalPages: number
+  hasMore: boolean
+}
 
-export const fetchIncidents = async (): Promise<IncidentResponse[]> => {
-  const { data } = await api.get("/incidents")
+export const fetchIncidents = async (page = 1, limit = 10): Promise<PaginatedIncidentResponse> => {
+  const { data } = await api.get("/incidents", { params: { page, limit } })
   return data
 }
 

@@ -1,4 +1,4 @@
-//IncidenMainTable.tsx
+//IncidentMainTable
 
 "use client";
 
@@ -11,14 +11,34 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { Badge } from "@/components/ui/badge";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Button } from "@/components/ui/button";
+
+import { LuChevronRight } from "react-icons/lu";
+import { LuChevronLeft } from "react-icons/lu";
 
 interface Props {
   data: Array<IncidentForm & { _id: string }>;
-  onRowClick: (incident: IncidentForm & { _id: string }) => void
+  onRowClick: (incident: IncidentForm & { _id: string }) => void;
+  currentPage: number;
+  totalPages: number;
+  itemsPerPage: number;
+  onPageChange: (page: number) => void;
+  onItemsPerPageChange: (val: number) => void;
 }
 
-export default function IncidentMainTable({ data, onRowClick }: Props) {
+export default function IncidentMainTable({
+  data,
+  onRowClick,
+  currentPage,
+  totalPages,
+  itemsPerPage,
+  onPageChange,
+  onItemsPerPageChange,
+}: Props) {
+  const startIdx = data.length > 0 ? (currentPage - 1) * itemsPerPage + 1 : 0;
+  const endIdx = data.length > 0 ? startIdx + data.length - 1 : 0;
+
   return (
     <div className="w-full overflow-x-auto rounded-lg border shadow-sm">
       <Table>
@@ -30,34 +50,88 @@ export default function IncidentMainTable({ data, onRowClick }: Props) {
         </TableHeader>
         <TableBody>
           {data.map((incident) => (
-            <TableRow key={incident._id} className="cursor-pointer hover:bg-gray-50" onClick={() => onRowClick(incident)}>
+            <TableRow
+              key={incident._id}
+              className="cursor-pointer hover:bg-gray-50"
+              onClick={() => onRowClick(incident)}
+            >
               <TableCell>{incident.refNo}</TableCell>
               <TableCell>{incident.description}</TableCell>
             </TableRow>
           ))}
         </TableBody>
       </Table>
+
+      {/* ✅ Pagination Controls */}
+      <div className="flex flex-col sm:flex-row justify-between items-center gap-3 p-3 border-t">
+        {/* Showing info */}
+        <p className="text-sm text-gray-600">
+          Showing {startIdx}–{endIdx} of {itemsPerPage * totalPages}
+        </p>
+
+        <div className="flex flex-wrap items-center gap-6">
+          {/* Items per page dropdown */}
+          <div className="flex items-center gap-2">
+            <span className="text-sm text-gray-600">Items per page:</span>
+            <Select
+              value={String(itemsPerPage)}
+              onValueChange={(val) => onItemsPerPageChange(Number(val))}
+            >
+              <SelectTrigger className="w-[80px]">
+                <SelectValue />
+              </SelectTrigger>
+              <SelectContent>
+                {[10, 20, 50, 100].map((num) => (
+                  <SelectItem key={num} value={String(num)}>
+                    {num}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          </div>
+
+          {/* Page selector */}
+          <div className="flex items-center gap-2">
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => onPageChange(Math.max(1, currentPage - 1))}
+              disabled={currentPage === 1}
+              className="cursor-pointer"
+            >
+            <LuChevronLeft />
+            </Button>
+
+            <Select
+              value={String(currentPage)}
+              onValueChange={(val) => onPageChange(Number(val))}
+            >
+              <SelectTrigger >
+                <SelectValue />
+              </SelectTrigger>
+              <SelectContent>
+                {Array.from({ length: totalPages }, (_, i) => i + 1).map((p) => (
+                  <SelectItem key={p} value={String(p)}>
+                     {p}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+
+            <span className="text-sm text-gray-600">of {totalPages} pages</span>
+
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => onPageChange(Math.min(totalPages, currentPage + 1))}
+              disabled={currentPage === totalPages}
+              className="cursor-pointer"
+            >
+             <LuChevronRight />
+            </Button>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
-
-
-
-{/* <TableCell>{incident.classification}</TableCell>
-              <TableCell>
-                <Badge
-                  variant={
-                    incident.status === "Open"
-                      ? "destructive"
-                      : incident.status === "Ongoing"
-                        ? "secondary"
-                        : "default"
-                  }
-                  className={
-                    incident.status === "Ongoing"
-                      ? "bg-yellow-100 text-yellow-700 hover:bg-yellow-100"
-                      : ""
-                  }
-                >
-                  {incident.status}
-                </Badge> </TableCell> */}

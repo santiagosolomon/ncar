@@ -12,7 +12,7 @@ import {
 import { Button } from "@/components/ui/button"
 import { IncidentDetailsTable } from "@/features/incidentsTable/components/IncidentDetails"
 import { useIncidents } from "@/hooks/useIncidentQueries"
-import { IncidentDetails } from "@/types/incidentModal"
+import { IncidentDetails } from "@/types/incidentDetails"
 
 interface IncidentDetailsDrawerProps {
   details: IncidentDetails[]
@@ -20,7 +20,7 @@ interface IncidentDetailsDrawerProps {
 }
 
 export function IncidentDetailsDrawer({ details, setDetails }: IncidentDetailsDrawerProps) {
-  const { data: incidents = [], isLoading } = useIncidents()
+
 
   return (
     <Drawer>
@@ -31,11 +31,10 @@ export function IncidentDetailsDrawer({ details, setDetails }: IncidentDetailsDr
         <DrawerHeader>
           <DrawerTitle>Incident Details</DrawerTitle>
         </DrawerHeader>
-        {isLoading ? (
-          <p>Loading...</p>
-        ) : (
-          <IncidentDetailsTable details={details} setDetails={setDetails} />
-        )}
+
+
+        <IncidentDetailsTable details={details} setDetails={setDetails} />
+
       </DrawerContent>
     </Drawer>
   )

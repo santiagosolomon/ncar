@@ -1,10 +1,50 @@
+//controllers/incidentCtrl.ts
+
 import { Request, Response } from "express"
 import { Incident } from "../models/Incident"
 
-export const getIncidents = async (_: Request, res: Response) => {
+export const getIncidents = async (req: Request, res: Response) => {
   try {
-    const incidents = await Incident.find().sort({ createdAt: -1 }) // newest first
-    res.json(incidents)
+    const page = parseInt(req.query.page as string) || 1
+    const limit = parseInt(req.query.limit as string) || 10
+    const skip = (page - 1) * limit
+
+    const [incidents, total] = await Promise.all([
+      Incident.find()
+        .sort({ createdAt: -1 })
+        .skip(skip)
+        .limit(limit)
+        .lean(), // Convert to plain JavaScript objects
+      Incident.countDocuments(),
+    ])
+
+    const totalPages = Math.ceil(total / limit)
+
+    // Ensure we don't exceed total pages
+    if (page > totalPages && total > 0) {
+      const lastPageSkip = (totalPages - 1) * limit
+      const lastPageIncidents = await Incident.find()
+        .sort({ createdAt: -1 })
+        .skip(lastPageSkip)
+        .limit(limit)
+        .lean()
+
+      return res.json({
+        data: lastPageIncidents,
+        total,
+        page: totalPages,
+        totalPages,
+        hasMore: false
+      })
+    }
+
+    res.json({
+      data: incidents,
+      total,
+      page,
+      totalPages,
+      hasMore: page < totalPages
+    })
   } catch (err) {
     res.status(500).json({ error: "Failed to fetch incidents" })
   }

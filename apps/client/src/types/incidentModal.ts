@@ -1,27 +1,8 @@
 //types/incidentModal.ts
 
-export interface IncidentIssues {
-   tempId?: string
-  _id?: string
-  grossWeight: string
-  netWeight: string
-  tareWeight: string
-}
-
-export interface IncidentDetails {
-  tempId?: string
-  _id?: string
-  type: string
-  deviation: string
-  description: string
-  sku: string
-  details: string
-  outOfTotal: string
-  poNo: string
-  lotNo: string
-  containerNo?: string
-  ladingNo: string
-}
+import { IncidentDetails } from "./incidentDetails"
+import { IncidentIssues } from "./incidentIssues"
+import { IncidentActions } from "./IncidentActions"
 
 export interface IncidentForm {
   refNo?: number // Optional since it will be auto-generated
@@ -38,6 +19,7 @@ export interface IncidentForm {
   date?: Date
   incidentDetails?: IncidentDetails[]
   incidentIssues?: IncidentIssues[]
+  incidentActions?: IncidentActions[]
 }
 
 export interface IncidentResponse extends IncidentForm {

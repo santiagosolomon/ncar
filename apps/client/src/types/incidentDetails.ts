@@ -1,16 +1,17 @@
 //types/incidentDetails.ts
 
-// export interface IncidentDetails {  
-//     _id?: string; 
-//     tempId?: string;
-//     type: string
-//     deviation: string
-//     description: string
-//     sku: string
-//     details: string
-//     outOfTotal: string
-//     poNo: string
-//     lotNo: string
-//     containerNo: string
-//     ladingNo: string
-// }
+export interface IncidentDetails {
+  tempId?: string
+  _id?: string
+  type: string
+  deviation: string
+  description: string
+  sku: string
+  details: string
+  outOfTotal: string
+  poNo: string
+  lotNo: string
+  containerNo?: string
+  ladingNo: string
+}
+

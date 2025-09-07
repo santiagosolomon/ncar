@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/drawer"
 import { Button } from "@/components/ui/button"
 import { IncidentIssuesTable } from "@/features/incidentsTable/components/IncidentIssues"
-import { IncidentIssues } from "@/types/incidentModal"
+import { IncidentIssues } from "@/types/incidentIssues"
 
 import { useIncidents } from "@/hooks/useIncidentQueries"
 
@@ -21,7 +21,7 @@ interface IncidentIssuesDrawerProps {
 }
 
 export function IncidentIssuesDrawer({ details, setDetails }: IncidentIssuesDrawerProps) {
-     const { data: incidents = [], isLoading } = useIncidents()
+   
 
   return (
     <Drawer>

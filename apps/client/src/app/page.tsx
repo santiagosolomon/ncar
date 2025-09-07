@@ -32,16 +32,27 @@ const defaultForm: IncidentForm = {
   date: undefined,
   incidentDetails: [],
   incidentIssues: [],
+  incidentActions: [   // 👈 initialize with one blank action set
+    {
+      tempId: crypto.randomUUID(),
+      correction: [],
+      corrective: [],
+      rootCause: "",
+      analysis: []
+    },
+  ],
 }
 
 export default function HomePage() {
+  const [currentPage, setCurrentPage] = useState(1)
+  const [itemsPerPage, setItemsPerPage] = useState(10)
   const [isOpen, setIsOpen] = useState(false)
   const [editingIncident, setEditingIncident] = useState<(IncidentForm & { _id: string }) | null>(null)
 
   // 🚀 persist form state in parent
   const [form, setForm] = useState<IncidentForm>(defaultForm)
 
-  const { data: incidents, isLoading, isError } = useIncidents()
+  const { data: incidents, isLoading, isError } = useIncidents(currentPage, itemsPerPage)
 
 
   const handleRowClick = (incident: IncidentForm & { _id: string }) => {
@@ -92,7 +103,24 @@ export default function HomePage() {
       {/* ✅ Render incident list from backend */}
       {isLoading && <p>Loading incidents...</p>}
       {isError && <p className="text-red-500">Failed to load incidents</p>}
-      {incidents && <IncidentMainTable data={incidents} onRowClick={handleRowClick} />}
+      {incidents && (
+        <IncidentMainTable 
+          data={incidents.data} 
+          onRowClick={handleRowClick} 
+          currentPage={incidents.page} 
+          totalPages={incidents.totalPages} 
+          itemsPerPage={itemsPerPage} 
+          onPageChange={(page) => {
+            if (page >= 1 && page <= incidents.totalPages) {
+              setCurrentPage(page);
+            }
+          }} 
+          onItemsPerPageChange={(val) => {
+            setItemsPerPage(val);
+            setCurrentPage(1); // reset to first page
+          }}
+        />
+      )}
     </div>
   )
 }
