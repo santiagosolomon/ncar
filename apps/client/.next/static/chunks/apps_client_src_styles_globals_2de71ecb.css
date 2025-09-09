@@ -780,6 +780,10 @@
     height: calc(var(--spacing) * 10);
   }
 
+  .h-\[34px\] {
+    height: 34px;
+  }
+
   .h-\[var\(--radix-select-trigger-height\)\] {
     height: var(--radix-select-trigger-height);
   }

@@ -114,9 +114,9 @@ export default function HomePage() {
                   <DialogTitle>{editingIncident ? "Edit Incident Report" : "File Incident Report"}</DialogTitle>
                   <div className="text-[0.84rem] text-gray-400 italic font-semibold">{editingIncident ? `(Ref No: ${form.refNo})` : null}</div>
                 </div>
-                <div className="mr-7 flex items-center">
+                <div className="mr-7 mt-2 flex items-center">
                   <Popover>
-                    <PopoverTrigger asChild >
+                    <PopoverTrigger asChild className="h-[34px]">
                       <Button
                         variant={"outline"}
                         className={cn(
@@ -124,7 +124,7 @@ export default function HomePage() {
                           !form.dateReported && "text-muted-foreground"
                         )}
                       >
-                        <CalendarIcon className="mr-2 mt h-4 w-4 shrink-0" />
+                        <CalendarIcon className="mr-2  h-4 w-4 shrink-0" />
                         <span className="whitespace-nowrap">
                           {form.dateReported ? format(form.dateReported, "PPP") : <span>Filing Date</span>}
                         </span>
