@@ -27,6 +27,7 @@ export function AnalysisTable({ title, details, setDetails }: Props) {
   const startAdd = () => {
     setNewRow({
       why: "",
+      probableRootCause: "",
       counterMeasure: "",
       who: "",
       when: "",
@@ -79,7 +80,8 @@ export function AnalysisTable({ title, details, setDetails }: Props) {
 
   return (
     <div>
-      <div className="flex justify-end mb-2">
+      <div className="flex justify-between items-center mb-2">
+        <h3 className="font-semibold">{title}</h3>
         <Button
           size="sm"
           variant="outline"
@@ -95,7 +97,8 @@ export function AnalysisTable({ title, details, setDetails }: Props) {
         <table className="min-w-full border text-sm text-left">
           <thead className="bg-gray-100">
             <tr>
-              <th className="px-2 py-2 border">Why</th>
+              <th className="px-2 py-2 border">Why?</th>
+              <th className="px-2 py-2 border">Probable Root Cause</th>
               <th className="px-2 py-2 border">Counter Measure</th>
               <th className="px-2 py-2 border">Who</th>
               <th className="px-2 py-2 border">When</th>
@@ -111,6 +114,7 @@ export function AnalysisTable({ title, details, setDetails }: Props) {
               return (
                 <tr key={idx} className="odd:bg-white even:bg-gray-50">
                   <td className="px-2 py-2 border">{renderCell(row, "why", idx)}</td>
+                  <td className="px-2 py-2 border">{renderCell(row, "probableRootCause", idx)}</td>
                   <td className="px-2 py-2 border">{renderCell(row, "counterMeasure", idx)}</td>
                   <td className="px-2 py-2 border">{renderCell(row, "who", idx)}</td>
                   <td className="px-2 py-2 border">{renderCell(row, "when", idx)}</td>
@@ -170,7 +174,7 @@ export function AnalysisTable({ title, details, setDetails }: Props) {
 
             {newRow && (
               <tr className="bg-yellow-50">
-                {(["why", "counterMeasure", "who", "when", "recurrence"] as (keyof IncidentAnalysis)[])
+                {(["why", "probableRootCause", "counterMeasure", "who", "when", "recurrence"] as (keyof IncidentAnalysis)[])
                   .map((field) => (
                     <td key={field} className="px-2 py-2 border">
                       <Input

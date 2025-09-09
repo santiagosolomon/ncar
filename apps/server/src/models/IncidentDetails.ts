@@ -3,7 +3,7 @@
 import { Schema } from "mongoose"
 
 export const incidentDetailsSchema = new Schema({
-   
+    
     type: { type: String },
     deviation: { type: String },
     description: { type: String },

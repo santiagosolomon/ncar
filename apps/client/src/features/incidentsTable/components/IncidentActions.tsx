@@ -2,6 +2,9 @@
 
 "use client"
 
+import { Label } from "@/components/ui/label"
+import { Textarea } from "@/components/ui/textarea"
+
 import { IncidentActions } from "@/types/IncidentActions"
 import { ActionsTable } from "./actionsTable/actionsTable"
 import { AnalysisTable } from "./analysisTable/analysisTable"
@@ -26,22 +29,22 @@ export function IncidentActionsTable({ details = [], setDetails }: IncidentActio
                 <div key={row._id || row.tempId || crypto.randomUUID()} className="p-6  border rounded-lg bg-white shadow-sm">
                     {/* Correction table */}
                     <ActionsTable
-                        title="Correction Actions"
+                        title="Correction"
                         items={row.correction}
                         onChange={(items) => updateRow(row._id || row.tempId!, r => ({ ...r, correction: items }))}
                     />
 
                     {/* Corrective table */}
                     <ActionsTable
-                        title="Corrective Actions"
+                        title="Corrective"
                         items={row.corrective}
                         onChange={(items) => updateRow(row._id || row.tempId!, r => ({ ...r, corrective: items }))}
                     />
 
                     {/* Root Cause */}
                     <div className="mt-6">
-                        <label className="block text-sm font-medium text-gray-700 mb-2">Root Cause Analysis</label>
-                        <textarea
+                        <Label className="block text-sm font-medium text-gray-700 mb-2">Root Cause</Label>
+                        <Textarea
                             className="w-full min-h-[100px] border rounded-md px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                             placeholder="Describe the root cause..."
                             value={row.rootCause}

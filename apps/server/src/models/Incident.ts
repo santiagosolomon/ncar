@@ -4,6 +4,7 @@ import { Schema, model } from "mongoose"
 import { incidentDetailsSchema } from "./IncidentDetails";
 import { incidentIssuesSchema } from "./IncidentIssues";
 import { incidentActionsSchema } from "./IncidentActions";
+import { incidentEvaluationSchema } from "./IncidentEvaluation";
 
 // Counter for auto-incrementing refNo
 const counterSchema = new Schema({
@@ -35,6 +36,7 @@ initializeCounter();
 
 const incidentSchema = new Schema({
     refNo: { type: Number, unique: true },
+    dateReported: { type: Date },
     description: { type: String },
     reportingDepartment: { type: String },
     reportingEmployee: { type: String },
@@ -48,7 +50,8 @@ const incidentSchema = new Schema({
     date: { type: Date },
     incidentDetails: [incidentDetailsSchema],
     incidentIssues: [incidentIssuesSchema],
-    incidentActions: [incidentActionsSchema]
+    incidentActions: [incidentActionsSchema],
+    incidentEvaluation: [incidentEvaluationSchema]
 
 }, {
     timestamps: true,

@@ -25,7 +25,7 @@ export function IncidentDetailsDrawer({ details, setDetails }: IncidentDetailsDr
   return (
     <Drawer>
       <DrawerTrigger className="cursor-pointer" asChild>
-        <Button variant="outline">View Incidents</Button>
+        <Button variant="outline">View Details</Button>
       </DrawerTrigger>
       <DrawerContent className="p-6">
         <DrawerHeader>

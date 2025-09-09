@@ -3,9 +3,11 @@
 import { IncidentDetails } from "./incidentDetails"
 import { IncidentIssues } from "./incidentIssues"
 import { IncidentActions } from "./IncidentActions"
+import { IncidentEvaluation } from "./IncidentEvaluation"
 
 export interface IncidentForm {
   refNo?: number // Optional since it will be auto-generated
+  dateReported?: Date
   description: string
   natureOfException: string
   auditFinding: string
@@ -20,6 +22,7 @@ export interface IncidentForm {
   incidentDetails?: IncidentDetails[]
   incidentIssues?: IncidentIssues[]
   incidentActions?: IncidentActions[]
+  incidentEvaluation?: IncidentEvaluation[]
 }
 
 export interface IncidentResponse extends IncidentForm {

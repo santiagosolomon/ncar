@@ -38,8 +38,10 @@ import { IncidentActions } from "@/types/IncidentActions"
 import { IncidentDetailsDrawer } from "@/features/incidentsDrawer/components/IncidentDetails"
 import { IncidentIssuesDrawer } from "@/features/incidentsDrawer/components/IncidentIssues"
 import { IncidentActionsDrawer } from "@/features/incidentsDrawer/components/IncidentActions"
+import { IncidentEvaluationDrawer } from "@/features/incidentsDrawer/components/IncidentEvaluation"
 
 import { is } from "date-fns/locale"
+import { IncidentEvaluation } from "@/types/IncidentEvaluation"
 
 
 const departments = [
@@ -93,6 +95,9 @@ export default function IncidentModal({ onClose, form, setForm, editingId, defau
     }
     const setIncidentActions = (updater: (prev: IncidentActions[]) => IncidentActions[]) => {
         setForm(prev => ({ ...prev, incidentActions: updater(prev.incidentActions) }))
+    }
+    const setIncidentEvaluation = (updater: (prev: IncidentEvaluation[]) => IncidentEvaluation[]) => {
+        setForm(prev => ({ ...prev, incidentEvaluation: updater(prev.incidentEvaluation) }))
     }
 
     const handleSubmit = (e: React.FormEvent) => {
@@ -329,7 +334,7 @@ export default function IncidentModal({ onClose, form, setForm, editingId, defau
             </div>
 
             {/* Delivery Type */}
-            <div className="p-4 border rounded-lg w-full bg-white">
+            <div className="p-4 border rounded-lg w-full bg-white mb-8">
                 <Label className="mb-4 ">Type of Delivery</Label>
                 <RadioGroup
                     value={form.typeOfDelivery}
@@ -356,11 +361,14 @@ export default function IncidentModal({ onClose, form, setForm, editingId, defau
                     </div>
                 </RadioGroup>
             </div>
+            <div className="flex gap-2">
+                <IncidentDetailsDrawer details={form.incidentDetails} setDetails={setIncidentDetails} />
+                <IncidentIssuesDrawer details={form.incidentIssues} setDetails={setIncidentIssues} />
+                <IncidentActionsDrawer details={form.incidentActions} setDetails={setIncidentActions} />
+                <IncidentEvaluationDrawer details={form.incidentEvaluation} setDetails={setIncidentEvaluation} />
+            </div>
 
-            <IncidentDetailsDrawer details={form.incidentDetails} setDetails={setIncidentDetails} />
-            <IncidentIssuesDrawer details={form.incidentIssues} setDetails={setIncidentIssues} />
-            <IncidentActionsDrawer details={form.incidentActions} setDetails={setIncidentActions} />
-
+            {/* Form Actions */}
             <DialogFooter>
                 <Button type="button" variant="outline" onClick={onClose} className="cursor-pointer">
                     Cancel

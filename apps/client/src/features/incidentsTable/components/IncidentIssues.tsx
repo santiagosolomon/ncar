@@ -5,6 +5,7 @@
 import { useState } from "react"
 import { IncidentIssues } from "@/types/incidentIssues"
 import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
 import {
     DropdownMenu,
     DropdownMenuTrigger,
@@ -62,7 +63,7 @@ export function IncidentIssuesTable({ details, setDetails }: IncidentIssuesTable
         const isEditing = editingId === (row._id || row.tempId)
         if (!isEditing) return (row as any)[field]
         return (
-            <input
+            <Input
                 className="border rounded px-2 py-1 w-full text-sm"
                 value={(draftRow as any)[field]}
                 onChange={e => setDraftRow({ ...draftRow, [field]: e.target.value })}
@@ -132,7 +133,7 @@ export function IncidentIssuesTable({ details, setDetails }: IncidentIssuesTable
                             <tr className="bg-yellow-50">
                                 {Object.keys(newRow).filter(f => f !== "tempId" && f !== "_id").map(field => (
                                     <td className="px-4 py-2 border" key={field}>
-                                        <input
+                                        <Input
                                             className="border rounded px-2 py-1 w-full text-sm"
                                             value={(newRow as any)[field]}
                                             onChange={e => setNewRow({ ...newRow, [field]: e.target.value })}

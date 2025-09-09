@@ -9,9 +9,8 @@ export type IncidentActionItem = {
 }
 
 export type IncidentAnalysis = {
-  tempId?: string
-  _id?: string
   why: string
+  probableRootCause?: string
   counterMeasure: string
   who: string
   when: string

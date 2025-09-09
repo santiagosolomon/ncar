@@ -19,6 +19,7 @@ const actionSchema = new Schema(
 const analysisSchema = new Schema(
   {
     why: { type: String },
+    probableRootCause: { type: String },
     counterMeasure: { type: String },
     who: { type: String },
     when: { type: String },
@@ -26,8 +27,7 @@ const analysisSchema = new Schema(
   },
   {
     _id: false, 
-    timestamps: true,
-    strict: true,
+
   }
 )
 

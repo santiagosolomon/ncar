@@ -17,6 +17,8 @@ import { Button } from "@/components/ui/button";
 import { LuChevronRight } from "react-icons/lu";
 import { LuChevronLeft } from "react-icons/lu";
 
+import clsx from "clsx"
+
 interface Props {
   data: Array<IncidentForm & { _id: string }>;
   onRowClick: (incident: IncidentForm & { _id: string }) => void;
@@ -25,6 +27,7 @@ interface Props {
   itemsPerPage: number;
   onPageChange: (page: number) => void;
   onItemsPerPageChange: (val: number) => void;
+  editingIncident: (IncidentForm & { _id: string }) | null;
 }
 
 export default function IncidentMainTable({
@@ -35,6 +38,7 @@ export default function IncidentMainTable({
   itemsPerPage,
   onPageChange,
   onItemsPerPageChange,
+  editingIncident,
 }: Props) {
   const startIdx = data.length > 0 ? (currentPage - 1) * itemsPerPage + 1 : 0;
   const endIdx = data.length > 0 ? startIdx + data.length - 1 : 0;
@@ -52,10 +56,10 @@ export default function IncidentMainTable({
           {data.map((incident) => (
             <TableRow
               key={incident._id}
-              className="cursor-pointer hover:bg-gray-50"
+              className={clsx("cursor-pointer hover:bg-gray-50", editingIncident?._id === incident._id ? "bg-blue-50" : "")}
               onClick={() => onRowClick(incident)}
             >
-              <TableCell>{incident.refNo}</TableCell>
+              <TableCell>{incident.refNo}</TableCell> 
               <TableCell>{incident.description}</TableCell>
             </TableRow>
           ))}

@@ -1,8 +1,7 @@
-//actionsTable/actionsTable.tsx
 "use client"
 
 import { useState } from "react"
-import { IncidentActionItem } from "@/types/IncidentActions"
+import { IncidentDocumentation } from "@/types/IncidentEvaluation" // 👈 new type
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import {
@@ -23,30 +22,26 @@ import {
   Trash2,
   Pencil,
   Plus,
-  CalendarIcon,
+  Calendar as CalendarIcon,
 } from "lucide-react"
 
 interface Props {
   title: string
-  items: IncidentActionItem[]
-  onChange: (items: IncidentActionItem[]) => void
+  items: IncidentDocumentation[]
+  onChange: (items: IncidentDocumentation[]) => void
 }
 
-export function ActionsTable({ title, items, onChange }: Props) {
+export function DocumentationTable({ title, items, onChange }: Props) {
   const [editingId, setEditingId] = useState<string | null>(null)
   const [deleteConfirmId, setDeleteConfirmId] = useState<string | null>(null)
-  const [newRow, setNewRow] = useState<IncidentActionItem | null>(null)
-  const [draftRow, setDraftRow] = useState<IncidentActionItem | null>(null)
+  const [newRow, setNewRow] = useState<IncidentDocumentation | null>(null)
+  const [draftRow, setDraftRow] = useState<IncidentDocumentation | null>(null)
 
   const startAdd = () => {
     setNewRow({
-      actionTaken: "",
-      personResponsible: "",
-      timeTable: new Date(),
-      followUpDate: new Date(),
-      status: "open",
-
-      
+      followedUpBy: "",
+      date: new Date(),
+      remarks: "",
     })
   }
 
@@ -57,7 +52,7 @@ export function ActionsTable({ title, items, onChange }: Props) {
     }
   }
 
-  const startEdit = (row: IncidentActionItem, idx: number) => {
+  const startEdit = (row: IncidentDocumentation, idx: number) => {
     setEditingId(String(idx))
     setDraftRow({ ...row })
   }
@@ -83,15 +78,14 @@ export function ActionsTable({ title, items, onChange }: Props) {
   }
 
   const renderCalendarCell = (
-    row: IncidentActionItem,
-    field: "timeTable" | "followUpDate",
+    row: IncidentDocumentation,
     isEditing: boolean,
     isNew: boolean
   ) => {
     const activeRow = isEditing ? draftRow : isNew ? newRow : null
 
     if (!isEditing && !isNew) {
-      return new Date(row[field]).toLocaleDateString()
+      return row.date ? new Date(row.date).toLocaleDateString() : ""
     }
 
     return (
@@ -101,24 +95,22 @@ export function ActionsTable({ title, items, onChange }: Props) {
             variant="outline"
             className={cn(
               "w-full justify-start text-left font-normal",
-              !activeRow?.[field] && "text-muted-foreground"
+              !activeRow?.date && "text-muted-foreground"
             )}
           >
             <CalendarIcon className="mr-2 h-4 w-4" />
-            {activeRow?.[field]
-              ? format(new Date(activeRow[field]), "PPP")
-              : "Pick a date"}
+            {activeRow?.date ? format(new Date(activeRow.date), "PPP") : "Pick a date"}
           </Button>
         </PopoverTrigger>
         <PopoverContent align="start" className="p-0">
           <Calendar
             mode="single"
-            selected={activeRow?.[field] ? new Date(activeRow[field]) : undefined}
+            selected={activeRow?.date ? new Date(activeRow.date) : undefined}
             onSelect={(date) =>
               date &&
               (isEditing
-                ? setDraftRow({ ...draftRow!, [field]: date })
-                : setNewRow({ ...newRow!, [field]: date }))
+                ? setDraftRow({ ...draftRow!, date })
+                : setNewRow({ ...newRow!, date }))
             }
             initialFocus
           />
@@ -127,12 +119,12 @@ export function ActionsTable({ title, items, onChange }: Props) {
     )
   }
 
-  const renderCell = (row: IncidentActionItem, field: keyof IncidentActionItem) => {
+  const renderCell = (row: IncidentDocumentation, field: keyof IncidentDocumentation) => {
     const isEditing = editingId === String(items.indexOf(row))
     const isNew = newRow && row === newRow
 
-    if (field === "timeTable" || field === "followUpDate") {
-      return renderCalendarCell(row, field, isEditing, !!isNew)
+    if (field === "date") {
+      return renderCalendarCell(row, isEditing, !!isNew)
     }
 
     if (!isEditing && !isNew) {
@@ -166,11 +158,9 @@ export function ActionsTable({ title, items, onChange }: Props) {
         <table className="min-w-full border text-sm text-left">
           <thead className="bg-gray-100">
             <tr>
-              <th className="px-2 py-2 border">Action Taken</th>
-              <th className="px-2 py-2 border">Person Responsible</th>
-              <th className="px-2 py-2 border">Time Table</th>
-              <th className="px-2 py-2 border">Follow Up Date</th>
-              <th className="px-2 py-2 border">Status</th>
+              <th className="px-2 py-2 border">Followed Up By</th>
+              <th className="px-2 py-2 border">Date</th>
+              <th className="px-2 py-2 border">Remarks</th>
               <th className="px-2 py-2 border w-14">Actions</th>
             </tr>
           </thead>
@@ -180,11 +170,9 @@ export function ActionsTable({ title, items, onChange }: Props) {
               const isDeleting = deleteConfirmId === String(idx)
               return (
                 <tr key={idx} className="odd:bg-white even:bg-gray-50">
-                  <td className="px-2 py-2 border">{renderCell(row, "actionTaken")}</td>
-                  <td className="px-2 py-2 border">{renderCell(row, "personResponsible")}</td>
-                  <td className="px-2 py-2 border">{renderCell(row, "timeTable")}</td>
-                  <td className="px-2 py-2 border">{renderCell(row, "followUpDate")}</td>
-                  <td className="px-2 py-2 border">{renderCell(row, "status")}</td>
+                  <td className="px-2 py-2 border">{renderCell(row, "followedUpBy")}</td>
+                  <td className="px-2 py-2 border">{renderCell(row, "date")}</td>
+                  <td className="px-2 py-2 border">{renderCell(row, "remarks")}</td>
                   <td className="px-2 py-2 border w-14">
                     {!isEditing && !isDeleting && (
                       <DropdownMenu>
@@ -242,9 +230,9 @@ export function ActionsTable({ title, items, onChange }: Props) {
 
             {newRow && (
               <tr className="bg-yellow-50">
-                {["actionTaken","personResponsible","timeTable","followUpDate","status"].map(field => (
+                {["followedUpBy", "date", "remarks"].map((field) => (
                   <td key={field} className="px-2 py-2 border">
-                    {renderCell(newRow, field as keyof IncidentActionItem)}
+                    {renderCell(newRow, field as keyof IncidentDocumentation)}
                   </td>
                 ))}
                 <td className="px-2 py-2 border">

@@ -5,6 +5,8 @@
 import { useState } from "react"
 import { IncidentDetails } from "@/types/incidentDetails"
 import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+
 import {
     DropdownMenu,
     DropdownMenuTrigger,
@@ -193,7 +195,7 @@ export function IncidentDetailsTable({ details, setDetails }: Props) {
                                     .filter(f => f !== "tempId" && f !== "_id")
                                     .map(field => (
                                         <td key={field} className="px-2 py-2 border">
-                                            <input
+                                            <Input
                                                 className="border rounded px-2 py-1 w-full text-sm"
                                                 value={(newRow as any)[field]}
                                                 onChange={e =>

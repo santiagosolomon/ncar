@@ -5197,6 +5197,101 @@ if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelper
     __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
 }
 }),
+"[project]/apps/client/src/features/incidentsTable/components/IncidentEvaluation.tsx [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+
+if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
+    __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
+}
+}),
+"[project]/apps/client/src/features/incidentsDrawer/components/IncidentEvaluation.tsx [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+//incidentsDrawer/IncidentDetails.tsx
+__turbopack_context__.s([
+    "IncidentEvaluationDrawer",
+    ()=>IncidentEvaluationDrawer
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/apps/client/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$drawer$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/apps/client/src/components/ui/drawer.tsx [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/apps/client/src/components/ui/button.tsx [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$features$2f$incidentsTable$2f$components$2f$IncidentEvaluation$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/apps/client/src/features/incidentsTable/components/IncidentEvaluation.tsx [app-client] (ecmascript)");
+"use client";
+;
+;
+;
+;
+function IncidentEvaluationDrawer(param) {
+    let { details, setDetails } = param;
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$drawer$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Drawer"], {
+        children: [
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$drawer$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["DrawerTrigger"], {
+                className: "cursor-pointer",
+                asChild: true,
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
+                    variant: "outline",
+                    children: "View Evaluation"
+                }, void 0, false, {
+                    fileName: "[project]/apps/client/src/features/incidentsDrawer/components/IncidentEvaluation.tsx",
+                    lineNumber: 26,
+                    columnNumber: 9
+                }, this)
+            }, void 0, false, {
+                fileName: "[project]/apps/client/src/features/incidentsDrawer/components/IncidentEvaluation.tsx",
+                lineNumber: 25,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$drawer$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["DrawerContent"], {
+                className: "p-0 inset-y-0 fixed h-screen",
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$drawer$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["DrawerHeader"], {
+                        className: "px-6 py-4 ",
+                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$drawer$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["DrawerTitle"], {
+                            children: "Incident Evaluation"
+                        }, void 0, false, {
+                            fileName: "[project]/apps/client/src/features/incidentsDrawer/components/IncidentEvaluation.tsx",
+                            lineNumber: 31,
+                            columnNumber: 13
+                        }, this)
+                    }, void 0, false, {
+                        fileName: "[project]/apps/client/src/features/incidentsDrawer/components/IncidentEvaluation.tsx",
+                        lineNumber: 30,
+                        columnNumber: 11
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "px-6 pb-6 overflow-y-auto ",
+                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$features$2f$incidentsTable$2f$components$2f$IncidentEvaluation$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["IncidentEvaluationTable"], {
+                            details: details,
+                            setDetails: setDetails
+                        }, void 0, false, {
+                            fileName: "[project]/apps/client/src/features/incidentsDrawer/components/IncidentEvaluation.tsx",
+                            lineNumber: 36,
+                            columnNumber: 13
+                        }, this)
+                    }, void 0, false, {
+                        fileName: "[project]/apps/client/src/features/incidentsDrawer/components/IncidentEvaluation.tsx",
+                        lineNumber: 35,
+                        columnNumber: 11
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "[project]/apps/client/src/features/incidentsDrawer/components/IncidentEvaluation.tsx",
+                lineNumber: 29,
+                columnNumber: 9
+            }, this)
+        ]
+    }, void 0, true, {
+        fileName: "[project]/apps/client/src/features/incidentsDrawer/components/IncidentEvaluation.tsx",
+        lineNumber: 24,
+        columnNumber: 5
+    }, this);
+}
+_c = IncidentEvaluationDrawer;
+var _c;
+__turbopack_context__.k.register(_c, "IncidentEvaluationDrawer");
+if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
+    __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
+}
+}),
 "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx [app-client] (ecmascript)", ((__turbopack_context__) => {
 "use strict";
 
@@ -5225,9 +5320,11 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modul
 var __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$features$2f$incidentsDrawer$2f$components$2f$IncidentDetails$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/apps/client/src/features/incidentsDrawer/components/IncidentDetails.tsx [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$features$2f$incidentsDrawer$2f$components$2f$IncidentIssues$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/apps/client/src/features/incidentsDrawer/components/IncidentIssues.tsx [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$features$2f$incidentsDrawer$2f$components$2f$IncidentActions$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/apps/client/src/features/incidentsDrawer/components/IncidentActions.tsx [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$features$2f$incidentsDrawer$2f$components$2f$IncidentEvaluation$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/apps/client/src/features/incidentsDrawer/components/IncidentEvaluation.tsx [app-client] (ecmascript)");
 ;
 var _s = __turbopack_context__.k.signature();
 "use client";
+;
 ;
 ;
 ;
@@ -5360,6 +5457,12 @@ function IncidentModal(param) {
                 incidentActions: updater(prev.incidentActions)
             }));
     };
+    const setIncidentEvaluation = (updater)=>{
+        setForm((prev)=>({
+                ...prev,
+                incidentEvaluation: updater(prev.incidentEvaluation)
+            }));
+    };
     const handleSubmit = (e)=>{
         e.preventDefault();
         const payload = {
@@ -5399,7 +5502,7 @@ function IncidentModal(param) {
                                 children: "Reporting Department"
                             }, void 0, false, {
                                 fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                lineNumber: 119,
+                                lineNumber: 124,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5412,7 +5515,7 @@ function IncidentModal(param) {
                                         placeholder: "e.g. Logistics"
                                     }, void 0, false, {
                                         fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                        lineNumber: 121,
+                                        lineNumber: 126,
                                         columnNumber: 25
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$popover$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Popover"], {
@@ -5428,17 +5531,17 @@ function IncidentModal(param) {
                                                         className: "h-4 w-4"
                                                     }, void 0, false, {
                                                         fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                                        lineNumber: 130,
+                                                        lineNumber: 135,
                                                         columnNumber: 37
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                                    lineNumber: 129,
+                                                    lineNumber: 134,
                                                     columnNumber: 33
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                                lineNumber: 128,
+                                                lineNumber: 133,
                                                 columnNumber: 29
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$popover$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["PopoverContent"], {
@@ -5449,14 +5552,14 @@ function IncidentModal(param) {
                                                             placeholder: "Search department..."
                                                         }, void 0, false, {
                                                             fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                                            lineNumber: 135,
+                                                            lineNumber: 140,
                                                             columnNumber: 37
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$command$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CommandEmpty"], {
                                                             children: "No department found."
                                                         }, void 0, false, {
                                                             fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                                            lineNumber: 136,
+                                                            lineNumber: 141,
                                                             columnNumber: 37
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$command$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CommandList"], {
@@ -5473,59 +5576,59 @@ function IncidentModal(param) {
                                                                                 children: dept.code
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                                                                lineNumber: 147,
+                                                                                lineNumber: 152,
                                                                                 columnNumber: 53
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                                 children: dept.name
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                                                                lineNumber: 148,
+                                                                                lineNumber: 153,
                                                                                 columnNumber: 53
                                                                             }, this)
                                                                         ]
                                                                     }, dept.code, true, {
                                                                         fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                                                        lineNumber: 140,
+                                                                        lineNumber: 145,
                                                                         columnNumber: 49
                                                                     }, this))
                                                             }, void 0, false, {
                                                                 fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                                                lineNumber: 138,
+                                                                lineNumber: 143,
                                                                 columnNumber: 41
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                                            lineNumber: 137,
+                                                            lineNumber: 142,
                                                             columnNumber: 37
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                                    lineNumber: 134,
+                                                    lineNumber: 139,
                                                     columnNumber: 33
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                                lineNumber: 133,
+                                                lineNumber: 138,
                                                 columnNumber: 29
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                        lineNumber: 127,
+                                        lineNumber: 132,
                                         columnNumber: 25
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                lineNumber: 120,
+                                lineNumber: 125,
                                 columnNumber: 21
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                        lineNumber: 118,
+                        lineNumber: 123,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5536,7 +5639,7 @@ function IncidentModal(param) {
                                 children: "Reporting Employee"
                             }, void 0, false, {
                                 fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                lineNumber: 159,
+                                lineNumber: 164,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Input"], {
@@ -5546,13 +5649,13 @@ function IncidentModal(param) {
                                 placeholder: "Employee name"
                             }, void 0, false, {
                                 fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                lineNumber: 160,
+                                lineNumber: 165,
                                 columnNumber: 21
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                        lineNumber: 158,
+                        lineNumber: 163,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5563,7 +5666,7 @@ function IncidentModal(param) {
                                 children: "Nature of Exception"
                             }, void 0, false, {
                                 fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                lineNumber: 170,
+                                lineNumber: 175,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Select"], {
@@ -5576,12 +5679,12 @@ function IncidentModal(param) {
                                             placeholder: "Select exception type"
                                         }, void 0, false, {
                                             fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                            lineNumber: 176,
+                                            lineNumber: 181,
                                             columnNumber: 29
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                        lineNumber: 175,
+                                        lineNumber: 180,
                                         columnNumber: 25
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SelectContent"], {
@@ -5591,7 +5694,7 @@ function IncidentModal(param) {
                                                 children: "Internal Incident"
                                             }, void 0, false, {
                                                 fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                                lineNumber: 179,
+                                                lineNumber: 184,
                                                 columnNumber: 29
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SelectItem"], {
@@ -5599,7 +5702,7 @@ function IncidentModal(param) {
                                                 children: "External Incident"
                                             }, void 0, false, {
                                                 fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                                lineNumber: 180,
+                                                lineNumber: 185,
                                                 columnNumber: 29
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SelectItem"], {
@@ -5607,7 +5710,7 @@ function IncidentModal(param) {
                                                 children: "Customer Complaint/Feedback"
                                             }, void 0, false, {
                                                 fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                                lineNumber: 181,
+                                                lineNumber: 186,
                                                 columnNumber: 29
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SelectItem"], {
@@ -5615,7 +5718,7 @@ function IncidentModal(param) {
                                                 children: "Internal Audit"
                                             }, void 0, false, {
                                                 fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                                lineNumber: 184,
+                                                lineNumber: 189,
                                                 columnNumber: 29
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SelectItem"], {
@@ -5623,7 +5726,7 @@ function IncidentModal(param) {
                                                 children: "External Audit"
                                             }, void 0, false, {
                                                 fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                                lineNumber: 185,
+                                                lineNumber: 190,
                                                 columnNumber: 29
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SelectItem"], {
@@ -5631,25 +5734,25 @@ function IncidentModal(param) {
                                                 children: "Balanced Scorecard Related"
                                             }, void 0, false, {
                                                 fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                                lineNumber: 186,
+                                                lineNumber: 191,
                                                 columnNumber: 29
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                        lineNumber: 178,
+                                        lineNumber: 183,
                                         columnNumber: 25
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                lineNumber: 171,
+                                lineNumber: 176,
                                 columnNumber: 21
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                        lineNumber: 169,
+                        lineNumber: 174,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5660,7 +5763,7 @@ function IncidentModal(param) {
                                 children: "Audit Finding"
                             }, void 0, false, {
                                 fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                lineNumber: 195,
+                                lineNumber: 200,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Select"], {
@@ -5673,12 +5776,12 @@ function IncidentModal(param) {
                                             placeholder: "Select audit finding"
                                         }, void 0, false, {
                                             fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                            lineNumber: 201,
+                                            lineNumber: 206,
                                             columnNumber: 29
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                        lineNumber: 200,
+                                        lineNumber: 205,
                                         columnNumber: 25
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SelectContent"], {
@@ -5688,7 +5791,7 @@ function IncidentModal(param) {
                                                 children: "Major Non-Conformity"
                                             }, void 0, false, {
                                                 fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                                lineNumber: 204,
+                                                lineNumber: 209,
                                                 columnNumber: 29
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SelectItem"], {
@@ -5696,7 +5799,7 @@ function IncidentModal(param) {
                                                 children: "Minor Non-Conformity"
                                             }, void 0, false, {
                                                 fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                                lineNumber: 205,
+                                                lineNumber: 210,
                                                 columnNumber: 29
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SelectItem"], {
@@ -5704,7 +5807,7 @@ function IncidentModal(param) {
                                                 children: "Observations for Improvement"
                                             }, void 0, false, {
                                                 fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                                lineNumber: 206,
+                                                lineNumber: 211,
                                                 columnNumber: 29
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SelectItem"], {
@@ -5712,31 +5815,31 @@ function IncidentModal(param) {
                                                 children: "Potential Non-Conformity"
                                             }, void 0, false, {
                                                 fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                                lineNumber: 209,
+                                                lineNumber: 214,
                                                 columnNumber: 29
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                        lineNumber: 203,
+                                        lineNumber: 208,
                                         columnNumber: 25
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                lineNumber: 196,
+                                lineNumber: 201,
                                 columnNumber: 21
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                        lineNumber: 194,
+                        lineNumber: 199,
                         columnNumber: 17
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                lineNumber: 117,
+                lineNumber: 122,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5747,7 +5850,7 @@ function IncidentModal(param) {
                         children: "Description / Support Documents"
                     }, void 0, false, {
                         fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                        lineNumber: 219,
+                        lineNumber: 224,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$textarea$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Textarea"], {
@@ -5758,13 +5861,13 @@ function IncidentModal(param) {
                         rows: 4
                     }, void 0, false, {
                         fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                        lineNumber: 220,
+                        lineNumber: 225,
                         columnNumber: 17
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                lineNumber: 218,
+                lineNumber: 223,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5778,7 +5881,7 @@ function IncidentModal(param) {
                                 children: "Select Type"
                             }, void 0, false, {
                                 fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                lineNumber: 233,
+                                lineNumber: 238,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Select"], {
@@ -5795,12 +5898,12 @@ function IncidentModal(param) {
                                             placeholder: "Select option"
                                         }, void 0, false, {
                                             fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                            lineNumber: 242,
+                                            lineNumber: 247,
                                             columnNumber: 29
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                        lineNumber: 241,
+                                        lineNumber: 246,
                                         columnNumber: 25
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SelectContent"], {
@@ -5810,7 +5913,7 @@ function IncidentModal(param) {
                                                 children: "Customer"
                                             }, void 0, false, {
                                                 fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                                lineNumber: 245,
+                                                lineNumber: 250,
                                                 columnNumber: 29
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SelectItem"], {
@@ -5818,7 +5921,7 @@ function IncidentModal(param) {
                                                 children: "Supplier"
                                             }, void 0, false, {
                                                 fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                                lineNumber: 246,
+                                                lineNumber: 251,
                                                 columnNumber: 29
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SelectItem"], {
@@ -5826,25 +5929,25 @@ function IncidentModal(param) {
                                                 children: "Department"
                                             }, void 0, false, {
                                                 fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                                lineNumber: 247,
+                                                lineNumber: 252,
                                                 columnNumber: 29
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                        lineNumber: 244,
+                                        lineNumber: 249,
                                         columnNumber: 25
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                lineNumber: 234,
+                                lineNumber: 239,
                                 columnNumber: 21
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                        lineNumber: 232,
+                        lineNumber: 237,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5855,7 +5958,7 @@ function IncidentModal(param) {
                                 children: "Date of Incident"
                             }, void 0, false, {
                                 fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                lineNumber: 253,
+                                lineNumber: 258,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$popover$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Popover"], {
@@ -5870,25 +5973,25 @@ function IncidentModal(param) {
                                                     className: "mr-2 h-4 w-4"
                                                 }, void 0, false, {
                                                     fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                                    lineNumber: 263,
+                                                    lineNumber: 268,
                                                     columnNumber: 33
                                                 }, this),
                                                 form.date ? (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$date$2d$fns$2f$format$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["format"])(form.date, "PPP") : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                     children: "Pick a date"
                                                 }, void 0, false, {
                                                     fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                                    lineNumber: 264,
+                                                    lineNumber: 269,
                                                     columnNumber: 73
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                            lineNumber: 256,
+                                            lineNumber: 261,
                                             columnNumber: 29
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                        lineNumber: 255,
+                                        lineNumber: 260,
                                         columnNumber: 25
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$popover$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["PopoverContent"], {
@@ -5902,30 +6005,30 @@ function IncidentModal(param) {
                                             initialFocus: true
                                         }, void 0, false, {
                                             fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                            lineNumber: 268,
+                                            lineNumber: 273,
                                             columnNumber: 29
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                        lineNumber: 267,
+                                        lineNumber: 272,
                                         columnNumber: 25
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                lineNumber: 254,
+                                lineNumber: 259,
                                 columnNumber: 21
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                        lineNumber: 252,
+                        lineNumber: 257,
                         columnNumber: 17
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                lineNumber: 230,
+                lineNumber: 235,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5936,7 +6039,7 @@ function IncidentModal(param) {
                         children: "Customer/Department"
                     }, void 0, false, {
                         fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                        lineNumber: 282,
+                        lineNumber: 287,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Input"], {
@@ -5945,13 +6048,13 @@ function IncidentModal(param) {
                         onChange: (e)=>handleChange("customerDepartment", e.target.value)
                     }, void 0, false, {
                         fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                        lineNumber: 283,
+                        lineNumber: 288,
                         columnNumber: 17
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                lineNumber: 281,
+                lineNumber: 286,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5962,7 +6065,7 @@ function IncidentModal(param) {
                         children: form.concernType === "supplier" ? "Supplier Name" : form.concernType === "customer" ? "Customer Name" : "Department Name"
                     }, void 0, false, {
                         fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                        lineNumber: 292,
+                        lineNumber: 297,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Input"], {
@@ -5973,13 +6076,13 @@ function IncidentModal(param) {
                         onChange: (e)=>handleChange("concernName", e.target.value)
                     }, void 0, false, {
                         fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                        lineNumber: 299,
+                        lineNumber: 304,
                         columnNumber: 17
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                lineNumber: 291,
+                lineNumber: 296,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5990,7 +6093,7 @@ function IncidentModal(param) {
                         children: "Module of Purchase"
                     }, void 0, false, {
                         fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                        lineNumber: 310,
+                        lineNumber: 315,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$radio$2d$group$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["RadioGroup"], {
@@ -6006,7 +6109,7 @@ function IncidentModal(param) {
                                         id: "imported"
                                     }, void 0, false, {
                                         fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                        lineNumber: 317,
+                                        lineNumber: 322,
                                         columnNumber: 25
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$label$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Label"], {
@@ -6015,13 +6118,13 @@ function IncidentModal(param) {
                                         children: "Imported"
                                     }, void 0, false, {
                                         fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                        lineNumber: 318,
+                                        lineNumber: 323,
                                         columnNumber: 25
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                lineNumber: 316,
+                                lineNumber: 321,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -6032,7 +6135,7 @@ function IncidentModal(param) {
                                         id: "local"
                                     }, void 0, false, {
                                         fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                        lineNumber: 323,
+                                        lineNumber: 328,
                                         columnNumber: 25
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$label$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Label"], {
@@ -6041,25 +6144,25 @@ function IncidentModal(param) {
                                         children: "Local"
                                     }, void 0, false, {
                                         fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                        lineNumber: 324,
+                                        lineNumber: 329,
                                         columnNumber: 25
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                lineNumber: 322,
+                                lineNumber: 327,
                                 columnNumber: 21
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                        lineNumber: 311,
+                        lineNumber: 316,
                         columnNumber: 17
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                lineNumber: 309,
+                lineNumber: 314,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -6070,7 +6173,7 @@ function IncidentModal(param) {
                         children: "Type of Delivery"
                     }, void 0, false, {
                         fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                        lineNumber: 333,
+                        lineNumber: 338,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$radio$2d$group$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["RadioGroup"], {
@@ -6086,7 +6189,7 @@ function IncidentModal(param) {
                                         id: "indent"
                                     }, void 0, false, {
                                         fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                        lineNumber: 340,
+                                        lineNumber: 345,
                                         columnNumber: 25
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$label$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Label"], {
@@ -6095,13 +6198,13 @@ function IncidentModal(param) {
                                         children: "Indent"
                                     }, void 0, false, {
                                         fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                        lineNumber: 341,
+                                        lineNumber: 346,
                                         columnNumber: 25
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                lineNumber: 339,
+                                lineNumber: 344,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -6112,7 +6215,7 @@ function IncidentModal(param) {
                                         id: "exstock"
                                     }, void 0, false, {
                                         fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                        lineNumber: 346,
+                                        lineNumber: 351,
                                         columnNumber: 25
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$label$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Label"], {
@@ -6121,13 +6224,13 @@ function IncidentModal(param) {
                                         children: "ExStock"
                                     }, void 0, false, {
                                         fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                        lineNumber: 347,
+                                        lineNumber: 352,
                                         columnNumber: 25
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                lineNumber: 345,
+                                lineNumber: 350,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -6138,7 +6241,7 @@ function IncidentModal(param) {
                                         id: "forward"
                                     }, void 0, false, {
                                         fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                        lineNumber: 352,
+                                        lineNumber: 357,
                                         columnNumber: 25
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$label$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Label"], {
@@ -6147,25 +6250,25 @@ function IncidentModal(param) {
                                         children: "Forward"
                                     }, void 0, false, {
                                         fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                        lineNumber: 353,
+                                        lineNumber: 358,
                                         columnNumber: 25
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                lineNumber: 351,
+                                lineNumber: 356,
                                 columnNumber: 21
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                        lineNumber: 334,
+                        lineNumber: 339,
                         columnNumber: 17
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                lineNumber: 332,
+                lineNumber: 337,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$features$2f$incidentsDrawer$2f$components$2f$IncidentDetails$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["IncidentDetailsDrawer"], {
@@ -6173,7 +6276,7 @@ function IncidentModal(param) {
                 setDetails: setIncidentDetails
             }, void 0, false, {
                 fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                lineNumber: 360,
+                lineNumber: 365,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$features$2f$incidentsDrawer$2f$components$2f$IncidentIssues$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["IncidentIssuesDrawer"], {
@@ -6181,7 +6284,7 @@ function IncidentModal(param) {
                 setDetails: setIncidentIssues
             }, void 0, false, {
                 fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                lineNumber: 361,
+                lineNumber: 366,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$features$2f$incidentsDrawer$2f$components$2f$IncidentActions$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["IncidentActionsDrawer"], {
@@ -6189,7 +6292,15 @@ function IncidentModal(param) {
                 setDetails: setIncidentActions
             }, void 0, false, {
                 fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                lineNumber: 362,
+                lineNumber: 367,
+                columnNumber: 13
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$features$2f$incidentsDrawer$2f$components$2f$IncidentEvaluation$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["IncidentEvaluationDrawer"], {
+                details: form.incidentEvaluation,
+                setDetails: setIncidentEvaluation
+            }, void 0, false, {
+                fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
+                lineNumber: 368,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["DialogFooter"], {
@@ -6202,7 +6313,7 @@ function IncidentModal(param) {
                         children: "Cancel"
                     }, void 0, false, {
                         fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                        lineNumber: 365,
+                        lineNumber: 372,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -6212,19 +6323,19 @@ function IncidentModal(param) {
                         children: isAdding || isUpdating ? "Saving..." : "Submit"
                     }, void 0, false, {
                         fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                        lineNumber: 368,
+                        lineNumber: 375,
                         columnNumber: 17
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                lineNumber: 364,
+                lineNumber: 371,
                 columnNumber: 13
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-        lineNumber: 115,
+        lineNumber: 120,
         columnNumber: 9
     }, this);
 }
@@ -6577,4 +6688,4 @@ if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelper
 }),
 ]);
 
-//# sourceMappingURL=apps_client_src_506ac504._.js.map
+//# sourceMappingURL=apps_client_src_23c8816c._.js.map
