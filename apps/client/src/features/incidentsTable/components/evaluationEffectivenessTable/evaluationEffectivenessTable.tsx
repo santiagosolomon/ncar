@@ -149,7 +149,7 @@ export function EffectivenessTable({ title, items, onChange }: Props) {
     <div className="mb-4">
       <div className="flex justify-between items-center mb-2">
         <h3 className="font-semibold">{title}</h3>
-        <Button size="sm" variant="outline" onClick={startAdd} disabled={!!newRow}>
+        <Button className="cursor-pointer" size="sm" variant="outline" onClick={startAdd} disabled={!!newRow}>
           <Plus className="w-4 h-4 mr-1" /> Add
         </Button>
       </div>
@@ -177,15 +177,16 @@ export function EffectivenessTable({ title, items, onChange }: Props) {
                     {!isEditing && !isDeleting && (
                       <DropdownMenu>
                         <DropdownMenuTrigger asChild>
-                          <Button variant="ghost" size="icon">
+                          <Button className="cursor-pointer" variant="ghost" size="icon">
                             <MoreHorizontal className="w-4 h-4" />
                           </Button>
                         </DropdownMenuTrigger>
                         <DropdownMenuContent>
-                          <DropdownMenuItem onClick={() => startEdit(row, idx)}>
+                          <DropdownMenuItem className="cursor-pointer" onClick={() => startEdit(row, idx)}>
                             <Pencil className="w-4 h-4 mr-2" /> Edit
                           </DropdownMenuItem>
                           <DropdownMenuItem
+                            className="cursor-pointer"
                             onClick={() => setDeleteConfirmId(String(idx))}
                           >
                             <Trash2 className="w-4 h-4 mr-2" /> Delete
@@ -196,10 +197,10 @@ export function EffectivenessTable({ title, items, onChange }: Props) {
 
                     {isEditing && (
                       <div className="flex">
-                        <Button size="icon" variant="ghost" onClick={saveEdit}>
+                        <Button className="cursor-pointer" size="icon" variant="ghost" onClick={saveEdit}>
                           <Check className="w-4 h-4 text-green-600" />
                         </Button>
-                        <Button size="icon" variant="ghost" onClick={cancelEdit}>
+                        <Button className="cursor-pointer" size="icon" variant="ghost" onClick={cancelEdit}>
                           <X className="w-4 h-4 text-red-600" />
                         </Button>
                       </div>
@@ -208,6 +209,7 @@ export function EffectivenessTable({ title, items, onChange }: Props) {
                     {isDeleting && (
                       <div className="flex">
                         <Button
+                          className="cursor-pointer"
                           size="icon"
                           variant="ghost"
                           onClick={() => deleteRow(idx)}
@@ -215,6 +217,7 @@ export function EffectivenessTable({ title, items, onChange }: Props) {
                           <Check className="w-4 h-4 text-green-600" />
                         </Button>
                         <Button
+                          className="cursor-pointer"
                           size="icon"
                           variant="ghost"
                           onClick={() => setDeleteConfirmId(null)}
@@ -237,10 +240,11 @@ export function EffectivenessTable({ title, items, onChange }: Props) {
                 ))}
                 <td className="px-2 py-2 border">
                   <div className="flex">
-                    <Button size="icon" variant="ghost" onClick={saveAdd}>
+                    <Button className="cursor-pointer" size="icon" variant="ghost" onClick={saveAdd}>
                       <Check className="w-4 h-4 text-green-600" />
                     </Button>
                     <Button
+                      className="cursor-pointer"
                       size="icon"
                       variant="ghost"
                       onClick={() => setNewRow(null)}

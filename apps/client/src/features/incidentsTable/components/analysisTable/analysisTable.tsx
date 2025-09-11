@@ -128,10 +128,10 @@ export function AnalysisTable({ title, details, setDetails }: Props) {
                           </Button>
                         </DropdownMenuTrigger>
                         <DropdownMenuContent>
-                          <DropdownMenuItem onClick={() => startEdit(row, idx)}>
+                          <DropdownMenuItem className="cursor-pointer" onClick={() => startEdit(row, idx)}>
                             <Pencil className="w-4 h-4 mr-2" /> Edit
                           </DropdownMenuItem>
-                          <DropdownMenuItem onClick={() => setDeleteConfirmIdx(idx)}>
+                          <DropdownMenuItem className="cursor-pointer" onClick={() => setDeleteConfirmIdx(idx)}>
                             <Trash2 className="w-4 h-4 mr-2" /> Delete
                           </DropdownMenuItem>
                         </DropdownMenuContent>
@@ -140,10 +140,10 @@ export function AnalysisTable({ title, details, setDetails }: Props) {
 
                     {isEditing && (
                       <div className="flex">
-                        <Button size="icon" variant="ghost" onClick={() => saveEdit(idx)}>
+                        <Button className="cursor-pointer" size="icon" variant="ghost" onClick={() => saveEdit(idx)}>
                           <Check className="w-4 h-4 text-green-600" />
                         </Button>
-                        <Button size="icon" variant="ghost" onClick={cancelEdit}>
+                        <Button className="cursor-pointer" size="icon" variant="ghost" onClick={cancelEdit}>
                           <X className="w-4 h-4 text-red-600" />
                         </Button>
                       </div>
@@ -152,6 +152,7 @@ export function AnalysisTable({ title, details, setDetails }: Props) {
                     {isDeleting && (
                       <div className="flex">
                         <Button
+                          className="cursor-pointer"
                           size="icon"
                           variant="ghost"
                           onClick={() => deleteRow(idx)}
@@ -159,6 +160,7 @@ export function AnalysisTable({ title, details, setDetails }: Props) {
                           <Check className="w-4 h-4 text-green-600" />
                         </Button>
                         <Button
+                          className="cursor-pointer"
                           size="icon"
                           variant="ghost"
                           onClick={() => setDeleteConfirmIdx(null)}
@@ -186,10 +188,10 @@ export function AnalysisTable({ title, details, setDetails }: Props) {
                   ))}
                 <td className="px-2 py-2 border">
                   <div className="flex">
-                    <Button size="icon" variant="ghost" onClick={saveAdd}>
+                    <Button className="cursor-pointer" size="icon" variant="ghost" onClick={saveAdd}>
                       <Check className="w-4 h-4 text-green-600" />
                     </Button>
-                    <Button size="icon" variant="ghost" onClick={() => setNewRow(null)}>
+                    <Button className="cursor-pointer" size="icon" variant="ghost" onClick={() => setNewRow(null)}>
                       <X className="w-4 h-4 text-red-600" />
                     </Button>
                   </div>

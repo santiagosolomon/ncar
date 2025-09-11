@@ -138,15 +138,16 @@ export function IncidentDetailsTable({ details, setDetails }: Props) {
                                         {!isEditing && !isDeleting && (
                                             <DropdownMenu>
                                                 <DropdownMenuTrigger asChild>
-                                                    <Button variant="ghost" size="icon">
+                                                    <Button className="cursor-pointer" variant="ghost" size="icon">
                                                         <MoreHorizontal className="w-4 h-4" />
                                                     </Button>
                                                 </DropdownMenuTrigger>
                                                 <DropdownMenuContent>
-                                                    <DropdownMenuItem onClick={() => startEdit(row)}>
+                                                    <DropdownMenuItem className="cursor-pointer" onClick={() => startEdit(row)}>
                                                         <Pencil className="w-4 h-4 mr-2" /> Edit
                                                     </DropdownMenuItem>
                                                     <DropdownMenuItem
+                                                        className="cursor-pointer"
                                                         onClick={() => setDeleteConfirmId(row._id || row.tempId!)}
                                                     >
                                                         <Trash2 className="w-4 h-4 mr-2" /> Delete
@@ -157,10 +158,10 @@ export function IncidentDetailsTable({ details, setDetails }: Props) {
 
                                         {isEditing && (
                                             <div className="flex ">
-                                                <Button size="icon" variant="ghost" onClick={saveEdit}>
+                                                <Button className="cursor-pointer" size="icon" variant="ghost" onClick={saveEdit}>
                                                     <Check className="w-4 h-4 text-green-600" />
                                                 </Button>
-                                                <Button size="icon" variant="ghost" onClick={cancelEdit}>
+                                                <Button className="cursor-pointer" size="icon" variant="ghost" onClick={cancelEdit}>
                                                     <X className="w-4 h-4 text-red-600" />
                                                 </Button>
                                             </div>
@@ -169,6 +170,7 @@ export function IncidentDetailsTable({ details, setDetails }: Props) {
                                         {isDeleting && (
                                             <div className="flex">
                                                 <Button
+                                                    className="cursor-pointer"
                                                     size="icon"
                                                     variant="ghost"
                                                     onClick={() => deleteRow(row._id || row.tempId!)}
@@ -176,6 +178,7 @@ export function IncidentDetailsTable({ details, setDetails }: Props) {
                                                     <Check className="w-4 h-4 text-green-600" />
                                                 </Button>
                                                 <Button
+                                                    className="cursor-pointer"
                                                     size="icon"
                                                     variant="ghost"
                                                     onClick={() => setDeleteConfirmId(null)}
