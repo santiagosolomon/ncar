@@ -92,11 +92,18 @@ export default function HomePage() {
   // 🆕 set org automatically for normal users
   useEffect(() => {
     if (!meLoading && !meError) {
-      if (role !== "admin" && userOrg) {
-        setSelectedOrg(userOrg)
+      if (role !== "admin") {
+        if (userOrg === "ALL") {
+          // keep ALL users free to switch between PTC, GICC, ALL
+          setSelectedOrg("ALL")
+        } else if (userOrg) {
+          // lock normal users to their own org
+          setSelectedOrg(userOrg)
+        }
       }
     }
   }, [role, userOrg, meLoading, meError])
+
 
   // fetch incidents based on selected org
   const { data: incidents, isLoading, isError } = useIncidents(currentPage, itemsPerPage, selectedOrg)
@@ -139,7 +146,7 @@ export default function HomePage() {
     <div className="h-screen flex flex-col">
       <div>
         {/* 📝 Header (now gets role + org from /me) */}
-        <IncidentsHeader selectedOrg={selectedOrg} onSelectOrg={setSelectedOrg} role={role} />
+        <IncidentsHeader selectedOrg={selectedOrg} onSelectOrg={setSelectedOrg} role={role} userOrg={userOrg} />
       </div>
 
       {/* 📋 Main Table */}
@@ -150,7 +157,7 @@ export default function HomePage() {
           {/* + Create Button & Modal */}
           <Dialog open={isOpen} onOpenChange={setIsOpen}>
             {/* Only show Create button based on condition */}
-            {!(role === "admin" && selectedOrg === "ALL") && (
+            {!((role === "admin" || userOrg === "ALL") && selectedOrg === "ALL") && (
               <DialogTrigger asChild>
                 <Button className="cursor-pointer" onClick={handleCreate}>+ Create</Button>
               </DialogTrigger>
@@ -161,56 +168,56 @@ export default function HomePage() {
                 <div className="flex gap-4 items-center justify-between">
                   <div className="flex gap-4">
                     <DialogTitle>{editingIncident ? "Edit Incident Report" : "File Incident Report"}</DialogTitle>
-                      <div className="text-[0.84rem] text-gray-400 italic font-semibold">
-                        {editingIncident ? `(Ref No: ${form.refNo})` : null}
-                      </div>
-                    </div>
-                    <div className="mr-7 mt-2 flex items-center">
-                      <Popover>
-                        <PopoverTrigger asChild className="h-[34px]">
-                          <Button
-                            variant={"outline"}
-                            className={cn(
-                              "min-w-[140px] justify-start text-left font-normal cursor-pointer ",
-                              !form.dateReported && "text-muted-foreground"
-                            )}
-                          >
-                            <CalendarIcon className="mr-2 h-4 w-4 shrink-0" />
-                            <span className="whitespace-nowrap">
-                              {form.dateReported ? format(form.dateReported, "PPP") : <span>Filing Date</span>}
-                            </span>
-                          </Button>
-                        </PopoverTrigger>
-                        <PopoverContent className="w-auto p-0" align="start">
-                          <Calendar
-                            className="w-[300px]"
-                            mode="single"
-                            selected={form.dateReported}
-                            onSelect={(d) => handleChange("dateReported", d ?? undefined)}
-                            initialFocus
-                          />
-                        </PopoverContent>
-                      </Popover>
+                    <div className="text-[0.84rem] text-gray-400 italic font-semibold">
+                      {editingIncident ? `(Ref No: ${form.refNo})` : null}
                     </div>
                   </div>
-                </DialogHeader>
-
-                <div className="mt-4">
-                  <IncidentModal
-                    onClose={handleClose}
-                    // 🆕 always pass selectedOrg into the form
-                    form={{
-                      ...form,
-                      organization: editingIncident ? form.organization : selectedOrg,
-                    }}
-                    setForm={setForm}
-                    editingId={editingIncident?._id}
-                    defaultForm={defaultForm}
-                  />
+                  <div className="mr-7 mt-2 flex items-center">
+                    <Popover>
+                      <PopoverTrigger asChild className="h-[34px]">
+                        <Button
+                          variant={"outline"}
+                          className={cn(
+                            "min-w-[140px] justify-start text-left font-normal cursor-pointer ",
+                            !form.dateReported && "text-muted-foreground"
+                          )}
+                        >
+                          <CalendarIcon className="mr-2 h-4 w-4 shrink-0" />
+                          <span className="whitespace-nowrap">
+                            {form.dateReported ? format(form.dateReported, "PPP") : <span>Filing Date</span>}
+                          </span>
+                        </Button>
+                      </PopoverTrigger>
+                      <PopoverContent className="w-auto p-0" align="start">
+                        <Calendar
+                          className="w-[300px]"
+                          mode="single"
+                          selected={form.dateReported}
+                          onSelect={(d) => handleChange("dateReported", d ?? undefined)}
+                          initialFocus
+                        />
+                      </PopoverContent>
+                    </Popover>
+                  </div>
                 </div>
-              </DialogContent>
-            </Dialog>
-          
+              </DialogHeader>
+
+              <div className="mt-4">
+                <IncidentModal
+                  onClose={handleClose}
+                  // 🆕 always pass selectedOrg into the form
+                  form={{
+                    ...form,
+                    organization: editingIncident ? form.organization : selectedOrg,
+                  }}
+                  setForm={setForm}
+                  editingId={editingIncident?._id}
+                  defaultForm={defaultForm}
+                />
+              </div>
+            </DialogContent>
+          </Dialog>
+
 
         </div>
 
