@@ -91,7 +91,7 @@ export function IncidentDetailsTable({ details, setDetails }: Props) {
     }
 
     return (
-        <div>
+        <div className="border p-4 rounded-md shadow-sm">
             <div className="flex justify-end mb-2">
                 <Button size="sm" variant="outline" className="cursor-pointer" onClick={startAdd} disabled={!!newRow}>
                     <Plus className="w-4 h-4" /> Add

@@ -3,6 +3,7 @@
 import { Schema, model } from "mongoose"
 import { incidentDetailsSchema } from "./IncidentDetails";
 import { incidentIssuesSchema } from "./IncidentIssues";
+import { incidentIssuesSelectionSchema } from "./IncidentIssues";
 import { incidentActionsSchema } from "./IncidentActions";
 import { incidentEvaluationSchema } from "./IncidentEvaluation";
 
@@ -50,13 +51,16 @@ const incidentSchema = new Schema({
     date: { type: Date },
     incidentDetails: [incidentDetailsSchema],
     incidentIssues: [incidentIssuesSchema],
+    incidentIssuesSelection: incidentIssuesSelectionSchema,
     incidentActions: [incidentActionsSchema],
-    incidentEvaluation: [incidentEvaluationSchema]
+    incidentEvaluation: [incidentEvaluationSchema],
 
+    // 🔑 Add this
+    organization: { type: String, enum: ["PTC", "GICC"], required: true },
 }, {
     timestamps: true,
-    strict: true, // This ensures no extra fields are saved
-    id: false // This prevents Mongoose from creating a virtual 'id' getter
+    strict: true,
+    id: false
 });
 
 // Add pre-save hook for auto-incrementing refNo

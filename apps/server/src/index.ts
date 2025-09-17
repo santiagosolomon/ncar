@@ -1,10 +1,14 @@
+// apps/server/src/index.ts
+
 import express, { Request, Response } from "express"
 import mongoose from "mongoose"
 import dotenv from "dotenv"
 import cors from "cors"
+import cookieParser from "cookie-parser";
 
 // import routes
 import incidentRoutes from "./routes/incidents"
+import authRoutes from "./routes/authRoutes"
 
 dotenv.config()
 
@@ -12,8 +16,12 @@ const app = express()
 const PORT = process.env.PORT || 5000
 
 // Middleware
-app.use(cors()) // allow frontend requests
-app.use(express.json())
+app.use(cors({
+  origin: "http://localhost:3000", // your Next.js dev URL
+  credentials: true,
+}));
+app.use(express.json());
+app.use(cookieParser());
 
 // MongoDB Connection
 mongoose
@@ -27,6 +35,7 @@ app.get("/", (req: Request, res: Response) => {
 })
 
 // ✅ Incidents API
+app.use("/api/auth", authRoutes)
 app.use("/api/incidents", incidentRoutes)
 
 // Start Server

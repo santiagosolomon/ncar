@@ -3,76 +3,81 @@
 import { Request, Response } from "express"
 import { Incident } from "../models/Incident"
 
+// controllers/incidentCtrl.ts
 export const getIncidents = async (req: Request, res: Response) => {
   try {
-    const page = parseInt(req.query.page as string) || 1
-    const limit = parseInt(req.query.limit as string) || 10
-    const skip = (page - 1) * limit
+    const { page = 1, limit = 10, organization } = req.query;
+    const userOrg = req.user?.organization;
 
-    const [incidents, total] = await Promise.all([
-      Incident.find()
-        .sort({ createdAt: -1 })
-        .skip(skip)
-        .limit(limit)
-        .lean(), // Convert to plain JavaScript objects
-      Incident.countDocuments(),
-    ])
+    let filter: any = {};
 
-    const totalPages = Math.ceil(total / limit)
-
-    // Ensure we don't exceed total pages
-    if (page > totalPages && total > 0) {
-      const lastPageSkip = (totalPages - 1) * limit
-      const lastPageIncidents = await Incident.find()
-        .sort({ createdAt: -1 })
-        .skip(lastPageSkip)
-        .limit(limit)
-        .lean()
-
-      return res.json({
-        data: lastPageIncidents,
-        total,
-        page: totalPages,
-        totalPages,
-        hasMore: false
-      })
+    if (userOrg === "ALL") {
+      // Admins can see both orgs
+      if (organization && organization !== "ALL") {
+        filter.organization = organization; // if dropdown picks PTC or GICC
+      }
+      // else leave filter empty = fetch all incidents
+    } else {
+      filter.organization = userOrg; // normal users locked to their org
     }
+
+    const incidents = await Incident.find(filter)
+      .skip((+page - 1) * +limit)
+      .limit(+limit)
+      .sort({ createdAt: -1 });
+
+    const total = await Incident.countDocuments(filter);
 
     res.json({
       data: incidents,
       total,
-      page,
-      totalPages,
-      hasMore: page < totalPages
-    })
+      page: +page,
+      totalPages: Math.ceil(total / +limit),
+    });
   } catch (err) {
-    res.status(500).json({ error: "Failed to fetch incidents" })
+    console.error("Error fetching incidents:", err);
+    res.status(500).json({ error: "Failed to fetch incidents" });
   }
-}
+};
+
+
+
 
 export const addIncident = async (req: Request, res: Response) => {
   try {
-    console.log('Received incident data:', req.body);
-    
-    // Create new incident without _id field
-    const { _id, ...incidentData } = req.body;
-    const incident = new Incident(incidentData);
-    
+    const user = req.user as { organization: string; role: string };
+
+    // Strip out malicious fields
+    const { _id, organization: orgFromBody, ...incidentData } = req.body;
+
+    let finalOrg: string;
+
+    if (user.organization === "ALL") {
+      // Admin case → must supply org explicitly
+      if (orgFromBody === "PTC" || orgFromBody === "GICC") {
+        finalOrg = orgFromBody;
+      } else {
+        return res.status(400).json({ error: "Admins must select PTC or GICC organization" });
+      }
+    } else {
+      // Normal users → locked to their org
+      finalOrg = user.organization;
+    }
+
+    const incident = new Incident({
+      ...incidentData,
+      organization: finalOrg,
+    });
+
     await incident.save();
     res.status(201).json(incident);
   } catch (err) {
-    console.error('Error creating incident:', err);
-    if (err instanceof Error) {
-      if ((err as any).code === 11000) {
-        res.status(400).json({ error: 'Duplicate refNo found. Please try again.' });
-      } else {
-        res.status(400).json({ error: err.message });
-      }
-    } else {
-      res.status(400).json({ error: 'Failed to create incident' });
-    }
+    console.error("Error creating incident:", err);
+    res.status(400).json({ error: "Failed to create incident" });
   }
-}
+};
+
+
 
 export const updateIncident = async (req: Request, res: Response) => {
   try {

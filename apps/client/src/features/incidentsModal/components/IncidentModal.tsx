@@ -42,6 +42,7 @@ import { IncidentEvaluationDrawer } from "@/features/incidentsDrawer/components/
 
 import { is } from "date-fns/locale"
 import { IncidentEvaluation } from "@/types/IncidentEvaluation"
+import { IncidentIssuesSelection } from "@/types/incidentIssues"
 
 
 const departments = [
@@ -92,6 +93,15 @@ export default function IncidentModal({ onClose, form, setForm, editingId, defau
     }
     const setIncidentIssues = (updater: (prev: IncidentIssues[]) => IncidentIssues[]) => {
         setForm(prev => ({ ...prev, incidentIssues: updater(prev.incidentIssues) }))
+    }
+
+    const setIncidentIssuesSelection = (
+        updater: (prev: IncidentIssuesSelection) => IncidentIssuesSelection
+    ) => {
+        setForm(prev => ({
+            ...prev,
+            incidentIssuesSelection: updater(prev.incidentIssuesSelection ?? {})
+        }))
     }
     const setIncidentActions = (updater: (prev: IncidentActions[]) => IncidentActions[]) => {
         setForm(prev => ({ ...prev, incidentActions: updater(prev.incidentActions) }))
@@ -363,7 +373,7 @@ export default function IncidentModal({ onClose, form, setForm, editingId, defau
             </div>
             <div className="flex gap-2">
                 <IncidentDetailsDrawer details={form.incidentDetails} setDetails={setIncidentDetails} />
-                <IncidentIssuesDrawer details={form.incidentIssues} setDetails={setIncidentIssues} />
+                <IncidentIssuesDrawer details={form.incidentIssues} setDetails={setIncidentIssues} issuesSelection={form.incidentIssuesSelection ?? {}} setIssuesSelection={setIncidentIssuesSelection} />
                 <IncidentActionsDrawer details={form.incidentActions} setDetails={setIncidentActions} />
                 <IncidentEvaluationDrawer details={form.incidentEvaluation} setDetails={setIncidentEvaluation} />
             </div>

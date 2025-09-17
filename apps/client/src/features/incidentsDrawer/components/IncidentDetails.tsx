@@ -27,13 +27,14 @@ export function IncidentDetailsDrawer({ details, setDetails }: IncidentDetailsDr
       <DrawerTrigger className="cursor-pointer" asChild>
         <Button variant="outline">View Details</Button>
       </DrawerTrigger>
-      <DrawerContent className="p-6">
+      <DrawerContent className="">
         <DrawerHeader>
           <DrawerTitle>Incident Details</DrawerTitle>
         </DrawerHeader>
 
-
-        <IncidentDetailsTable details={details} setDetails={setDetails} />
+        <div className="overflow-y-auto px-6 pb-6">
+          <IncidentDetailsTable details={details} setDetails={setDetails} />
+        </div>
 
       </DrawerContent>
     </Drawer>

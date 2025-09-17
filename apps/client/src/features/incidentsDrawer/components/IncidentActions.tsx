@@ -25,13 +25,13 @@ export function IncidentActionsDrawer({ details, setDetails }: IncidentActionsDr
         <Button variant="outline">View Action</Button>
       </DrawerTrigger>
      
-        <DrawerContent className="p-0 inset-y-0 fixed h-screen">
-          <DrawerHeader className="px-6 py-4 ">
+        <DrawerContent className=" inset-y-[-10px] fixed  ">
+          <DrawerHeader >
             <DrawerTitle>Incident Correction Action</DrawerTitle>
           </DrawerHeader>
 
           {/* Scrollable area */}
-          <div className="px-6 pb-6 overflow-y-auto ">
+          <div className="px-6 pb-6 overflow-x-auto ">
             <IncidentActionsTable details={details} setDetails={setDetails} />
           </div>
         </DrawerContent>

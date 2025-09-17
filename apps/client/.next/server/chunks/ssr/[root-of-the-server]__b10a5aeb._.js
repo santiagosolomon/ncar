@@ -2173,6 +2173,7 @@ function IncidentDetailsTable({ details, setDetails }) {
         }, this);
     };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+        className: "border p-4 rounded-md shadow-sm",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "flex justify-end mb-2",
@@ -2925,7 +2926,7 @@ function IncidentDetailsDrawer({ details, setDetails }) {
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$drawer$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["DrawerContent"], {
-                className: "p-6",
+                className: "",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$drawer$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["DrawerHeader"], {
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$drawer$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["DrawerTitle"], {
@@ -2940,12 +2941,19 @@ function IncidentDetailsDrawer({ details, setDetails }) {
                         lineNumber: 31,
                         columnNumber: 9
                     }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$features$2f$incidentsTable$2f$components$2f$IncidentDetails$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["IncidentDetailsTable"], {
-                        details: details,
-                        setDetails: setDetails
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "overflow-y-auto px-6 pb-6",
+                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$features$2f$incidentsTable$2f$components$2f$IncidentDetails$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["IncidentDetailsTable"], {
+                            details: details,
+                            setDetails: setDetails
+                        }, void 0, false, {
+                            fileName: "[project]/apps/client/src/features/incidentsDrawer/components/IncidentDetails.tsx",
+                            lineNumber: 36,
+                            columnNumber: 11
+                        }, this)
                     }, void 0, false, {
                         fileName: "[project]/apps/client/src/features/incidentsDrawer/components/IncidentDetails.tsx",
-                        lineNumber: 36,
+                        lineNumber: 35,
                         columnNumber: 9
                     }, this)
                 ]
@@ -3035,7 +3043,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$com
 ;
 ;
 ;
-function IncidentIssuesTable({ details, setDetails }) {
+function IncidentIssuesTable({ details, setDetails, issuesSelection = {}, setIssuesSelection }) {
     const [editingId, setEditingId] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(null);
     const [deleteConfirmId, setDeleteConfirmId] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(null);
     const [newRow, setNewRow] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(null);
@@ -3090,79 +3098,47 @@ function IncidentIssuesTable({ details, setDetails }) {
                 })
         }, void 0, false, {
             fileName: "[project]/apps/client/src/features/incidentsTable/components/IncidentIssues.tsx",
-            lineNumber: 68,
+            lineNumber: 70,
             columnNumber: 7
         }, this);
     };
     const toggleIssue = (field)=>{
-        setDetails((prev)=>{
-            const updated = [
-                ...prev
-            ];
-            if (!updated[0]) {
-                updated.push({
-                    tempId: crypto.randomUUID(),
-                    grossWeight: "",
-                    netWeight: "",
-                    tareWeight: "",
-                    quantityIssue: false,
-                    qualityIssue: false,
-                    procedureDocumentation: false,
-                    packagingProblem: false,
-                    others: ""
-                });
-            }
-            updated[0] = {
-                ...updated[0],
-                [field]: !updated[0][field]
-            };
-            return updated;
-        });
+        if (!setIssuesSelection) return;
+        setIssuesSelection((prev)=>({
+                ...prev,
+                [field]: !prev[field]
+            }));
     };
     const updateOthers = (val)=>{
-        setDetails((prev)=>{
-            const updated = [
-                ...prev
-            ];
-            if (!updated[0]) {
-                updated.push({
-                    tempId: crypto.randomUUID(),
-                    grossWeight: "",
-                    netWeight: "",
-                    tareWeight: "",
-                    others: val
-                });
-            } else {
-                updated[0] = {
-                    ...updated[0],
-                    others: val
-                };
-            }
-            return updated;
-        });
+        if (!setIssuesSelection) return;
+        setIssuesSelection((prev)=>({
+                ...prev,
+                others: val
+            }));
     };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+        className: "space-y-6 border p-4 rounded-md shadow-sm",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "flex justify-between mb-2",
+                className: "flex justify-between items-center mb-2",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$label$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Label"], {
                         className: "flex items-center gap-2",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$checkbox$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Checkbox"], {
-                                checked: details[0]?.quantityIssue || false,
+                                checked: issuesSelection.quantityIssue || false,
                                 onCheckedChange: ()=>toggleIssue("quantityIssue")
                             }, void 0, false, {
                                 fileName: "[project]/apps/client/src/features/incidentsTable/components/IncidentIssues.tsx",
-                                lineNumber: 119,
-                                columnNumber: 11
+                                lineNumber: 92,
+                                columnNumber: 13
                             }, this),
                             "Quantity Issue"
                         ]
                     }, void 0, true, {
                         fileName: "[project]/apps/client/src/features/incidentsTable/components/IncidentIssues.tsx",
-                        lineNumber: 118,
-                        columnNumber: 9
+                        lineNumber: 91,
+                        columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
                         size: "sm",
@@ -3175,26 +3151,26 @@ function IncidentIssuesTable({ details, setDetails }) {
                                 className: "w-4 h-4"
                             }, void 0, false, {
                                 fileName: "[project]/apps/client/src/features/incidentsTable/components/IncidentIssues.tsx",
-                                lineNumber: 126,
-                                columnNumber: 11
+                                lineNumber: 99,
+                                columnNumber: 13
                             }, this),
                             " Add"
                         ]
                     }, void 0, true, {
                         fileName: "[project]/apps/client/src/features/incidentsTable/components/IncidentIssues.tsx",
-                        lineNumber: 125,
-                        columnNumber: 9
+                        lineNumber: 98,
+                        columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/apps/client/src/features/incidentsTable/components/IncidentIssues.tsx",
-                lineNumber: 117,
-                columnNumber: 7
+                lineNumber: 90,
+                columnNumber: 9
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "overflow-x-auto",
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("table", {
-                    className: "min-w-full border text-sm text-left",
+                    className: "min-w-full text-sm text-left ",
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("thead", {
                             className: "bg-gray-100",
@@ -3205,43 +3181,43 @@ function IncidentIssuesTable({ details, setDetails }) {
                                         children: "Gross Weight"
                                     }, void 0, false, {
                                         fileName: "[project]/apps/client/src/features/incidentsTable/components/IncidentIssues.tsx",
-                                        lineNumber: 134,
-                                        columnNumber: 15
+                                        lineNumber: 107,
+                                        columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
                                         className: "px-4 py-2 border",
                                         children: "Net Weight"
                                     }, void 0, false, {
                                         fileName: "[project]/apps/client/src/features/incidentsTable/components/IncidentIssues.tsx",
-                                        lineNumber: 135,
-                                        columnNumber: 15
+                                        lineNumber: 108,
+                                        columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
                                         className: "px-4 py-2 border",
                                         children: "Tare Weight"
                                     }, void 0, false, {
                                         fileName: "[project]/apps/client/src/features/incidentsTable/components/IncidentIssues.tsx",
-                                        lineNumber: 136,
-                                        columnNumber: 15
+                                        lineNumber: 109,
+                                        columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
                                         className: "px-2 py-2 border w-14",
                                         children: "Actions"
                                     }, void 0, false, {
                                         fileName: "[project]/apps/client/src/features/incidentsTable/components/IncidentIssues.tsx",
-                                        lineNumber: 137,
-                                        columnNumber: 15
+                                        lineNumber: 110,
+                                        columnNumber: 17
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/apps/client/src/features/incidentsTable/components/IncidentIssues.tsx",
-                                lineNumber: 133,
-                                columnNumber: 13
+                                lineNumber: 106,
+                                columnNumber: 15
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/apps/client/src/features/incidentsTable/components/IncidentIssues.tsx",
-                            lineNumber: 132,
-                            columnNumber: 11
+                            lineNumber: 105,
+                            columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("tbody", {
                             children: [
@@ -3256,24 +3232,24 @@ function IncidentIssuesTable({ details, setDetails }) {
                                                 children: renderCell(row, "grossWeight")
                                             }, void 0, false, {
                                                 fileName: "[project]/apps/client/src/features/incidentsTable/components/IncidentIssues.tsx",
-                                                lineNumber: 146,
-                                                columnNumber: 19
+                                                lineNumber: 119,
+                                                columnNumber: 21
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
                                                 className: "px-4 py-2 border",
                                                 children: renderCell(row, "netWeight")
                                             }, void 0, false, {
                                                 fileName: "[project]/apps/client/src/features/incidentsTable/components/IncidentIssues.tsx",
-                                                lineNumber: 147,
-                                                columnNumber: 19
+                                                lineNumber: 120,
+                                                columnNumber: 21
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
                                                 className: "px-4 py-2 border",
                                                 children: renderCell(row, "tareWeight")
                                             }, void 0, false, {
                                                 fileName: "[project]/apps/client/src/features/incidentsTable/components/IncidentIssues.tsx",
-                                                lineNumber: 148,
-                                                columnNumber: 19
+                                                lineNumber: 121,
+                                                columnNumber: 21
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
                                                 className: "px-2 py-2 border w-14",
@@ -3290,66 +3266,68 @@ function IncidentIssuesTable({ details, setDetails }) {
                                                                         className: "w-4 h-4"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/apps/client/src/features/incidentsTable/components/IncidentIssues.tsx",
-                                                                        lineNumber: 154,
-                                                                        columnNumber: 29
+                                                                        lineNumber: 127,
+                                                                        columnNumber: 31
                                                                     }, this)
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/apps/client/src/features/incidentsTable/components/IncidentIssues.tsx",
-                                                                    lineNumber: 153,
-                                                                    columnNumber: 27
+                                                                    lineNumber: 126,
+                                                                    columnNumber: 29
                                                                 }, this)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/apps/client/src/features/incidentsTable/components/IncidentIssues.tsx",
-                                                                lineNumber: 152,
-                                                                columnNumber: 25
+                                                                lineNumber: 125,
+                                                                columnNumber: 27
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$dropdown$2d$menu$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["DropdownMenuContent"], {
                                                                 children: [
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$dropdown$2d$menu$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["DropdownMenuItem"], {
+                                                                        className: "cursor-pointer",
                                                                         onClick: ()=>startEdit(row),
                                                                         children: [
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$pencil$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Pencil$3e$__["Pencil"], {
                                                                                 className: "w-4 h-4 mr-2"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/apps/client/src/features/incidentsTable/components/IncidentIssues.tsx",
-                                                                                lineNumber: 158,
-                                                                                columnNumber: 76
+                                                                                lineNumber: 131,
+                                                                                columnNumber: 105
                                                                             }, this),
                                                                             " Edit"
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/apps/client/src/features/incidentsTable/components/IncidentIssues.tsx",
-                                                                        lineNumber: 158,
-                                                                        columnNumber: 27
+                                                                        lineNumber: 131,
+                                                                        columnNumber: 29
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$dropdown$2d$menu$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["DropdownMenuItem"], {
+                                                                        className: "cursor-pointer",
                                                                         onClick: ()=>setDeleteConfirmId(row._id || row.tempId),
                                                                         children: [
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$trash$2d$2$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Trash2$3e$__["Trash2"], {
                                                                                 className: "w-4 h-4 mr-2"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/apps/client/src/features/incidentsTable/components/IncidentIssues.tsx",
-                                                                                lineNumber: 159,
-                                                                                columnNumber: 104
+                                                                                lineNumber: 132,
+                                                                                columnNumber: 133
                                                                             }, this),
                                                                             " Delete"
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/apps/client/src/features/incidentsTable/components/IncidentIssues.tsx",
-                                                                        lineNumber: 159,
-                                                                        columnNumber: 27
+                                                                        lineNumber: 132,
+                                                                        columnNumber: 29
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/apps/client/src/features/incidentsTable/components/IncidentIssues.tsx",
-                                                                lineNumber: 157,
-                                                                columnNumber: 25
+                                                                lineNumber: 130,
+                                                                columnNumber: 27
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/apps/client/src/features/incidentsTable/components/IncidentIssues.tsx",
-                                                        lineNumber: 151,
-                                                        columnNumber: 23
+                                                        lineNumber: 124,
+                                                        columnNumber: 25
                                                     }, this),
                                                     isEditing && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                         className: "flex",
@@ -3363,13 +3341,13 @@ function IncidentIssuesTable({ details, setDetails }) {
                                                                     className: "w-4 h-4 text-green-600"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/apps/client/src/features/incidentsTable/components/IncidentIssues.tsx",
-                                                                    lineNumber: 165,
-                                                                    columnNumber: 107
+                                                                    lineNumber: 138,
+                                                                    columnNumber: 109
                                                                 }, this)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/apps/client/src/features/incidentsTable/components/IncidentIssues.tsx",
-                                                                lineNumber: 165,
-                                                                columnNumber: 25
+                                                                lineNumber: 138,
+                                                                columnNumber: 27
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
                                                                 size: "icon",
@@ -3380,19 +3358,19 @@ function IncidentIssuesTable({ details, setDetails }) {
                                                                     className: "w-4 h-4 text-red-600"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/apps/client/src/features/incidentsTable/components/IncidentIssues.tsx",
-                                                                    lineNumber: 166,
-                                                                    columnNumber: 109
+                                                                    lineNumber: 139,
+                                                                    columnNumber: 111
                                                                 }, this)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/apps/client/src/features/incidentsTable/components/IncidentIssues.tsx",
-                                                                lineNumber: 166,
-                                                                columnNumber: 25
+                                                                lineNumber: 139,
+                                                                columnNumber: 27
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/apps/client/src/features/incidentsTable/components/IncidentIssues.tsx",
-                                                        lineNumber: 164,
-                                                        columnNumber: 23
+                                                        lineNumber: 137,
+                                                        columnNumber: 25
                                                     }, this),
                                                     isDeleting && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                         className: "flex ",
@@ -3406,13 +3384,13 @@ function IncidentIssuesTable({ details, setDetails }) {
                                                                     className: "w-4 h-4 text-green-600"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/apps/client/src/features/incidentsTable/components/IncidentIssues.tsx",
-                                                                    lineNumber: 172,
-                                                                    columnNumber: 138
+                                                                    lineNumber: 145,
+                                                                    columnNumber: 140
                                                                 }, this)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/apps/client/src/features/incidentsTable/components/IncidentIssues.tsx",
-                                                                lineNumber: 172,
-                                                                columnNumber: 25
+                                                                lineNumber: 145,
+                                                                columnNumber: 27
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
                                                                 size: "icon",
@@ -3423,31 +3401,31 @@ function IncidentIssuesTable({ details, setDetails }) {
                                                                     className: "w-4 h-4 text-red-600"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/apps/client/src/features/incidentsTable/components/IncidentIssues.tsx",
-                                                                    lineNumber: 173,
-                                                                    columnNumber: 129
+                                                                    lineNumber: 146,
+                                                                    columnNumber: 131
                                                                 }, this)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/apps/client/src/features/incidentsTable/components/IncidentIssues.tsx",
-                                                                lineNumber: 173,
-                                                                columnNumber: 25
+                                                                lineNumber: 146,
+                                                                columnNumber: 27
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/apps/client/src/features/incidentsTable/components/IncidentIssues.tsx",
-                                                        lineNumber: 170,
-                                                        columnNumber: 23
+                                                        lineNumber: 143,
+                                                        columnNumber: 25
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/apps/client/src/features/incidentsTable/components/IncidentIssues.tsx",
-                                                lineNumber: 149,
-                                                columnNumber: 19
+                                                lineNumber: 122,
+                                                columnNumber: 21
                                             }, this)
                                         ]
                                     }, row._id || row.tempId, true, {
                                         fileName: "[project]/apps/client/src/features/incidentsTable/components/IncidentIssues.tsx",
-                                        lineNumber: 145,
-                                        columnNumber: 17
+                                        lineNumber: 118,
+                                        columnNumber: 19
                                     }, this);
                                 }),
                                 newRow && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("tr", {
@@ -3464,13 +3442,13 @@ function IncidentIssuesTable({ details, setDetails }) {
                                                         })
                                                 }, void 0, false, {
                                                     fileName: "[project]/apps/client/src/features/incidentsTable/components/IncidentIssues.tsx",
-                                                    lineNumber: 184,
-                                                    columnNumber: 21
+                                                    lineNumber: 157,
+                                                    columnNumber: 23
                                                 }, this)
                                             }, field, false, {
                                                 fileName: "[project]/apps/client/src/features/incidentsTable/components/IncidentIssues.tsx",
-                                                lineNumber: 183,
-                                                columnNumber: 19
+                                                lineNumber: 156,
+                                                columnNumber: 21
                                             }, this)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
                                             className: "px-2 py-2 border",
@@ -3486,13 +3464,13 @@ function IncidentIssuesTable({ details, setDetails }) {
                                                             className: "w-4 h-4 text-green-600"
                                                         }, void 0, false, {
                                                             fileName: "[project]/apps/client/src/features/incidentsTable/components/IncidentIssues.tsx",
-                                                            lineNumber: 194,
-                                                            columnNumber: 23
+                                                            lineNumber: 167,
+                                                            columnNumber: 25
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/apps/client/src/features/incidentsTable/components/IncidentIssues.tsx",
-                                                        lineNumber: 193,
-                                                        columnNumber: 21
+                                                        lineNumber: 166,
+                                                        columnNumber: 23
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
                                                         size: "icon",
@@ -3503,106 +3481,106 @@ function IncidentIssuesTable({ details, setDetails }) {
                                                             className: "w-4 h-4 text-red-600"
                                                         }, void 0, false, {
                                                             fileName: "[project]/apps/client/src/features/incidentsTable/components/IncidentIssues.tsx",
-                                                            lineNumber: 197,
-                                                            columnNumber: 23
+                                                            lineNumber: 170,
+                                                            columnNumber: 25
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/apps/client/src/features/incidentsTable/components/IncidentIssues.tsx",
-                                                        lineNumber: 196,
-                                                        columnNumber: 21
+                                                        lineNumber: 169,
+                                                        columnNumber: 23
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/apps/client/src/features/incidentsTable/components/IncidentIssues.tsx",
-                                                lineNumber: 192,
-                                                columnNumber: 19
+                                                lineNumber: 165,
+                                                columnNumber: 21
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/apps/client/src/features/incidentsTable/components/IncidentIssues.tsx",
-                                            lineNumber: 191,
-                                            columnNumber: 17
+                                            lineNumber: 164,
+                                            columnNumber: 19
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/apps/client/src/features/incidentsTable/components/IncidentIssues.tsx",
-                                    lineNumber: 181,
-                                    columnNumber: 15
+                                    lineNumber: 154,
+                                    columnNumber: 17
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/apps/client/src/features/incidentsTable/components/IncidentIssues.tsx",
-                            lineNumber: 140,
-                            columnNumber: 11
+                            lineNumber: 113,
+                            columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/apps/client/src/features/incidentsTable/components/IncidentIssues.tsx",
-                    lineNumber: 131,
-                    columnNumber: 9
+                    lineNumber: 104,
+                    columnNumber: 11
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/apps/client/src/features/incidentsTable/components/IncidentIssues.tsx",
-                lineNumber: 130,
-                columnNumber: 7
+                lineNumber: 103,
+                columnNumber: 9
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "  py-4 rounded-md ",
+                className: " rounded-md",
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "grid grid-cols-2 gap-4 w-[500px]",
+                    className: "grid grid-cols-2 gap-4 sm:w-[600px]",
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$label$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Label"], {
                             className: "flex items-center gap-2 ",
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$checkbox$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Checkbox"], {
-                                    checked: details[0]?.qualityIssue || false,
+                                    checked: issuesSelection.qualityIssue || false,
                                     onCheckedChange: ()=>toggleIssue("qualityIssue")
                                 }, void 0, false, {
                                     fileName: "[project]/apps/client/src/features/incidentsTable/components/IncidentIssues.tsx",
-                                    lineNumber: 211,
-                                    columnNumber: 13
+                                    lineNumber: 184,
+                                    columnNumber: 15
                                 }, this),
                                 "Quality Issue"
                             ]
                         }, void 0, true, {
                             fileName: "[project]/apps/client/src/features/incidentsTable/components/IncidentIssues.tsx",
-                            lineNumber: 210,
-                            columnNumber: 11
+                            lineNumber: 183,
+                            columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$label$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Label"], {
                             className: "flex items-center gap-2",
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$checkbox$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Checkbox"], {
-                                    checked: details[0]?.procedureDocumentation || false,
+                                    checked: issuesSelection.procedureDocumentation || false,
                                     onCheckedChange: ()=>toggleIssue("procedureDocumentation")
                                 }, void 0, false, {
                                     fileName: "[project]/apps/client/src/features/incidentsTable/components/IncidentIssues.tsx",
-                                    lineNumber: 218,
-                                    columnNumber: 13
+                                    lineNumber: 191,
+                                    columnNumber: 15
                                 }, this),
                                 "Procedure / Documentation"
                             ]
                         }, void 0, true, {
                             fileName: "[project]/apps/client/src/features/incidentsTable/components/IncidentIssues.tsx",
-                            lineNumber: 217,
-                            columnNumber: 11
+                            lineNumber: 190,
+                            columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$label$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Label"], {
                             className: "flex items-center gap-2",
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$checkbox$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Checkbox"], {
-                                    checked: details[0]?.packagingProblem || false,
+                                    checked: issuesSelection.packagingProblem || false,
                                     onCheckedChange: ()=>toggleIssue("packagingProblem")
                                 }, void 0, false, {
                                     fileName: "[project]/apps/client/src/features/incidentsTable/components/IncidentIssues.tsx",
-                                    lineNumber: 225,
-                                    columnNumber: 13
+                                    lineNumber: 198,
+                                    columnNumber: 15
                                 }, this),
                                 "Packaging Problem"
                             ]
                         }, void 0, true, {
                             fileName: "[project]/apps/client/src/features/incidentsTable/components/IncidentIssues.tsx",
-                            lineNumber: 224,
-                            columnNumber: 11
+                            lineNumber: 197,
+                            columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$label$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Label"], {
                             className: "flex items-center gap-2",
@@ -3611,41 +3589,41 @@ function IncidentIssuesTable({ details, setDetails }) {
                                     children: "Others:"
                                 }, void 0, false, {
                                     fileName: "[project]/apps/client/src/features/incidentsTable/components/IncidentIssues.tsx",
-                                    lineNumber: 232,
-                                    columnNumber: 13
+                                    lineNumber: 205,
+                                    columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Input"], {
-                                    className: "w-64 h-8",
-                                    value: details[0]?.others || "",
+                                    className: "w-64 h-7",
+                                    value: issuesSelection.others || "",
                                     onChange: (e)=>updateOthers(e.target.value),
-                                    placeholder: "Specify..."
+                                    placeholder: "specify..."
                                 }, void 0, false, {
                                     fileName: "[project]/apps/client/src/features/incidentsTable/components/IncidentIssues.tsx",
-                                    lineNumber: 233,
-                                    columnNumber: 13
+                                    lineNumber: 206,
+                                    columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/apps/client/src/features/incidentsTable/components/IncidentIssues.tsx",
-                            lineNumber: 231,
-                            columnNumber: 11
+                            lineNumber: 204,
+                            columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/apps/client/src/features/incidentsTable/components/IncidentIssues.tsx",
-                    lineNumber: 209,
-                    columnNumber: 9
+                    lineNumber: 182,
+                    columnNumber: 11
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/apps/client/src/features/incidentsTable/components/IncidentIssues.tsx",
-                lineNumber: 208,
-                columnNumber: 7
+                lineNumber: 181,
+                columnNumber: 9
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/apps/client/src/features/incidentsTable/components/IncidentIssues.tsx",
-        lineNumber: 116,
-        columnNumber: 5
+        lineNumber: 89,
+        columnNumber: 7
     }, this);
 }
 }),
@@ -3666,7 +3644,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$fea
 ;
 ;
 ;
-function IncidentIssuesDrawer({ details, setDetails }) {
+function IncidentIssuesDrawer({ details, setDetails, issuesSelection, setIssuesSelection }) {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$drawer$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Drawer"], {
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$drawer$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["DrawerTrigger"], {
@@ -3677,48 +3655,56 @@ function IncidentIssuesDrawer({ details, setDetails }) {
                     children: "View Issues"
                 }, void 0, false, {
                     fileName: "[project]/apps/client/src/features/incidentsDrawer/components/IncidentIssues.tsx",
-                    lineNumber: 29,
+                    lineNumber: 32,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/apps/client/src/features/incidentsDrawer/components/IncidentIssues.tsx",
-                lineNumber: 28,
+                lineNumber: 31,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$drawer$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["DrawerContent"], {
-                className: "p-6",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$drawer$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["DrawerHeader"], {
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$drawer$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["DrawerTitle"], {
                             children: "Incident Issues"
                         }, void 0, false, {
                             fileName: "[project]/apps/client/src/features/incidentsDrawer/components/IncidentIssues.tsx",
-                            lineNumber: 33,
+                            lineNumber: 36,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/apps/client/src/features/incidentsDrawer/components/IncidentIssues.tsx",
-                        lineNumber: 32,
+                        lineNumber: 35,
                         columnNumber: 9
                     }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$features$2f$incidentsTable$2f$components$2f$IncidentIssues$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["IncidentIssuesTable"], {
-                        details: details,
-                        setDetails: setDetails
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "overflow-y-auto px-6 pb-6",
+                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$features$2f$incidentsTable$2f$components$2f$IncidentIssues$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["IncidentIssuesTable"], {
+                            details: details,
+                            setDetails: setDetails,
+                            issuesSelection: issuesSelection,
+                            setIssuesSelection: setIssuesSelection
+                        }, void 0, false, {
+                            fileName: "[project]/apps/client/src/features/incidentsDrawer/components/IncidentIssues.tsx",
+                            lineNumber: 39,
+                            columnNumber: 11
+                        }, this)
                     }, void 0, false, {
                         fileName: "[project]/apps/client/src/features/incidentsDrawer/components/IncidentIssues.tsx",
-                        lineNumber: 35,
+                        lineNumber: 38,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/apps/client/src/features/incidentsDrawer/components/IncidentIssues.tsx",
-                lineNumber: 31,
+                lineNumber: 34,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/apps/client/src/features/incidentsDrawer/components/IncidentIssues.tsx",
-        lineNumber: 27,
+        lineNumber: 30,
         columnNumber: 5
     }, this);
 }
@@ -3896,7 +3882,7 @@ function ActionsTable({ title, items, onChange }) {
         }, this);
     };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: "mb-4",
+        className: "mb-4 ",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "flex justify-between items-center mb-2",
@@ -4897,7 +4883,7 @@ function IncidentActionsTable({ details = [], setDetails }) {
         setDetails((prev)=>prev.map((row)=>(row._id || row.tempId) === id ? updater(row) : row));
     };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: "space-y-6",
+        className: "space-y-6 ",
         children: details.map((row)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "p-6  border rounded-lg bg-white shadow-sm",
                 children: [
@@ -5024,10 +5010,9 @@ function IncidentActionsDrawer({ details, setDetails }) {
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$drawer$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["DrawerContent"], {
-                className: "p-0 inset-y-0 fixed h-screen",
+                className: " inset-y-[-10px] fixed  ",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$drawer$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["DrawerHeader"], {
-                        className: "px-6 py-4 ",
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$drawer$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["DrawerTitle"], {
                             children: "Incident Correction Action"
                         }, void 0, false, {
@@ -5041,7 +5026,7 @@ function IncidentActionsDrawer({ details, setDetails }) {
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "px-6 pb-6 overflow-y-auto ",
+                        className: "px-6 pb-6 overflow-x-auto ",
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$features$2f$incidentsTable$2f$components$2f$IncidentActions$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["IncidentActionsTable"], {
                             details: details,
                             setDetails: setDetails
@@ -6315,7 +6300,6 @@ function IncidentEvaluationDrawer({ details, setDetails }) {
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$drawer$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["DrawerContent"], {
-                className: "p-0 inset-y-0 fixed h-screen",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$drawer$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["DrawerHeader"], {
                         className: "px-6 py-4 ",
@@ -6516,6 +6500,12 @@ function IncidentModal({ onClose, form, setForm, editingId, defaultForm }) {
                 incidentIssues: updater(prev.incidentIssues)
             }));
     };
+    const setIncidentIssuesSelection = (updater)=>{
+        setForm((prev)=>({
+                ...prev,
+                incidentIssuesSelection: updater(prev.incidentIssuesSelection ?? {})
+            }));
+    };
     const setIncidentActions = (updater)=>{
         setForm((prev)=>({
                 ...prev,
@@ -6567,7 +6557,7 @@ function IncidentModal({ onClose, form, setForm, editingId, defaultForm }) {
                                 children: "Reporting Department"
                             }, void 0, false, {
                                 fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                lineNumber: 124,
+                                lineNumber: 134,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -6580,7 +6570,7 @@ function IncidentModal({ onClose, form, setForm, editingId, defaultForm }) {
                                         placeholder: "e.g. Logistics"
                                     }, void 0, false, {
                                         fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                        lineNumber: 126,
+                                        lineNumber: 136,
                                         columnNumber: 25
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$popover$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Popover"], {
@@ -6596,17 +6586,17 @@ function IncidentModal({ onClose, form, setForm, editingId, defaultForm }) {
                                                         className: "h-4 w-4"
                                                     }, void 0, false, {
                                                         fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                                        lineNumber: 135,
+                                                        lineNumber: 145,
                                                         columnNumber: 37
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                                    lineNumber: 134,
+                                                    lineNumber: 144,
                                                     columnNumber: 33
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                                lineNumber: 133,
+                                                lineNumber: 143,
                                                 columnNumber: 29
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$popover$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["PopoverContent"], {
@@ -6617,14 +6607,14 @@ function IncidentModal({ onClose, form, setForm, editingId, defaultForm }) {
                                                             placeholder: "Search department..."
                                                         }, void 0, false, {
                                                             fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                                            lineNumber: 140,
+                                                            lineNumber: 150,
                                                             columnNumber: 37
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$command$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["CommandEmpty"], {
                                                             children: "No department found."
                                                         }, void 0, false, {
                                                             fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                                            lineNumber: 141,
+                                                            lineNumber: 151,
                                                             columnNumber: 37
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$command$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["CommandList"], {
@@ -6641,59 +6631,59 @@ function IncidentModal({ onClose, form, setForm, editingId, defaultForm }) {
                                                                                 children: dept.code
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                                                                lineNumber: 152,
+                                                                                lineNumber: 162,
                                                                                 columnNumber: 53
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                                 children: dept.name
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                                                                lineNumber: 153,
+                                                                                lineNumber: 163,
                                                                                 columnNumber: 53
                                                                             }, this)
                                                                         ]
                                                                     }, dept.code, true, {
                                                                         fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                                                        lineNumber: 145,
+                                                                        lineNumber: 155,
                                                                         columnNumber: 49
                                                                     }, this))
                                                             }, void 0, false, {
                                                                 fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                                                lineNumber: 143,
+                                                                lineNumber: 153,
                                                                 columnNumber: 41
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                                            lineNumber: 142,
+                                                            lineNumber: 152,
                                                             columnNumber: 37
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                                    lineNumber: 139,
+                                                    lineNumber: 149,
                                                     columnNumber: 33
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                                lineNumber: 138,
+                                                lineNumber: 148,
                                                 columnNumber: 29
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                        lineNumber: 132,
+                                        lineNumber: 142,
                                         columnNumber: 25
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                lineNumber: 125,
+                                lineNumber: 135,
                                 columnNumber: 21
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                        lineNumber: 123,
+                        lineNumber: 133,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -6704,7 +6694,7 @@ function IncidentModal({ onClose, form, setForm, editingId, defaultForm }) {
                                 children: "Reporting Employee"
                             }, void 0, false, {
                                 fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                lineNumber: 164,
+                                lineNumber: 174,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Input"], {
@@ -6714,13 +6704,13 @@ function IncidentModal({ onClose, form, setForm, editingId, defaultForm }) {
                                 placeholder: "Employee name"
                             }, void 0, false, {
                                 fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                lineNumber: 165,
+                                lineNumber: 175,
                                 columnNumber: 21
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                        lineNumber: 163,
+                        lineNumber: 173,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -6731,7 +6721,7 @@ function IncidentModal({ onClose, form, setForm, editingId, defaultForm }) {
                                 children: "Nature of Exception"
                             }, void 0, false, {
                                 fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                lineNumber: 175,
+                                lineNumber: 185,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Select"], {
@@ -6744,12 +6734,12 @@ function IncidentModal({ onClose, form, setForm, editingId, defaultForm }) {
                                             placeholder: "Select exception type"
                                         }, void 0, false, {
                                             fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                            lineNumber: 181,
+                                            lineNumber: 191,
                                             columnNumber: 29
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                        lineNumber: 180,
+                                        lineNumber: 190,
                                         columnNumber: 25
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["SelectContent"], {
@@ -6759,7 +6749,7 @@ function IncidentModal({ onClose, form, setForm, editingId, defaultForm }) {
                                                 children: "Internal Incident"
                                             }, void 0, false, {
                                                 fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                                lineNumber: 184,
+                                                lineNumber: 194,
                                                 columnNumber: 29
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["SelectItem"], {
@@ -6767,7 +6757,7 @@ function IncidentModal({ onClose, form, setForm, editingId, defaultForm }) {
                                                 children: "External Incident"
                                             }, void 0, false, {
                                                 fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                                lineNumber: 185,
+                                                lineNumber: 195,
                                                 columnNumber: 29
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["SelectItem"], {
@@ -6775,7 +6765,7 @@ function IncidentModal({ onClose, form, setForm, editingId, defaultForm }) {
                                                 children: "Customer Complaint/Feedback"
                                             }, void 0, false, {
                                                 fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                                lineNumber: 186,
+                                                lineNumber: 196,
                                                 columnNumber: 29
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["SelectItem"], {
@@ -6783,7 +6773,7 @@ function IncidentModal({ onClose, form, setForm, editingId, defaultForm }) {
                                                 children: "Internal Audit"
                                             }, void 0, false, {
                                                 fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                                lineNumber: 189,
+                                                lineNumber: 199,
                                                 columnNumber: 29
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["SelectItem"], {
@@ -6791,7 +6781,7 @@ function IncidentModal({ onClose, form, setForm, editingId, defaultForm }) {
                                                 children: "External Audit"
                                             }, void 0, false, {
                                                 fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                                lineNumber: 190,
+                                                lineNumber: 200,
                                                 columnNumber: 29
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["SelectItem"], {
@@ -6799,25 +6789,25 @@ function IncidentModal({ onClose, form, setForm, editingId, defaultForm }) {
                                                 children: "Balanced Scorecard Related"
                                             }, void 0, false, {
                                                 fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                                lineNumber: 191,
+                                                lineNumber: 201,
                                                 columnNumber: 29
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                        lineNumber: 183,
+                                        lineNumber: 193,
                                         columnNumber: 25
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                lineNumber: 176,
+                                lineNumber: 186,
                                 columnNumber: 21
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                        lineNumber: 174,
+                        lineNumber: 184,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -6828,7 +6818,7 @@ function IncidentModal({ onClose, form, setForm, editingId, defaultForm }) {
                                 children: "Audit Finding"
                             }, void 0, false, {
                                 fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                lineNumber: 200,
+                                lineNumber: 210,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Select"], {
@@ -6841,12 +6831,12 @@ function IncidentModal({ onClose, form, setForm, editingId, defaultForm }) {
                                             placeholder: "Select audit finding"
                                         }, void 0, false, {
                                             fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                            lineNumber: 206,
+                                            lineNumber: 216,
                                             columnNumber: 29
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                        lineNumber: 205,
+                                        lineNumber: 215,
                                         columnNumber: 25
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["SelectContent"], {
@@ -6856,7 +6846,7 @@ function IncidentModal({ onClose, form, setForm, editingId, defaultForm }) {
                                                 children: "Major Non-Conformity"
                                             }, void 0, false, {
                                                 fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                                lineNumber: 209,
+                                                lineNumber: 219,
                                                 columnNumber: 29
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["SelectItem"], {
@@ -6864,7 +6854,7 @@ function IncidentModal({ onClose, form, setForm, editingId, defaultForm }) {
                                                 children: "Minor Non-Conformity"
                                             }, void 0, false, {
                                                 fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                                lineNumber: 210,
+                                                lineNumber: 220,
                                                 columnNumber: 29
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["SelectItem"], {
@@ -6872,7 +6862,7 @@ function IncidentModal({ onClose, form, setForm, editingId, defaultForm }) {
                                                 children: "Observations for Improvement"
                                             }, void 0, false, {
                                                 fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                                lineNumber: 211,
+                                                lineNumber: 221,
                                                 columnNumber: 29
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["SelectItem"], {
@@ -6880,31 +6870,31 @@ function IncidentModal({ onClose, form, setForm, editingId, defaultForm }) {
                                                 children: "Potential Non-Conformity"
                                             }, void 0, false, {
                                                 fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                                lineNumber: 214,
+                                                lineNumber: 224,
                                                 columnNumber: 29
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                        lineNumber: 208,
+                                        lineNumber: 218,
                                         columnNumber: 25
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                lineNumber: 201,
+                                lineNumber: 211,
                                 columnNumber: 21
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                        lineNumber: 199,
+                        lineNumber: 209,
                         columnNumber: 17
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                lineNumber: 122,
+                lineNumber: 132,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -6915,7 +6905,7 @@ function IncidentModal({ onClose, form, setForm, editingId, defaultForm }) {
                         children: "Description / Support Documents"
                     }, void 0, false, {
                         fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                        lineNumber: 224,
+                        lineNumber: 234,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$textarea$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Textarea"], {
@@ -6926,13 +6916,13 @@ function IncidentModal({ onClose, form, setForm, editingId, defaultForm }) {
                         rows: 4
                     }, void 0, false, {
                         fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                        lineNumber: 225,
+                        lineNumber: 235,
                         columnNumber: 17
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                lineNumber: 223,
+                lineNumber: 233,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -6946,7 +6936,7 @@ function IncidentModal({ onClose, form, setForm, editingId, defaultForm }) {
                                 children: "Select Type"
                             }, void 0, false, {
                                 fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                lineNumber: 238,
+                                lineNumber: 248,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Select"], {
@@ -6963,12 +6953,12 @@ function IncidentModal({ onClose, form, setForm, editingId, defaultForm }) {
                                             placeholder: "Select option"
                                         }, void 0, false, {
                                             fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                            lineNumber: 247,
+                                            lineNumber: 257,
                                             columnNumber: 29
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                        lineNumber: 246,
+                                        lineNumber: 256,
                                         columnNumber: 25
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["SelectContent"], {
@@ -6978,7 +6968,7 @@ function IncidentModal({ onClose, form, setForm, editingId, defaultForm }) {
                                                 children: "Customer"
                                             }, void 0, false, {
                                                 fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                                lineNumber: 250,
+                                                lineNumber: 260,
                                                 columnNumber: 29
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["SelectItem"], {
@@ -6986,7 +6976,7 @@ function IncidentModal({ onClose, form, setForm, editingId, defaultForm }) {
                                                 children: "Supplier"
                                             }, void 0, false, {
                                                 fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                                lineNumber: 251,
+                                                lineNumber: 261,
                                                 columnNumber: 29
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["SelectItem"], {
@@ -6994,25 +6984,25 @@ function IncidentModal({ onClose, form, setForm, editingId, defaultForm }) {
                                                 children: "Department"
                                             }, void 0, false, {
                                                 fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                                lineNumber: 252,
+                                                lineNumber: 262,
                                                 columnNumber: 29
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                        lineNumber: 249,
+                                        lineNumber: 259,
                                         columnNumber: 25
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                lineNumber: 239,
+                                lineNumber: 249,
                                 columnNumber: 21
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                        lineNumber: 237,
+                        lineNumber: 247,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -7023,7 +7013,7 @@ function IncidentModal({ onClose, form, setForm, editingId, defaultForm }) {
                                 children: "Date of Incident"
                             }, void 0, false, {
                                 fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                lineNumber: 258,
+                                lineNumber: 268,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$popover$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Popover"], {
@@ -7038,25 +7028,25 @@ function IncidentModal({ onClose, form, setForm, editingId, defaultForm }) {
                                                     className: "mr-2 h-4 w-4"
                                                 }, void 0, false, {
                                                     fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                                    lineNumber: 268,
+                                                    lineNumber: 278,
                                                     columnNumber: 33
                                                 }, this),
                                                 form.date ? (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$date$2d$fns$2f$format$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["format"])(form.date, "PPP") : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                     children: "Pick a date"
                                                 }, void 0, false, {
                                                     fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                                    lineNumber: 269,
+                                                    lineNumber: 279,
                                                     columnNumber: 73
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                            lineNumber: 261,
+                                            lineNumber: 271,
                                             columnNumber: 29
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                        lineNumber: 260,
+                                        lineNumber: 270,
                                         columnNumber: 25
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$popover$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["PopoverContent"], {
@@ -7070,30 +7060,30 @@ function IncidentModal({ onClose, form, setForm, editingId, defaultForm }) {
                                             initialFocus: true
                                         }, void 0, false, {
                                             fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                            lineNumber: 273,
+                                            lineNumber: 283,
                                             columnNumber: 29
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                        lineNumber: 272,
+                                        lineNumber: 282,
                                         columnNumber: 25
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                lineNumber: 259,
+                                lineNumber: 269,
                                 columnNumber: 21
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                        lineNumber: 257,
+                        lineNumber: 267,
                         columnNumber: 17
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                lineNumber: 235,
+                lineNumber: 245,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -7104,7 +7094,7 @@ function IncidentModal({ onClose, form, setForm, editingId, defaultForm }) {
                         children: "Customer/Department"
                     }, void 0, false, {
                         fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                        lineNumber: 287,
+                        lineNumber: 297,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Input"], {
@@ -7113,13 +7103,13 @@ function IncidentModal({ onClose, form, setForm, editingId, defaultForm }) {
                         onChange: (e)=>handleChange("customerDepartment", e.target.value)
                     }, void 0, false, {
                         fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                        lineNumber: 288,
+                        lineNumber: 298,
                         columnNumber: 17
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                lineNumber: 286,
+                lineNumber: 296,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -7130,7 +7120,7 @@ function IncidentModal({ onClose, form, setForm, editingId, defaultForm }) {
                         children: form.concernType === "supplier" ? "Supplier Name" : form.concernType === "customer" ? "Customer Name" : "Department Name"
                     }, void 0, false, {
                         fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                        lineNumber: 297,
+                        lineNumber: 307,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Input"], {
@@ -7141,13 +7131,13 @@ function IncidentModal({ onClose, form, setForm, editingId, defaultForm }) {
                         onChange: (e)=>handleChange("concernName", e.target.value)
                     }, void 0, false, {
                         fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                        lineNumber: 304,
+                        lineNumber: 314,
                         columnNumber: 17
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                lineNumber: 296,
+                lineNumber: 306,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -7158,7 +7148,7 @@ function IncidentModal({ onClose, form, setForm, editingId, defaultForm }) {
                         children: "Module of Purchase"
                     }, void 0, false, {
                         fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                        lineNumber: 315,
+                        lineNumber: 325,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$radio$2d$group$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["RadioGroup"], {
@@ -7174,7 +7164,7 @@ function IncidentModal({ onClose, form, setForm, editingId, defaultForm }) {
                                         id: "imported"
                                     }, void 0, false, {
                                         fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                        lineNumber: 322,
+                                        lineNumber: 332,
                                         columnNumber: 25
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$label$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Label"], {
@@ -7183,13 +7173,13 @@ function IncidentModal({ onClose, form, setForm, editingId, defaultForm }) {
                                         children: "Imported"
                                     }, void 0, false, {
                                         fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                        lineNumber: 323,
+                                        lineNumber: 333,
                                         columnNumber: 25
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                lineNumber: 321,
+                                lineNumber: 331,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -7200,7 +7190,7 @@ function IncidentModal({ onClose, form, setForm, editingId, defaultForm }) {
                                         id: "local"
                                     }, void 0, false, {
                                         fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                        lineNumber: 328,
+                                        lineNumber: 338,
                                         columnNumber: 25
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$label$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Label"], {
@@ -7209,25 +7199,25 @@ function IncidentModal({ onClose, form, setForm, editingId, defaultForm }) {
                                         children: "Local"
                                     }, void 0, false, {
                                         fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                        lineNumber: 329,
+                                        lineNumber: 339,
                                         columnNumber: 25
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                lineNumber: 327,
+                                lineNumber: 337,
                                 columnNumber: 21
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                        lineNumber: 316,
+                        lineNumber: 326,
                         columnNumber: 17
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                lineNumber: 314,
+                lineNumber: 324,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -7238,7 +7228,7 @@ function IncidentModal({ onClose, form, setForm, editingId, defaultForm }) {
                         children: "Type of Delivery"
                     }, void 0, false, {
                         fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                        lineNumber: 338,
+                        lineNumber: 348,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$radio$2d$group$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["RadioGroup"], {
@@ -7254,7 +7244,7 @@ function IncidentModal({ onClose, form, setForm, editingId, defaultForm }) {
                                         id: "indent"
                                     }, void 0, false, {
                                         fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                        lineNumber: 345,
+                                        lineNumber: 355,
                                         columnNumber: 25
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$label$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Label"], {
@@ -7263,13 +7253,13 @@ function IncidentModal({ onClose, form, setForm, editingId, defaultForm }) {
                                         children: "Indent"
                                     }, void 0, false, {
                                         fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                        lineNumber: 346,
+                                        lineNumber: 356,
                                         columnNumber: 25
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                lineNumber: 344,
+                                lineNumber: 354,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -7280,7 +7270,7 @@ function IncidentModal({ onClose, form, setForm, editingId, defaultForm }) {
                                         id: "exstock"
                                     }, void 0, false, {
                                         fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                        lineNumber: 351,
+                                        lineNumber: 361,
                                         columnNumber: 25
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$label$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Label"], {
@@ -7289,13 +7279,13 @@ function IncidentModal({ onClose, form, setForm, editingId, defaultForm }) {
                                         children: "ExStock"
                                     }, void 0, false, {
                                         fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                        lineNumber: 352,
+                                        lineNumber: 362,
                                         columnNumber: 25
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                lineNumber: 350,
+                                lineNumber: 360,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -7306,7 +7296,7 @@ function IncidentModal({ onClose, form, setForm, editingId, defaultForm }) {
                                         id: "forward"
                                     }, void 0, false, {
                                         fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                        lineNumber: 357,
+                                        lineNumber: 367,
                                         columnNumber: 25
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$label$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Label"], {
@@ -7315,25 +7305,25 @@ function IncidentModal({ onClose, form, setForm, editingId, defaultForm }) {
                                         children: "Forward"
                                     }, void 0, false, {
                                         fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                        lineNumber: 358,
+                                        lineNumber: 368,
                                         columnNumber: 25
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                                lineNumber: 356,
+                                lineNumber: 366,
                                 columnNumber: 21
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                        lineNumber: 339,
+                        lineNumber: 349,
                         columnNumber: 17
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                lineNumber: 337,
+                lineNumber: 347,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -7344,15 +7334,17 @@ function IncidentModal({ onClose, form, setForm, editingId, defaultForm }) {
                         setDetails: setIncidentDetails
                     }, void 0, false, {
                         fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                        lineNumber: 365,
+                        lineNumber: 375,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$features$2f$incidentsDrawer$2f$components$2f$IncidentIssues$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["IncidentIssuesDrawer"], {
                         details: form.incidentIssues,
-                        setDetails: setIncidentIssues
+                        setDetails: setIncidentIssues,
+                        issuesSelection: form.incidentIssuesSelection ?? {},
+                        setIssuesSelection: setIncidentIssuesSelection
                     }, void 0, false, {
                         fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                        lineNumber: 366,
+                        lineNumber: 376,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$features$2f$incidentsDrawer$2f$components$2f$IncidentActions$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["IncidentActionsDrawer"], {
@@ -7360,7 +7352,7 @@ function IncidentModal({ onClose, form, setForm, editingId, defaultForm }) {
                         setDetails: setIncidentActions
                     }, void 0, false, {
                         fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                        lineNumber: 367,
+                        lineNumber: 377,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$features$2f$incidentsDrawer$2f$components$2f$IncidentEvaluation$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["IncidentEvaluationDrawer"], {
@@ -7368,13 +7360,13 @@ function IncidentModal({ onClose, form, setForm, editingId, defaultForm }) {
                         setDetails: setIncidentEvaluation
                     }, void 0, false, {
                         fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                        lineNumber: 368,
+                        lineNumber: 378,
                         columnNumber: 17
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                lineNumber: 364,
+                lineNumber: 374,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["DialogFooter"], {
@@ -7387,7 +7379,7 @@ function IncidentModal({ onClose, form, setForm, editingId, defaultForm }) {
                         children: "Cancel"
                     }, void 0, false, {
                         fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                        lineNumber: 373,
+                        lineNumber: 383,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
@@ -7397,19 +7389,19 @@ function IncidentModal({ onClose, form, setForm, editingId, defaultForm }) {
                         children: isAdding || isUpdating ? "Saving..." : "Submit"
                     }, void 0, false, {
                         fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                        lineNumber: 376,
+                        lineNumber: 386,
                         columnNumber: 17
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-                lineNumber: 372,
+                lineNumber: 382,
                 columnNumber: 13
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/apps/client/src/features/incidentsModal/components/IncidentModal.tsx",
-        lineNumber: 120,
+        lineNumber: 130,
         columnNumber: 9
     }, this);
 }
@@ -7463,6 +7455,7 @@ const defaultForm = {
     date: undefined,
     incidentDetails: [],
     incidentIssues: [],
+    incidentIssuesSelection: {},
     incidentActions: [
         {
             tempId: crypto.randomUUID(),
@@ -7525,7 +7518,7 @@ function HomePage() {
                         children: "Incident Reports"
                     }, void 0, false, {
                         fileName: "[project]/apps/client/src/app/page.tsx",
-                        lineNumber: 103,
+                        lineNumber: 104,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Dialog"], {
@@ -7540,12 +7533,12 @@ function HomePage() {
                                     children: "+ Create"
                                 }, void 0, false, {
                                     fileName: "[project]/apps/client/src/app/page.tsx",
-                                    lineNumber: 107,
+                                    lineNumber: 108,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/apps/client/src/app/page.tsx",
-                                lineNumber: 106,
+                                lineNumber: 107,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["DialogContent"], {
@@ -7562,7 +7555,7 @@ function HomePage() {
                                                             children: editingIncident ? "Edit Incident Report" : "File Incident Report"
                                                         }, void 0, false, {
                                                             fileName: "[project]/apps/client/src/app/page.tsx",
-                                                            lineNumber: 114,
+                                                            lineNumber: 115,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -7570,13 +7563,13 @@ function HomePage() {
                                                             children: editingIncident ? `(Ref No: ${form.refNo})` : null
                                                         }, void 0, false, {
                                                             fileName: "[project]/apps/client/src/app/page.tsx",
-                                                            lineNumber: 115,
+                                                            lineNumber: 116,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/apps/client/src/app/page.tsx",
-                                                    lineNumber: 113,
+                                                    lineNumber: 114,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -7594,7 +7587,7 @@ function HomePage() {
                                                                             className: "mr-2  h-4 w-4 shrink-0"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/apps/client/src/app/page.tsx",
-                                                                            lineNumber: 127,
+                                                                            lineNumber: 128,
                                                                             columnNumber: 25
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -7603,23 +7596,23 @@ function HomePage() {
                                                                                 children: "Filing Date"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/apps/client/src/app/page.tsx",
-                                                                                lineNumber: 129,
+                                                                                lineNumber: 130,
                                                                                 columnNumber: 83
                                                                             }, this)
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/apps/client/src/app/page.tsx",
-                                                                            lineNumber: 128,
+                                                                            lineNumber: 129,
                                                                             columnNumber: 25
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/apps/client/src/app/page.tsx",
-                                                                    lineNumber: 120,
+                                                                    lineNumber: 121,
                                                                     columnNumber: 23
                                                                 }, this)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/apps/client/src/app/page.tsx",
-                                                                lineNumber: 119,
+                                                                lineNumber: 120,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$popover$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["PopoverContent"], {
@@ -7633,34 +7626,34 @@ function HomePage() {
                                                                     initialFocus: true
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/apps/client/src/app/page.tsx",
-                                                                    lineNumber: 134,
+                                                                    lineNumber: 135,
                                                                     columnNumber: 23
                                                                 }, this)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/apps/client/src/app/page.tsx",
-                                                                lineNumber: 133,
+                                                                lineNumber: 134,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/apps/client/src/app/page.tsx",
-                                                        lineNumber: 118,
+                                                        lineNumber: 119,
                                                         columnNumber: 19
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/apps/client/src/app/page.tsx",
-                                                    lineNumber: 117,
+                                                    lineNumber: 118,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/apps/client/src/app/page.tsx",
-                                            lineNumber: 112,
+                                            lineNumber: 113,
                                             columnNumber: 15
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/apps/client/src/app/page.tsx",
-                                        lineNumber: 111,
+                                        lineNumber: 112,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -7673,37 +7666,37 @@ function HomePage() {
                                             defaultForm: defaultForm
                                         }, void 0, false, {
                                             fileName: "[project]/apps/client/src/app/page.tsx",
-                                            lineNumber: 148,
+                                            lineNumber: 149,
                                             columnNumber: 15
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/apps/client/src/app/page.tsx",
-                                        lineNumber: 147,
+                                        lineNumber: 148,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/apps/client/src/app/page.tsx",
-                                lineNumber: 110,
+                                lineNumber: 111,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/apps/client/src/app/page.tsx",
-                        lineNumber: 105,
+                        lineNumber: 106,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/apps/client/src/app/page.tsx",
-                lineNumber: 102,
+                lineNumber: 103,
                 columnNumber: 7
             }, this),
             isLoading && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                 children: "Loading incidents..."
             }, void 0, false, {
                 fileName: "[project]/apps/client/src/app/page.tsx",
-                lineNumber: 155,
+                lineNumber: 156,
                 columnNumber: 21
             }, this),
             isError && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -7711,7 +7704,7 @@ function HomePage() {
                 children: "Failed to load incidents"
             }, void 0, false, {
                 fileName: "[project]/apps/client/src/app/page.tsx",
-                lineNumber: 156,
+                lineNumber: 157,
                 columnNumber: 19
             }, this),
             incidents && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$features$2f$incidents$2f$components$2f$IncidentMainTable$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -7732,13 +7725,13 @@ function HomePage() {
                 }
             }, void 0, false, {
                 fileName: "[project]/apps/client/src/app/page.tsx",
-                lineNumber: 158,
+                lineNumber: 159,
                 columnNumber: 9
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/apps/client/src/app/page.tsx",
-        lineNumber: 101,
+        lineNumber: 102,
         columnNumber: 5
     }, this);
 }

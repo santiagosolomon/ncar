@@ -154,7 +154,7 @@ export function ActionsTable({ title, items, onChange }: Props) {
   }
 
   return (
-    <div className="mb-4">
+    <div className="mb-4 ">
       <div className="flex justify-between items-center mb-2">
         <h3 className="font-semibold">{title}</h3>
         <Button className="cursor-pointer" size="sm" variant="outline" onClick={startAdd} disabled={!!newRow}>

@@ -5,8 +5,9 @@ export interface IncidentIssues {
   grossWeight: string
   netWeight: string
   tareWeight: string
+}
 
-  // ✅ new fields
+export interface IncidentIssuesSelection {
   quantityIssue?: boolean
   qualityIssue?: boolean
   procedureDocumentation?: boolean

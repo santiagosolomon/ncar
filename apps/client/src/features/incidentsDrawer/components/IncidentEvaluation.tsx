@@ -26,7 +26,7 @@ export function IncidentEvaluationDrawer({ details, setDetails }: IncidentEvalua
         <Button variant="outline">View Evaluation</Button>
       </DrawerTrigger>
      
-        <DrawerContent className="p-0 inset-y-0 fixed h-screen">
+        <DrawerContent >
           <DrawerHeader className="px-6 py-4 ">
             <DrawerTitle>Incident Evaluation</DrawerTitle>
           </DrawerHeader>

@@ -11,9 +11,16 @@ export interface PaginatedIncidentResponse {
   hasMore: boolean
 }
 
-export const fetchIncidents = async (page = 1, limit = 10): Promise<PaginatedIncidentResponse> => {
-  const { data } = await api.get("/incidents", { params: { page, limit } })
-  return data
+export const fetchIncidents = async (page = 1, limit = 10, organization: string): Promise<PaginatedIncidentResponse> => {
+  try {
+    console.log('Fetching incidents with params:', { page, limit, organization });
+    const { data } = await api.get("/incidents", { params: { page, limit, organization } });
+    console.log('Received incidents data:', data);
+    return data;
+  } catch (error) {
+    console.error('Error fetching incidents:', error);
+    throw error;
+  }
 }
 
 export const createIncident = async (incident: IncidentForm) => {

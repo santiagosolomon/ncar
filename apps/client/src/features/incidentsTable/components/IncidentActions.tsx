@@ -24,7 +24,7 @@ export function IncidentActionsTable({ details = [], setDetails }: IncidentActio
     }
 
     return (
-        <div className="space-y-6">
+        <div className="space-y-6 ">
             {details.map(row => (
                 <div key={row._id || row.tempId || crypto.randomUUID()} className="p-6  border rounded-lg bg-white shadow-sm">
                     {/* Correction table */}

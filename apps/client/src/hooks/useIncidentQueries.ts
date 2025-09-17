@@ -4,12 +4,12 @@ import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query"
 import { fetchIncidents, createIncident, updateIncident, deleteIncident, PaginatedIncidentResponse } from "@/services/incidents"
 import { IncidentForm } from "@/types/incidentModal" 
 
-export const useIncidents = (page: number, limit: number) =>
+export const useIncidents = (page: number, limit: number, organization: string) =>
   useQuery<PaginatedIncidentResponse>({
-    queryKey: ["incidents", page, limit],
-    queryFn: () => fetchIncidents(page, limit),
-
+    queryKey: ["incidents", page, limit, organization],
+    queryFn: () => fetchIncidents(page, limit, organization),
   })
+
 
 export const useAddIncident = () => {
   const qc = useQueryClient()
