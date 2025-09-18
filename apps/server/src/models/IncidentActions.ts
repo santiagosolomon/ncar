@@ -37,6 +37,7 @@ export const incidentActionsSchema = new Schema(
     correction: [actionSchema],  //  correction actions
     corrective: [actionSchema],  //  corrective actions
     rootCause: { type: String },
+    occurence: { type: String },
     analysis: [analysisSchema]
   },
   { _id: false, timestamps: true, strict: true }

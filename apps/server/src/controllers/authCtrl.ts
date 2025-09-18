@@ -17,6 +17,7 @@ export const me = async (req: Request, res: Response) => {
     res.status(200).json({
       user: {
         id: req.user.id,
+        email: req.user.email,
         role: req.user.role,
         organization: req.user.organization,
       },
@@ -62,7 +63,7 @@ export const login = async (req: Request, res: Response) => {
         if (!isMatch) return res.status(400).json({ error: "Invalid credentials" })
 
         const token = jwt.sign(
-            { id: user._id, role: user.role, organization: user.organization },
+            { id: user._id, email: user.email, role: user.role, organization: user.organization },
             JWT_SECRET,
             { expiresIn: "1d" }
         )

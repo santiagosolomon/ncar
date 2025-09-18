@@ -11,32 +11,43 @@ const mod = __turbopack_context__.x("node:async_hooks", () => require("node:asyn
 
 module.exports = mod;
 }),
-"[project]/apps/client/middleware.ts [middleware-edge] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/apps/client/middleware.ts [middleware-edge] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
 
-// // middleware.ts
-// import { NextResponse } from "next/server"
-// import type { NextRequest } from "next/server"
-// import jwt from "jsonwebtoken"
-// const JWT_SECRET = process.env.JWT_SECRET || "supersecret"
-// export function middleware(req: NextRequest) {
-//   const token = req.cookies.get("token")?.value
-//   // Redirect unauthenticated users to /login
-//   if (!token) {
-//     if (req.nextUrl.pathname !== "/login") {
-//       return NextResponse.redirect(new URL("/login", req.url))
-//     }
-//     return NextResponse.next()
-//   }
-//   try {
-//     jwt.verify(token, JWT_SECRET) // validate
-//     return NextResponse.next()
-//   } catch {
-//     return NextResponse.redirect(new URL("/login", req.url))
-//   }
-// }
-// export const config = {
-//   matcher: ["/((?!_next/static|_next/image|favicon.ico|login).*)"],
-// }
+__turbopack_context__.s([
+    "config",
+    ()=>config,
+    "middleware",
+    ()=>middleware
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$esm$2f$api$2f$server$2e$js__$5b$middleware$2d$edge$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/apps/client/node_modules/next/dist/esm/api/server.js [middleware-edge] (ecmascript) <locals>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$esm$2f$server$2f$web$2f$exports$2f$index$2e$js__$5b$middleware$2d$edge$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/apps/client/node_modules/next/dist/esm/server/web/exports/index.js [middleware-edge] (ecmascript)");
+;
+function middleware(req) {
+    const token = req.cookies.get("token")?.value;
+    const { pathname } = req.nextUrl;
+    // Public routes that don't need authentication
+    const publicRoutes = [
+        "/login",
+        "/register"
+    ];
+    // If has token and trying to access auth pages (login/register)
+    if (token && publicRoutes.includes(pathname)) {
+        return __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$esm$2f$server$2f$web$2f$exports$2f$index$2e$js__$5b$middleware$2d$edge$5d$__$28$ecmascript$29$__["NextResponse"].redirect(new URL("/", req.url));
+    }
+    // If no token and trying to access protected routes
+    if (!token && !publicRoutes.includes(pathname)) {
+        const loginUrl = new URL("/login", req.url);
+        loginUrl.searchParams.set("from", pathname); // Save the page they tried to visit
+        return __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$esm$2f$server$2f$web$2f$exports$2f$index$2e$js__$5b$middleware$2d$edge$5d$__$28$ecmascript$29$__["NextResponse"].redirect(loginUrl);
+    }
+    return __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$esm$2f$server$2f$web$2f$exports$2f$index$2e$js__$5b$middleware$2d$edge$5d$__$28$ecmascript$29$__["NextResponse"].next();
+}
+const config = {
+    matcher: [
+        "/((?!_next/static|_next/image|favicon.ico|api).*)"
+    ]
+};
 }),
 ]);
 

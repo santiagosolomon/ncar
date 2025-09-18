@@ -25,12 +25,28 @@ import { cn } from "@/lib/utils"
 import { format } from "date-fns"
 
 // 🔹 fetcher with cookies
-const fetcher = (url: string) =>
-  fetch(url, { credentials: "include" }).then((res) => {
-    if (!res.ok) throw new Error("Failed to fetch")
-    return res.json()
-  })
+export const fetcher = async (url: string) => {
+  try {
+    const res = await fetch(url, { credentials: "include" })
 
+    if (res.status === 401) {
+      // No valid cookie -> redirect to login
+      if (typeof window !== "undefined") {
+        window.location.href = "/login"
+      }
+      return null // 🔹 return null instead of throwing
+    }
+
+    if (!res.ok) {
+      throw new Error(`Failed to fetch: ${res.status}`)
+    }
+
+    return res.json()
+  } catch (err) {
+    console.error("Fetcher error:", err)
+    return null // 🔹 safe fallback
+  }
+}
 
 export type Organization = "PTC" | "GICC" | "ALL";
 
@@ -57,6 +73,7 @@ const defaultForm: IncidentForm = {
       correction: [],
       corrective: [],
       rootCause: "",
+      occurence: "",
       analysis: []
     },
   ],
@@ -108,9 +125,6 @@ export default function HomePage() {
   // fetch incidents based on selected org
   const { data: incidents, isLoading, isError } = useIncidents(currentPage, itemsPerPage, selectedOrg)
 
-  console.log("User data:", me)
-  console.log("Incidents data:", { incidents, isLoading, isError })
-
   const handleChange = (field: keyof IncidentForm, value: any) => {
     setForm((prev) => ({ ...prev, [field]: value }))
   }
@@ -146,7 +160,7 @@ export default function HomePage() {
     <div className="h-screen flex flex-col">
       <div>
         {/* 📝 Header (now gets role + org from /me) */}
-        <IncidentsHeader selectedOrg={selectedOrg} onSelectOrg={setSelectedOrg} role={role} userOrg={userOrg} />
+        <IncidentsHeader selectedOrg={selectedOrg} onSelectOrg={setSelectedOrg} role={role} userOrg={userOrg} email={me?.user?.email ?? ""} />
       </div>
 
       {/* 📋 Main Table */}

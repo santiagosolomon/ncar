@@ -28,7 +28,7 @@ __turbopack_context__.n(__import_unsupported(`crypto`));
 "[project]/apps/client/middleware.ts [middleware-edge] (ecmascript)", ((__turbopack_context__) => {
 "use strict";
 
-// middleware.ts
+// client/middleware.ts
 __turbopack_context__.s([
     "config",
     ()=>config,
@@ -43,23 +43,30 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modul
 const JWT_SECRET = process.env.JWT_SECRET || "supersecret";
 function middleware(req) {
     const token = req.cookies.get("token")?.value;
-    // Redirect unauthenticated users to /login
+    const { pathname } = req.nextUrl;
+    // Case 1: No token → force login
     if (!token) {
-        if (req.nextUrl.pathname !== "/login") {
+        if (pathname !== "/login") {
             return __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$esm$2f$server$2f$web$2f$exports$2f$index$2e$js__$5b$middleware$2d$edge$5d$__$28$ecmascript$29$__["NextResponse"].redirect(new URL("/login", req.url));
         }
         return __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$esm$2f$server$2f$web$2f$exports$2f$index$2e$js__$5b$middleware$2d$edge$5d$__$28$ecmascript$29$__["NextResponse"].next();
     }
     try {
         __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$jsonwebtoken$2f$index$2e$js__$5b$middleware$2d$edge$5d$__$28$ecmascript$29$__["default"].verify(token, JWT_SECRET); // validate
+        // Case 2: Already logged in but trying to go back to /login
+        if (pathname === "/login") {
+            return __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$esm$2f$server$2f$web$2f$exports$2f$index$2e$js__$5b$middleware$2d$edge$5d$__$28$ecmascript$29$__["NextResponse"].redirect(new URL("/", req.url)) // 👈 redirect to home
+            ;
+        }
         return __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$esm$2f$server$2f$web$2f$exports$2f$index$2e$js__$5b$middleware$2d$edge$5d$__$28$ecmascript$29$__["NextResponse"].next();
     } catch  {
+        // Case 3: Invalid/expired token
         return __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$esm$2f$server$2f$web$2f$exports$2f$index$2e$js__$5b$middleware$2d$edge$5d$__$28$ecmascript$29$__["NextResponse"].redirect(new URL("/login", req.url));
     }
 }
 const config = {
     matcher: [
-        "/((?!_next/static|_next/image|favicon.ico|login).*)"
+        "/((?!_next/static|_next/image|favicon.ico|api).*)"
     ]
 };
 }),

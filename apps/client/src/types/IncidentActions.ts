@@ -23,5 +23,6 @@ export type IncidentActions = {
   correction: IncidentActionItem[]
   corrective: IncidentActionItem[]
   rootCause: string
+  occurence: string
   analysis: IncidentAnalysis[]
 }

@@ -11,13 +11,13 @@ export const api = axios.create({
 
 // Add request interceptor for debugging
 api.interceptors.request.use(request => {
-  console.log('Starting Request:', request)
+  // console.log('Starting Request:', request)
   return request
 });
 
 // Add response interceptor for debugging
 api.interceptors.response.use(response => {
-  console.log('Response:', response)
+  // console.log('Response:', response)
   return response
 }, error => {
   console.error('Response Error:', error)

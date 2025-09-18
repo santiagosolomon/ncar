@@ -1,8 +1,7 @@
-//app/login/page.tsx
-
+// app/login/page.tsx
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -20,6 +19,26 @@ export default function LoginPage() {
     const [error, setError] = useState("")
     const [loading, setLoading] = useState(false)
     const router = useRouter()
+
+    // Check if user is already logged in
+    useEffect(() => {
+        const checkAuth = async () => {
+            try {
+                const res = await fetch("http://localhost:5000/api/auth/me", {
+                    credentials: "include"
+                });
+                if (res.ok) {
+                    router.replace("/");
+                }
+            } catch (err) {
+                // Not authenticated, stay on login page
+                console.error("Auth check failed:", err);
+            }
+        };
+        
+        checkAuth();
+    }, [router]);
+
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault()
@@ -39,8 +58,8 @@ export default function LoginPage() {
                 throw new Error(data.error || "Login failed")
             }
 
-            // Login success
-            router.push("/")
+            // Login success - use replace to prevent back navigation
+            router.replace("/")
         } catch (err: any) {
             setError(err.message)
         } finally {
@@ -56,7 +75,7 @@ export default function LoginPage() {
                 </CardHeader>
                 <CardContent>
                     <form onSubmit={handleSubmit} className="space-y-4">
-                        <div>
+                        <div className="space-y-1">
                             <Label htmlFor="email">Email</Label>
                             <Input
                                 id="email"
@@ -66,7 +85,7 @@ export default function LoginPage() {
                                 required
                             />
                         </div>
-                        <div>
+                        <div className="space-y-1">
                             <Label htmlFor="password">Password</Label>
                             <Input
                                 id="password"
@@ -79,7 +98,7 @@ export default function LoginPage() {
                         {error && <p className="text-red-500 text-sm">{error}</p>}
                         <Button
                             type="submit"
-                            className="w-full"
+                            className="w-full bg-blue-600 hover:bg-blue-500 cursor-pointer"
                             disabled={loading}
                         >
                             {loading ? "Logging in..." : "Login"}

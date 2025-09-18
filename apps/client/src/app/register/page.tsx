@@ -62,7 +62,7 @@ export default function RegisterPage() {
               {error}
             </div>
           )}
-          <div>
+          <div className="space-y-1">
 
 
             <Label htmlFor="email">Email</Label>
@@ -76,7 +76,7 @@ export default function RegisterPage() {
             />
           </div>
 
-          <div>
+          <div className="space-y-1">
             <Label htmlFor="password">Password</Label>
             <Input
               id="password"
@@ -88,13 +88,14 @@ export default function RegisterPage() {
             />
           </div>
 
-          <div>
+          <div className="space-y-1">
             <Label htmlFor="organization">Organization</Label>
             <Select
+            
               value={formData.organization}
               onValueChange={handleOrganizationChange}
             >
-              <SelectTrigger>
+              <SelectTrigger className="w-full">
                 <SelectValue placeholder="Select organization" />
               </SelectTrigger>
               <SelectContent>
@@ -122,12 +123,12 @@ export default function RegisterPage() {
             </Select>
           </div> */}
 
-          <Button type="submit" className="w-full">
-            Register
+          <Button type="submit" className="w-full bg-blue-600 hover:bg-blue-500 cursor-pointer">
+            Sign up
           </Button>
         </form>
 
-        <p className="mt-4 text-center text-sm">
+        <p className="mt-6 text-center text-sm">
           Already have an account?{' '}
           <a href="/login" className="text-blue-600 hover:underline">
             Log in

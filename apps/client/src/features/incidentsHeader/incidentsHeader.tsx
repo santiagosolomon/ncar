@@ -14,15 +14,17 @@ import {
 } from "@/components/ui/dropdown-menu"
 import { Menu } from "lucide-react"
 import { useRouter } from "next/navigation"
+import { cn } from "@/lib/utils"
 
 interface Props {
   selectedOrg: "PTC" | "GICC" | "ALL"
   onSelectOrg: (org: "PTC" | "GICC" | "ALL") => void
   role: "admin" | "user"
   userOrg: "PTC" | "GICC" | "ALL"
+  email: string
 }
 
-export default function IncidentsHeader({ selectedOrg, onSelectOrg, role, userOrg }: Props) {
+export default function IncidentsHeader({ selectedOrg, onSelectOrg, role, userOrg, email }: Props) {
 
   const [error, setError] = useState('');
   const router = useRouter()
@@ -54,8 +56,8 @@ export default function IncidentsHeader({ selectedOrg, onSelectOrg, role, userOr
   return (
     <header className="flex justify-between items-center bg-white border-b px-6 py-3 shadow-sm ">
 
-      <div className="font-mono text-gray-700">
-        <h1>{selectedOrg}</h1>
+      <div className=" text-gray-700 font-bold tracking-wider">
+        <h1>{selectedOrg == "ALL" ? "NCAR" : selectedOrg}</h1>
       </div>
       {/* 🍔 Hamburger menu */}
       <DropdownMenu>
@@ -65,17 +67,26 @@ export default function IncidentsHeader({ selectedOrg, onSelectOrg, role, userOr
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end" className="w-40">
-          <DropdownMenuLabel>Organization</DropdownMenuLabel>
+          <DropdownMenuLabel className="text-xs text-muted-foreground">
+            Signed in as
+          </DropdownMenuLabel>
+          <div className="px-2 py-1 text-sm text-foreground truncate font-medium">
+            {email}
+          </div>
           <DropdownMenuSeparator />
-
+          <DropdownMenuLabel>Organization</DropdownMenuLabel>
           {availableOrgs.map((org) => (
-            <DropdownMenuItem key={org} onClick={() => onSelectOrg(org as any)}>
+            <DropdownMenuItem
+              key={org}
+              onClick={() => onSelectOrg(org as any)}
+              className={cn(selectedOrg === org && "bg-gray-100")}
+            >
               {selectedOrg === org ? "✓ " : ""} {org}
             </DropdownMenuItem>
           ))}
 
           <DropdownMenuSeparator />
-          <DropdownMenuItem onClick={handleLogout} className="text-red-600">
+          <DropdownMenuItem onClick={handleLogout} className="text-red-600 cursor-pointer">
             Logout
           </DropdownMenuItem>
         </DropdownMenuContent>
