@@ -11,11 +11,11 @@ import {
 } from "@/components/ui/drawer"
 import { Button } from "@/components/ui/button"
 import { IncidentActions } from "@/types/IncidentActions"
-import { IncidentActionsTable } from "@/features/incidentsTable/components/IncidentActions"
+import IncidentActionTable from "@/features/incidentsTable/components/IncidentActionTable"
 
 interface IncidentActionsDrawerProps {
-  details: IncidentActions[]
-  setDetails: (updater: (prev: IncidentActions[]) => IncidentActions[]) => void
+  details: IncidentActions
+  setDetails: (updater: (prev: IncidentActions) => IncidentActions) => void
 }
 
 export function IncidentActionsDrawer({ details, setDetails }: IncidentActionsDrawerProps) {
@@ -24,18 +24,16 @@ export function IncidentActionsDrawer({ details, setDetails }: IncidentActionsDr
       <DrawerTrigger className="cursor-pointer" asChild>
         <Button variant="outline">View Action</Button>
       </DrawerTrigger>
-     
-        <DrawerContent className=" inset-y-[-10px] fixed  ">
-          <DrawerHeader >
-            <DrawerTitle>Incident Correction Action</DrawerTitle>
-          </DrawerHeader>
 
-          {/* Scrollable area */}
-          <div className="px-6 pb-6 overflow-x-auto ">
-            <IncidentActionsTable details={details} setDetails={setDetails} />
-          </div>
-        </DrawerContent>
-    
+      <DrawerContent className="inset-y-[-10px] fixed">
+        <DrawerHeader>
+          <DrawerTitle>Incident Correction Action</DrawerTitle>
+        </DrawerHeader>
+
+        <div className="px-6 pb-6 overflow-x-auto">
+          <IncidentActionTable details={details} setDetails={setDetails} />
+        </div>
+      </DrawerContent>
     </Drawer>
   )
 }

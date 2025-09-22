@@ -103,12 +103,25 @@ export default function IncidentModal({ onClose, form, setForm, editingId, defau
             incidentIssuesSelection: updater(prev.incidentIssuesSelection ?? {})
         }))
     }
-    const setIncidentActions = (updater: (prev: IncidentActions[]) => IncidentActions[]) => {
-        setForm(prev => ({ ...prev, incidentActions: updater(prev.incidentActions) }))
-    }
+
     const setIncidentEvaluation = (updater: (prev: IncidentEvaluation[]) => IncidentEvaluation[]) => {
         setForm(prev => ({ ...prev, incidentEvaluation: updater(prev.incidentEvaluation) }))
     }
+    const setIncidentActions = (updater: (prev: IncidentActions) => IncidentActions) => {
+        setForm(prev => ({
+            ...prev,
+            incidentActions: [updater(prev.incidentActions[0] || {
+                tempId: crypto.randomUUID(),
+                correction: [],
+                corrective: [],
+                occurence: "",
+                consequence: "",
+                rootCause: "",
+                analysis: []
+            })]
+        }))
+    }
+
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault()
@@ -374,7 +387,18 @@ export default function IncidentModal({ onClose, form, setForm, editingId, defau
             <div className="flex gap-2">
                 <IncidentDetailsDrawer details={form.incidentDetails} setDetails={setIncidentDetails} />
                 <IncidentIssuesDrawer details={form.incidentIssues} setDetails={setIncidentIssues} issuesSelection={form.incidentIssuesSelection ?? {}} setIssuesSelection={setIncidentIssuesSelection} />
-                <IncidentActionsDrawer details={form.incidentActions} setDetails={setIncidentActions} />
+                <IncidentActionsDrawer
+                    details={form.incidentActions[0] || {
+                        tempId: crypto.randomUUID(),
+                        correction: [],
+                        corrective: [],
+                        occurence: "",
+                        consequence: "",
+                        rootCause: "",
+                        analysis: []
+                    }}
+                    setDetails={setIncidentActions}
+                />
                 <IncidentEvaluationDrawer details={form.incidentEvaluation} setDetails={setIncidentEvaluation} />
             </div>
 

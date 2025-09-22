@@ -2,6 +2,7 @@
 
 import { Request, Response } from "express"
 import { Incident } from "../models/Incident"
+import { sendIncidentEmail } from "../utils/sendIncidentEmail"
 
 // controllers/incidentCtrl.ts
 export const getIncidents = async (req: Request, res: Response) => {
@@ -68,6 +69,17 @@ export const addIncident = async (req: Request, res: Response) => {
       ...incidentData,
       organization: finalOrg,
     });
+
+    await incident.save();
+
+    // 🔹 Send Outlook email after saving
+    try {
+      await sendIncidentEmail(incident);
+    } catch (emailErr) {
+      console.error("Incident saved but failed to send email:", emailErr);
+      // Optional: don’t fail the request if email fails
+    }
+
 
     await incident.save();
     res.status(201).json(incident);

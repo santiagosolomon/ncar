@@ -67,16 +67,15 @@ const defaultForm: IncidentForm = {
   incidentDetails: [],
   incidentIssues: [],
   incidentIssuesSelection: {},
-  incidentActions: [
-    {
-      tempId: crypto.randomUUID(),
-      correction: [],
-      corrective: [],
-      rootCause: "",
-      occurence: "",
-      analysis: []
-    },
-  ],
+  incidentActions: [{
+    tempId: crypto.randomUUID(),
+    correction: [],
+    corrective: [],
+    occurence: "",
+    consequence: "",
+    rootCause: "",
+    analysis: []
+  }],
   incidentEvaluation: [
     {
       tempId: crypto.randomUUID(),

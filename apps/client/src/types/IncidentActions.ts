@@ -1,6 +1,8 @@
 // types/IncidentActions.ts
 
 export type IncidentActionItem = {
+  tempId?: string
+  _id?: string
   actionTaken: string
   personResponsible: string
   timeTable: Date
@@ -9,6 +11,8 @@ export type IncidentActionItem = {
 }
 
 export type IncidentAnalysis = {
+  tempId?: string
+  _id?: string
   why: string
   probableRootCause?: string
   counterMeasure: string
@@ -22,7 +26,8 @@ export type IncidentActions = {
   _id?: string
   correction: IncidentActionItem[]
   corrective: IncidentActionItem[]
-  rootCause: string
   occurence: string
+  consequence: string
+  rootCause: string
   analysis: IncidentAnalysis[]
 }
