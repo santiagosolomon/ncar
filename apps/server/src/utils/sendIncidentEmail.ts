@@ -1,8 +1,9 @@
 // utils/sendIncidentEmail.ts
-import { transporter } from "./mailer";
+import { createTransporter } from "./mailer";
 import { getRecipients } from "./recipients";
 
 export async function sendIncidentEmail(incident: any) {
+  const transporter = createTransporter();
   const recipients = getRecipients(incident.concernType);
 
   const subject = `Incident Report - Ref No: ${incident.refNo || "N/A"}`;
@@ -15,19 +16,18 @@ export async function sendIncidentEmail(incident: any) {
 
     <p><b>Description:</b></p>
     <p>${incident.description}</p>
-
-    <p><b>Deviation Raised:</b> ${incident.concernName || ""}</p>
-
-    <br/>
     <p>Prepared by: ${incident.reportingEmployee}</p>
     <br/>
     <p><i>Note: This mail was sent automatically via NCAR System for notification purposes only. Reply is not necessary.</i></p>
   `;
 
   await transporter.sendMail({
-    from: process.env.OUTLOOK_USER,
+    from: "monsantiago09@gmail.com", // ✅ must be verified in Gmail
     to: recipients.join(", "),
     subject,
     html,
   });
+
+  console.log(`📧 Incident email sent to: ${recipients.join(", ")}`);
 }
+

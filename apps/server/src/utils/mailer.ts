@@ -1,17 +1,19 @@
-// utils/mailer.ts
 import nodemailer from "nodemailer";
 
+export function createTransporter() {
+  if (!process.env.GMAIL_USER || !process.env.GMAIL_PASS) {
+    throw new Error("❌ Missing GMAIL_USER or GMAIL_PASS in .env");
+  }
 
-// 🔍 Debug env values
-console.log("SMTP user:", process.env.OUTLOOK_USER);
-console.log("SMTP pass:", process.env.OUTLOOK_PASS ? "******" : "MISSING");
+  console.log("📨 Creating Gmail transporter with user:", process.env.GMAIL_USER);
 
-export const transporter = nodemailer.createTransport({
-  host: "smtp.office365.com",
-  port: 587,
-  secure: false, // STARTTLS
-  auth: {
-    user: process.env.OUTLOOK_USER, // e.g. dein.peter@petbowe.com.ph
-    pass: process.env.OUTLOOK_PASS, // app password or actual password
-  },
-});
+  return nodemailer.createTransport({
+    host: "smtp.gmail.com",
+    port: 587,
+    secure: false, // STARTTLS
+    auth: {
+      user: process.env.GMAIL_USER, // Server token
+      pass: process.env.GMAIL_PASS, // Same token again
+    },
+  });
+}

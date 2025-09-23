@@ -5573,7 +5573,7 @@ function IncidentActionTable(param) {
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$label$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Label"], {
                         className: "block text-sm font-medium text-gray-700 mb-2",
-                        children: "Consequence"
+                        children: "Deal with the Consequences"
                     }, void 0, false, {
                         fileName: "[project]/apps/client/src/features/incidentsTable/components/IncidentActionTable.tsx",
                         lineNumber: 65,
@@ -5623,7 +5623,7 @@ function IncidentActionTable(param) {
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$features$2f$incidentsTable$2f$components$2f$IncidentAnalysisTableLogic$2f$IncidentAnalysisTableLogic$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["IncidentAnalysisTableLogic"], {
-                title: "Analysis",
+                title: "Root Cause Analysis",
                 details: (_details_analysis = details.analysis) !== null && _details_analysis !== void 0 ? _details_analysis : [],
                 setDetails: setAnalysis
             }, void 0, false, {
@@ -6938,7 +6938,7 @@ function IncidentEvaluationTable(param) {
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "mt-6",
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$features$2f$incidentsTable$2f$components$2f$evaluationDocumentationTable$2f$evaluationDocumentationTable$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["DocumentationTable"], {
-                            title: "Changes to System Documentation (If Applicable)",
+                            title: "Changes to System Documentation (QMS/Risk Register)",
                             items: row.documentation,
                             onChange: (items)=>updateRow(row._id || row.tempId, (r)=>({
                                         ...r,

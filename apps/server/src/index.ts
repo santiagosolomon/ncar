@@ -1,8 +1,8 @@
 // apps/server/src/index.ts
-
+import dotenv from "dotenv"
+dotenv.config()
 import express, { Request, Response } from "express"
 import mongoose from "mongoose"
-import dotenv from "dotenv"
 import cors from "cors"
 import cookieParser from "cookie-parser";
 
@@ -10,7 +10,10 @@ import cookieParser from "cookie-parser";
 import incidentRoutes from "./routes/incidents"
 import authRoutes from "./routes/authRoutes"
 
-dotenv.config()
+
+
+// console.log("Loaded OUTLOOK_USER:", process.env.OUTLOOK_USER);
+// console.log("Loaded OUTLOOK_PASS:", process.env.OUTLOOK_PASS ? "******" : "MISSING");
 
 const app = express()
 const PORT = process.env.PORT || 5000

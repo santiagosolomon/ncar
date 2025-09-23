@@ -63,7 +63,7 @@ export default function IncidentActionTable({ details, setDetails }: Props) {
             {/* Consequence */}
             <div className="">
                 <Label className="block text-sm font-medium text-gray-700 mb-2">
-                    Consequence
+                    Deal with the Consequences
                 </Label>
                 <Textarea
                     className="w-full min-h-[100px] border rounded-md px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
@@ -86,7 +86,7 @@ export default function IncidentActionTable({ details, setDetails }: Props) {
                 />
             </div>
             {/* Analysis */}
-            <IncidentAnalysisTableLogic title="Analysis" details={details.analysis ?? []} setDetails={setAnalysis} />
+            <IncidentAnalysisTableLogic title="Root Cause Analysis" details={details.analysis ?? []} setDetails={setAnalysis} />
 
         </div>
     )

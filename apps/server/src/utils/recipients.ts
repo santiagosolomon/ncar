@@ -1,29 +1,30 @@
 // utils/recipients.ts
 const commonRecipients = [
-    //   "dein.peter@petbowe.com.ph",
-    // "junnel.montelibano@petbowe.com.ph",
-    //   "kenneth.cruz@petbowe.com.ph",
-    //   "paul.cuaresma@petbowe.com.ph",
-    //   "ybeth@petbowe.com.ph",
-    //   "sheena.palmon@petbowe.com.ph",
-    //   "vher@petbowe.com.ph",
-    //   "rea.siwa@petbowe.com.ph",
-    //   "katherine.valena@petbowe.com.ph",
-    //   "jocelyn@petbowe.com.ph",
-    //   "sernan.mercado@petbowe.com.ph",
-    //   "jay.delafuente@petbowe.com.ph",
+    "dein.petertest@gmail.com",
+    "junnel.montelibanotest@gmail.com",
+    "kenneth.cruztest@gmail.com",
+    "paul.cuaresmatest@gmail.com",
+    "ybethtest@gmail.com",
+    "sheena.palmontest@gmail.com",
+    "vhertest@gmail.com",
+    "rea.siwatest@gmail.com",
+    "katherine.valenatest@gmail.com",
+    "jocelyntest@gmail.com",
+    "sernan.mercadotest@gmail.com",
+    "jay.delafuentetest@gmail.com",
     "solomon.santiago@petbowe.com.ph",
-    //   "liza.antonio@petbowe.com.ph",
-    //   "rodolfo.concepcion@petbowe.com.ph",
-    //   "joshua.deleon@petbowe.com.ph",
+    "liza.antoniotest@gmail.com",
+    "rodolfo.concepciontest@gmail.com",
+    "joshua.deleontest@gmail.com",
+    "monsantiago09@gmail.com"
 ];
 
 const customerExtra = [
     //   "miles@petbowe.com.ph",
-    //   "rafa@petbowe.com.ph",
-    //   "mel@petbowe.com.ph",
-    //   "merry.dejesus@petbowe.com.ph",
-    "junnel.montelibano@petbowe.com.ph",
+    "rafatest@gmail.com",
+    "melatest@gmail.com",
+    "merry.dejesustest@gmail.com",
+    "junnel.montelibanotest@petbowe.com.ph",
 ];
 
 export function getRecipients(concernType: string) {

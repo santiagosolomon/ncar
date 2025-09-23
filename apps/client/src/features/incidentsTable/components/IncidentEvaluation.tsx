@@ -42,7 +42,7 @@ export function IncidentEvaluationTable({ details = [], setDetails }: IncidentEv
                     {/* Documentation */}
                     <div className="mt-6">
                         <DocumentationTable
-                            title="Changes to System Documentation (If Applicable)"
+                            title="Changes to System Documentation (QMS/Risk Register)"
                             items={row.documentation}
                             onChange={(items) => updateRow(row._id || row.tempId!, r => ({ ...r, documentation: items }))}
                         />
