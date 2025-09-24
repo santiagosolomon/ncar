@@ -2603,6 +2603,11 @@
     }
   }
 
+  .dark\:border-2:is(.dark *) {
+    border-style: var(--tw-border-style);
+    border-width: 2px;
+  }
+
   .dark\:border-gray-700:is(.dark *) {
     border-color: var(--color-gray-700);
   }
