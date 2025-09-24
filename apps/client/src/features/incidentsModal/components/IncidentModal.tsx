@@ -334,7 +334,7 @@ export default function IncidentModal({ onClose, form, setForm, editingId, defau
             </div>
 
             {/* Radio Group */}
-            <div className="p-4 border rounded-lg w-full bg-white">
+            <div className="p-4 border rounded-lg w-full bg-white dark:bg-gray-700">
                 <Label className="mb-4 ">Module of Purchase</Label>
                 <RadioGroup
                     value={form.moduleOfPurchase}
@@ -357,7 +357,7 @@ export default function IncidentModal({ onClose, form, setForm, editingId, defau
             </div>
 
             {/* Delivery Type */}
-            <div className="p-4 border rounded-lg w-full bg-white mb-8">
+            <div className="p-4 border rounded-lg w-full bg-white mb-8 dark:bg-gray-700">
                 <Label className="mb-4 ">Type of Delivery</Label>
                 <RadioGroup
                     value={form.typeOfDelivery}

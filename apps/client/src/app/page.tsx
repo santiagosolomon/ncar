@@ -156,7 +156,7 @@ export default function HomePage() {
   if (meError) return <p className="text-red-500">Failed to fetch user info</p>
 
   return (
-    <div className="h-screen flex flex-col">
+    <div className="h-screen flex flex-col dark:bg-gray-900 dark:text-white">
       <div>
         {/* 📝 Header (now gets role + org from /me) */}
         <IncidentsHeader selectedOrg={selectedOrg} onSelectOrg={setSelectedOrg} role={role} userOrg={userOrg} email={me?.user?.email ?? ""} />

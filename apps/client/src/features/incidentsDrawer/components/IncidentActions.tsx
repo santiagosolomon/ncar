@@ -25,12 +25,12 @@ export function IncidentActionsDrawer({ details, setDetails }: IncidentActionsDr
         <Button variant="outline">View Action</Button>
       </DrawerTrigger>
 
-      <DrawerContent className="inset-y-[-10px] fixed">
+      <DrawerContent className="inset-y-[-10px] fixed dark:bg-black">
         <DrawerHeader>
           <DrawerTitle>Incident Correction Action</DrawerTitle>
         </DrawerHeader>
 
-        <div className="px-6 pb-6 overflow-x-auto">
+        <div className="px-6 pb-6 overflow-x-auto ">
           <IncidentActionTable details={details} setDetails={setDetails} />
         </div>
       </DrawerContent>

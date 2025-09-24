@@ -12,7 +12,7 @@ import {
 import { Button } from "@/components/ui/button"
 import { IncidentEvaluation } from "@/types/IncidentEvaluation"
 import { IncidentEvaluationTable } from "@/features/incidentsTable/components/IncidentEvaluation"
-import { IncidentActionsTable } from "@/features/incidentsTable/components/IncidentActions"
+
 
 interface IncidentEvaluationDrawerProps {
   details: IncidentEvaluation[]
@@ -26,7 +26,7 @@ export function IncidentEvaluationDrawer({ details, setDetails }: IncidentEvalua
         <Button variant="outline">View Evaluation</Button>
       </DrawerTrigger>
      
-        <DrawerContent >
+        <DrawerContent className="dark:bg-black">
           <DrawerHeader className="px-6 py-4 ">
             <DrawerTitle>Incident Evaluation</DrawerTitle>
           </DrawerHeader>

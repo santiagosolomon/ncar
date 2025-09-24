@@ -134,7 +134,7 @@ export function IncidentAnalysisTableLogic({ details, setDetails, title }: Props
 
       <div className="overflow-x-auto">
         <table className="min-w-full border text-sm text-left">
-          <thead className="bg-gray-100">
+          <thead className="bg-gray-100 dark:bg-gray-800">
             <tr>
               <th className="px-2 py-2 border">Why?</th>
               <th className="px-2 py-2 border">Probable Root Cause</th>
@@ -152,7 +152,7 @@ export function IncidentAnalysisTableLogic({ details, setDetails, title }: Props
               return (
                 <tr
                   key={row._id || row.tempId || index}
-                  className="odd:bg-white even:bg-gray-50"
+                  className="odd:bg-white even:bg-gray-50 dark:odd:bg-gray-700 dark:even:bg-gray-600"
                 >
                   <td className="px-2 py-2 border">{renderCell(row, "why")}</td>
                   <td className="px-2 py-2 border">{renderCell(row, "probableRootCause")}</td>

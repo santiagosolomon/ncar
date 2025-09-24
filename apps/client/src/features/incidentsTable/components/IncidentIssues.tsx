@@ -102,7 +102,7 @@ export function IncidentIssuesTable({ details, setDetails, issuesSelection = {},
 
         <div className="overflow-x-auto">
           <table className="min-w-full text-sm text-left ">
-            <thead className="bg-gray-100">
+            <thead className="bg-gray-100 dark:bg-gray-800">
               <tr>
                 <th className="px-4 py-2 border">Gross Weight</th>
                 <th className="px-4 py-2 border">Net Weight</th>
@@ -115,7 +115,7 @@ export function IncidentIssuesTable({ details, setDetails, issuesSelection = {},
                 const isEditing = editingId === (row._id || row.tempId)
                 const isDeleting = deleteConfirmId === (row._id || row.tempId)
                 return (
-                  <tr key={row._id || row.tempId} className="odd:bg-white even:bg-gray-50">
+                  <tr key={row._id || row.tempId} className="odd:bg-white even:bg-gray-50  dark:odd:bg-gray-700 dark:even:bg-gray-600">
                     <td className="px-4 py-2 border">{renderCell(row, "grossWeight")}</td>
                     <td className="px-4 py-2 border">{renderCell(row, "netWeight")}</td>
                     <td className="px-4 py-2 border">{renderCell(row, "tareWeight")}</td>
@@ -151,7 +151,7 @@ export function IncidentIssuesTable({ details, setDetails, issuesSelection = {},
                 )
               })}
               {newRow && (
-                <tr className="bg-yellow-50">
+                <tr className="bg-yellow-50 ">
                   {Object.keys(newRow).filter(f => f !== "tempId" && f !== "_id").map(field => (
                     <td className="px-4 py-2 border" key={field}>
                       <Input

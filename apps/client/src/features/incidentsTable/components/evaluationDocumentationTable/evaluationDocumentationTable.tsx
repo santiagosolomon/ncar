@@ -156,7 +156,7 @@ export function DocumentationTable({ title, items, onChange }: Props) {
 
       <div className="overflow-x-auto">
         <table className="min-w-full border text-sm text-left">
-          <thead className="bg-gray-100">
+          <thead className="bg-gray-100 dark:bg-gray-800">
             <tr>
               <th className="px-2 py-2 border">Followed Up By</th>
               <th className="px-2 py-2 border">Date</th>
@@ -169,7 +169,7 @@ export function DocumentationTable({ title, items, onChange }: Props) {
               const isEditing = editingId === String(idx)
               const isDeleting = deleteConfirmId === String(idx)
               return (
-                <tr key={idx} className="odd:bg-white even:bg-gray-50">
+                <tr key={idx} className="odd:bg-white even:bg-gray-50 dark:odd:bg-gray-700 dark:even:bg-gray-600">
                   <td className="px-2 py-2 border">{renderCell(row, "followedUpBy")}</td>
                   <td className="px-2 py-2 border">{renderCell(row, "date")}</td>
                   <td className="px-2 py-2 border">{renderCell(row, "remarks")}</td>

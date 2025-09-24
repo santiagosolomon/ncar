@@ -12,6 +12,8 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
+import { ThemeToggle } from "@/components/ThemeToggle";
+
 import { Menu } from "lucide-react"
 import { useRouter } from "next/navigation"
 import { cn } from "@/lib/utils"
@@ -54,43 +56,48 @@ export default function IncidentsHeader({ selectedOrg, onSelectOrg, role, userOr
       : [userOrg]
 
   return (
-    <header className="flex justify-between items-center bg-white border-b px-6 py-3 shadow-sm ">
+    <header className="flex justify-between items-center dark:bg-gray-800 dark:text-white bg-white border-b px-6 py-3 shadow-sm ">
 
-      <div className=" text-gray-700 font-bold tracking-wider">
+      <div className=" text-gray-700 font-bold tracking-wider dark:text-white">
         <h1>{selectedOrg == "ALL" ? "NCAR" : selectedOrg}</h1>
       </div>
-      {/* 🍔 Hamburger menu */}
-      <DropdownMenu>
-        <DropdownMenuTrigger asChild>
-          <Button variant="ghost" size="icon" className="cursor-pointer">
-            <Menu className="h-6 w-6" />
-          </Button>
-        </DropdownMenuTrigger>
-        <DropdownMenuContent align="end" className="w-40">
-          <DropdownMenuLabel className="text-xs text-muted-foreground">
-            Signed in as
-          </DropdownMenuLabel>
-          <div className="px-2 py-1 text-sm text-foreground truncate font-medium">
-            {email}
-          </div>
-          <DropdownMenuSeparator />
-          <DropdownMenuLabel>Organization</DropdownMenuLabel>
-          {availableOrgs.map((org) => (
-            <DropdownMenuItem
-              key={org}
-              onClick={() => onSelectOrg(org as any)}
-              className={cn(selectedOrg === org && "bg-gray-100")}
-            >
-              {selectedOrg === org ? "✓ " : ""} {org}
-            </DropdownMenuItem>
-          ))}
+      <div className="flex ">
+        <div className="border-none">
+          <ThemeToggle />
+        </div>
+        {/* 🍔 Hamburger menu */}
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+            <Button variant="ghost" size="icon" className="cursor-pointer">
+              <Menu className="h-6 w-6" />
+            </Button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent align="end" className="w-40">
+            <DropdownMenuLabel className="text-xs text-muted-foreground">
+              Signed in as
+            </DropdownMenuLabel>
+            <div className="px-2 py-1 text-sm text-foreground truncate font-medium">
+              {email}
+            </div>
+            <DropdownMenuSeparator />
+            <DropdownMenuLabel>Organization</DropdownMenuLabel>
+            {availableOrgs.map((org) => (
+              <DropdownMenuItem
+                key={org}
+                onClick={() => onSelectOrg(org as any)}
+                className={cn(selectedOrg === org && "bg-gray-100 dark:bg-gray-700")}
+              >
+                {selectedOrg === org ? "✓ " : ""} {org}
+              </DropdownMenuItem>
+            ))}
 
-          <DropdownMenuSeparator />
-          <DropdownMenuItem onClick={handleLogout} className="text-red-600 cursor-pointer">
-            Logout
-          </DropdownMenuItem>
-        </DropdownMenuContent>
-      </DropdownMenu>
+            <DropdownMenuSeparator />
+            <DropdownMenuItem onClick={handleLogout} className="text-red-600 cursor-pointer">
+              Logout
+            </DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
+      </div>
     </header>
   )
 }

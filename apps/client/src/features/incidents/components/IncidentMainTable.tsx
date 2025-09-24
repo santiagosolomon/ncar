@@ -44,10 +44,10 @@ export default function IncidentMainTable({
   const endIdx = data.length > 0 ? startIdx + data.length - 1 : 0;
 
   return (
-    <div className="w-full overflow-x-auto rounded-lg border shadow-sm">
+    <div className="w-full overflow-x-auto rounded-lg border shadow-sm dark:text-white dark:border-gray-700">
       <Table>
         <TableHeader>
-          <TableRow>
+          <TableRow className="transition-none">
             <TableHead>Ref. No.</TableHead>
             <TableHead>Description</TableHead>
           </TableRow>
@@ -56,10 +56,10 @@ export default function IncidentMainTable({
           {data.map((incident) => (
             <TableRow
               key={incident._id}
-              className={clsx("cursor-pointer hover:bg-gray-50", editingIncident?._id === incident._id ? "bg-blue-50" : "")}
+              className={clsx("cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-700 transition-none", editingIncident?._id === incident._id ? "bg-blue-50 dark:bg-blue-600" : "")}
               onClick={() => onRowClick(incident)}
             >
-              <TableCell>{incident.refNo}</TableCell> 
+              <TableCell>{incident.refNo}</TableCell>
               <TableCell>{incident.description}</TableCell>
             </TableRow>
           ))}
@@ -81,7 +81,7 @@ export default function IncidentMainTable({
               value={String(itemsPerPage)}
               onValueChange={(val) => onItemsPerPageChange(Number(val))}
             >
-              <SelectTrigger className="w-[80px]">
+              <SelectTrigger className="w-[80px] transition-none">
                 <SelectValue />
               </SelectTrigger>
               <SelectContent>
@@ -101,22 +101,22 @@ export default function IncidentMainTable({
               size="sm"
               onClick={() => onPageChange(Math.max(1, currentPage - 1))}
               disabled={currentPage === 1}
-              className="cursor-pointer"
+              className="cursor-pointer transition-none"
             >
-            <LuChevronLeft />
+              <LuChevronLeft />
             </Button>
 
             <Select
               value={String(currentPage)}
               onValueChange={(val) => onPageChange(Number(val))}
             >
-              <SelectTrigger >
+              <SelectTrigger className="transition-none">
                 <SelectValue />
               </SelectTrigger>
               <SelectContent>
                 {Array.from({ length: totalPages }, (_, i) => i + 1).map((p) => (
                   <SelectItem key={p} value={String(p)}>
-                     {p}
+                    {p}
                   </SelectItem>
                 ))}
               </SelectContent>
@@ -129,9 +129,9 @@ export default function IncidentMainTable({
               size="sm"
               onClick={() => onPageChange(Math.min(totalPages, currentPage + 1))}
               disabled={currentPage === totalPages}
-              className="cursor-pointer"
+              className="cursor-pointer transition-none"
             >
-             <LuChevronRight />
+              <LuChevronRight />
             </Button>
           </div>
         </div>

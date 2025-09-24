@@ -91,7 +91,7 @@ export function IncidentDetailsTable({ details, setDetails }: Props) {
     }
 
     return (
-        <div className="border p-4 rounded-md shadow-sm">
+        <div className="border p-4 rounded-md shadow-sm ">
             <div className="flex justify-end mb-2">
                 <Button size="sm" variant="outline" className="cursor-pointer" onClick={startAdd} disabled={!!newRow}>
                     <Plus className="w-4 h-4" /> Add
@@ -100,7 +100,7 @@ export function IncidentDetailsTable({ details, setDetails }: Props) {
 
             <div className="overflow-x-auto">
                 <table className="min-w-full border text-sm text-left">
-                    <thead className="bg-gray-100">
+                    <thead className="bg-gray-100 dark:bg-gray-800">
                         <tr>
                             <th className="px-2 py-2 border">Type</th>
                             <th className="px-2 py-2 border">Deviation</th>
@@ -122,7 +122,7 @@ export function IncidentDetailsTable({ details, setDetails }: Props) {
                             return (
                                 <tr
                                     key={row._id || row.tempId}
-                                    className="odd:bg-white even:bg-gray-50"
+                                    className="odd:bg-white even:bg-gray-50 dark:odd:bg-gray-700 dark:even:bg-gray-600"
                                 >
                                     <td className="px-2 py-2 border">{renderCell(row, "type")}</td>
                                     <td className="px-2 py-2 border">{renderCell(row, "deviation")}</td>
@@ -193,7 +193,7 @@ export function IncidentDetailsTable({ details, setDetails }: Props) {
                         })}
 
                         {newRow && (
-                            <tr className="bg-yellow-50">
+                            <tr className="bg-yellow-50 ">
                                 {Object.keys(newRow)
                                     .filter(f => f !== "tempId" && f !== "_id")
                                     .map(field => (

@@ -40,7 +40,7 @@ export default function IncidentActionTable({ details, setDetails }: Props) {
     }
 
     return (
-        <div className="p-6  border rounded-lg bg-white shadow-sm flex flex-col gap-5">
+        <div className="p-6  border rounded-lg bg-white shadow-sm flex flex-col gap-5 dark:bg-black">
             {/* Correction */}
             <IncidentActionTableLogic title="Correction" details={details.correction ?? []} setDetails={setCorrection} />
 
