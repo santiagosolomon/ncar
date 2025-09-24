@@ -5519,7 +5519,7 @@ function IncidentActionTable(param) {
                 consequence: value
             }));
     };
-    var _details_correction, _details_corrective, _details_occurence, _details_consequence, _details_rootCause, _details_analysis;
+    var _details_correction, _details_consequence, _details_analysis, _details_rootCause, _details_occurence, _details_corrective;
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         className: "p-6  border rounded-lg bg-white shadow-sm flex flex-col gap-5",
         children: [
@@ -5532,42 +5532,6 @@ function IncidentActionTable(param) {
                 lineNumber: 45,
                 columnNumber: 13
             }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$features$2f$incidentsTable$2f$components$2f$IncidentActionTableLogic$2f$IncidentActionTableLogic$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["IncidentActionTableLogic"], {
-                title: "Corrective",
-                details: (_details_corrective = details.corrective) !== null && _details_corrective !== void 0 ? _details_corrective : [],
-                setDetails: setCorrective
-            }, void 0, false, {
-                fileName: "[project]/apps/client/src/features/incidentsTable/components/IncidentActionTable.tsx",
-                lineNumber: 48,
-                columnNumber: 13
-            }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "",
-                children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$label$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Label"], {
-                        className: "block text-sm font-medium text-gray-700 mb-2",
-                        children: "Occurrence"
-                    }, void 0, false, {
-                        fileName: "[project]/apps/client/src/features/incidentsTable/components/IncidentActionTable.tsx",
-                        lineNumber: 52,
-                        columnNumber: 17
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$textarea$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Textarea"], {
-                        className: "w-full min-h-[100px] border rounded-md px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent",
-                        placeholder: "Describe the occurrence...",
-                        value: (_details_occurence = details.occurence) !== null && _details_occurence !== void 0 ? _details_occurence : "",
-                        onChange: (e)=>setOccurrence(e.target.value)
-                    }, void 0, false, {
-                        fileName: "[project]/apps/client/src/features/incidentsTable/components/IncidentActionTable.tsx",
-                        lineNumber: 55,
-                        columnNumber: 17
-                    }, this)
-                ]
-            }, void 0, true, {
-                fileName: "[project]/apps/client/src/features/incidentsTable/components/IncidentActionTable.tsx",
-                lineNumber: 51,
-                columnNumber: 13
-            }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "",
                 children: [
@@ -5576,7 +5540,7 @@ function IncidentActionTable(param) {
                         children: "Deal with the Consequences"
                     }, void 0, false, {
                         fileName: "[project]/apps/client/src/features/incidentsTable/components/IncidentActionTable.tsx",
-                        lineNumber: 65,
+                        lineNumber: 49,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$textarea$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Textarea"], {
@@ -5584,6 +5548,42 @@ function IncidentActionTable(param) {
                         placeholder: "Describe the consequence...",
                         value: (_details_consequence = details.consequence) !== null && _details_consequence !== void 0 ? _details_consequence : "",
                         onChange: (e)=>setConsequence(e.target.value)
+                    }, void 0, false, {
+                        fileName: "[project]/apps/client/src/features/incidentsTable/components/IncidentActionTable.tsx",
+                        lineNumber: 52,
+                        columnNumber: 17
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "[project]/apps/client/src/features/incidentsTable/components/IncidentActionTable.tsx",
+                lineNumber: 48,
+                columnNumber: 13
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$features$2f$incidentsTable$2f$components$2f$IncidentAnalysisTableLogic$2f$IncidentAnalysisTableLogic$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["IncidentAnalysisTableLogic"], {
+                title: "Root Cause Analysis",
+                details: (_details_analysis = details.analysis) !== null && _details_analysis !== void 0 ? _details_analysis : [],
+                setDetails: setAnalysis
+            }, void 0, false, {
+                fileName: "[project]/apps/client/src/features/incidentsTable/components/IncidentActionTable.tsx",
+                lineNumber: 61,
+                columnNumber: 13
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "",
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$label$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Label"], {
+                        className: "block text-sm font-medium text-gray-700 mb-2",
+                        children: "Root Cause"
+                    }, void 0, false, {
+                        fileName: "[project]/apps/client/src/features/incidentsTable/components/IncidentActionTable.tsx",
+                        lineNumber: 65,
+                        columnNumber: 17
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$textarea$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Textarea"], {
+                        className: "w-full min-h-[100px] border rounded-md px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent",
+                        placeholder: "Describe the root cause...",
+                        value: (_details_rootCause = details.rootCause) !== null && _details_rootCause !== void 0 ? _details_rootCause : "",
+                        onChange: (e)=>setRootCause(e.target.value)
                     }, void 0, false, {
                         fileName: "[project]/apps/client/src/features/incidentsTable/components/IncidentActionTable.tsx",
                         lineNumber: 68,
@@ -5600,7 +5600,7 @@ function IncidentActionTable(param) {
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$label$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Label"], {
                         className: "block text-sm font-medium text-gray-700 mb-2",
-                        children: "Root Cause"
+                        children: "Occurrence"
                     }, void 0, false, {
                         fileName: "[project]/apps/client/src/features/incidentsTable/components/IncidentActionTable.tsx",
                         lineNumber: 78,
@@ -5608,9 +5608,9 @@ function IncidentActionTable(param) {
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$textarea$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Textarea"], {
                         className: "w-full min-h-[100px] border rounded-md px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent",
-                        placeholder: "Describe the root cause...",
-                        value: (_details_rootCause = details.rootCause) !== null && _details_rootCause !== void 0 ? _details_rootCause : "",
-                        onChange: (e)=>setRootCause(e.target.value)
+                        placeholder: "Describe the occurrence...",
+                        value: (_details_occurence = details.occurence) !== null && _details_occurence !== void 0 ? _details_occurence : "",
+                        onChange: (e)=>setOccurrence(e.target.value)
                     }, void 0, false, {
                         fileName: "[project]/apps/client/src/features/incidentsTable/components/IncidentActionTable.tsx",
                         lineNumber: 81,
@@ -5622,13 +5622,13 @@ function IncidentActionTable(param) {
                 lineNumber: 77,
                 columnNumber: 13
             }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$features$2f$incidentsTable$2f$components$2f$IncidentAnalysisTableLogic$2f$IncidentAnalysisTableLogic$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["IncidentAnalysisTableLogic"], {
-                title: "Root Cause Analysis",
-                details: (_details_analysis = details.analysis) !== null && _details_analysis !== void 0 ? _details_analysis : [],
-                setDetails: setAnalysis
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$features$2f$incidentsTable$2f$components$2f$IncidentActionTableLogic$2f$IncidentActionTableLogic$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["IncidentActionTableLogic"], {
+                title: "Corrective",
+                details: (_details_corrective = details.corrective) !== null && _details_corrective !== void 0 ? _details_corrective : [],
+                setDetails: setCorrective
             }, void 0, false, {
                 fileName: "[project]/apps/client/src/features/incidentsTable/components/IncidentActionTable.tsx",
-                lineNumber: 89,
+                lineNumber: 90,
                 columnNumber: 13
             }, this)
         ]

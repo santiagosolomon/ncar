@@ -22,8 +22,9 @@ export async function sendIncidentEmail(incident: any) {
   `;
 
   await transporter.sendMail({
-    from: "monsantiago09@gmail.com", // ✅ must be verified in Gmail
+    from: `"${incident.reportingEmployee}" <${process.env.GMAIL_USER}>`,
     to: recipients.join(", "),
+    replyTo: incident.reportingEmployeeEmail,
     subject,
     html,
   });

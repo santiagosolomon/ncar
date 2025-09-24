@@ -44,8 +44,34 @@ export default function IncidentActionTable({ details, setDetails }: Props) {
             {/* Correction */}
             <IncidentActionTableLogic title="Correction" details={details.correction ?? []} setDetails={setCorrection} />
 
-            {/* Corrective */}
-            <IncidentActionTableLogic title="Corrective" details={details.corrective ?? []} setDetails={setCorrective} />
+            {/* Consequence */}
+            <div className="">
+                <Label className="block text-sm font-medium text-gray-700 mb-2">
+                    Deal with the Consequences
+                </Label>
+                <Textarea
+                    className="w-full min-h-[100px] border rounded-md px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    placeholder="Describe the consequence..."
+                    value={details.consequence ?? ""}
+                    onChange={e => setConsequence(e.target.value)}
+                />
+            </div>
+
+            {/* Analysis */}
+            <IncidentAnalysisTableLogic title="Root Cause Analysis" details={details.analysis ?? []} setDetails={setAnalysis} />
+
+            {/* Root Cause */}
+            <div className="">
+                <Label className="block text-sm font-medium text-gray-700 mb-2">
+                    Root Cause
+                </Label>
+                <Textarea
+                    className="w-full min-h-[100px] border rounded-md px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    placeholder="Describe the root cause..."
+                    value={details.rootCause ?? ""}
+                    onChange={e => setRootCause(e.target.value)}
+                />
+            </div>
 
             {/* Occurrence */}
             <div className="">
@@ -60,33 +86,9 @@ export default function IncidentActionTable({ details, setDetails }: Props) {
                 />
             </div>
 
-            {/* Consequence */}
-            <div className="">
-                <Label className="block text-sm font-medium text-gray-700 mb-2">
-                    Deal with the Consequences
-                </Label>
-                <Textarea
-                    className="w-full min-h-[100px] border rounded-md px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                    placeholder="Describe the consequence..."
-                    value={details.consequence ?? ""}
-                    onChange={e => setConsequence(e.target.value)}
-                />
-            </div>
+            {/* Corrective */}
+            <IncidentActionTableLogic title="Corrective" details={details.corrective ?? []} setDetails={setCorrective} />
 
-            {/* Root Cause */}
-            <div className="">
-                <Label className="block text-sm font-medium text-gray-700 mb-2">
-                    Root Cause
-                </Label>
-                <Textarea
-                    className="w-full min-h-[100px] border rounded-md px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                    placeholder="Describe the root cause..."
-                    value={details.rootCause ?? ""}
-                    onChange={e => setRootCause(e.target.value)}
-                />
-            </div>
-            {/* Analysis */}
-            <IncidentAnalysisTableLogic title="Root Cause Analysis" details={details.analysis ?? []} setDetails={setAnalysis} />
 
         </div>
     )

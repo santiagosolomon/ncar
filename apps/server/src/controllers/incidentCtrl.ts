@@ -42,26 +42,23 @@ export const getIncidents = async (req: Request, res: Response) => {
 };
 
 
-
-
 export const addIncident = async (req: Request, res: Response) => {
   try {
     const user = req.user as { organization: string; role: string };
 
-    // Strip out malicious fields
     const { _id, organization: orgFromBody, ...incidentData } = req.body;
 
     let finalOrg: string;
 
     if (user.organization === "ALL") {
-      // Admin case → must supply org explicitly
       if (orgFromBody === "PTC" || orgFromBody === "GICC") {
         finalOrg = orgFromBody;
       } else {
-        return res.status(400).json({ error: "Admins must select PTC or GICC organization" });
+        return res
+          .status(400)
+          .json({ error: "Admins must select PTC or GICC organization" });
       }
     } else {
-      // Normal users → locked to their org
       finalOrg = user.organization;
     }
 
@@ -72,17 +69,13 @@ export const addIncident = async (req: Request, res: Response) => {
 
     await incident.save();
 
-    // 🔹 Send Outlook email after saving
-    try {
-      await sendIncidentEmail(incident);
-    } catch (emailErr) {
-      console.error("Incident saved but failed to send email:", emailErr);
-      // Optional: don’t fail the request if email fails
-    }
-
-
-    await incident.save();
+    // ✅ Respond to client immediately
     res.status(201).json(incident);
+
+    // ✅ Kick off email in the background (not blocking)
+    sendIncidentEmail(incident).catch((emailErr) => {
+      console.error("Incident saved but failed to send email:", emailErr);
+    });
   } catch (err) {
     console.error("Error creating incident:", err);
     res.status(400).json({ error: "Failed to create incident" });
