@@ -46,7 +46,7 @@ export default function IncidentMainTable({
   return (
     <div className="w-full overflow-x-auto rounded-lg border shadow-sm dark:text-white dark:border-sky-900 dark:shadow-md dark:bg-sky-950 ">
       <Table>
-        <TableHeader className="">
+        <TableHeader>
           <TableRow className="transition-none">
             <TableHead>Ref. No.</TableHead>
             <TableHead>Description</TableHead>
