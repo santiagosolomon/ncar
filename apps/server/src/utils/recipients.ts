@@ -13,6 +13,7 @@ const commonRecipients = [
     // "sernan.mercadotest@gmail.com",
     // "jay.delafuentetest@gmail.com",
     "solomon.santiago@petbowe.com.ph",
+    "tom@petbowe.com.ph",
     // "liza.antoniotest@gmail.com",
     // "rodolfo.concepciontest@gmail.com",
     // "joshua.deleontest@gmail.com",

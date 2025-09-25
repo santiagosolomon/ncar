@@ -18,11 +18,9 @@ export function createTransporter() {
     tls: {
       rejectUnauthorized: false, // sometimes needed with cPanel SSL
     },
-
-
   });
 
-  // ✅ Verify connection at startup
+  // Verify connection at startup
   transporter.verify((error, success) => {
     if (error) {
       console.error("❌ SMTP connection failed:", error.message);
