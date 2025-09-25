@@ -31,7 +31,7 @@ export function IncidentIssuesDrawer({ details, setDetails, issuesSelection, set
       <DrawerTrigger className="cursor-pointer" asChild >
         <Button variant="outline">View Issues</Button>
       </DrawerTrigger>
-      <DrawerContent >
+      <DrawerContent className=" dark:bg-sky-950">
         <DrawerHeader >
           <DrawerTitle>Incident Issues</DrawerTitle>
         </DrawerHeader>

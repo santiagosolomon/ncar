@@ -1,19 +1,35 @@
 import nodemailer from "nodemailer";
 
 export function createTransporter() {
-  if (!process.env.GMAIL_USER || !process.env.GMAIL_PASS) {
-    throw new Error("❌ Missing GMAIL_USER or GMAIL_PASS in .env");
+  if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
+    throw new Error("❌ Missing EMAIL_USER or EMAIL_PASS in .env");
   }
 
-  console.log("📨 Creating Gmail transporter with user:", process.env.GMAIL_USER);
+  console.log("📨 Creating Outlook transporter with user:", process.env.EMAIL_USER);
 
-  return nodemailer.createTransport({
-    host: "smtp.gmail.com",
-    port: 587,
-    secure: false, // STARTTLS
+  const transporter = nodemailer.createTransport({
+    host: process.env.EMAIL_HOST,
+    port: Number(process.env.EMAIL_PORT), // default fallback
+    secure: false, // port 465
     auth: {
-      user: process.env.GMAIL_USER, // Server token
-      pass: process.env.GMAIL_PASS, // Same token again
+      user: process.env.EMAIL_USER,
+      pass: process.env.EMAIL_PASS,
     },
+    tls: {
+      rejectUnauthorized: false, // sometimes needed with cPanel SSL
+    },
+
+
   });
+
+  // ✅ Verify connection at startup
+  transporter.verify((error, success) => {
+    if (error) {
+      console.error("❌ SMTP connection failed:", error.message);
+    } else {
+      console.log("✅ SMTP server is ready to take messages");
+    }
+  });
+
+  return transporter;
 }

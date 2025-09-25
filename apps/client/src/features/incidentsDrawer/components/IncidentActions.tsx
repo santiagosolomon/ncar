@@ -25,7 +25,7 @@ export function IncidentActionsDrawer({ details, setDetails }: IncidentActionsDr
         <Button variant="outline">View Action</Button>
       </DrawerTrigger>
 
-      <DrawerContent className="inset-y-[-10px] fixed dark:bg-black">
+      <DrawerContent className="inset-y-[-10px] fixed dark:bg-sky-950">
         <DrawerHeader>
           <DrawerTitle>Incident Correction Action</DrawerTitle>
         </DrawerHeader>

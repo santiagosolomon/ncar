@@ -56,7 +56,7 @@ export default function IncidentsHeader({ selectedOrg, onSelectOrg, role, userOr
       : [userOrg]
 
   return (
-    <header className="flex justify-between items-center dark:bg-gray-800 dark:text-white bg-white border-b px-6 py-3 shadow-sm ">
+    <header className="flex justify-between items-center dark:bg-sky-950 dark:text-white bg-white border-b px-6 py-3 shadow-sm ">
 
       <div className=" text-gray-700 font-bold tracking-wider dark:text-white">
         <h1>{selectedOrg == "ALL" ? "NCAR" : selectedOrg}</h1>

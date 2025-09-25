@@ -12,6 +12,7 @@ import {
     CardTitle,
     CardContent,
 } from "@/components/ui/card"
+import Image from "next/image"
 
 export default function LoginPage() {
     const [email, setEmail] = useState("")
@@ -35,7 +36,7 @@ export default function LoginPage() {
                 console.error("Auth check failed:", err);
             }
         };
-        
+
         checkAuth();
     }, [router]);
 
@@ -68,13 +69,18 @@ export default function LoginPage() {
     }
 
     return (
-        <div className="h-screen flex items-center justify-center bg-gray-100 dark:bg-black">
-            <Card className="w-[400px] shadow-lg">
-                <CardHeader>
-                    <CardTitle className="text-center">Login</CardTitle>
+        <div className="h-screen flex items-center justify-center bg-gray-50 dark:bg-sky-950">
+            <Card className="w-[400px] rounded-lg bg-white shadow dark:bg-sky-900">
+                <CardHeader className="flex justify-center">
+                    <Image
+                        src="/petboweLogo.jpg"
+                        alt="NCAR Logo"
+                        width={85}
+                        height={85}
+                    />
                 </CardHeader>
                 <CardContent>
-                    <form onSubmit={handleSubmit} className="space-y-4">
+                    <form onSubmit={handleSubmit} className="space-y-4 ">
                         <div className="space-y-1">
                             <Label htmlFor="email">Email</Label>
                             <Input
@@ -101,7 +107,7 @@ export default function LoginPage() {
                             className="w-full bg-blue-600 hover:bg-blue-500 cursor-pointer"
                             disabled={loading}
                         >
-                            {loading ? "Logging in..." : "Login"}
+                            {loading ? "Logging in..." : "Log in"}
                         </Button>
 
                         <p className="mt-4 text-center text-sm">

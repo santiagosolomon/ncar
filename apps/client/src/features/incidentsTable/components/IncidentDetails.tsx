@@ -91,7 +91,7 @@ export function IncidentDetailsTable({ details, setDetails }: Props) {
     }
 
     return (
-        <div className="border p-4 rounded-md shadow-sm ">
+        <div className="border p-4 rounded-md shadow-sm dark:border-gray-700 dark:bg-sky-900">
             <div className="flex justify-end mb-2">
                 <Button size="sm" variant="outline" className="cursor-pointer" onClick={startAdd} disabled={!!newRow}>
                     <Plus className="w-4 h-4" /> Add
@@ -100,7 +100,7 @@ export function IncidentDetailsTable({ details, setDetails }: Props) {
 
             <div className="overflow-x-auto">
                 <table className="min-w-full border text-sm text-left">
-                    <thead className="bg-gray-100 dark:bg-gray-800">
+                    <thead className="bg-gray-100 dark:bg-sky-950">
                         <tr>
                             <th className="px-2 py-2 border">Type</th>
                             <th className="px-2 py-2 border">Deviation</th>

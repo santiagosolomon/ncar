@@ -40,13 +40,13 @@ export default function IncidentActionTable({ details, setDetails }: Props) {
     }
 
     return (
-        <div className="p-6  border rounded-lg bg-white shadow-sm flex flex-col gap-5 dark:bg-black">
+        <div className="p-6  border rounded-lg bg-white shadow-sm flex flex-col gap-5 dark:bg-sky-900">
             {/* Correction */}
             <IncidentActionTableLogic title="Correction" details={details.correction ?? []} setDetails={setCorrection} />
 
             {/* Consequence */}
             <div className="">
-                <Label className="block text-sm font-medium text-gray-700 mb-2">
+                <Label className="block text-sm font-medium dark:text-white mb-2">
                     Deal with the Consequences
                 </Label>
                 <Textarea
@@ -62,7 +62,7 @@ export default function IncidentActionTable({ details, setDetails }: Props) {
 
             {/* Root Cause */}
             <div className="">
-                <Label className="block text-sm font-medium text-gray-700 mb-2">
+                <Label className="block text-sm font-medium dark:text-white mb-2">
                     Root Cause
                 </Label>
                 <Textarea
@@ -75,7 +75,7 @@ export default function IncidentActionTable({ details, setDetails }: Props) {
 
             {/* Occurrence */}
             <div className="">
-                <Label className="block text-sm font-medium text-gray-700 mb-2">
+                <Label className="block text-sm font-medium dark:text-white mb-2">
                     Occurrence
                 </Label>
                 <Textarea

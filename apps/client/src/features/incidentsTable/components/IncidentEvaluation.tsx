@@ -26,7 +26,7 @@ export function IncidentEvaluationTable({ details = [], setDetails }: IncidentEv
     return (
         <div className="space-y-6">
             {details.map(row => (
-                <div key={row._id || row.tempId || crypto.randomUUID()} className="p-6  border rounded-lg bg-white shadow-sm dark:bg-black">
+                <div key={row._id || row.tempId || crypto.randomUUID()} className="p-6  border rounded-lg bg-white shadow-sm dark:bg-sky-900">
 
                     {/* Effectiveness */}
                     <div className="mt-6">

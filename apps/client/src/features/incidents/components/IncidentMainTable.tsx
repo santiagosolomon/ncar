@@ -44,9 +44,9 @@ export default function IncidentMainTable({
   const endIdx = data.length > 0 ? startIdx + data.length - 1 : 0;
 
   return (
-    <div className="w-full overflow-x-auto rounded-lg border shadow-sm dark:text-white dark:border-gray-700">
+    <div className="w-full overflow-x-auto rounded-lg border shadow-sm dark:text-white dark:border-sky-900 dark:shadow-md dark:bg-sky-950 ">
       <Table>
-        <TableHeader>
+        <TableHeader className="">
           <TableRow className="transition-none">
             <TableHead>Ref. No.</TableHead>
             <TableHead>Description</TableHead>
@@ -56,7 +56,7 @@ export default function IncidentMainTable({
           {data.map((incident) => (
             <TableRow
               key={incident._id}
-              className={clsx("cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-700 transition-none", editingIncident?._id === incident._id ? "bg-blue-50 dark:bg-blue-600" : "")}
+              className={clsx("cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-700 transition-none", editingIncident?._id === incident._id ? "bg-blue-50 dark:bg-blue-800" : "")}
               onClick={() => onRowClick(incident)}
             >
               <TableCell>{incident.refNo}</TableCell>

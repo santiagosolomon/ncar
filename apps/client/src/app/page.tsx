@@ -98,6 +98,7 @@ export default function HomePage() {
   const [editingIncident, setEditingIncident] = useState<(IncidentForm & { _id: string }) | null>(null)
 
   const [form, setForm] = useState<IncidentForm>(defaultForm)
+  
 
   // 🚀 fetch user from /me
   const { data: me, error: meError, isLoading: meLoading } = useSWR("http://localhost:5000/api/auth/me", fetcher)
@@ -156,7 +157,7 @@ export default function HomePage() {
   if (meError) return <p className="text-red-500">Failed to fetch user info</p>
 
   return (
-    <div className="h-screen flex flex-col dark:bg-gray-900 dark:text-white">
+    <div className="h-screen flex flex-col dark:bg-sky-950 dark:text-white">
       <div>
         {/* 📝 Header (now gets role + org from /me) */}
         <IncidentsHeader selectedOrg={selectedOrg} onSelectOrg={setSelectedOrg} role={role} userOrg={userOrg} email={me?.user?.email ?? ""} />
@@ -176,7 +177,7 @@ export default function HomePage() {
               </DialogTrigger>
             )}
 
-            <DialogContent className="max-h-[700px] 2xl:max-h-[750px] sm:max-w-[1100px] max-w-[600px] overflow-y-auto">
+            <DialogContent className="max-h-[700px] 2xl:max-h-[750px] sm:max-w-[1100px] max-w-[600px] overflow-y-auto dark:bg-sky-950"  onCloseAutoFocus={(e) => e.preventDefault()}> {/* onCloseAutoFocus={(e) => e.preventDefault()} -- will help to avoid moving to top after closing the modal*/}
               <DialogHeader>
                 <div className="flex gap-4 items-center justify-between">
                   <div className="flex gap-4">

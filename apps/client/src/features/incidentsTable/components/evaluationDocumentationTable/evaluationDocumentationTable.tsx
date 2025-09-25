@@ -156,7 +156,7 @@ export function DocumentationTable({ title, items, onChange }: Props) {
 
       <div className="overflow-x-auto">
         <table className="min-w-full border text-sm text-left">
-          <thead className="bg-gray-100 dark:bg-gray-800">
+          <thead className="bg-gray-100 dark:bg-sky-950">
             <tr>
               <th className="px-2 py-2 border">Followed Up By</th>
               <th className="px-2 py-2 border">Date</th>

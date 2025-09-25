@@ -86,7 +86,7 @@ export function IncidentIssuesTable({ details, setDetails, issuesSelection = {},
   }
 
   return (
-      <div className="space-y-6 border p-4 rounded-md shadow-sm">
+      <div className="space-y-6 border p-4 rounded-md shadow-sm dark:bg-sky-900">
         <div className="flex justify-between items-center mb-2">
           <Label className="flex items-center gap-2">
             <Checkbox
@@ -102,7 +102,7 @@ export function IncidentIssuesTable({ details, setDetails, issuesSelection = {},
 
         <div className="overflow-x-auto">
           <table className="min-w-full text-sm text-left ">
-            <thead className="bg-gray-100 dark:bg-gray-800">
+            <thead className="bg-gray-100 dark:bg-sky-950">
               <tr>
                 <th className="px-4 py-2 border">Gross Weight</th>
                 <th className="px-4 py-2 border">Net Weight</th>

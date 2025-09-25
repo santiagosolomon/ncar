@@ -27,7 +27,7 @@ export function IncidentDetailsDrawer({ details, setDetails }: IncidentDetailsDr
       <DrawerTrigger className="cursor-pointer" asChild>
         <Button variant="outline">View Details</Button>
       </DrawerTrigger>
-      <DrawerContent className="">
+      <DrawerContent className="dark:bg-sky-950">
         <DrawerHeader>
           <DrawerTitle>Incident Details</DrawerTitle>
         </DrawerHeader>
