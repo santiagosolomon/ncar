@@ -69,10 +69,10 @@ export const addIncident = async (req: Request, res: Response) => {
 
     await incident.save();
 
-    // ✅ Respond to client immediately
+    //  Respond to client immediately
     res.status(201).json(incident);
 
-    // ✅ Kick off email in the background (not blocking)
+    //  Kick off email in the background (not blocking)
     sendIncidentEmail(incident).catch((emailErr) => {
       console.error("Incident saved but failed to send email:", emailErr);
     });

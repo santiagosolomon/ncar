@@ -21,12 +21,19 @@ import { MoreHorizontal, X, Check, Save, Trash2, Pencil, Plus } from "lucide-rea
 import { IncidentActionItem } from "@/types/IncidentActions"
 
 import { normalizeRows } from "@/utils/normalizeRows";
+import { D } from "@tanstack/react-query-devtools/build/legacy/ReactQueryDevtools-DO8QvfQP"
 
 interface Props {
     title: string
     details: IncidentActionItem[]
     setDetails: (updater: (prev: IncidentActionItem[]) => IncidentActionItem[]) => void
 }
+
+const getUniqueKey = (row: IncidentActionItem, index: number) => {
+    if (row._id) return row._id;
+    if (row.tempId) return row.tempId;
+    return `row-${index}-${crypto.randomUUID()}`;
+};
 
 export function IncidentActionTableLogic({ details, setDetails, title }: Props) {
     const [editingId, setEditingId] = useState<string | null>(null)
@@ -91,8 +98,8 @@ export function IncidentActionTableLogic({ details, setDetails, title }: Props) 
 
         // Not in edit mode → just display values
         if (!isEditing) {
-            if (value instanceof Date) {
-                return format(value, "yyyy-MM-dd")
+            if (field === "timeTable" || field === "followUpDate") {
+                return value ? format(new Date(value), "PPP") : "N/A"
             }
             return value
         }
@@ -108,7 +115,7 @@ export function IncidentActionTableLogic({ details, setDetails, title }: Props) 
                         >
                             <CalendarIcon className="mr-2 h-4 w-4" />
                             {draftRow?.[field]
-                                ? format(draftRow[field] as Date, "yyyy-MM-dd")
+                                ? format(new Date(draftRow[field] as Date), "PPP")
                                 : "Pick a date"}
                         </Button>
                     </PopoverTrigger>
@@ -159,12 +166,12 @@ export function IncidentActionTableLogic({ details, setDetails, title }: Props) 
                         </tr>
                     </thead>
                     <tbody>
-                        {details.map(row => {
+                        {details.map((row, index) => {
                             const isEditing = editingId === (row._id || row.tempId)
                             const isDeleting = deleteConfirmId === (row._id || row.tempId)
                             return (
                                 <tr
-                                    key={row._id || row.tempId || `row-${row.actionTaken}-${row.personResponsible}`}
+                                    key={getUniqueKey(row, index)}
                                     className="odd:bg-white even:bg-gray-50 dark:odd:bg-gray-700 dark:even:bg-gray-600"
                                 >
                                     <td className="px-2 py-2 border">{renderCell(row, "actionTaken")}</td>
@@ -248,7 +255,7 @@ export function IncidentActionTableLogic({ details, setDetails, title }: Props) 
                                         <PopoverTrigger asChild>
                                             <Button variant="outline" className="w-full justify-start text-left font-normal">
                                                 <CalendarIcon className="mr-2 h-4 w-4" />
-                                                {newRow.timeTable ? format(newRow.timeTable, "yyyy-MM-dd") : "Pick a date"}
+                                                {newRow.timeTable ? format(newRow.timeTable, "PPP") : "Pick a date"}
                                             </Button>
                                         </PopoverTrigger>
                                         <PopoverContent align="start" className="p-0">
@@ -265,7 +272,7 @@ export function IncidentActionTableLogic({ details, setDetails, title }: Props) 
                                         <PopoverTrigger asChild>
                                             <Button variant="outline" className="w-full justify-start text-left font-normal">
                                                 <CalendarIcon className="mr-2 h-4 w-4" />
-                                                {newRow.followUpDate ? format(newRow.followUpDate, "yyyy-MM-dd") : "Pick a date"}
+                                                {newRow.followUpDate ? format(newRow.followUpDate, "PPP") : "Pick a date"}
                                             </Button>
                                         </PopoverTrigger>
                                         <PopoverContent align="start" className="p-0">

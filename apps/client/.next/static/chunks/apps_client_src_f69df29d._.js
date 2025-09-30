@@ -8433,6 +8433,1495 @@ if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelper
     __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
 }
 }),
+"[project]/apps/client/src/components/PrintWrapper.tsx [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+//src/components/PrintWrapper.tsx
+__turbopack_context__.s([
+    "PrintWrapper",
+    ()=>PrintWrapper
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/apps/client/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/apps/client/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$date$2d$fns$2f$format$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/apps/client/node_modules/date-fns/format.js [app-client] (ecmascript) <locals>");
+"use client";
+;
+;
+;
+const PrintWrapper = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["forwardRef"])(_c = (param, ref)=>{
+    let { incident } = param;
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+        ref: ref,
+        className: "p-8 bg-white text-black min-h-[297mm] print:m-0 print:p-[20mm]",
+        style: {
+            width: '210mm',
+            margin: '0 auto',
+            backgroundColor: 'white',
+            color: 'black'
+        },
+        children: [
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("style", {
+                type: "text/css",
+                media: "print",
+                children: "\n                        @page {\n                            size: A4;\n                            margin: 20mm;\n                        }\n                        body {\n                            margin: 0;\n                            padding: 0;\n                            print-color-adjust: exact;\n                            -webkit-print-color-adjust: exact;\n                        }\n                        \n                        /* Grid styles */\n                        .grid-cols-2 {\n                            display: grid;\n                            grid-template-columns: 1fr 1fr;\n                            gap: 1rem;\n                        }\n                        \n                        /* Table styles */\n                        table {\n                            width: 100%;\n                            border-collapse: collapse;\n                            margin-bottom: 1rem;\n                            page-break-inside: auto;\n                        }\n                        \n                        tr {\n                            page-break-inside: avoid;\n                            page-break-after: auto;\n                        }\n                        \n                        td, th {\n                            border: 1px solid black;\n                            padding: 8px;\n                            text-align: left;\n                        }\n                        \n                        thead {\n                            display: table-header-group;\n                        }\n                        \n                        thead tr {\n                            background-color: #f3f4f6 !important;\n                        }\n                        \n                        /* Margins and spacing */\n                        .mb-2 { margin-bottom: 0.5rem; }\n                        .mb-4 { margin-bottom: 1.3rem; }\n                        .mb-6 { margin-bottom: 1.5rem; }\n                        .mb-8 { margin-bottom: 2rem; }\n                        .mb-12 { margin-bottom: 3rem; }\n                        .mb-16 { margin-bottom: 4rem; }\n                        .mb-20 { margin-bottom: 5rem; }\n                        .mb-24 { margin-bottom: 6rem; }\n                        .mb-28 { margin-bottom: 7rem; }\n                        .mb-32 { margin-bottom: 8rem; }\n                        .mb-36 { margin-bottom: 9rem; }\n                        .mb-40 { margin-bottom: 10rem; }\n                        .mb-44 { margin-bottom: 11rem; }\n                        .mb-48 { margin-bottom: 12rem; }\n                        .mt-4 { margin-top: 1rem; }\n                        .mt-12 { margin-top: 3rem; }\n                        .p-2 { padding: 0.5rem; }\n                        .gap-4 { gap: 1rem; }\n                        .gap-8 { gap: 2rem; }\n                        .gap-12 { gap: 3rem; }\n                        .gap-16 { gap: 4rem; }\n                        .gap-20 { gap: 5rem; }\n                        .flex { display: flex; }\n                        .flex-col { flex-direction: column; }\n                        .justify-between { justify-content: space-between; }\n                        \n                        /* Typography */\n                        .text-2xl { font-size: 1.5rem; }\n                        .text-lg { font-size: 1.125rem; }\n                        .text-4xl { font-size: 1.3rem; }\n                        .font-bold { font-weight: 700; }\n                        .font-semibold { font-weight: 600; }\n                        \n                        \n                        /* Fix for flex gap in tables */\n                        tr.flex { \n                            display: table-row !important; \n                        }\n                        \n                        /* Container width */\n                        @media print {\n                            div[ref] {\n                                width: 210mm !important;\n                                padding: 20mm !important;\n                                margin: 0 !important;\n                            }\n                        }\n                    "
+            }, void 0, false, {
+                fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                lineNumber: 26,
+                columnNumber: 17
+            }, ("TURBOPACK compile-time value", void 0)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "text-center mb-6",
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
+                        className: "text-2xl font-bold mb-2",
+                        children: "NCAR Incident Report"
+                    }, void 0, false, {
+                        fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                        lineNumber: 126,
+                        columnNumber: 21
+                    }, ("TURBOPACK compile-time value", void 0)),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                        className: "text-lg",
+                        children: [
+                            "Reference No: ",
+                            incident.refNo
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                        lineNumber: 127,
+                        columnNumber: 21
+                    }, ("TURBOPACK compile-time value", void 0)),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                        className: "text-sm",
+                        children: [
+                            "Organization: ",
+                            incident.organization
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                        lineNumber: 128,
+                        columnNumber: 21
+                    }, ("TURBOPACK compile-time value", void 0))
+                ]
+            }, void 0, true, {
+                fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                lineNumber: 125,
+                columnNumber: 17
+            }, ("TURBOPACK compile-time value", void 0)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "grid grid-cols-2 gap-4 mb-6",
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
+                                        children: "Date Reported:"
+                                    }, void 0, false, {
+                                        fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                        lineNumber: 134,
+                                        columnNumber: 28
+                                    }, ("TURBOPACK compile-time value", void 0)),
+                                    " ",
+                                    incident.dateReported ? (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$date$2d$fns$2f$format$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["format"])(new Date(incident.dateReported), 'MMM dd, yyyy') : 'N/A'
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                lineNumber: 134,
+                                columnNumber: 25
+                            }, ("TURBOPACK compile-time value", void 0)),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
+                                        children: "Department:"
+                                    }, void 0, false, {
+                                        fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                        lineNumber: 135,
+                                        columnNumber: 28
+                                    }, ("TURBOPACK compile-time value", void 0)),
+                                    " ",
+                                    incident.reportingDepartment
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                lineNumber: 135,
+                                columnNumber: 25
+                            }, ("TURBOPACK compile-time value", void 0)),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
+                                        children: "Reporting Employee:"
+                                    }, void 0, false, {
+                                        fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                        lineNumber: 136,
+                                        columnNumber: 28
+                                    }, ("TURBOPACK compile-time value", void 0)),
+                                    " ",
+                                    incident.reportingEmployee
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                lineNumber: 136,
+                                columnNumber: 25
+                            }, ("TURBOPACK compile-time value", void 0))
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                        lineNumber: 133,
+                        columnNumber: 21
+                    }, ("TURBOPACK compile-time value", void 0)),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
+                                        children: "Nature of Exception:"
+                                    }, void 0, false, {
+                                        fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                        lineNumber: 139,
+                                        columnNumber: 28
+                                    }, ("TURBOPACK compile-time value", void 0)),
+                                    " ",
+                                    incident.natureOfException
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                lineNumber: 139,
+                                columnNumber: 25
+                            }, ("TURBOPACK compile-time value", void 0)),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
+                                        children: "Audit Finding:"
+                                    }, void 0, false, {
+                                        fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                        lineNumber: 140,
+                                        columnNumber: 28
+                                    }, ("TURBOPACK compile-time value", void 0)),
+                                    " ",
+                                    incident.auditFinding
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                lineNumber: 140,
+                                columnNumber: 25
+                            }, ("TURBOPACK compile-time value", void 0)),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
+                                        children: "Concern Type:"
+                                    }, void 0, false, {
+                                        fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                        lineNumber: 141,
+                                        columnNumber: 28
+                                    }, ("TURBOPACK compile-time value", void 0)),
+                                    " ",
+                                    incident.concernType
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                lineNumber: 141,
+                                columnNumber: 25
+                            }, ("TURBOPACK compile-time value", void 0))
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                        lineNumber: 138,
+                        columnNumber: 21
+                    }, ("TURBOPACK compile-time value", void 0))
+                ]
+            }, void 0, true, {
+                fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                lineNumber: 132,
+                columnNumber: 17
+            }, ("TURBOPACK compile-time value", void 0)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "mb-6",
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
+                        className: "text-lg font-semibold mb-2",
+                        children: "Description"
+                    }, void 0, false, {
+                        fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                        lineNumber: 147,
+                        columnNumber: 21
+                    }, ("TURBOPACK compile-time value", void 0)),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                        className: "whitespace-pre-wrap border p-2",
+                        children: incident.description
+                    }, void 0, false, {
+                        fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                        lineNumber: 148,
+                        columnNumber: 21
+                    }, ("TURBOPACK compile-time value", void 0))
+                ]
+            }, void 0, true, {
+                fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                lineNumber: 146,
+                columnNumber: 17
+            }, ("TURBOPACK compile-time value", void 0)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "grid grid-cols-2 gap-4 mb-6",
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
+                                        children: "Concern Name:"
+                                    }, void 0, false, {
+                                        fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                        lineNumber: 154,
+                                        columnNumber: 28
+                                    }, ("TURBOPACK compile-time value", void 0)),
+                                    " ",
+                                    incident.concernName
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                lineNumber: 154,
+                                columnNumber: 25
+                            }, ("TURBOPACK compile-time value", void 0)),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
+                                        children: "Customer/Department:"
+                                    }, void 0, false, {
+                                        fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                        lineNumber: 155,
+                                        columnNumber: 28
+                                    }, ("TURBOPACK compile-time value", void 0)),
+                                    " ",
+                                    incident.customerDepartment
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                lineNumber: 155,
+                                columnNumber: 25
+                            }, ("TURBOPACK compile-time value", void 0))
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                        lineNumber: 153,
+                        columnNumber: 21
+                    }, ("TURBOPACK compile-time value", void 0)),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
+                                        children: "Module of Purchase:"
+                                    }, void 0, false, {
+                                        fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                        lineNumber: 158,
+                                        columnNumber: 28
+                                    }, ("TURBOPACK compile-time value", void 0)),
+                                    " ",
+                                    incident.moduleOfPurchase
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                lineNumber: 158,
+                                columnNumber: 25
+                            }, ("TURBOPACK compile-time value", void 0)),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
+                                        children: "Type of Delivery:"
+                                    }, void 0, false, {
+                                        fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                        lineNumber: 159,
+                                        columnNumber: 28
+                                    }, ("TURBOPACK compile-time value", void 0)),
+                                    " ",
+                                    incident.typeOfDelivery
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                lineNumber: 159,
+                                columnNumber: 25
+                            }, ("TURBOPACK compile-time value", void 0))
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                        lineNumber: 157,
+                        columnNumber: 21
+                    }, ("TURBOPACK compile-time value", void 0))
+                ]
+            }, void 0, true, {
+                fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                lineNumber: 152,
+                columnNumber: 17
+            }, ("TURBOPACK compile-time value", void 0)),
+            incident.incidentDetails && incident.incidentDetails.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "mb-6",
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
+                        className: "text-4xl font-extrabold mb-2",
+                        children: "Incident Details"
+                    }, void 0, false, {
+                        fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                        lineNumber: 166,
+                        columnNumber: 25
+                    }, ("TURBOPACK compile-time value", void 0)),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("table", {
+                        className: "w-full border-collapse border",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("thead", {
+                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("tr", {
+                                    className: "bg-gray-100",
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
+                                            className: "border p-2",
+                                            children: "Type"
+                                        }, void 0, false, {
+                                            fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                            lineNumber: 170,
+                                            columnNumber: 37
+                                        }, ("TURBOPACK compile-time value", void 0)),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
+                                            className: "border p-2",
+                                            children: "Deviation"
+                                        }, void 0, false, {
+                                            fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                            lineNumber: 171,
+                                            columnNumber: 37
+                                        }, ("TURBOPACK compile-time value", void 0)),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
+                                            className: "border p-2",
+                                            children: "Description"
+                                        }, void 0, false, {
+                                            fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                            lineNumber: 172,
+                                            columnNumber: 37
+                                        }, ("TURBOPACK compile-time value", void 0)),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
+                                            className: "border p-2",
+                                            children: "SKU"
+                                        }, void 0, false, {
+                                            fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                            lineNumber: 173,
+                                            columnNumber: 37
+                                        }, ("TURBOPACK compile-time value", void 0)),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
+                                            className: "border p-2",
+                                            children: "Out of Total"
+                                        }, void 0, false, {
+                                            fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                            lineNumber: 174,
+                                            columnNumber: 37
+                                        }, ("TURBOPACK compile-time value", void 0)),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
+                                            className: "border p-2",
+                                            children: "PO No."
+                                        }, void 0, false, {
+                                            fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                            lineNumber: 175,
+                                            columnNumber: 37
+                                        }, ("TURBOPACK compile-time value", void 0)),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
+                                            className: "border p-2",
+                                            children: "Lot No."
+                                        }, void 0, false, {
+                                            fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                            lineNumber: 176,
+                                            columnNumber: 37
+                                        }, ("TURBOPACK compile-time value", void 0))
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                    lineNumber: 169,
+                                    columnNumber: 33
+                                }, ("TURBOPACK compile-time value", void 0))
+                            }, void 0, false, {
+                                fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                lineNumber: 168,
+                                columnNumber: 29
+                            }, ("TURBOPACK compile-time value", void 0)),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("tbody", {
+                                children: incident.incidentDetails.map((detail, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("tr", {
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
+                                                className: "border p-2",
+                                                children: detail.type
+                                            }, void 0, false, {
+                                                fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                                lineNumber: 182,
+                                                columnNumber: 41
+                                            }, ("TURBOPACK compile-time value", void 0)),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
+                                                className: "border p-2",
+                                                children: detail.deviation
+                                            }, void 0, false, {
+                                                fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                                lineNumber: 183,
+                                                columnNumber: 41
+                                            }, ("TURBOPACK compile-time value", void 0)),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
+                                                className: "border p-2",
+                                                children: detail.description
+                                            }, void 0, false, {
+                                                fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                                lineNumber: 184,
+                                                columnNumber: 41
+                                            }, ("TURBOPACK compile-time value", void 0)),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
+                                                className: "border p-2",
+                                                children: detail.sku
+                                            }, void 0, false, {
+                                                fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                                lineNumber: 185,
+                                                columnNumber: 41
+                                            }, ("TURBOPACK compile-time value", void 0)),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
+                                                className: "border p-2",
+                                                children: detail.outOfTotal
+                                            }, void 0, false, {
+                                                fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                                lineNumber: 186,
+                                                columnNumber: 41
+                                            }, ("TURBOPACK compile-time value", void 0)),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
+                                                className: "border p-2",
+                                                children: detail.poNo
+                                            }, void 0, false, {
+                                                fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                                lineNumber: 187,
+                                                columnNumber: 41
+                                            }, ("TURBOPACK compile-time value", void 0)),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
+                                                className: "border p-2",
+                                                children: detail.lotNo
+                                            }, void 0, false, {
+                                                fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                                lineNumber: 188,
+                                                columnNumber: 41
+                                            }, ("TURBOPACK compile-time value", void 0))
+                                        ]
+                                    }, detail._id || detail.tempId || index, true, {
+                                        fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                        lineNumber: 181,
+                                        columnNumber: 37
+                                    }, ("TURBOPACK compile-time value", void 0)))
+                            }, void 0, false, {
+                                fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                lineNumber: 179,
+                                columnNumber: 29
+                            }, ("TURBOPACK compile-time value", void 0))
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                        lineNumber: 167,
+                        columnNumber: 25
+                    }, ("TURBOPACK compile-time value", void 0))
+                ]
+            }, void 0, true, {
+                fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                lineNumber: 165,
+                columnNumber: 21
+            }, ("TURBOPACK compile-time value", void 0)),
+            incident.incidentIssues && incident.incidentIssues.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "mb-6",
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
+                        className: "text-4xl font-extrabold mb-2",
+                        children: " Incident Issues"
+                    }, void 0, false, {
+                        fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                        lineNumber: 199,
+                        columnNumber: 25
+                    }, ("TURBOPACK compile-time value", void 0)),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("table", {
+                        className: "w-full border-collapse border",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("thead", {
+                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("tr", {
+                                    className: "bg-gray-100",
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
+                                            className: "border p-2",
+                                            children: "Gross Weight"
+                                        }, void 0, false, {
+                                            fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                            lineNumber: 203,
+                                            columnNumber: 37
+                                        }, ("TURBOPACK compile-time value", void 0)),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
+                                            className: "border p-2",
+                                            children: "Net Weight"
+                                        }, void 0, false, {
+                                            fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                            lineNumber: 204,
+                                            columnNumber: 37
+                                        }, ("TURBOPACK compile-time value", void 0)),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
+                                            className: "border p-2",
+                                            children: "Tare Weight"
+                                        }, void 0, false, {
+                                            fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                            lineNumber: 205,
+                                            columnNumber: 37
+                                        }, ("TURBOPACK compile-time value", void 0))
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                    lineNumber: 202,
+                                    columnNumber: 33
+                                }, ("TURBOPACK compile-time value", void 0))
+                            }, void 0, false, {
+                                fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                lineNumber: 201,
+                                columnNumber: 29
+                            }, ("TURBOPACK compile-time value", void 0)),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("tbody", {
+                                children: incident.incidentIssues.map((issue, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("tr", {
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
+                                                className: "border p-2",
+                                                children: issue.grossWeight
+                                            }, void 0, false, {
+                                                fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                                lineNumber: 211,
+                                                columnNumber: 41
+                                            }, ("TURBOPACK compile-time value", void 0)),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
+                                                className: "border p-2",
+                                                children: issue.netWeight
+                                            }, void 0, false, {
+                                                fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                                lineNumber: 212,
+                                                columnNumber: 41
+                                            }, ("TURBOPACK compile-time value", void 0)),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
+                                                className: "border p-2",
+                                                children: issue.tareWeight
+                                            }, void 0, false, {
+                                                fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                                lineNumber: 213,
+                                                columnNumber: 41
+                                            }, ("TURBOPACK compile-time value", void 0))
+                                        ]
+                                    }, issue._id || issue.tempId || index, true, {
+                                        fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                        lineNumber: 210,
+                                        columnNumber: 37
+                                    }, ("TURBOPACK compile-time value", void 0)))
+                            }, void 0, false, {
+                                fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                lineNumber: 208,
+                                columnNumber: 29
+                            }, ("TURBOPACK compile-time value", void 0))
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                        lineNumber: 200,
+                        columnNumber: 25
+                    }, ("TURBOPACK compile-time value", void 0))
+                ]
+            }, void 0, true, {
+                fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                lineNumber: 198,
+                columnNumber: 21
+            }, ("TURBOPACK compile-time value", void 0)),
+            incident.incidentIssuesSelection && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "grid grid-cols-2 gap-4 mb-8",
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
+                                        children: "Quality Issue:"
+                                    }, void 0, false, {
+                                        fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                        lineNumber: 225,
+                                        columnNumber: 32
+                                    }, ("TURBOPACK compile-time value", void 0)),
+                                    " ",
+                                    incident.incidentIssuesSelection.qualityIssue ? 'Yes' : 'No'
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                lineNumber: 225,
+                                columnNumber: 29
+                            }, ("TURBOPACK compile-time value", void 0)),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
+                                        children: "Quantity Issue:"
+                                    }, void 0, false, {
+                                        fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                        lineNumber: 226,
+                                        columnNumber: 32
+                                    }, ("TURBOPACK compile-time value", void 0)),
+                                    " ",
+                                    incident.incidentIssuesSelection.quantityIssue ? 'Yes' : 'No'
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                lineNumber: 226,
+                                columnNumber: 29
+                            }, ("TURBOPACK compile-time value", void 0))
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                        lineNumber: 224,
+                        columnNumber: 25
+                    }, ("TURBOPACK compile-time value", void 0)),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
+                                        children: "Procedure/Documentation:"
+                                    }, void 0, false, {
+                                        fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                        lineNumber: 229,
+                                        columnNumber: 32
+                                    }, ("TURBOPACK compile-time value", void 0)),
+                                    " ",
+                                    incident.incidentIssuesSelection.procedureDocumentation ? 'Yes' : 'No'
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                lineNumber: 229,
+                                columnNumber: 29
+                            }, ("TURBOPACK compile-time value", void 0)),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
+                                        children: "Packaging Problem:"
+                                    }, void 0, false, {
+                                        fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                        lineNumber: 230,
+                                        columnNumber: 32
+                                    }, ("TURBOPACK compile-time value", void 0)),
+                                    " ",
+                                    incident.incidentIssuesSelection.packagingProblem ? 'Yes' : 'No'
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                lineNumber: 230,
+                                columnNumber: 29
+                            }, ("TURBOPACK compile-time value", void 0))
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                        lineNumber: 228,
+                        columnNumber: 25
+                    }, ("TURBOPACK compile-time value", void 0)),
+                    incident.incidentIssuesSelection.others && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
+                                children: "Others:"
+                            }, void 0, false, {
+                                fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                lineNumber: 233,
+                                columnNumber: 32
+                            }, ("TURBOPACK compile-time value", void 0)),
+                            " ",
+                            incident.incidentIssuesSelection.others
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                        lineNumber: 233,
+                        columnNumber: 29
+                    }, ("TURBOPACK compile-time value", void 0))
+                ]
+            }, void 0, true, {
+                fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                lineNumber: 223,
+                columnNumber: 21
+            }, ("TURBOPACK compile-time value", void 0)),
+            incident.incidentActions && incident.incidentActions.map((action, actionIndex)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: "mb-8",
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
+                            className: "text-4xl font-extrabold mb-4 mt-6",
+                            children: "Incident Actions"
+                        }, void 0, false, {
+                            fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                            lineNumber: 242,
+                            columnNumber: 25
+                        }, ("TURBOPACK compile-time value", void 0)),
+                        action.correction && action.correction.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: " ",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                    className: "font-semibold",
+                                    children: "Correction"
+                                }, void 0, false, {
+                                    fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                    lineNumber: 246,
+                                    columnNumber: 33
+                                }, ("TURBOPACK compile-time value", void 0)),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("table", {
+                                    className: "w-full border-collapse border print-table",
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("thead", {
+                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("tr", {
+                                                className: "bg-gray-100 flex gap-8",
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
+                                                        className: "border p-2",
+                                                        children: "Action Taken"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                                        lineNumber: 250,
+                                                        columnNumber: 45
+                                                    }, ("TURBOPACK compile-time value", void 0)),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
+                                                        className: "border p-2",
+                                                        children: "Person Responsible"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                                        lineNumber: 251,
+                                                        columnNumber: 45
+                                                    }, ("TURBOPACK compile-time value", void 0)),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
+                                                        className: "border p-2",
+                                                        children: "Time Table"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                                        lineNumber: 252,
+                                                        columnNumber: 45
+                                                    }, ("TURBOPACK compile-time value", void 0)),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
+                                                        className: "border p-2",
+                                                        children: "Follow Up Date"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                                        lineNumber: 253,
+                                                        columnNumber: 45
+                                                    }, ("TURBOPACK compile-time value", void 0)),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
+                                                        className: "border p-2",
+                                                        children: "Status"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                                        lineNumber: 254,
+                                                        columnNumber: 45
+                                                    }, ("TURBOPACK compile-time value", void 0))
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                                lineNumber: 249,
+                                                columnNumber: 41
+                                            }, ("TURBOPACK compile-time value", void 0))
+                                        }, void 0, false, {
+                                            fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                            lineNumber: 248,
+                                            columnNumber: 37
+                                        }, ("TURBOPACK compile-time value", void 0)),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("tbody", {
+                                            children: action.correction.map((item, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("tr", {
+                                                    children: [
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
+                                                            className: "border p-2",
+                                                            children: item.actionTaken
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                                            lineNumber: 260,
+                                                            columnNumber: 49
+                                                        }, ("TURBOPACK compile-time value", void 0)),
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
+                                                            className: "border p-2",
+                                                            children: item.personResponsible
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                                            lineNumber: 261,
+                                                            columnNumber: 49
+                                                        }, ("TURBOPACK compile-time value", void 0)),
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
+                                                            className: "border p-2",
+                                                            children: item.timeTable ? (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$date$2d$fns$2f$format$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["format"])(new Date(item.timeTable), 'MMM dd, yyyy') : 'N/A'
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                                            lineNumber: 262,
+                                                            columnNumber: 49
+                                                        }, ("TURBOPACK compile-time value", void 0)),
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
+                                                            className: "border p-2",
+                                                            children: item.followUpDate ? (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$date$2d$fns$2f$format$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["format"])(new Date(item.followUpDate), 'MMM dd, yyyy') : 'N/A'
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                                            lineNumber: 263,
+                                                            columnNumber: 49
+                                                        }, ("TURBOPACK compile-time value", void 0)),
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
+                                                            className: "border p-2",
+                                                            children: item.status
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                                            lineNumber: 264,
+                                                            columnNumber: 49
+                                                        }, ("TURBOPACK compile-time value", void 0))
+                                                    ]
+                                                }, item._id || item.tempId || index, true, {
+                                                    fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                                    lineNumber: 259,
+                                                    columnNumber: 45
+                                                }, ("TURBOPACK compile-time value", void 0)))
+                                        }, void 0, false, {
+                                            fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                            lineNumber: 257,
+                                            columnNumber: 37
+                                        }, ("TURBOPACK compile-time value", void 0))
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                    lineNumber: 247,
+                                    columnNumber: 33
+                                }, ("TURBOPACK compile-time value", void 0))
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                            lineNumber: 245,
+                            columnNumber: 29
+                        }, ("TURBOPACK compile-time value", void 0)),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "flex mt-12 mb-8",
+                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
+                                        children: "Consequences:"
+                                    }, void 0, false, {
+                                        fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                        lineNumber: 275,
+                                        columnNumber: 32
+                                    }, ("TURBOPACK compile-time value", void 0)),
+                                    " ",
+                                    action.consequence
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                lineNumber: 275,
+                                columnNumber: 29
+                            }, ("TURBOPACK compile-time value", void 0))
+                        }, void 0, false, {
+                            fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                            lineNumber: 274,
+                            columnNumber: 26
+                        }, ("TURBOPACK compile-time value", void 0)),
+                        action.analysis && action.analysis.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "mt-4",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                    className: "font-semibold",
+                                    children: "Root Cause Analysis"
+                                }, void 0, false, {
+                                    fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                    lineNumber: 281,
+                                    columnNumber: 33
+                                }, ("TURBOPACK compile-time value", void 0)),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("table", {
+                                    className: "w-full border-collapse border",
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("thead", {
+                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("tr", {
+                                                className: "bg-gray-100",
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
+                                                        className: "border p-2",
+                                                        children: "Why"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                                        lineNumber: 285,
+                                                        columnNumber: 45
+                                                    }, ("TURBOPACK compile-time value", void 0)),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
+                                                        className: "border p-2",
+                                                        children: "Probable Root Cause"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                                        lineNumber: 286,
+                                                        columnNumber: 45
+                                                    }, ("TURBOPACK compile-time value", void 0)),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
+                                                        className: "border p-2",
+                                                        children: "Counter Measure"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                                        lineNumber: 287,
+                                                        columnNumber: 45
+                                                    }, ("TURBOPACK compile-time value", void 0)),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
+                                                        className: "border p-2",
+                                                        children: "Who"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                                        lineNumber: 288,
+                                                        columnNumber: 45
+                                                    }, ("TURBOPACK compile-time value", void 0)),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
+                                                        className: "border p-2",
+                                                        children: "When"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                                        lineNumber: 289,
+                                                        columnNumber: 45
+                                                    }, ("TURBOPACK compile-time value", void 0)),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
+                                                        className: "border p-2",
+                                                        children: "Recurrence"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                                        lineNumber: 290,
+                                                        columnNumber: 45
+                                                    }, ("TURBOPACK compile-time value", void 0))
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                                lineNumber: 284,
+                                                columnNumber: 41
+                                            }, ("TURBOPACK compile-time value", void 0))
+                                        }, void 0, false, {
+                                            fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                            lineNumber: 283,
+                                            columnNumber: 37
+                                        }, ("TURBOPACK compile-time value", void 0)),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("tbody", {
+                                            children: action.analysis.map((item, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("tr", {
+                                                    children: [
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
+                                                            className: "border p-2",
+                                                            children: item.why
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                                            lineNumber: 296,
+                                                            columnNumber: 49
+                                                        }, ("TURBOPACK compile-time value", void 0)),
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
+                                                            className: "border p-2",
+                                                            children: item.probableRootCause
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                                            lineNumber: 297,
+                                                            columnNumber: 49
+                                                        }, ("TURBOPACK compile-time value", void 0)),
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
+                                                            className: "border p-2",
+                                                            children: item.counterMeasure
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                                            lineNumber: 298,
+                                                            columnNumber: 49
+                                                        }, ("TURBOPACK compile-time value", void 0)),
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
+                                                            className: "border p-2",
+                                                            children: item.who
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                                            lineNumber: 299,
+                                                            columnNumber: 49
+                                                        }, ("TURBOPACK compile-time value", void 0)),
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
+                                                            className: "border p-2",
+                                                            children: item.when
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                                            lineNumber: 300,
+                                                            columnNumber: 49
+                                                        }, ("TURBOPACK compile-time value", void 0)),
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
+                                                            className: "border p-2",
+                                                            children: item.recurrence
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                                            lineNumber: 301,
+                                                            columnNumber: 49
+                                                        }, ("TURBOPACK compile-time value", void 0))
+                                                    ]
+                                                }, item._id || item.tempId || index, true, {
+                                                    fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                                    lineNumber: 295,
+                                                    columnNumber: 45
+                                                }, ("TURBOPACK compile-time value", void 0)))
+                                        }, void 0, false, {
+                                            fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                            lineNumber: 293,
+                                            columnNumber: 37
+                                        }, ("TURBOPACK compile-time value", void 0))
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                    lineNumber: 282,
+                                    columnNumber: 33
+                                }, ("TURBOPACK compile-time value", void 0))
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                            lineNumber: 280,
+                            columnNumber: 29
+                        }, ("TURBOPACK compile-time value", void 0)),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "flex flex-col  mt-12 mb-8",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
+                                            children: "Root Cause:"
+                                        }, void 0, false, {
+                                            fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                            lineNumber: 311,
+                                            columnNumber: 32
+                                        }, ("TURBOPACK compile-time value", void 0)),
+                                        " ",
+                                        action.rootCause
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                    lineNumber: 311,
+                                    columnNumber: 29
+                                }, ("TURBOPACK compile-time value", void 0)),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
+                                            children: "Occurrence:"
+                                        }, void 0, false, {
+                                            fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                            lineNumber: 312,
+                                            columnNumber: 32
+                                        }, ("TURBOPACK compile-time value", void 0)),
+                                        " ",
+                                        action.occurence
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                    lineNumber: 312,
+                                    columnNumber: 29
+                                }, ("TURBOPACK compile-time value", void 0))
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                            lineNumber: 310,
+                            columnNumber: 25
+                        }, ("TURBOPACK compile-time value", void 0)),
+                        action.corrective && action.corrective.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                    className: "font-semibold",
+                                    children: "Corrective"
+                                }, void 0, false, {
+                                    fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                    lineNumber: 318,
+                                    columnNumber: 33
+                                }, ("TURBOPACK compile-time value", void 0)),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("table", {
+                                    className: "w-full border-collapse border",
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("thead", {
+                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("tr", {
+                                                className: "bg-gray-100",
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
+                                                        className: "border p-2",
+                                                        children: "Action Taken"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                                        lineNumber: 322,
+                                                        columnNumber: 45
+                                                    }, ("TURBOPACK compile-time value", void 0)),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
+                                                        className: "border p-2",
+                                                        children: "Person Responsible"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                                        lineNumber: 323,
+                                                        columnNumber: 45
+                                                    }, ("TURBOPACK compile-time value", void 0)),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
+                                                        className: "border p-2",
+                                                        children: "Time Table"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                                        lineNumber: 324,
+                                                        columnNumber: 45
+                                                    }, ("TURBOPACK compile-time value", void 0)),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
+                                                        className: "border p-2",
+                                                        children: "Follow Up Date"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                                        lineNumber: 325,
+                                                        columnNumber: 45
+                                                    }, ("TURBOPACK compile-time value", void 0)),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
+                                                        className: "border p-2",
+                                                        children: "Status"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                                        lineNumber: 326,
+                                                        columnNumber: 45
+                                                    }, ("TURBOPACK compile-time value", void 0))
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                                lineNumber: 321,
+                                                columnNumber: 41
+                                            }, ("TURBOPACK compile-time value", void 0))
+                                        }, void 0, false, {
+                                            fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                            lineNumber: 320,
+                                            columnNumber: 37
+                                        }, ("TURBOPACK compile-time value", void 0)),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("tbody", {
+                                            children: action.corrective.map((item, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("tr", {
+                                                    children: [
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
+                                                            className: "border p-2",
+                                                            children: item.actionTaken
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                                            lineNumber: 332,
+                                                            columnNumber: 49
+                                                        }, ("TURBOPACK compile-time value", void 0)),
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
+                                                            className: "border p-2",
+                                                            children: item.personResponsible
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                                            lineNumber: 333,
+                                                            columnNumber: 49
+                                                        }, ("TURBOPACK compile-time value", void 0)),
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
+                                                            className: "border p-2",
+                                                            children: item.timeTable ? (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$date$2d$fns$2f$format$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["format"])(new Date(item.timeTable), 'MMM dd, yyyy') : 'N/A'
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                                            lineNumber: 334,
+                                                            columnNumber: 49
+                                                        }, ("TURBOPACK compile-time value", void 0)),
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
+                                                            className: "border p-2",
+                                                            children: item.followUpDate ? (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$date$2d$fns$2f$format$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["format"])(new Date(item.followUpDate), 'MMM dd, yyyy') : 'N/A'
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                                            lineNumber: 335,
+                                                            columnNumber: 49
+                                                        }, ("TURBOPACK compile-time value", void 0)),
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
+                                                            className: "border p-2",
+                                                            children: item.status
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                                            lineNumber: 336,
+                                                            columnNumber: 49
+                                                        }, ("TURBOPACK compile-time value", void 0))
+                                                    ]
+                                                }, item._id || item.tempId || index, true, {
+                                                    fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                                    lineNumber: 331,
+                                                    columnNumber: 45
+                                                }, ("TURBOPACK compile-time value", void 0)))
+                                        }, void 0, false, {
+                                            fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                            lineNumber: 329,
+                                            columnNumber: 37
+                                        }, ("TURBOPACK compile-time value", void 0))
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                    lineNumber: 319,
+                                    columnNumber: 33
+                                }, ("TURBOPACK compile-time value", void 0))
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                            lineNumber: 317,
+                            columnNumber: 29
+                        }, ("TURBOPACK compile-time value", void 0))
+                    ]
+                }, action.tempId || actionIndex, true, {
+                    fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                    lineNumber: 241,
+                    columnNumber: 21
+                }, ("TURBOPACK compile-time value", void 0))),
+            incident.incidentEvaluation && incident.incidentEvaluation.map((evaluation, evalIndex)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: "mb-6",
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
+                            className: "text-4xl font-serif mb-2 mt-12",
+                            children: "Incident Evaluation"
+                        }, void 0, false, {
+                            fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                            lineNumber: 353,
+                            columnNumber: 25
+                        }, ("TURBOPACK compile-time value", void 0)),
+                        evaluation.effectiveness && evaluation.effectiveness.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "mb-4",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                    className: "font-semibold",
+                                    children: "Effectiveness"
+                                }, void 0, false, {
+                                    fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                    lineNumber: 357,
+                                    columnNumber: 33
+                                }, ("TURBOPACK compile-time value", void 0)),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("table", {
+                                    className: "w-full border-collapse border",
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("thead", {
+                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("tr", {
+                                                className: "bg-gray-100",
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
+                                                        className: "border p-2",
+                                                        children: "Evaluated By"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                                        lineNumber: 361,
+                                                        columnNumber: 45
+                                                    }, ("TURBOPACK compile-time value", void 0)),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
+                                                        className: "border p-2",
+                                                        children: "Date"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                                        lineNumber: 362,
+                                                        columnNumber: 45
+                                                    }, ("TURBOPACK compile-time value", void 0)),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
+                                                        className: "border p-2",
+                                                        children: "Remarks"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                                        lineNumber: 363,
+                                                        columnNumber: 45
+                                                    }, ("TURBOPACK compile-time value", void 0))
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                                lineNumber: 360,
+                                                columnNumber: 41
+                                            }, ("TURBOPACK compile-time value", void 0))
+                                        }, void 0, false, {
+                                            fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                            lineNumber: 359,
+                                            columnNumber: 37
+                                        }, ("TURBOPACK compile-time value", void 0)),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("tbody", {
+                                            children: evaluation.effectiveness.map((item, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("tr", {
+                                                    children: [
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
+                                                            className: "border p-2",
+                                                            children: item.evaluatedBy
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                                            lineNumber: 369,
+                                                            columnNumber: 49
+                                                        }, ("TURBOPACK compile-time value", void 0)),
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
+                                                            className: "border p-2",
+                                                            children: item.date ? (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$date$2d$fns$2f$format$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["format"])(new Date(item.date), 'MMM dd, yyyy') : 'N/A'
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                                            lineNumber: 370,
+                                                            columnNumber: 49
+                                                        }, ("TURBOPACK compile-time value", void 0)),
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
+                                                            className: "border p-2",
+                                                            children: item.remarks
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                                            lineNumber: 371,
+                                                            columnNumber: 49
+                                                        }, ("TURBOPACK compile-time value", void 0))
+                                                    ]
+                                                }, index, true, {
+                                                    fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                                    lineNumber: 368,
+                                                    columnNumber: 45
+                                                }, ("TURBOPACK compile-time value", void 0)))
+                                        }, void 0, false, {
+                                            fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                            lineNumber: 366,
+                                            columnNumber: 37
+                                        }, ("TURBOPACK compile-time value", void 0))
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                    lineNumber: 358,
+                                    columnNumber: 33
+                                }, ("TURBOPACK compile-time value", void 0))
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                            lineNumber: 356,
+                            columnNumber: 29
+                        }, ("TURBOPACK compile-time value", void 0)),
+                        evaluation.documentation && evaluation.documentation.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "mb-4",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                    className: "font-semibold",
+                                    children: "Documentation"
+                                }, void 0, false, {
+                                    fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                    lineNumber: 382,
+                                    columnNumber: 33
+                                }, ("TURBOPACK compile-time value", void 0)),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("table", {
+                                    className: "w-full border-collapse border",
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("thead", {
+                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("tr", {
+                                                className: "bg-gray-100",
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
+                                                        className: "border p-2",
+                                                        children: "Followed Up By"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                                        lineNumber: 386,
+                                                        columnNumber: 45
+                                                    }, ("TURBOPACK compile-time value", void 0)),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
+                                                        className: "border p-2",
+                                                        children: "Date"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                                        lineNumber: 387,
+                                                        columnNumber: 45
+                                                    }, ("TURBOPACK compile-time value", void 0)),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
+                                                        className: "border p-2",
+                                                        children: "Remarks"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                                        lineNumber: 388,
+                                                        columnNumber: 45
+                                                    }, ("TURBOPACK compile-time value", void 0))
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                                lineNumber: 385,
+                                                columnNumber: 41
+                                            }, ("TURBOPACK compile-time value", void 0))
+                                        }, void 0, false, {
+                                            fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                            lineNumber: 384,
+                                            columnNumber: 37
+                                        }, ("TURBOPACK compile-time value", void 0)),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("tbody", {
+                                            children: evaluation.documentation.map((item, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("tr", {
+                                                    children: [
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
+                                                            className: "border p-2",
+                                                            children: item.followedUpBy
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                                            lineNumber: 394,
+                                                            columnNumber: 49
+                                                        }, ("TURBOPACK compile-time value", void 0)),
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
+                                                            className: "border p-2",
+                                                            children: item.date ? (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$date$2d$fns$2f$format$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["format"])(new Date(item.date), 'MMM dd, yyyy') : 'N/A'
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                                            lineNumber: 395,
+                                                            columnNumber: 49
+                                                        }, ("TURBOPACK compile-time value", void 0)),
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
+                                                            className: "border p-2",
+                                                            children: item.remarks
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                                            lineNumber: 396,
+                                                            columnNumber: 49
+                                                        }, ("TURBOPACK compile-time value", void 0))
+                                                    ]
+                                                }, index, true, {
+                                                    fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                                    lineNumber: 393,
+                                                    columnNumber: 45
+                                                }, ("TURBOPACK compile-time value", void 0)))
+                                        }, void 0, false, {
+                                            fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                            lineNumber: 391,
+                                            columnNumber: 37
+                                        }, ("TURBOPACK compile-time value", void 0))
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                                    lineNumber: 383,
+                                    columnNumber: 33
+                                }, ("TURBOPACK compile-time value", void 0))
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                            lineNumber: 381,
+                            columnNumber: 29
+                        }, ("TURBOPACK compile-time value", void 0))
+                    ]
+                }, evaluation._id || evaluation.tempId || evalIndex, true, {
+                    fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                    lineNumber: 352,
+                    columnNumber: 21
+                }, ("TURBOPACK compile-time value", void 0))),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "mt-12 flex justify-between",
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "border-t pt-4",
+                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                            className: "font-semibold",
+                            children: [
+                                "Prepared by: ",
+                                incident.reportingEmployee
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                            lineNumber: 409,
+                            columnNumber: 25
+                        }, ("TURBOPACK compile-time value", void 0))
+                    }, void 0, false, {
+                        fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                        lineNumber: 408,
+                        columnNumber: 21
+                    }, ("TURBOPACK compile-time value", void 0)),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "border-t pt-4",
+                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                            className: "font-semibold",
+                            children: [
+                                "Filing Date: ",
+                                incident.dateReported ? (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$date$2d$fns$2f$format$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["format"])(new Date(incident.dateReported), 'MMMM dd, yyyy') : 'N/A'
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                            lineNumber: 412,
+                            columnNumber: 25
+                        }, ("TURBOPACK compile-time value", void 0))
+                    }, void 0, false, {
+                        fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                        lineNumber: 411,
+                        columnNumber: 21
+                    }, ("TURBOPACK compile-time value", void 0))
+                ]
+            }, void 0, true, {
+                fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+                lineNumber: 407,
+                columnNumber: 17
+            }, ("TURBOPACK compile-time value", void 0))
+        ]
+    }, void 0, true, {
+        fileName: "[project]/apps/client/src/components/PrintWrapper.tsx",
+        lineNumber: 15,
+        columnNumber: 13
+    }, ("TURBOPACK compile-time value", void 0));
+});
+_c1 = PrintWrapper;
+PrintWrapper.displayName = 'PrintWrapper';
+var _c, _c1;
+__turbopack_context__.k.register(_c, "PrintWrapper$forwardRef");
+__turbopack_context__.k.register(_c1, "PrintWrapper");
+if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
+    __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
+}
+}),
 "[project]/apps/client/src/app/page.tsx [app-client] (ecmascript)", ((__turbopack_context__) => {
 "use strict";
 
@@ -8457,9 +9946,11 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modul
 var __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$hooks$2f$useIncidentQueries$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/apps/client/src/hooks/useIncidentQueries.ts [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$lib$2f$utils$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/apps/client/src/lib/utils.ts [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$date$2d$fns$2f$format$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/apps/client/node_modules/date-fns/format.js [app-client] (ecmascript) <locals>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$PrintWrapper$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/apps/client/src/components/PrintWrapper.tsx [app-client] (ecmascript)");
 ;
 var _s = __turbopack_context__.k.signature();
 "use client";
+;
 ;
 ;
 ;
@@ -8567,34 +10058,53 @@ function HomePage() {
                 setIsPrinting(false);
                 return;
             }
+            // Store the current active element before printing
+            const previousActiveElement = document.activeElement;
             // Write the print content to the new window
             printWindow.document.write("\n    <!DOCTYPE html>\n    <html>\n      <head>\n        <title>Print Report</title>\n        <style>\n          @page {\n            size: A4;\n            margin: 20mm;\n          }\n          body {\n            font-family: system-ui, -apple-system, sans-serif;\n            line-height: 1.5;\n            color: black;\n            background: white;\n          }\n          * {\n            print-color-adjust: exact !important;\n            -webkit-print-color-adjust: exact !important;\n          }\n        </style>\n      </head>\n      <body>\n        ".concat(printContent.outerHTML, "\n      </body>\n    </html>\n  "));
             printWindow.document.close();
+            const cleanup = {
+                "HomePage.useCallback[handlePrint].cleanup": ()=>{
+                    setIsPrinting(false);
+                    // Restore focus to the previous active element
+                    if (previousActiveElement && 'focus' in previousActiveElement) {
+                        previousActiveElement.focus();
+                    }
+                    // Force React to update the modal's focus trap
+                    window.dispatchEvent(new Event('focus'));
+                }
+            }["HomePage.useCallback[handlePrint].cleanup"];
             // Reset printing state if window is closed without printing
             const checkWindowClosed = setInterval({
                 "HomePage.useCallback[handlePrint].checkWindowClosed": ()=>{
                     if (printWindow.closed) {
                         clearInterval(checkWindowClosed);
-                        setIsPrinting(false);
+                        cleanup();
                     }
                 }
-            }["HomePage.useCallback[handlePrint].checkWindowClosed"], 0);
-            // Handle print completion or cancellation
+            }["HomePage.useCallback[handlePrint].checkWindowClosed"], 1000);
+            // Handle print completion
             printWindow.onload = ({
                 "HomePage.useCallback[handlePrint]": ()=>{
                     printWindow.print();
-                    printWindow.onafterprint = ({
-                        "HomePage.useCallback[handlePrint]": ()=>{
-                            printWindow.close();
-                            clearInterval(checkWindowClosed);
-                            setIsPrinting(false);
-                        }
-                    })["HomePage.useCallback[handlePrint]"];
+                    // Reset state after print dialog opens
+                    setIsPrinting(false);
+                }
+            })["HomePage.useCallback[handlePrint]"];
+            // Handle after print
+            printWindow.onafterprint = ({
+                "HomePage.useCallback[handlePrint]": ()=>{
+                    printWindow.close();
+                    clearInterval(checkWindowClosed);
+                    cleanup();
                 }
             })["HomePage.useCallback[handlePrint]"];
             // Cleanup interval when component unmounts
             return ({
-                "HomePage.useCallback[handlePrint]": ()=>clearInterval(checkWindowClosed)
+                "HomePage.useCallback[handlePrint]": ()=>{
+                    clearInterval(checkWindowClosed);
+                    cleanup();
+                }
             })["HomePage.useCallback[handlePrint]"];
         }
     }["HomePage.useCallback[handlePrint]"], []);
@@ -8652,7 +10162,7 @@ function HomePage() {
         children: "Loading user..."
     }, void 0, false, {
         fileName: "[project]/apps/client/src/app/page.tsx",
-        lineNumber: 239,
+        lineNumber: 259,
         columnNumber: 25
     }, this);
     if (meError) return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -8660,13 +10170,36 @@ function HomePage() {
         children: "Failed to fetch user info"
     }, void 0, false, {
         fileName: "[project]/apps/client/src/app/page.tsx",
-        lineNumber: 240,
+        lineNumber: 260,
         columnNumber: 23
     }, this);
     var _me_user_email;
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         className: "h-screen flex flex-col dark:bg-sky-950 dark:text-white",
         children: [
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                style: {
+                    display: "none"
+                },
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    ref: componentRef,
+                    children: editingIncident && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$PrintWrapper$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["PrintWrapper"], {
+                        incident: form
+                    }, void 0, false, {
+                        fileName: "[project]/apps/client/src/app/page.tsx",
+                        lineNumber: 267,
+                        columnNumber: 31
+                    }, this)
+                }, void 0, false, {
+                    fileName: "[project]/apps/client/src/app/page.tsx",
+                    lineNumber: 266,
+                    columnNumber: 9
+                }, this)
+            }, void 0, false, {
+                fileName: "[project]/apps/client/src/app/page.tsx",
+                lineNumber: 265,
+                columnNumber: 7
+            }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$features$2f$incidentsHeader$2f$incidentsHeader$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                     selectedOrg: selectedOrg,
@@ -8676,12 +10209,12 @@ function HomePage() {
                     email: (_me_user_email = me === null || me === void 0 ? void 0 : (_me_user2 = me.user) === null || _me_user2 === void 0 ? void 0 : _me_user2.email) !== null && _me_user_email !== void 0 ? _me_user_email : ""
                 }, void 0, false, {
                     fileName: "[project]/apps/client/src/app/page.tsx",
-                    lineNumber: 252,
+                    lineNumber: 272,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/apps/client/src/app/page.tsx",
-                lineNumber: 250,
+                lineNumber: 270,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -8695,7 +10228,7 @@ function HomePage() {
                                 children: "Incident Reports"
                             }, void 0, false, {
                                 fileName: "[project]/apps/client/src/app/page.tsx",
-                                lineNumber: 258,
+                                lineNumber: 278,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Dialog"], {
@@ -8710,12 +10243,12 @@ function HomePage() {
                                             children: "+ Create"
                                         }, void 0, false, {
                                             fileName: "[project]/apps/client/src/app/page.tsx",
-                                            lineNumber: 265,
+                                            lineNumber: 285,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/apps/client/src/app/page.tsx",
-                                        lineNumber: 264,
+                                        lineNumber: 284,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["DialogContent"], {
@@ -8728,27 +10261,40 @@ function HomePage() {
                                                     className: "flex gap-4 items-center justify-between",
                                                     children: [
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                            className: "flex gap-4",
+                                                            className: "flex gap-4 items-center",
                                                             children: [
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["DialogTitle"], {
                                                                     children: editingIncident ? "Edit Incident Report" : "File Incident Report"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/apps/client/src/app/page.tsx",
-                                                                    lineNumber: 273,
+                                                                    lineNumber: 293,
                                                                     columnNumber: 21
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                    className: "text-[0.84rem] text-gray-400 italic font-semibold",
-                                                                    children: editingIncident ? "(Ref No: ".concat(form.refNo, ")") : null
-                                                                }, void 0, false, {
+                                                                    className: "text-[0.84rem] text-gray-400 italic font-semibold flex items-center gap-2",
+                                                                    children: [
+                                                                        editingIncident ? "(Ref No: ".concat(form.refNo, ")") : null,
+                                                                        selectedOrg === "ALL" && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                                            className: "text-[13px] font-medium text-gray-500 mb-[0.10rem]",
+                                                                            children: [
+                                                                                " - ",
+                                                                                form.organization
+                                                                            ]
+                                                                        }, void 0, true, {
+                                                                            fileName: "[project]/apps/client/src/app/page.tsx",
+                                                                            lineNumber: 296,
+                                                                            columnNumber: 50
+                                                                        }, this)
+                                                                    ]
+                                                                }, void 0, true, {
                                                                     fileName: "[project]/apps/client/src/app/page.tsx",
-                                                                    lineNumber: 274,
+                                                                    lineNumber: 294,
                                                                     columnNumber: 21
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/apps/client/src/app/page.tsx",
-                                                            lineNumber: 272,
+                                                            lineNumber: 292,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -8767,7 +10313,7 @@ function HomePage() {
                                                                                         className: "mr-2 h-4 w-4 shrink-0"
                                                                                     }, void 0, false, {
                                                                                         fileName: "[project]/apps/client/src/app/page.tsx",
-                                                                                        lineNumber: 288,
+                                                                                        lineNumber: 310,
                                                                                         columnNumber: 27
                                                                                     }, this),
                                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -8776,23 +10322,23 @@ function HomePage() {
                                                                                             children: "Filing Date"
                                                                                         }, void 0, false, {
                                                                                             fileName: "[project]/apps/client/src/app/page.tsx",
-                                                                                            lineNumber: 290,
+                                                                                            lineNumber: 312,
                                                                                             columnNumber: 85
                                                                                         }, this)
                                                                                     }, void 0, false, {
                                                                                         fileName: "[project]/apps/client/src/app/page.tsx",
-                                                                                        lineNumber: 289,
+                                                                                        lineNumber: 311,
                                                                                         columnNumber: 27
                                                                                     }, this)
                                                                                 ]
                                                                             }, void 0, true, {
                                                                                 fileName: "[project]/apps/client/src/app/page.tsx",
-                                                                                lineNumber: 281,
+                                                                                lineNumber: 303,
                                                                                 columnNumber: 25
                                                                             }, this)
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/apps/client/src/app/page.tsx",
-                                                                            lineNumber: 280,
+                                                                            lineNumber: 302,
                                                                             columnNumber: 23
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$popover$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["PopoverContent"], {
@@ -8806,18 +10352,18 @@ function HomePage() {
                                                                                 initialFocus: true
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/apps/client/src/app/page.tsx",
-                                                                                lineNumber: 295,
+                                                                                lineNumber: 317,
                                                                                 columnNumber: 25
                                                                             }, this)
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/apps/client/src/app/page.tsx",
-                                                                            lineNumber: 294,
+                                                                            lineNumber: 316,
                                                                             columnNumber: 23
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/apps/client/src/app/page.tsx",
-                                                                    lineNumber: 279,
+                                                                    lineNumber: 301,
                                                                     columnNumber: 21
                                                                 }, this),
                                                                 editingIncident && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -8830,29 +10376,29 @@ function HomePage() {
                                                                         children: isPrinting ? 'Preparing...' : 'Print'
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/apps/client/src/app/page.tsx",
-                                                                        lineNumber: 306,
+                                                                        lineNumber: 328,
                                                                         columnNumber: 25
                                                                     }, this)
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/apps/client/src/app/page.tsx",
-                                                                    lineNumber: 305,
+                                                                    lineNumber: 327,
                                                                     columnNumber: 23
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/apps/client/src/app/page.tsx",
-                                                            lineNumber: 278,
+                                                            lineNumber: 300,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/apps/client/src/app/page.tsx",
-                                                    lineNumber: 271,
+                                                    lineNumber: 291,
                                                     columnNumber: 17
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/apps/client/src/app/page.tsx",
-                                                lineNumber: 270,
+                                                lineNumber: 290,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -8869,37 +10415,37 @@ function HomePage() {
                                                     defaultForm: defaultForm
                                                 }, void 0, false, {
                                                     fileName: "[project]/apps/client/src/app/page.tsx",
-                                                    lineNumber: 322,
+                                                    lineNumber: 344,
                                                     columnNumber: 17
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/apps/client/src/app/page.tsx",
-                                                lineNumber: 321,
+                                                lineNumber: 343,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/apps/client/src/app/page.tsx",
-                                        lineNumber: 269,
+                                        lineNumber: 289,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/apps/client/src/app/page.tsx",
-                                lineNumber: 261,
+                                lineNumber: 281,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/apps/client/src/app/page.tsx",
-                        lineNumber: 257,
+                        lineNumber: 277,
                         columnNumber: 9
                     }, this),
                     isLoading && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                         children: "Loading incidents..."
                     }, void 0, false, {
                         fileName: "[project]/apps/client/src/app/page.tsx",
-                        lineNumber: 341,
+                        lineNumber: 363,
                         columnNumber: 23
                     }, this),
                     isError && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -8907,7 +10453,7 @@ function HomePage() {
                         children: "Failed to load incidents"
                     }, void 0, false, {
                         fileName: "[project]/apps/client/src/app/page.tsx",
-                        lineNumber: 342,
+                        lineNumber: 364,
                         columnNumber: 21
                     }, this),
                     incidents && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$features$2f$incidents$2f$components$2f$IncidentMainTable$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -8928,19 +10474,19 @@ function HomePage() {
                         }
                     }, void 0, false, {
                         fileName: "[project]/apps/client/src/app/page.tsx",
-                        lineNumber: 344,
+                        lineNumber: 366,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/apps/client/src/app/page.tsx",
-                lineNumber: 256,
+                lineNumber: 276,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/apps/client/src/app/page.tsx",
-        lineNumber: 243,
+        lineNumber: 263,
         columnNumber: 5
     }, this);
 }
@@ -8959,4 +10505,4 @@ if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelper
 }),
 ]);
 
-//# sourceMappingURL=apps_client_src_eb4e23bc._.js.map
+//# sourceMappingURL=apps_client_src_f69df29d._.js.map

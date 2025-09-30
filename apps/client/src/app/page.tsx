@@ -1,6 +1,8 @@
+//app/page.tsx
+
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef, useCallback } from "react"
 import useSWR from "swr"
 
 import IncidentMainTable from "@/features/incidents/components/IncidentMainTable"
@@ -23,6 +25,9 @@ import { useIncidents } from "@/hooks/useIncidentQueries"
 import { IncidentForm } from "@/types/incidentModal"
 import { cn } from "@/lib/utils"
 import { format } from "date-fns"
+import { useReactToPrint } from "react-to-print"
+import { PrintWrapper } from "@/components/PrintWrapper"
+
 
 // 🔹 fetcher with cookies
 export const fetcher = async (url: string) => {
@@ -98,13 +103,108 @@ export default function HomePage() {
   const [editingIncident, setEditingIncident] = useState<(IncidentForm & { _id: string }) | null>(null)
 
   const [form, setForm] = useState<IncidentForm>(defaultForm)
-  
+
 
   // 🚀 fetch user from /me
   const { data: me, error: meError, isLoading: meLoading } = useSWR("http://localhost:5000/api/auth/me", fetcher)
 
   const role = me?.user?.role ?? "user"
   const userOrg = me?.user?.organization ?? "PTC"
+
+  const componentRef = useRef<HTMLDivElement>(null);
+  const [isPrinting, setIsPrinting] = useState(false);
+
+  // ...existing code...
+
+  const handlePrint = useCallback(() => {
+    setIsPrinting(true);
+    const printContent = componentRef.current;
+
+    if (!printContent) {
+      console.error('Print content not ready');
+      setIsPrinting(false);
+      return;
+    }
+
+    const printWindow = window.open('', '_blank');
+    if (!printWindow) {
+      console.error('Could not open print window');
+      setIsPrinting(false);
+      return;
+    }
+
+    // Store the current active element before printing
+    const previousActiveElement = document.activeElement;
+
+    // Write the print content to the new window
+    printWindow.document.write(`
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <title>Print Report</title>
+        <style>
+          @page {
+            size: A4;
+            margin: 20mm;
+          }
+          body {
+            font-family: system-ui, -apple-system, sans-serif;
+            line-height: 1.5;
+            color: black;
+            background: white;
+          }
+          * {
+            print-color-adjust: exact !important;
+            -webkit-print-color-adjust: exact !important;
+          }
+        </style>
+      </head>
+      <body>
+        ${printContent.outerHTML}
+      </body>
+    </html>
+  `);
+
+    printWindow.document.close();
+
+    const cleanup = () => {
+      setIsPrinting(false);
+      // Restore focus to the previous active element
+      if (previousActiveElement && 'focus' in previousActiveElement) {
+        (previousActiveElement as HTMLElement).focus();
+      }
+      // Force React to update the modal's focus trap
+      window.dispatchEvent(new Event('focus'));
+    };
+
+    // Reset printing state if window is closed without printing
+    const checkWindowClosed = setInterval(() => {
+      if (printWindow.closed) {
+        clearInterval(checkWindowClosed);
+        cleanup();
+      }
+    }, 1000);
+
+    // Handle print completion
+    printWindow.onload = () => {
+      printWindow.print();
+      // Reset state after print dialog opens
+      setIsPrinting(false);
+    };
+
+    // Handle after print
+    printWindow.onafterprint = () => {
+      printWindow.close();
+      clearInterval(checkWindowClosed);
+      cleanup();
+    };
+
+    // Cleanup interval when component unmounts
+    return () => {
+      clearInterval(checkWindowClosed);
+      cleanup();
+    };
+  }, []);
 
   // 🆕 set org automatically for normal users
   useEffect(() => {
@@ -147,10 +247,13 @@ export default function HomePage() {
     setIsOpen(true)
   }
 
+
+
   const handleClose = () => {
     setForm(defaultForm)
     setEditingIncident(null)
     setIsOpen(false)
+
   }
 
   if (meLoading) return <p>Loading user...</p>
@@ -158,6 +261,12 @@ export default function HomePage() {
 
   return (
     <div className="h-screen flex flex-col dark:bg-sky-950 dark:text-white">
+      {/* Print Container */}
+      <div style={{ display: "none" }}>
+        <div ref={componentRef}>
+          {editingIncident && <PrintWrapper incident={form} />}
+        </div>
+      </div>
       <div>
         {/* 📝 Header (now gets role + org from /me) */}
         <IncidentsHeader selectedOrg={selectedOrg} onSelectOrg={setSelectedOrg} role={role} userOrg={userOrg} email={me?.user?.email ?? ""} />
@@ -177,16 +286,18 @@ export default function HomePage() {
               </DialogTrigger>
             )}
 
-            <DialogContent className="max-h-[700px] 2xl:max-h-[750px] sm:max-w-[1100px] max-w-[600px] overflow-y-auto dark:bg-sky-950"  onCloseAutoFocus={(e) => e.preventDefault()}> {/* onCloseAutoFocus={(e) => e.preventDefault()} -- will help to avoid moving to top after closing the modal*/}
+            <DialogContent className="max-h-[700px] 2xl:max-h-[750px] sm:max-w-[1100px] max-w-[600px] overflow-y-auto dark:bg-sky-950" onCloseAutoFocus={(e) => e.preventDefault()}> {/* onCloseAutoFocus={(e) => e.preventDefault()} -- will help to avoid moving to top after closing the modal*/}
               <DialogHeader>
                 <div className="flex gap-4 items-center justify-between">
-                  <div className="flex gap-4">
+                  <div className="flex gap-4 items-center">
                     <DialogTitle>{editingIncident ? "Edit Incident Report" : "File Incident Report"}</DialogTitle>
-                    <div className="text-[0.84rem] text-gray-400 italic font-semibold">
+                    <div className="text-[0.84rem] text-gray-400 italic font-semibold flex items-center gap-2">
                       {editingIncident ? `(Ref No: ${form.refNo})` : null}
+                      {selectedOrg === "ALL" && (<p className="text-[13px] font-medium text-gray-500 mb-[0.10rem]"> - {form.organization}</p>)}
                     </div>
+
                   </div>
-                  <div className="mr-7 mt-2 flex items-center">
+                  <div className="mr-7 mt-2 flex gap-2 items-center">
                     <Popover>
                       <PopoverTrigger asChild className="h-[34px]">
                         <Button
@@ -212,6 +323,19 @@ export default function HomePage() {
                         />
                       </PopoverContent>
                     </Popover>
+                    {editingIncident && (
+                      <div>
+                        <Button
+                          type="button"
+                          variant="outline"
+                          onClick={handlePrint}
+                          disabled={isPrinting || !componentRef.current}
+                          className="h-[34px]"
+                        >
+                          {isPrinting ? 'Preparing...' : 'Print'}
+                        </Button>
+                      </div>
+                    )}
                   </div>
                 </div>
               </DialogHeader>

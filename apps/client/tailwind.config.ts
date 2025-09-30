@@ -8,4 +8,11 @@ module.exports = {
     extend: {},
   },
   plugins: [],
+  variants: {
+    extend: {
+      // Enable print variant
+      margin: ['print'],
+      padding: ['print'],
+    },
+  },
 };
