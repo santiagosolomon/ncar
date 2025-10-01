@@ -10,6 +10,7 @@ export async function sendIncidentEmail(incident: any) {
 
   const html = `
     <p><b>Ref No:</b> ${incident.refNo || ""}</p>
+    <p><b>Organization:</b> ${incident.organization}</p>
     <p><b>Reporting Department:</b> ${incident.reportingDepartment}</p>
     <p><b>Reporting Employee:</b> ${incident.reportingEmployee}</p>
     <p><b>Status:</b> NEW</p>

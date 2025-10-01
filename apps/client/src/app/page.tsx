@@ -111,100 +111,123 @@ export default function HomePage() {
   const role = me?.user?.role ?? "user"
   const userOrg = me?.user?.organization ?? "PTC"
 
-  const componentRef = useRef<HTMLDivElement>(null);
-  const [isPrinting, setIsPrinting] = useState(false);
+
 
   // ...existing code...
 
+  const [isModalDisabled, setIsModalDisabled] = useState(false);
+
+  // Replace the existing handlePrint function
+  const [printWindow, setPrintWindow] = useState<Window | null>(null);
+  const componentRef = useRef<HTMLDivElement>(null);
+  const dialogRef = useRef<HTMLDivElement>(null);
+  const [isPrinting, setIsPrinting] = useState(false);
+
+  // Replace the handlePrint function
   const handlePrint = useCallback(() => {
-    setIsPrinting(true);
-    const printContent = componentRef.current;
-
-    if (!printContent) {
-      console.error('Print content not ready');
-      setIsPrinting(false);
-      return;
-    }
-
-    const printWindow = window.open('', '_blank');
-    if (!printWindow) {
-      console.error('Could not open print window');
-      setIsPrinting(false);
-      return;
-    }
-
-    // Store the current active element before printing
-    const previousActiveElement = document.activeElement;
-
-    // Write the print content to the new window
-    printWindow.document.write(`
-    <!DOCTYPE html>
-    <html>
-      <head>
-        <title>Print Report</title>
-        <style>
-          @page {
-            size: A4;
-            margin: 20mm;
-          }
-          body {
-            font-family: system-ui, -apple-system, sans-serif;
-            line-height: 1.5;
-            color: black;
-            background: white;
-          }
-          * {
-            print-color-adjust: exact !important;
-            -webkit-print-color-adjust: exact !important;
-          }
-        </style>
-      </head>
-      <body>
-        ${printContent.outerHTML}
-      </body>
-    </html>
-  `);
-
-    printWindow.document.close();
-
-    const cleanup = () => {
-      setIsPrinting(false);
-      // Restore focus to the previous active element
-      if (previousActiveElement && 'focus' in previousActiveElement) {
-        (previousActiveElement as HTMLElement).focus();
+    try {
+      // First ensure any existing print window is closed
+      if (printWindow) {
+        printWindow.close();
+        setPrintWindow(null);
       }
-      // Force React to update the modal's focus trap
-      window.dispatchEvent(new Event('focus'));
+
+      setIsPrinting(true);
+      const content = componentRef.current;
+
+      if (!content) {
+        console.error('No content to print');
+        setIsPrinting(false);
+        return;
+      }
+
+      // Small delay to ensure previous window is fully closed
+      setTimeout(() => {
+        const pw = window.open('', '_blank');
+        if (!pw) {
+          console.error('Failed to open print window');
+          setIsPrinting(false);
+          return;
+        }
+
+        setPrintWindow(pw);
+
+        pw.document.write(`
+        <!DOCTYPE html>
+        <html>
+          <head>
+            <title>Print Report </title>
+            <style>
+              @page { size: A4; margin: 20mm; }
+              body { 
+                font-family: system-ui, -apple-system, sans-serif;
+                line-height: 1.5;
+                color: black;
+                background: white;
+                margin: 0;
+                padding: 20mm;
+              }
+              * {
+                print-color-adjust: exact !important;
+                -webkit-print-color-adjust: exact !important;
+              }
+              table { width: 100%; border-collapse: collapse; }
+              th, td { border: 1px solid black; padding: 8px; }
+              th { background-color: #f3f4f6 !important; }
+            </style>
+          </head>
+          <body>${content.outerHTML}</body>
+        </html>
+      `);
+
+        pw.document.close();
+
+        pw.onload = () => {
+          pw.focus();
+          pw.print();
+        };
+
+      }, 100); // Small delay to ensure clean state
+
+    } catch (error) {
+      console.error('Print error:', error);
+      setIsPrinting(false);
+    }
+  }, [printWindow]); // Add printWindow to dependencies
+
+  // Add cleanup effect
+  useEffect(() => {
+    const cleanup = () => {
+      if (printWindow) {
+        printWindow.close();
+        setPrintWindow(null);
+      }
+      setIsPrinting(false);
+
+      // Re-enable form inputs
+      if (dialogRef.current) {
+        const inputs = dialogRef.current.querySelectorAll('input, textarea, select, button');
+        inputs.forEach(input => {
+          (input as HTMLElement).removeAttribute('disabled');
+        });
+      }
     };
 
-    // Reset printing state if window is closed without printing
-    const checkWindowClosed = setInterval(() => {
-      if (printWindow.closed) {
-        clearInterval(checkWindowClosed);
+    // Handle window focus changes
+    const handleFocus = () => {
+      if (printWindow?.closed) {
         cleanup();
       }
-    }, 1000);
-
-    // Handle print completion
-    printWindow.onload = () => {
-      printWindow.print();
-      // Reset state after print dialog opens
-      setIsPrinting(false);
     };
 
-    // Handle after print
-    printWindow.onafterprint = () => {
-      printWindow.close();
-      clearInterval(checkWindowClosed);
-      cleanup();
-    };
+    window.addEventListener('focus', handleFocus);
 
-    // Cleanup interval when component unmounts
+    // Cleanup on unmount
     return () => {
-      clearInterval(checkWindowClosed);
+      window.removeEventListener('focus', handleFocus);
       cleanup();
     };
-  }, []);
+  }, [printWindow]);
 
   // 🆕 set org automatically for normal users
   useEffect(() => {
@@ -260,7 +283,7 @@ export default function HomePage() {
   if (meError) return <p className="text-red-500">Failed to fetch user info</p>
 
   return (
-    <div className="h-screen flex flex-col dark:bg-sky-950 dark:text-white">
+    <div className="h-screen flex flex-col dark:bg-gradient-to-r dark:from-sky-950 dark:to-sky-800 dark:text-white">
       {/* Print Container */}
       <div style={{ display: "none" }}>
         <div ref={componentRef}>
@@ -286,7 +309,17 @@ export default function HomePage() {
               </DialogTrigger>
             )}
 
-            <DialogContent className="max-h-[700px] 2xl:max-h-[750px] sm:max-w-[1100px] max-w-[600px] overflow-y-auto dark:bg-sky-950" onCloseAutoFocus={(e) => e.preventDefault()}> {/* onCloseAutoFocus={(e) => e.preventDefault()} -- will help to avoid moving to top after closing the modal*/}
+            <DialogContent ref={dialogRef} className="max-h-[700px] 2xl:max-h-[750px] sm:max-w-[1100px] max-w-[600px] overflow-y-auto dark:bg-sky-950"
+              onOpenAutoFocus={(e) => {
+                e.preventDefault();
+                if (dialogRef.current) {
+                  dialogRef.current.focus();
+                }
+              }}
+              onCloseAutoFocus={(e) => {
+                e.preventDefault();
+                setIsModalDisabled(false);
+              }}> {/* onCloseAutoFocus={(e) => e.preventDefault()} -- will help to avoid moving to top after closing the modal*/}
               <DialogHeader>
                 <div className="flex gap-4 items-center justify-between">
                   <div className="flex gap-4 items-center">
@@ -329,7 +362,7 @@ export default function HomePage() {
                           type="button"
                           variant="outline"
                           onClick={handlePrint}
-                          disabled={isPrinting || !componentRef.current}
+                          disabled={isPrinting}
                           className="h-[34px]"
                         >
                           {isPrinting ? 'Preparing...' : 'Print'}
@@ -340,7 +373,7 @@ export default function HomePage() {
                 </div>
               </DialogHeader>
 
-              <div className="mt-4">
+              <div className={isModalDisabled ? 'pointer-events-none' : ''}>
                 <IncidentModal
                   onClose={handleClose}
                   // 🆕 always pass selectedOrg into the form
