@@ -305,7 +305,7 @@ export default function HomePage() {
             {/* Only show Create button based on condition */}
             {!((role === "admin" || userOrg === "ALL") && selectedOrg === "ALL") && (
               <DialogTrigger asChild>
-                <Button className="cursor-pointer" onClick={handleCreate}>+ Create</Button>
+                <Button className="cursor-pointer transition-none" onClick={handleCreate}>+ Create</Button>
               </DialogTrigger>
             )}
 

@@ -12,7 +12,7 @@ export function ThemeToggle() {
       variant="outline"
       size="icon"
       onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-      className="cursor-pointer border-none shadow-none transition-colors duration-300"
+      className="cursor-pointer border-none shadow-none transition-none duration-300"
     >
       {theme === "light" ? <Moon className="h-5 w-5" /> : <Sun className="h-5 w-5" />}
     </Button>

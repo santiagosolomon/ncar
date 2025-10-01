@@ -62,7 +62,7 @@ export default function IncidentsHeader({ selectedOrg, onSelectOrg, role, userOr
         <h1>{selectedOrg == "ALL" ? "NCAR" : selectedOrg}</h1>
       </div>
       <div className="flex ">
-        <div className="border-none">
+        <div className="border-none transition-none">
           <ThemeToggle />
         </div>
         {/* 🍔 Hamburger menu */}
