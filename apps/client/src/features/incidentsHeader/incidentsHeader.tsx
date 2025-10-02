@@ -31,10 +31,6 @@ export default function IncidentsHeader({ selectedOrg, onSelectOrg, role, userOr
   const [error, setError] = useState('');
   const router = useRouter()
 
-  // const handleLogout = () => {
-
-  // }
-
   const handleLogout = async () => {
     try {
       const res = await fetch("http://localhost:5000/api/auth/logout", {

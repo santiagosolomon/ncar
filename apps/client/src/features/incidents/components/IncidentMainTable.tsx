@@ -11,13 +11,20 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { Button } from "@/components/ui/button";
 
 import { LuChevronRight } from "react-icons/lu";
 import { LuChevronLeft } from "react-icons/lu";
 
-import clsx from "clsx"
+import clsx from "clsx";
+import Image from "next/image";
 
 interface Props {
   data: Array<IncidentForm & { _id: string }>;
@@ -44,7 +51,20 @@ export default function IncidentMainTable({
   const endIdx = data.length > 0 ? startIdx + data.length - 1 : 0;
 
   return (
-    <div className="w-full overflow-x-auto rounded-lg border shadow-sm dark:text-white dark:border-sky-900 dark:shadow-md dark:bg-sky-950 ">
+    <div className="w-full overflow-x-auto rounded-lg border shadow-sm dark:text-white dark:border-sky-900 dark:shadow-md dark:bg-sky-950 relative">
+      {/* Decorative Background Logo */}
+      <div className="absolute inset-0 flex items-center justify-end pointer-events-none">
+        <div className="relative right-30 bottom-10 bottom right w-[400px] h-[400px] opacity-[0.03] dark:opacity-[0.07] hidden sm:block">
+          <Image
+            src="/petboweLogoMain.png"
+            alt="PetBowe Logo"
+            fill
+            className="object-contain"
+            loading="lazy"
+            priority={false}
+          />
+        </div>
+      </div>
       <Table>
         <TableHeader>
           <TableRow className="transition-none">
@@ -56,7 +76,12 @@ export default function IncidentMainTable({
           {data.map((incident) => (
             <TableRow
               key={incident._id}
-              className={clsx("cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-700 transition-none", editingIncident?._id === incident._id ? "bg-blue-50 dark:bg-blue-800" : "")}
+              className={clsx(
+                "cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-700 transition-none",
+                editingIncident?._id === incident._id
+                  ? "bg-blue-50 dark:bg-blue-800"
+                  : ""
+              )}
               onClick={() => onRowClick(incident)}
             >
               <TableCell>{incident.refNo}</TableCell>
@@ -114,11 +139,13 @@ export default function IncidentMainTable({
                 <SelectValue />
               </SelectTrigger>
               <SelectContent>
-                {Array.from({ length: totalPages }, (_, i) => i + 1).map((p) => (
-                  <SelectItem key={p} value={String(p)}>
-                    {p}
-                  </SelectItem>
-                ))}
+                {Array.from({ length: totalPages }, (_, i) => i + 1).map(
+                  (p) => (
+                    <SelectItem key={p} value={String(p)}>
+                      {p}
+                    </SelectItem>
+                  )
+                )}
               </SelectContent>
             </Select>
 
@@ -127,7 +154,9 @@ export default function IncidentMainTable({
             <Button
               variant="outline"
               size="sm"
-              onClick={() => onPageChange(Math.min(totalPages, currentPage + 1))}
+              onClick={() =>
+                onPageChange(Math.min(totalPages, currentPage + 1))
+              }
               disabled={currentPage === totalPages}
               className="cursor-pointer transition-none"
             >
@@ -139,3 +168,4 @@ export default function IncidentMainTable({
     </div>
   );
 }
+6

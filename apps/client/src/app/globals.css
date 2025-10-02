@@ -26,36 +26,36 @@ body {
 }
 
 @media print {
-    body {
-        margin: 0;
-        padding: 0;
-        background: white;
-    }
-    
-    * {
-        print-color-adjust: exact !important;
-        -webkit-print-color-adjust: exact !important;
-    }
-    
-    @page {
-        size: A4;
-        margin: 20mm;
-    }
+  body {
+    margin: 0;
+    padding: 0;
+    background: white;
+  }
+
+  * {
+    print-color-adjust: exact !important;
+    -webkit-print-color-adjust: exact !important;
+  }
+
+  @page {
+    size: A4;
+    margin: 20mm;
+  }
 }
 
 .print-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 1rem;
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
 }
 
 .print-table th,
 .print-table td {
-    border: 1px solid #000;
-    padding: 8px;
-    text-align: left;
+  border: 1px solid #000;
+  padding: 8px;
+  text-align: left;
 }
 
 .print-table th {
-    background-color: #f3f4f6;
+  background-color: #f3f4f6;
 }
