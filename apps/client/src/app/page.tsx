@@ -1,57 +1,60 @@
 //app/page.tsx
 
-"use client"
+"use client";
 
-import { useState, useEffect, useRef, useCallback } from "react"
-import useSWR from "swr"
+import { useState, useEffect, useRef, useCallback } from "react";
+import useSWR from "swr";
 
-import IncidentMainTable from "@/features/incidents/components/IncidentMainTable"
-import IncidentModal from "@/features/incidentsModal/components/IncidentModal"
-import IncidentsHeader from "@/features/incidentsHeader/incidentsHeader"
+import IncidentMainTable from "@/features/incidents/components/IncidentMainTable";
+import IncidentModal from "@/features/incidentsModal/components/IncidentModal";
+import IncidentsHeader from "@/features/incidentsHeader/incidentsHeader";
 
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/ui/button";
 import {
   Dialog,
   DialogContent,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog"
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
-import { Calendar } from "@/components/ui/calendar"
-import { Calendar as CalendarIcon } from "lucide-react"
+} from "@/components/ui/dialog";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
+import { Calendar } from "@/components/ui/calendar";
+import { Calendar as CalendarIcon } from "lucide-react";
 
-import { useIncidents } from "@/hooks/useIncidentQueries"
-import { IncidentForm } from "@/types/incidentModal"
-import { cn } from "@/lib/utils"
-import { format } from "date-fns"
-import { useReactToPrint } from "react-to-print"
-import { PrintWrapper } from "@/components/PrintWrapper"
+import { useIncidents } from "@/hooks/useIncidentQueries";
+import { IncidentForm } from "@/types/incidentModal";
+import { cn } from "@/lib/utils";
+import { format } from "date-fns";
+import { useReactToPrint } from "react-to-print";
+import { PrintWrapper } from "@/components/PrintWrapper";
 
-
-// 🔹 fetcher with cookies
+//  fetcher with cookies
 export const fetcher = async (url: string) => {
   try {
-    const res = await fetch(url, { credentials: "include" })
+    const res = await fetch(url, { credentials: "include" });
 
     if (res.status === 401) {
       // No valid cookie -> redirect to login
       if (typeof window !== "undefined") {
-        window.location.href = "/login"
+        window.location.href = "/login";
       }
-      return null // 🔹 return null instead of throwing
+      return null; //  return null instead of throwing
     }
 
     if (!res.ok) {
-      throw new Error(`Failed to fetch: ${res.status}`)
+      throw new Error(`Failed to fetch: ${res.status}`);
     }
 
-    return res.json()
+    return res.json();
   } catch (err) {
-    console.error("Fetcher error:", err)
-    return null // 🔹 safe fallback
+    console.error("Fetcher error:", err);
+    return null; //  safe fallback
   }
-}
+};
 
 export type Organization = "PTC" | "GICC" | "ALL";
 
@@ -72,46 +75,51 @@ const defaultForm: IncidentForm = {
   incidentDetails: [],
   incidentIssues: [],
   incidentIssuesSelection: {},
-  incidentActions: [{
-    tempId: crypto.randomUUID(),
-    correction: [],
-    corrective: [],
-    occurence: "",
-    consequence: "",
-    rootCause: "",
-    analysis: []
-  }],
+  incidentActions: [
+    {
+      tempId: crypto.randomUUID(),
+      correction: [],
+      corrective: [],
+      occurence: "",
+      consequence: "",
+      rootCause: "",
+      analysis: [],
+    },
+  ],
   incidentEvaluation: [
     {
       tempId: crypto.randomUUID(),
       effectiveness: [],
-      documentation: []
-    }
+      documentation: [],
+    },
   ],
 
   organization: "PTC",
-}
+};
 
 export default function HomePage() {
-  const [currentPage, setCurrentPage] = useState(1)
-  const [itemsPerPage, setItemsPerPage] = useState(10)
+  const [currentPage, setCurrentPage] = useState(1);
+  const [itemsPerPage, setItemsPerPage] = useState(10);
 
   // 🆕 org filter state
-  const [selectedOrg, setSelectedOrg] = useState<"PTC" | "GICC" | "ALL">("ALL")
+  const [selectedOrg, setSelectedOrg] = useState<"PTC" | "GICC" | "ALL">("ALL");
 
-  const [isOpen, setIsOpen] = useState(false)
-  const [editingIncident, setEditingIncident] = useState<(IncidentForm & { _id: string }) | null>(null)
+  const [isOpen, setIsOpen] = useState(false);
+  const [editingIncident, setEditingIncident] = useState<
+    (IncidentForm & { _id: string }) | null
+  >(null);
 
-  const [form, setForm] = useState<IncidentForm>(defaultForm)
-
+  const [form, setForm] = useState<IncidentForm>(defaultForm);
 
   // 🚀 fetch user from /me
-  const { data: me, error: meError, isLoading: meLoading } = useSWR("http://localhost:5000/api/auth/me", fetcher)
+  const {
+    data: me,
+    error: meError,
+    isLoading: meLoading,
+  } = useSWR("http://localhost:5000/api/auth/me", fetcher);
 
-  const role = me?.user?.role ?? "user"
-  const userOrg = me?.user?.organization ?? "PTC"
-
-
+  const role = me?.user?.role ?? "user";
+  const userOrg = me?.user?.organization ?? "PTC";
 
   // ...existing code...
 
@@ -136,16 +144,16 @@ export default function HomePage() {
       const content = componentRef.current;
 
       if (!content) {
-        console.error('No content to print');
+        console.error("No content to print");
         setIsPrinting(false);
         return;
       }
 
       // Small delay to ensure previous window is fully closed
       setTimeout(() => {
-        const pw = window.open('', '_blank');
+        const pw = window.open("", "_blank");
         if (!pw) {
-          console.error('Failed to open print window');
+          console.error("Failed to open print window");
           setIsPrinting(false);
           return;
         }
@@ -186,16 +194,14 @@ export default function HomePage() {
           pw.focus();
           pw.print();
         };
-
       }, 100); // Small delay to ensure clean state
-
     } catch (error) {
-      console.error('Print error:', error);
+      console.error("Print error:", error);
       setIsPrinting(false);
     }
   }, [printWindow]); // Add printWindow to dependencies
 
-  // Add cleanup effect
+  // Add cleanup effect to avoid Preparing... state hanging
   useEffect(() => {
     const cleanup = () => {
       if (printWindow) {
@@ -206,9 +212,11 @@ export default function HomePage() {
 
       // Re-enable form inputs
       if (dialogRef.current) {
-        const inputs = dialogRef.current.querySelectorAll('input, textarea, select, button');
-        inputs.forEach(input => {
-          (input as HTMLElement).removeAttribute('disabled');
+        const inputs = dialogRef.current.querySelectorAll(
+          "input, textarea, select, button"
+        );
+        inputs.forEach((input) => {
+          (input as HTMLElement).removeAttribute("disabled");
         });
       }
     };
@@ -220,67 +228,67 @@ export default function HomePage() {
       }
     };
 
-    window.addEventListener('focus', handleFocus);
+    window.addEventListener("focus", handleFocus);
 
     // Cleanup on unmount
     return () => {
-      window.removeEventListener('focus', handleFocus);
+      window.removeEventListener("focus", handleFocus);
       cleanup();
     };
   }, [printWindow]);
 
-  // 🆕 set org automatically for normal users
+  //  set org automatically for normal users
   useEffect(() => {
     if (!meLoading && !meError) {
       if (role !== "admin") {
         if (userOrg === "ALL") {
           // keep ALL users free to switch between PTC, GICC, ALL
-          setSelectedOrg("ALL")
+          setSelectedOrg("ALL");
         } else if (userOrg) {
           // lock normal users to their own org
-          setSelectedOrg(userOrg)
+          setSelectedOrg(userOrg);
         }
       }
     }
-  }, [role, userOrg, meLoading, meError])
-
+  }, [role, userOrg, meLoading, meError]);
 
   // fetch incidents based on selected org
-  const { data: incidents, isLoading, isError } = useIncidents(currentPage, itemsPerPage, selectedOrg)
+  const {
+    data: incidents,
+    isLoading,
+    isError,
+  } = useIncidents(currentPage, itemsPerPage, selectedOrg);
 
   const handleChange = (field: keyof IncidentForm, value: any) => {
-    setForm((prev) => ({ ...prev, [field]: value }))
-  }
+    setForm((prev) => ({ ...prev, [field]: value }));
+  };
 
   const handleRowClick = (incident: IncidentForm & { _id: string }) => {
-    setEditingIncident(incident)
+    setEditingIncident(incident);
     setForm({
       ...incident,
       date: incident.date ? new Date(incident.date) : undefined,
       organization: incident.organization,
-    })
-    setIsOpen(true)
-  }
+    });
+    setIsOpen(true);
+  };
 
   const handleCreate = () => {
     if (editingIncident) {
-      setForm(defaultForm)
+      setForm(defaultForm);
     }
-    setEditingIncident(null)
-    setIsOpen(true)
-  }
-
-
+    setEditingIncident(null);
+    setIsOpen(true);
+  };
 
   const handleClose = () => {
-    setForm(defaultForm)
-    setEditingIncident(null)
-    setIsOpen(false)
+    setForm(defaultForm);
+    setEditingIncident(null);
+    setIsOpen(false);
+  };
 
-  }
-
-  if (meLoading) return <p>Loading user...</p>
-  if (meError) return <p className="text-red-500">Failed to fetch user info</p>
+  if (meLoading) return <p>Loading user...</p>;
+  if (meError) return <p className="text-red-500">Failed to fetch user info</p>;
 
   return (
     <div className="h-screen flex flex-col dark:bg-gradient-to-r dark:from-sky-950 dark:to-sky-800 dark:text-white">
@@ -291,11 +299,17 @@ export default function HomePage() {
         </div>
       </div>
       <div>
-        {/* 📝 Header (now gets role + org from /me) */}
-        <IncidentsHeader selectedOrg={selectedOrg} onSelectOrg={setSelectedOrg} role={role} userOrg={userOrg} email={me?.user?.email ?? ""} />
+        {/* Header (now gets role + org from /me) */}
+        <IncidentsHeader
+          selectedOrg={selectedOrg}
+          onSelectOrg={setSelectedOrg}
+          role={role}
+          userOrg={userOrg}
+          email={me?.user?.email ?? ""}
+        />
       </div>
 
-      {/* 📋 Main Table */}
+      {/* Main Table */}
       <div className="p-6 overflow-y-auto flex-1">
         <div className="flex justify-between items-center mb-4">
           <h1 className="text-red-600 text-lg">Incident Reports</h1>
@@ -303,13 +317,23 @@ export default function HomePage() {
           {/* + Create Button & Modal */}
           <Dialog open={isOpen} onOpenChange={setIsOpen}>
             {/* Only show Create button based on condition */}
-            {!((role === "admin" || userOrg === "ALL") && selectedOrg === "ALL") && (
+            {!(
+              (role === "admin" || userOrg === "ALL") &&
+              selectedOrg === "ALL"
+            ) && (
               <DialogTrigger asChild>
-                <Button className="cursor-pointer transition-none" onClick={handleCreate}>+ Create</Button>
+                <Button
+                  className="cursor-pointer transition-none"
+                  onClick={handleCreate}
+                >
+                  + Create
+                </Button>
               </DialogTrigger>
             )}
 
-            <DialogContent ref={dialogRef} className="max-h-[700px] 2xl:max-h-[750px] sm:max-w-[1100px] max-w-[600px] overflow-y-auto dark:bg-sky-950"
+            <DialogContent
+              ref={dialogRef}
+              className="max-h-[700px] 2xl:max-h-[750px] sm:max-w-[1100px] max-w-[600px] overflow-y-auto dark:bg-sky-950"
               onOpenAutoFocus={(e) => {
                 e.preventDefault();
                 if (dialogRef.current) {
@@ -319,16 +343,27 @@ export default function HomePage() {
               onCloseAutoFocus={(e) => {
                 e.preventDefault();
                 setIsModalDisabled(false);
-              }}> {/* onCloseAutoFocus={(e) => e.preventDefault()} -- will help to avoid moving to top after closing the modal*/}
+              }}
+            >
+              {" "}
+              {/* onCloseAutoFocus={(e) => e.preventDefault()} -- will help to avoid moving to top after closing the modal*/}
               <DialogHeader>
                 <div className="flex gap-4 items-center justify-between">
                   <div className="flex gap-4 items-center">
-                    <DialogTitle>{editingIncident ? "Edit Incident Report" : "File Incident Report"}</DialogTitle>
+                    <DialogTitle>
+                      {editingIncident
+                        ? "Edit Incident Report"
+                        : "File Incident Report"}
+                    </DialogTitle>
                     <div className="text-[0.84rem] text-gray-400 italic font-semibold flex items-center gap-2">
                       {editingIncident ? `(Ref No: ${form.refNo})` : null}
-                      {selectedOrg === "ALL" && (<p className="text-[13px] font-medium text-gray-500 mb-[0.10rem]"> - {form.organization}</p>)}
+                      {selectedOrg === "ALL" && (
+                        <p className="text-[13px] font-medium text-gray-500 mb-[0.10rem]">
+                          {" "}
+                          - {form.organization}
+                        </p>
+                      )}
                     </div>
-
                   </div>
                   <div className="mr-7 mt-2 flex gap-2 items-center">
                     <Popover>
@@ -342,7 +377,11 @@ export default function HomePage() {
                         >
                           <CalendarIcon className="mr-2 h-4 w-4 shrink-0" />
                           <span className="whitespace-nowrap">
-                            {form.dateReported ? format(form.dateReported, "PPP") : <span>Filing Date</span>}
+                            {form.dateReported ? (
+                              format(form.dateReported, "PPP")
+                            ) : (
+                              <span>Filing Date</span>
+                            )}
                           </span>
                         </Button>
                       </PopoverTrigger>
@@ -351,7 +390,9 @@ export default function HomePage() {
                           className="w-[300px]"
                           mode="single"
                           selected={form.dateReported}
-                          onSelect={(d) => handleChange("dateReported", d ?? undefined)}
+                          onSelect={(d) =>
+                            handleChange("dateReported", d ?? undefined)
+                          }
                           initialFocus
                         />
                       </PopoverContent>
@@ -365,21 +406,22 @@ export default function HomePage() {
                           disabled={isPrinting}
                           className="h-[34px]"
                         >
-                          {isPrinting ? 'Preparing...' : 'Print'}
+                          {isPrinting ? "Preparing..." : "Print"}
                         </Button>
                       </div>
                     )}
                   </div>
                 </div>
               </DialogHeader>
-
-              <div className={isModalDisabled ? 'pointer-events-none' : ''}>
+              <div className={isModalDisabled ? "pointer-events-none" : ""}>
                 <IncidentModal
                   onClose={handleClose}
                   // 🆕 always pass selectedOrg into the form
                   form={{
                     ...form,
-                    organization: editingIncident ? form.organization : selectedOrg,
+                    organization: editingIncident
+                      ? form.organization
+                      : selectedOrg,
                   }}
                   setForm={setForm}
                   editingId={editingIncident?._id}
@@ -388,8 +430,6 @@ export default function HomePage() {
               </div>
             </DialogContent>
           </Dialog>
-
-
         </div>
 
         {/* Table incident list from backend */}
@@ -405,16 +445,16 @@ export default function HomePage() {
             itemsPerPage={itemsPerPage}
             onPageChange={(page) => {
               if (page >= 1 && page <= incidents.totalPages) {
-                setCurrentPage(page)
+                setCurrentPage(page);
               }
             }}
             onItemsPerPageChange={(val) => {
-              setItemsPerPage(val)
-              setCurrentPage(1)
+              setItemsPerPage(val);
+              setCurrentPage(1);
             }}
           />
         )}
       </div>
     </div>
-  )
+  );
 }
