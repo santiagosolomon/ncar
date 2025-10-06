@@ -6,7 +6,7 @@ import { authMiddleware } from "../middleware/authMiddleware"
 
 const router = Router()
 
-router.use(authMiddleware) // 👈 protect all incident routes
+router.use(authMiddleware) // protect all incident routes
 
 router.get("/", getIncidents)
 router.post("/", addIncident)

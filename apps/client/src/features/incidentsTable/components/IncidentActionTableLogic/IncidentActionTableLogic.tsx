@@ -48,7 +48,7 @@ export function IncidentActionTableLogic({ details, setDetails, title }: Props) 
 
     const startAdd = () => {
         setNewRow({
-            tempId: crypto.randomUUID(), // ✅ always unique key
+            tempId: crypto.randomUUID(), // always unique key
             actionTaken: "",
             personResponsible: "",
             timeTable: new Date(),
@@ -60,7 +60,7 @@ export function IncidentActionTableLogic({ details, setDetails, title }: Props) 
 
     const saveAdd = () => {
         if (newRow) {
-            setDetails(prev => [...prev, newRow]) // ✅ already has tempId
+            setDetails(prev => [...prev, newRow]) // already has tempId
             setNewRow(null)
         }
     }
@@ -87,7 +87,7 @@ export function IncidentActionTableLogic({ details, setDetails, title }: Props) 
 
     const deleteRow = (id: string) => {
         setDetails(prev =>
-            prev.filter(d => d._id !== id && d.tempId !== id) // ✅ handles both cases
+            prev.filter(d => d._id !== id && d.tempId !== id) // handles both cases
         )
         setDeleteConfirmId(null)
     }
@@ -104,7 +104,7 @@ export function IncidentActionTableLogic({ details, setDetails, title }: Props) 
             return value
         }
 
-        // ✅ In edit mode → special handling for date fields
+        // In edit mode → special handling for date fields
         if (field === "timeTable" || field === "followUpDate") {
             return (
                 <Popover>
@@ -132,7 +132,7 @@ export function IncidentActionTableLogic({ details, setDetails, title }: Props) 
             )
         }
 
-        // ✅ Default → text input
+        // Default → text input
         return (
             <Input
                 className="border rounded px-2 py-1 w-full text-sm"

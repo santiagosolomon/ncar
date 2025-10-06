@@ -45,13 +45,13 @@ export function IncidentDetailsTable({ details, setDetails }: Props) {
 
     const saveAdd = () => {
         if (newRow) {
-            setDetails(prev => [...prev, newRow]) // ✅ already has tempId
+            setDetails(prev => [...prev, newRow]) // already has tempId
             setNewRow(null)
         }
     }
 
     const startEdit = (row: IncidentDetails) => {
-        setEditingId(row._id || row.tempId!) // ✅ handles both cases
+        setEditingId(row._id || row.tempId!) // handles both cases
         setDraftRow({ ...row })
     }
 
@@ -70,7 +70,7 @@ export function IncidentDetailsTable({ details, setDetails }: Props) {
 
     const deleteRow = (id: string) => {
         setDetails(prev =>
-            prev.filter(d => d._id !== id && d.tempId !== id) // ✅ handles both cases
+            prev.filter(d => d._id !== id && d.tempId !== id) // handles both cases
         )
         setDeleteConfirmId(null)
     }

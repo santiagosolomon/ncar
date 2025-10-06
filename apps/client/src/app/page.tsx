@@ -101,7 +101,7 @@ export default function HomePage() {
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage, setItemsPerPage] = useState(10);
 
-  // 🆕 org filter state
+  // org filter state
   const [selectedOrg, setSelectedOrg] = useState<"PTC" | "GICC" | "ALL">("ALL");
 
   const [isOpen, setIsOpen] = useState(false);
@@ -111,7 +111,7 @@ export default function HomePage() {
 
   const [form, setForm] = useState<IncidentForm>(defaultForm);
 
-  // 🚀 fetch user from /me
+  // fetch user from /me
   const {
     data: me,
     error: meError,
@@ -416,7 +416,7 @@ export default function HomePage() {
               <div className={isModalDisabled ? "pointer-events-none" : ""}>
                 <IncidentModal
                   onClose={handleClose}
-                  // 🆕 always pass selectedOrg into the form
+                  // always pass selectedOrg into the form
                   form={{
                     ...form,
                     organization: editingIncident

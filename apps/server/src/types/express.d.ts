@@ -7,7 +7,7 @@ declare global {
         id: string;
         role: string;
         organization: string;
-        [key: string]: any; // 👈 optional if you want flexibility
+        [key: string]: any; // optional if you want flexibility
       };
     }
   }

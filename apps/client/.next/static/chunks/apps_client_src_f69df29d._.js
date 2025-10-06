@@ -815,7 +815,6 @@ function IncidentMainTable(param) {
     }, this);
 }
 _c = IncidentMainTable;
-6;
 var _c;
 __turbopack_context__.k.register(_c, "IncidentMainTable");
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
@@ -2479,12 +2478,12 @@ function IncidentDetailsTable(param) {
             setDetails((prev)=>[
                     ...prev,
                     newRow
-                ]); // ✅ already has tempId
+                ]); // already has tempId
             setNewRow(null);
         }
     };
     const startEdit = (row)=>{
-        setEditingId(row._id || row.tempId); // ✅ handles both cases
+        setEditingId(row._id || row.tempId); // handles both cases
         setDraftRow({
             ...row
         });
@@ -2501,7 +2500,7 @@ function IncidentDetailsTable(param) {
         setDraftRow(null);
     };
     const deleteRow = (id)=>{
-        setDetails((prev)=>prev.filter((d)=>d._id !== id && d.tempId !== id) // ✅ handles both cases
+        setDetails((prev)=>prev.filter((d)=>d._id !== id && d.tempId !== id) // handles both cases
         );
         setDeleteConfirmId(null);
     };
@@ -4187,7 +4186,7 @@ function IncidentActionTableLogic(param) {
             setDetails((prev)=>[
                     ...prev,
                     newRow
-                ]); // ✅ already has tempId
+                ]); // already has tempId
             setNewRow(null);
         }
     };
@@ -4209,7 +4208,7 @@ function IncidentActionTableLogic(param) {
         setDraftRow(null);
     };
     const deleteRow = (id)=>{
-        setDetails((prev)=>prev.filter((d)=>d._id !== id && d.tempId !== id) // ✅ handles both cases
+        setDetails((prev)=>prev.filter((d)=>d._id !== id && d.tempId !== id) // handles both cases
         );
         setDeleteConfirmId(null);
     };
@@ -4224,7 +4223,7 @@ function IncidentActionTableLogic(param) {
             }
             return value;
         }
-        // ✅ In edit mode → special handling for date fields
+        // In edit mode → special handling for date fields
         if (field === "timeTable" || field === "followUpDate") {
             return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$popover$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Popover"], {
                 children: [
@@ -4281,7 +4280,7 @@ function IncidentActionTableLogic(param) {
             }, this);
         }
         var _field;
-        // ✅ Default → text input
+        // Default → text input
         return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Input"], {
             className: "border rounded px-2 py-1 w-full text-sm",
             value: (_field = (_this = draftRow) === null || _this === void 0 ? void 0 : _this[field]) !== null && _field !== void 0 ? _field : "",
@@ -8299,7 +8298,7 @@ function IncidentsHeader(param) {
             console.error("Logout error:", err);
         }
     };
-    // 👇 decide which orgs to show
+    // decide which orgs to show
     const availableOrgs = role === "admin" || userOrg === "ALL" ? [
         "PTC",
         "GICC",
@@ -10054,12 +10053,12 @@ function HomePage() {
     _s();
     const [currentPage, setCurrentPage] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(1);
     const [itemsPerPage, setItemsPerPage] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(10);
-    // 🆕 org filter state
+    // org filter state
     const [selectedOrg, setSelectedOrg] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])("ALL");
     const [isOpen, setIsOpen] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
     const [editingIncident, setEditingIncident] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
     const [form, setForm] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(defaultForm);
-    // 🚀 fetch user from /me
+    // fetch user from /me
     const { data: me, error: meError, isLoading: meLoading } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$swr$2f$dist$2f$index$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"])("http://localhost:5000/api/auth/me", fetcher);
     var _me_user_role;
     const role = (_me_user_role = me === null || me === void 0 ? void 0 : (_me_user = me.user) === null || _me_user === void 0 ? void 0 : _me_user.role) !== null && _me_user_role !== void 0 ? _me_user_role : "user";
@@ -10465,7 +10464,7 @@ function HomePage() {
                                                 className: isModalDisabled ? "pointer-events-none" : "",
                                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$features$2f$incidentsModal$2f$components$2f$IncidentModal$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                                                     onClose: handleClose,
-                                                    // 🆕 always pass selectedOrg into the form
+                                                    // always pass selectedOrg into the form
                                                     form: {
                                                         ...form,
                                                         organization: editingIncident ? form.organization : selectedOrg

@@ -738,7 +738,6 @@ function IncidentMainTable({ data, onRowClick, currentPage, totalPages, itemsPer
         columnNumber: 5
     }, this);
 }
-6;
 }),
 "[externals]/util [external] (util, cjs)", ((__turbopack_context__, module, exports) => {
 
@@ -2184,12 +2183,12 @@ function IncidentDetailsTable({ details, setDetails }) {
             setDetails((prev)=>[
                     ...prev,
                     newRow
-                ]); // ✅ already has tempId
+                ]); // already has tempId
             setNewRow(null);
         }
     };
     const startEdit = (row)=>{
-        setEditingId(row._id || row.tempId); // ✅ handles both cases
+        setEditingId(row._id || row.tempId); // handles both cases
         setDraftRow({
             ...row
         });
@@ -2206,7 +2205,7 @@ function IncidentDetailsTable({ details, setDetails }) {
         setDraftRow(null);
     };
     const deleteRow = (id)=>{
-        setDetails((prev)=>prev.filter((d)=>d._id !== id && d.tempId !== id) // ✅ handles both cases
+        setDetails((prev)=>prev.filter((d)=>d._id !== id && d.tempId !== id) // handles both cases
         );
         setDeleteConfirmId(null);
     };
@@ -3843,7 +3842,7 @@ function IncidentActionTableLogic({ details, setDetails, title }) {
             setDetails((prev)=>[
                     ...prev,
                     newRow
-                ]); // ✅ already has tempId
+                ]); // already has tempId
             setNewRow(null);
         }
     };
@@ -3865,7 +3864,7 @@ function IncidentActionTableLogic({ details, setDetails, title }) {
         setDraftRow(null);
     };
     const deleteRow = (id)=>{
-        setDetails((prev)=>prev.filter((d)=>d._id !== id && d.tempId !== id) // ✅ handles both cases
+        setDetails((prev)=>prev.filter((d)=>d._id !== id && d.tempId !== id) // handles both cases
         );
         setDeleteConfirmId(null);
     };
@@ -3879,7 +3878,7 @@ function IncidentActionTableLogic({ details, setDetails, title }) {
             }
             return value;
         }
-        // ✅ In edit mode → special handling for date fields
+        // In edit mode → special handling for date fields
         if (field === "timeTable" || field === "followUpDate") {
             return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$popover$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Popover"], {
                 children: [
@@ -3935,7 +3934,7 @@ function IncidentActionTableLogic({ details, setDetails, title }) {
                 columnNumber: 17
             }, this);
         }
-        // ✅ Default → text input
+        // Default → text input
         return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Input"], {
             className: "border rounded px-2 py-1 w-full text-sm",
             value: draftRow?.[field] ?? "",
@@ -7847,7 +7846,7 @@ function IncidentsHeader({ selectedOrg, onSelectOrg, role, userOrg, email }) {
             console.error("Logout error:", err);
         }
     };
-    // 👇 decide which orgs to show
+    // decide which orgs to show
     const availableOrgs = role === "admin" || userOrg === "ALL" ? [
         "PTC",
         "GICC",
@@ -9673,12 +9672,12 @@ const defaultForm = {
 function HomePage() {
     const [currentPage, setCurrentPage] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(1);
     const [itemsPerPage, setItemsPerPage] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(10);
-    // 🆕 org filter state
+    // org filter state
     const [selectedOrg, setSelectedOrg] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])("ALL");
     const [isOpen, setIsOpen] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
     const [editingIncident, setEditingIncident] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(null);
     const [form, setForm] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(defaultForm);
-    // 🚀 fetch user from /me
+    // fetch user from /me
     const { data: me, error: meError, isLoading: meLoading } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$swr$2f$dist$2f$index$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"])("http://localhost:5000/api/auth/me", fetcher);
     const role = me?.user?.role ?? "user";
     const userOrg = me?.user?.organization ?? "PTC";
@@ -10089,7 +10088,7 @@ function HomePage() {
                                                 className: isModalDisabled ? "pointer-events-none" : "",
                                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$client$2f$src$2f$features$2f$incidentsModal$2f$components$2f$IncidentModal$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
                                                     onClose: handleClose,
-                                                    // 🆕 always pass selectedOrg into the form
+                                                    // always pass selectedOrg into the form
                                                     form: {
                                                         ...form,
                                                         organization: editingIncident ? form.organization : selectedOrg

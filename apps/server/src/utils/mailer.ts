@@ -2,10 +2,10 @@ import nodemailer from "nodemailer";
 
 export function createTransporter() {
   if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
-    throw new Error("❌ Missing EMAIL_USER or EMAIL_PASS in .env");
+    throw new Error("Missing EMAIL_USER or EMAIL_PASS in .env");
   }
 
-  console.log("📨 Creating Outlook transporter with user:", process.env.EMAIL_USER);
+  console.log("Creating Outlook transporter with user:", process.env.EMAIL_USER);
 
   const transporter = nodemailer.createTransport({
     host: process.env.EMAIL_HOST,
@@ -23,9 +23,9 @@ export function createTransporter() {
   // Verify connection at startup
   transporter.verify((error, success) => {
     if (error) {
-      console.error("❌ SMTP connection failed:", error.message);
+      console.error("SMTP connection failed:", error.message);
     } else {
-      console.log("✅ SMTP server is ready to take messages");
+      console.log("SMTP server is ready to take messages");
     }
   });
 

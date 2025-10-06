@@ -15,7 +15,7 @@ import {
 } from "@/components/ui/dropdown-menu"
 import { MoreHorizontal, X, Check, Trash2, Pencil, Plus } from "lucide-react"
 
-// ✅ new hook
+// new hook
 import { useIncidentTableLogic } from "@/hooks/useIncidentTableLogic"
 
 interface Props {

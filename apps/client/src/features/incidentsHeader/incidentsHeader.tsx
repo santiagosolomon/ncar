@@ -45,7 +45,7 @@ export default function IncidentsHeader({ selectedOrg, onSelectOrg, role, userOr
     }
   }
 
-  // 👇 decide which orgs to show
+  // decide which orgs to show
   const availableOrgs =
     role === "admin" || userOrg === "ALL"
       ? ["PTC", "GICC", "ALL"]
@@ -61,7 +61,7 @@ export default function IncidentsHeader({ selectedOrg, onSelectOrg, role, userOr
         <div className="border-none transition-none">
           <ThemeToggle />
         </div>
-        {/* 🍔 Hamburger menu */}
+        {/* Hamburger menu */}
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button variant="ghost" size="icon" className="cursor-pointer">

@@ -68,7 +68,7 @@ export const login = async (req: Request, res: Response) => {
             { expiresIn: "1d" }
         )
 
-        // ✅ set httpOnly cookie
+        // set httpOnly cookie
         res.cookie("token", token, {
             httpOnly: true,
             secure: process.env.NODE_ENV === "production",
@@ -97,3 +97,4 @@ export const logout = (req: Request, res: Response) => {
     })
     res.status(200).json({ message: "Logout successful" })
 }
+ 

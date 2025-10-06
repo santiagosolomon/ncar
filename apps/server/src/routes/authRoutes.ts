@@ -10,7 +10,7 @@ router.post('/login', login);
 router.post('/register', register);
 router.post('/logout', logout);
 
-// ✅ protected route
+// protected route
 router.get("/me", authMiddleware, me);
 
 export default router

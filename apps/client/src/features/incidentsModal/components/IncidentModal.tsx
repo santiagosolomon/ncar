@@ -30,7 +30,7 @@ import { Calendar as CalendarIcon } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { format, set } from "date-fns"
 
-import { IncidentForm } from "@/types/incidentModal"   // ✅ use shared type
+import { IncidentForm } from "@/types/incidentModal"   // use shared type
 import { IncidentDetails } from "@/types/incidentDetails"
 import { IncidentIssues } from "@/types/incidentIssues"
 import { IncidentActions } from "@/types/IncidentActions"
@@ -74,7 +74,7 @@ interface Props {
     setForm: React.Dispatch<React.SetStateAction<IncidentForm>>
     editingId: string
     defaultForm: IncidentForm
-    // initialData?: IncidentForm & { _id: string }  // ✅ use shared type
+    // initialData?: IncidentForm & { _id: string }  // use shared type
 }
 
 export default function IncidentModal({ onClose, form, setForm, editingId, defaultForm }: Props) {

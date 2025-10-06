@@ -23,18 +23,18 @@ export async function sendIncidentEmail(incident: any) {
   `;
 
   await transporter.sendMail({
-    // ✅ Use Outlook account from .env
+    // Use Outlook account from .env
     from: `"NCAR System" <${process.env.EMAIL_USER}>`,
 
-    // ✅ All recipients
+    // All recipients
     to: recipients.join(", "),
 
-    // ✅ Ensure replies go to the actual employee
+    // Ensure replies go to the actual employee
     replyTo: incident.reportingEmployeeEmail || process.env.EMAIL_USER,
 
     subject,
     html,
   });
 
-  console.log(`📧 Incident email sent to: ${recipients.join(", ")}`);
+  console.log(`Incident email sent to: ${recipients.join(", ")}`);
 }

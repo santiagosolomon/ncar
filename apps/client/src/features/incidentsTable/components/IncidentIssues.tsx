@@ -177,7 +177,7 @@ export function IncidentIssuesTable({ details, setDetails, issuesSelection = {},
           </table>
         </div>
 
-        {/* ✅ Issue checkboxes */}
+        {/* Issue checkboxes */}
         <div className=" rounded-md">
           <div className="grid grid-cols-2 gap-4 sm:w-[600px]">
             <Label className="flex items-center gap-2 ">

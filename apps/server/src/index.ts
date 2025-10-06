@@ -29,19 +29,19 @@ app.use(cookieParser());
 // MongoDB Connection
 mongoose
   .connect(process.env.MONGODB_URI as string)
-  .then(() => console.log("✅ Connected to MongoDB"))
-  .catch((err) => console.error("❌ MongoDB connection error:", err))
+  .then(() => console.log("Connected to MongoDB"))
+  .catch((err) => console.error("MongoDB connection error:", err))
 
 // Health check
 app.get("/", (req: Request, res: Response) => {
   res.send("Hello from Express + MongoDB!")
 })
 
-// ✅ Incidents API
+// Incidents API
 app.use("/api/auth", authRoutes)
 app.use("/api/incidents", incidentRoutes)
 
 // Start Server
 app.listen(PORT, () => {
-  console.log(`🚀 Server running at http://localhost:${PORT}`)
+  console.log(`Server running at http://localhost:${PORT}`)
 })
