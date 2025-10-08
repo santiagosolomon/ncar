@@ -2,6 +2,7 @@
 
 "use client";
 
+import { useState } from "react";
 import { IncidentForm } from "@/types/incidentModal";
 import {
   Table,
@@ -22,6 +23,15 @@ import { Button } from "@/components/ui/button";
 
 import { LuChevronRight } from "react-icons/lu";
 import { LuChevronLeft } from "react-icons/lu";
+
+import {
+  DropdownMenu,
+  DropdownMenuTrigger,
+  DropdownMenuContent,
+  DropdownMenuItem,
+} from "@/components/ui/dropdown-menu";
+
+import { MoreHorizontal, ChevronDown, ChevronRight } from "lucide-react";
 
 import clsx from "clsx";
 import Image from "next/image";
@@ -50,6 +60,8 @@ export default function IncidentMainTable({
   const startIdx = data.length > 0 ? (currentPage - 1) * itemsPerPage + 1 : 0;
   const endIdx = data.length > 0 ? startIdx + data.length - 1 : 0;
 
+  const [expandedRows, setExpandedRows] = useState<string[]>([]);
+
   return (
     <div className="w-full overflow-x-auto rounded-lg border shadow-sm dark:text-white dark:border-sky-900 dark:shadow-md dark:bg-sky-950 relative">
       {/* Decorative Background Logo */}
@@ -70,6 +82,9 @@ export default function IncidentMainTable({
           <TableRow className="transition-none">
             <TableHead>Ref. No.</TableHead>
             <TableHead>Description</TableHead>
+            <TableHead >Classification</TableHead>
+            <TableHead>Status</TableHead>
+            <TableHead>Actions</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
@@ -82,10 +97,75 @@ export default function IncidentMainTable({
                   ? "bg-blue-50 dark:bg-blue-800"
                   : ""
               )}
-              onClick={() => onRowClick(incident)}
+              onClick={() => {
+                setExpandedRows((prev) =>
+                  prev.includes(incident._id)
+                    ? prev.filter((id) => id !== incident._id)
+                    : [...prev, incident._id]
+                );
+              }}
             >
               <TableCell>{incident.refNo}</TableCell>
-              <TableCell>{incident.description}</TableCell>
+              <TableCell className="max-w-[300px] relative">
+                {/* Icon positioned slightly left */}
+                {incident.description.length > 100 && (
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    className={clsx(
+                      "absolute -left-4 top-1/2 -translate-y-1/2 h-0 w-0 text-gray-500 hover:text-gray-800 dark:text-gray-300"
+                    )}
+                    onClick={() => {
+                      setExpandedRows((prev) =>
+                        prev.includes(incident._id)
+                          ? prev.filter((id) => id !== incident._id)
+                          : [...prev, incident._id]
+                      );
+                    }}
+                  >
+                    {expandedRows.includes(incident._id) ? (
+                      <ChevronDown className="h-4 w-4" />
+                    ) : (
+                      <ChevronRight className="h-4 w-4" />
+                    )}
+                  </Button>
+                )}
+
+                {/* Description text */}
+
+                {expandedRows.includes(incident._id) ? (
+                  <p className="whitespace-pre-wrap">{incident.description}</p>
+                ) : (
+                  <p className="truncate line-clamp-2">{incident.description}</p>
+                )}
+              </TableCell>
+
+              <TableCell>{incident.classification}</TableCell>
+              <TableCell>{incident.status}</TableCell>
+              <TableCell>
+                <DropdownMenu>
+                  <DropdownMenuTrigger asChild>
+                    <Button
+                      variant="ghost"
+                      className="cursor-pointer h-4"
+                      size="icon"
+                    >
+                      <MoreHorizontal />
+                    </Button>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent>
+                    <DropdownMenuItem
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        onRowClick(incident);
+                      }}
+                    >
+                      Edit
+                    </DropdownMenuItem>
+                    {/* Future actions can be added here */}
+                  </DropdownMenuContent>
+                </DropdownMenu>
+              </TableCell>
             </TableRow>
           ))}
         </TableBody>

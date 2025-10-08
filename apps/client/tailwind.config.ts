@@ -10,7 +10,7 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/line-clamp')],
   variants: {
     extend: {
       // Enable print variant

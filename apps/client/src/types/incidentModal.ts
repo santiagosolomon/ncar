@@ -23,6 +23,8 @@ export interface IncidentForm {
   customerDepartment: string
   moduleOfPurchase: 'Imported' | 'Local'
   typeOfDelivery: 'indent' | 'exstock' | 'forward'
+  status: string
+  classification: string
   date?: Date
   incidentDetails?: IncidentDetails[]
   incidentIssues?: IncidentIssues[]

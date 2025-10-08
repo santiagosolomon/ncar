@@ -71,6 +71,8 @@ const defaultForm: IncidentForm = {
   customerDepartment: "",
   moduleOfPurchase: "Imported",
   typeOfDelivery: "indent",
+  classification: "",
+  status: "",
   date: undefined,
   incidentDetails: [],
   incidentIssues: [],

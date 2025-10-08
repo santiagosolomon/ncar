@@ -48,6 +48,8 @@ const incidentSchema = new Schema({
     customerDepartment: String,
     moduleOfPurchase: { type: String, enum: ['Imported', 'Local'] },
     typeOfDelivery: { type: String, enum: ['indent', 'exstock', 'forward'] },
+    status: { type: String },
+    classification: { type: String },
     date: { type: Date },
     incidentDetails: [incidentDetailsSchema],
     incidentIssues: [incidentIssuesSchema],
