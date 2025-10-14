@@ -82,7 +82,7 @@ export default function IncidentMainTable({
           <TableRow className="transition-none">
             <TableHead>Ref. No.</TableHead>
             <TableHead>Description</TableHead>
-            <TableHead >Classification</TableHead>
+            <TableHead>Classification</TableHead>
             <TableHead>Status</TableHead>
             <TableHead>Actions</TableHead>
           </TableRow>
@@ -92,10 +92,11 @@ export default function IncidentMainTable({
             <TableRow
               key={incident._id}
               className={clsx(
-                "cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-700 transition-none",
+                " hover:bg-gray-50 dark:hover:bg-gray-700 transition-none",
                 editingIncident?._id === incident._id
                   ? "bg-blue-50 dark:bg-blue-800"
-                  : ""
+                  : "",
+                incident.description.length > 100 ? "cursor-pointer " : ""
               )}
               onClick={() => {
                 setExpandedRows((prev) =>
@@ -113,7 +114,7 @@ export default function IncidentMainTable({
                     variant="ghost"
                     size="icon"
                     className={clsx(
-                      "absolute -left-4 top-1/2 -translate-y-1/2 h-0 w-0 text-gray-500 hover:text-gray-800 dark:text-gray-300"
+                      "absolute -left-2 top-[53%] -translate-y-1/2 h-0 w-0  text-gray-500 hover:text-gray-800 dark:text-gray-300"
                     )}
                     onClick={() => {
                       setExpandedRows((prev) =>
@@ -124,9 +125,9 @@ export default function IncidentMainTable({
                     }}
                   >
                     {expandedRows.includes(incident._id) ? (
-                      <ChevronDown className="h-4 w-4" />
+                      <ChevronDown className="h-4 w-4 " />
                     ) : (
-                      <ChevronRight className="h-4 w-4" />
+                      <ChevronRight className="h-4 w-4 " />
                     )}
                   </Button>
                 )}
@@ -134,9 +135,11 @@ export default function IncidentMainTable({
                 {/* Description text */}
 
                 {expandedRows.includes(incident._id) ? (
-                  <p className="whitespace-pre-wrap">{incident.description}</p>
+                  <p className="whitespace-pre-wrap ">{incident.description}</p>
                 ) : (
-                  <p className="truncate line-clamp-2">{incident.description}</p>
+                  <p className="truncate line-clamp-2">
+                    {incident.description}
+                  </p>
                 )}
               </TableCell>
 
@@ -147,7 +150,7 @@ export default function IncidentMainTable({
                   <DropdownMenuTrigger asChild>
                     <Button
                       variant="ghost"
-                      className="cursor-pointer h-4"
+                      className="cursor-pointer h-4 transition-none"
                       size="icon"
                     >
                       <MoreHorizontal />
@@ -155,12 +158,13 @@ export default function IncidentMainTable({
                   </DropdownMenuTrigger>
                   <DropdownMenuContent>
                     <DropdownMenuItem
+                      className="cursor-pointer"
                       onClick={(e) => {
                         e.stopPropagation();
                         onRowClick(incident);
                       }}
                     >
-                      Edit
+                      Edit Incident
                     </DropdownMenuItem>
                     {/* Future actions can be added here */}
                   </DropdownMenuContent>

@@ -64,7 +64,7 @@ export default function IncidentsHeader({ selectedOrg, onSelectOrg, role, userOr
         {/* Hamburger menu */}
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button variant="ghost" size="icon" className="cursor-pointer">
+            <Button variant="ghost" size="icon" className="cursor-pointer transition-none">
               <Menu className="h-6 w-6" />
             </Button>
           </DropdownMenuTrigger>
@@ -81,7 +81,7 @@ export default function IncidentsHeader({ selectedOrg, onSelectOrg, role, userOr
               <DropdownMenuItem
                 key={org}
                 onClick={() => onSelectOrg(org as any)}
-                className={cn(selectedOrg === org && "bg-gray-100 dark:bg-gray-700")}
+                className={cn(selectedOrg === org && "bg-gray-100 dark:bg-gray-700", "cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-600")}
               >
                 {selectedOrg === org ? "✓ " : ""} {org}
               </DropdownMenuItem>
