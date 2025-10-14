@@ -1,27 +1,46 @@
 //controllers/incidentCtrl.ts
 
-import { Request, Response } from "express"
-import { Incident } from "../models/Incident"
-import { sendIncidentEmail } from "../utils/sendIncidentEmail"
+import { Request, Response } from "express";
+import { Incident } from "../models/Incident";
+import { sendIncidentEmail } from "../utils/sendIncidentEmail";
 
-// controllers/incidentCtrl.ts
 export const getIncidents = async (req: Request, res: Response) => {
   try {
-    const { page = 1, limit = 10, organization } = req.query;
+    const { page = 1, limit = 10, organization, search = "" } = req.query;
     const userOrg = req.user?.organization;
 
     let filter: any = {};
 
+    // === ORGANIZATION FILTER ===
     if (userOrg === "ALL") {
-      // Admins can see both orgs
       if (organization && organization !== "ALL") {
-        filter.organization = organization; // if dropdown picks PTC or GICC
+        filter.organization = organization;
       }
-      // else leave filter empty = fetch all incidents
     } else {
-      filter.organization = userOrg; // normal users locked to their org
+      filter.organization = userOrg;
     }
 
+    // === ADVANCED SEARCH FILTER ===
+    if (search) {
+      const searchStr = String(search).trim();
+      const regex = new RegExp(searchStr, "i");
+
+      // ✅ Match both refNo (numeric via $toString) and description
+      filter.$or = [
+        {
+          $expr: {
+            $regexMatch: {
+              input: { $toString: "$refNo" }, // convert refNo (number) → string
+              regex: searchStr,
+              options: "i",
+            },
+          },
+        },
+        { description: { $regex: regex } },
+      ];
+    }
+
+    // === FETCH RESULTS ===
     const incidents = await Incident.find(filter)
       .skip((+page - 1) * +limit)
       .limit(+limit)
@@ -40,7 +59,6 @@ export const getIncidents = async (req: Request, res: Response) => {
     res.status(500).json({ error: "Failed to fetch incidents" });
   }
 };
-
 
 export const addIncident = async (req: Request, res: Response) => {
   try {
@@ -82,26 +100,26 @@ export const addIncident = async (req: Request, res: Response) => {
   }
 };
 
-
-
 export const updateIncident = async (req: Request, res: Response) => {
   try {
-    const { id } = req.params
-    const updated = await Incident.findByIdAndUpdate(id, req.body, { new: true })
-    if (!updated) return res.status(404).json({ error: "Incident not found" })
-    res.json(updated)
+    const { id } = req.params;
+    const updated = await Incident.findByIdAndUpdate(id, req.body, {
+      new: true,
+    });
+    if (!updated) return res.status(404).json({ error: "Incident not found" });
+    res.json(updated);
   } catch (err) {
-    res.status(400).json({ error: "Failed to update incident" })
+    res.status(400).json({ error: "Failed to update incident" });
   }
-}
+};
 
 export const deleteIncident = async (req: Request, res: Response) => {
   try {
-    const { id } = req.params
-    const deleted = await Incident.findByIdAndDelete(id)
-    if (!deleted) return res.status(404).json({ error: "Incident not found" })
-    res.status(204).send()
+    const { id } = req.params;
+    const deleted = await Incident.findByIdAndDelete(id);
+    if (!deleted) return res.status(404).json({ error: "Incident not found" });
+    res.status(204).send();
   } catch (err) {
-    res.status(400).json({ error: "Failed to delete incident" })
+    res.status(400).json({ error: "Failed to delete incident" });
   }
-}
+};

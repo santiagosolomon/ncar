@@ -132,6 +132,8 @@ export default function HomePage() {
   const componentRef = useRef<HTMLDivElement>(null);
   const dialogRef = useRef<HTMLDivElement>(null);
   const [isPrinting, setIsPrinting] = useState(false);
+  const [search, setSearch] = useState("");
+  const [debouncedSearch, setDebouncedSearch] = useState(search);
 
   // Replace the handlePrint function
   const handlePrint = useCallback(() => {
@@ -239,6 +241,15 @@ export default function HomePage() {
     };
   }, [printWindow]);
 
+  // Debounce effect — triggers 500ms after user stops typing
+  useEffect(() => {
+    const handler = setTimeout(() => {
+      setDebouncedSearch(search);
+    }, 500);
+
+    return () => clearTimeout(handler);
+  }, [search]);
+
   //  set org automatically for normal users
   useEffect(() => {
     if (!meLoading && !meError) {
@@ -255,11 +266,12 @@ export default function HomePage() {
   }, [role, userOrg, meLoading, meError]);
 
   // fetch incidents based on selected org
+  // New (use debouncedSearch instead)
   const {
     data: incidents,
     isLoading,
     isError,
-  } = useIncidents(currentPage, itemsPerPage, selectedOrg);
+  } = useIncidents(currentPage, itemsPerPage, selectedOrg, debouncedSearch);
 
   const handleChange = (field: keyof IncidentForm, value: any) => {
     setForm((prev) => ({ ...prev, [field]: value }));
@@ -315,6 +327,21 @@ export default function HomePage() {
       <div className="p-6 overflow-y-auto flex-1">
         <div className="flex justify-between items-center mb-4">
           <h1 className="text-red-600 text-lg">Incident Reports</h1>
+
+          {(role === "admin" || userOrg === "ALL") && selectedOrg === "ALL" && (
+            // Update the search input handler
+            <input
+              type="text"
+              placeholder="Search by Ref No. or Description..."
+              value={search}
+              onChange={(e) => {
+                const value = e.target.value.trim();
+                setSearch(value);
+                setCurrentPage(1); // Reset to first page when searching
+              }}
+              className="border border-gray-300 dark:border-gray-700 rounded-lg px-3 py-2 text-sm w-72 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+          )}
 
           {/* + Create Button & Modal */}
           <Dialog open={isOpen} onOpenChange={setIsOpen}>
