@@ -7,9 +7,7 @@
   "static/chunks/90005_axios_lib_70056de4._.js",
   "static/chunks/90005_date-fns_01996b83._.js",
   "static/chunks/90005_react-day-picker_dist_esm_4a7696eb._.js",
-  "static/chunks/90005_@radix-ui_d47df05f._.js",
-  "static/chunks/90005_@floating-ui_4f04fe57._.js",
-  "static/chunks/90005_d7c7b275._.js"
+  "static/chunks/90005_b52cef2b._.js"
 ],
     source: "dynamic"
 });
