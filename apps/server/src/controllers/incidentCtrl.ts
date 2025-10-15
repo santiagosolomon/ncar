@@ -1,17 +1,25 @@
-//controllers/incidentCtrl.ts
+// controllers/incidentCtrl.ts
 
 import { Request, Response } from "express";
 import { Incident } from "../models/Incident";
 import { sendIncidentEmail } from "../utils/sendIncidentEmail";
 
+/**
+ * GET /api/incidents
+ * Fetch paginated incidents with search and organization filtering.
+ */
 export const getIncidents = async (req: Request, res: Response) => {
   try {
     const { page = 1, limit = 10, organization, search = "" } = req.query;
     const userOrg = req.user?.organization;
 
-    let filter: any = {};
+    const pageNum = Number(page);
+    const limitNum = Number(limit);
 
-    // === ORGANIZATION FILTER ===
+    // === FILTER SETUP ===
+    const filter: Record<string, any> = {};
+
+    // Organization filter
     if (userOrg === "ALL") {
       if (organization && organization !== "ALL") {
         filter.organization = organization;
@@ -25,12 +33,12 @@ export const getIncidents = async (req: Request, res: Response) => {
       const searchStr = String(search).trim();
       const regex = new RegExp(searchStr, "i");
 
-      // ✅ Match both refNo (numeric via $toString) and description
+      // Match both refNo (converted to string) and description
       filter.$or = [
         {
           $expr: {
             $regexMatch: {
-              input: { $toString: "$refNo" }, // convert refNo (number) → string
+              input: { $toString: "$refNo" },
               regex: searchStr,
               options: "i",
             },
@@ -40,34 +48,39 @@ export const getIncidents = async (req: Request, res: Response) => {
       ];
     }
 
-    // === FETCH RESULTS ===
-    const incidents = await Incident.find(filter)
-      .skip((+page - 1) * +limit)
-      .limit(+limit)
-      .sort({ createdAt: -1 });
+    // === FETCH DATA IN PARALLEL ===
+    const [incidents, total] = await Promise.all([
+      Incident.find(filter)
+        .lean() // faster & memory-efficient
+        .skip((pageNum - 1) * limitNum)
+        .limit(limitNum)
+        .sort({ createdAt: -1 }),
+      Incident.countDocuments(filter),
+    ]);
 
-    const total = await Incident.countDocuments(filter);
-
-    res.json({
+    return res.json({
       data: incidents,
       total,
-      page: +page,
-      totalPages: Math.ceil(total / +limit),
+      page: pageNum,
+      totalPages: Math.ceil(total / limitNum),
     });
   } catch (err) {
     console.error("Error fetching incidents:", err);
-    res.status(500).json({ error: "Failed to fetch incidents" });
+    return res.status(500).json({ error: "Failed to fetch incidents" });
   }
 };
 
+/**
+ * POST /api/incidents
+ * Create a new incident.
+ */
 export const addIncident = async (req: Request, res: Response) => {
   try {
     const user = req.user as { organization: string; role: string };
-
     const { _id, organization: orgFromBody, ...incidentData } = req.body;
 
+    // Determine organization based on user role
     let finalOrg: string;
-
     if (user.organization === "ALL") {
       if (orgFromBody === "PTC" || orgFromBody === "GICC") {
         finalOrg = orgFromBody;
@@ -87,39 +100,58 @@ export const addIncident = async (req: Request, res: Response) => {
 
     await incident.save();
 
-    //  Respond to client immediately
+    // Respond immediately
     res.status(201).json(incident);
 
-    //  Kick off email in the background (not blocking)
+    // Send email asynchronously (non-blocking)
     sendIncidentEmail(incident).catch((emailErr) => {
       console.error("Incident saved but failed to send email:", emailErr);
     });
   } catch (err) {
     console.error("Error creating incident:", err);
-    res.status(400).json({ error: "Failed to create incident" });
+    return res.status(400).json({ error: "Failed to create incident" });
   }
 };
 
+/**
+ * PUT /api/incidents/:id
+ * Update an existing incident.
+ */
 export const updateIncident = async (req: Request, res: Response) => {
   try {
     const { id } = req.params;
     const updated = await Incident.findByIdAndUpdate(id, req.body, {
       new: true,
+      lean: true, // return plain object for performance
     });
-    if (!updated) return res.status(404).json({ error: "Incident not found" });
-    res.json(updated);
+
+    if (!updated) {
+      return res.status(404).json({ error: "Incident not found" });
+    }
+
+    return res.json(updated);
   } catch (err) {
-    res.status(400).json({ error: "Failed to update incident" });
+    console.error("Error updating incident:", err);
+    return res.status(400).json({ error: "Failed to update incident" });
   }
 };
 
+/**
+ * DELETE /api/incidents/:id
+ * Delete an incident.
+ */
 export const deleteIncident = async (req: Request, res: Response) => {
   try {
     const { id } = req.params;
-    const deleted = await Incident.findByIdAndDelete(id);
-    if (!deleted) return res.status(404).json({ error: "Incident not found" });
-    res.status(204).send();
+    const deleted = await Incident.findByIdAndDelete(id).lean();
+
+    if (!deleted) {
+      return res.status(404).json({ error: "Incident not found" });
+    }
+
+    return res.status(204).send();
   } catch (err) {
-    res.status(400).json({ error: "Failed to delete incident" });
+    console.error("Error deleting incident:", err);
+    return res.status(400).json({ error: "Failed to delete incident" });
   }
 };

@@ -1,8 +1,6 @@
-//IncidentMainTable
-
 "use client";
 
-import { useState } from "react";
+import React, { useState, useCallback } from "react";
 import { IncidentForm } from "@/types/incidentModal";
 import {
   Table,
@@ -20,19 +18,13 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Button } from "@/components/ui/button";
-
-import { LuChevronRight } from "react-icons/lu";
-import { LuChevronLeft } from "react-icons/lu";
-
 import {
   DropdownMenu,
   DropdownMenuTrigger,
   DropdownMenuContent,
   DropdownMenuItem,
 } from "@/components/ui/dropdown-menu";
-
 import { MoreHorizontal, ChevronDown, ChevronRight } from "lucide-react";
-
 import clsx from "clsx";
 import Image from "next/image";
 
@@ -47,7 +39,7 @@ interface Props {
   editingIncident: (IncidentForm & { _id: string }) | null;
 }
 
-export default function IncidentMainTable({
+const IncidentMainTable = React.memo(function IncidentMainTable({
   data,
   onRowClick,
   currentPage,
@@ -57,16 +49,23 @@ export default function IncidentMainTable({
   onItemsPerPageChange,
   editingIncident,
 }: Props) {
+  const [expandedRows, setExpandedRows] = useState<string[]>([]);
+
   const startIdx = data.length > 0 ? (currentPage - 1) * itemsPerPage + 1 : 0;
   const endIdx = data.length > 0 ? startIdx + data.length - 1 : 0;
 
-  const [expandedRows, setExpandedRows] = useState<string[]>([]);
+  // ✅ useCallback to prevent function recreation on every render
+  const toggleRow = useCallback((id: string) => {
+    setExpandedRows((prev) =>
+      prev.includes(id) ? prev.filter((pid) => pid !== id) : [...prev, id]
+    );
+  }, []);
 
   return (
     <div className="w-full rounded-lg border shadow-sm dark:text-white dark:border-sky-900 dark:shadow-md dark:bg-sky-950 relative">
       {/* Decorative Background Logo */}
       <div className="absolute inset-0 flex items-center justify-end pointer-events-none">
-        <div className="relative right-30 bottom-10 bottom right w-[400px] h-[400px] opacity-[0.03] dark:opacity-[0.07] hidden sm:block">
+        <div className="relative right-30 bottom-10 w-[400px] h-[400px] opacity-[0.03] dark:opacity-[0.07] hidden sm:block">
           <Image
             src="/petboweLogoMain.png"
             alt="PetBowe Logo"
@@ -78,6 +77,7 @@ export default function IncidentMainTable({
           />
         </div>
       </div>
+
       <Table>
         <TableHeader>
           <TableRow className="transition-none">
@@ -93,7 +93,7 @@ export default function IncidentMainTable({
             <TableRow>
               <TableCell
                 colSpan={5}
-                className="text-center py-4 text-gray-500 dark:text-gray-400 "
+                className="text-center py-4 text-gray-500 dark:text-gray-400"
               >
                 No results found.
               </TableCell>
@@ -103,50 +103,40 @@ export default function IncidentMainTable({
               <TableRow
                 key={incident._id}
                 className={clsx(
-                  " hover:bg-gray-50 dark:hover:bg-gray-700 transition-none",
+                  "hover:bg-gray-50 dark:hover:bg-gray-700 transition-none",
                   editingIncident?._id === incident._id
                     ? "bg-blue-50 dark:bg-blue-800"
                     : "",
-                  incident.description.length > 100 ? "cursor-pointer " : ""
+                  incident.description.length > 100 ? "cursor-pointer" : ""
                 )}
-                onClick={() => {
-                  setExpandedRows((prev) =>
-                    prev.includes(incident._id)
-                      ? prev.filter((id) => id !== incident._id)
-                      : [...prev, incident._id]
-                  );
-                }}
+                onClick={() => toggleRow(incident._id)}
               >
                 <TableCell>{incident.refNo}</TableCell>
+
+                {/* Description cell */}
                 <TableCell className="max-w-[300px] relative">
-                  {/* Icon positioned slightly left */}
                   {incident.description.length > 100 && (
                     <Button
                       variant="ghost"
                       size="icon"
                       className={clsx(
-                        "absolute -left-2 top-[53%] -translate-y-1/2 h-0 w-0  text-gray-500 hover:text-gray-800 dark:text-gray-300"
+                        "absolute -left-2 top-[53%] -translate-y-1/2 h-0 w-0 text-gray-500 hover:text-gray-800 dark:text-gray-300"
                       )}
-                      onClick={() => {
-                        setExpandedRows((prev) =>
-                          prev.includes(incident._id)
-                            ? prev.filter((id) => id !== incident._id)
-                            : [...prev, incident._id]
-                        );
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        toggleRow(incident._id);
                       }}
                     >
                       {expandedRows.includes(incident._id) ? (
-                        <ChevronDown className="h-4 w-4 " />
+                        <ChevronDown className="h-4 w-4" />
                       ) : (
-                        <ChevronRight className="h-4 w-4 " />
+                        <ChevronRight className="h-4 w-4" />
                       )}
                     </Button>
                   )}
 
-                  {/* Description text */}
-
                   {expandedRows.includes(incident._id) ? (
-                    <p className="whitespace-pre-wrap ">
+                    <p className="whitespace-pre-wrap">
                       {incident.description}
                     </p>
                   ) : (
@@ -155,15 +145,17 @@ export default function IncidentMainTable({
                     </p>
                   )}
                 </TableCell>
+
                 <TableCell>{incident.classification}</TableCell>
                 <TableCell>{incident.status}</TableCell>
+
                 <TableCell>
                   <DropdownMenu>
                     <DropdownMenuTrigger asChild>
                       <Button
                         variant="ghost"
-                        className="cursor-pointer h-4 transition-none"
                         size="icon"
+                        className="cursor-pointer h-4 transition-none"
                       >
                         <MoreHorizontal />
                       </Button>
@@ -178,7 +170,6 @@ export default function IncidentMainTable({
                       >
                         Edit Incident
                       </DropdownMenuItem>
-                      {/* Future actions can be added here */}
                     </DropdownMenuContent>
                   </DropdownMenu>
                 </TableCell>
@@ -188,9 +179,8 @@ export default function IncidentMainTable({
         </TableBody>
       </Table>
 
-      {/* ✅ Pagination Controls */}
+      {/* Pagination Controls */}
       <div className="flex flex-col sm:flex-row justify-between items-center gap-3 p-3 border-t">
-        {/* Showing info */}
         <p className="text-sm text-gray-600">
           Showing {startIdx}–{endIdx} of {itemsPerPage * totalPages}
         </p>
@@ -225,7 +215,7 @@ export default function IncidentMainTable({
               disabled={currentPage === 1}
               className="cursor-pointer transition-none"
             >
-              <LuChevronLeft />
+              &lt;
             </Button>
 
             <Select
@@ -257,11 +247,13 @@ export default function IncidentMainTable({
               disabled={currentPage === totalPages}
               className="cursor-pointer transition-none"
             >
-              <LuChevronRight />
+              &gt;
             </Button>
           </div>
         </div>
       </div>
     </div>
   );
-}
+});
+
+export default IncidentMainTable;

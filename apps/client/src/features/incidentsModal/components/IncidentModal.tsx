@@ -200,6 +200,7 @@ export default function IncidentModal({
           <Label htmlFor="reportingDepartment">Reporting Department</Label>
           <div className="flex items-center gap-2">
             <Input
+              name="reportingDepartment"
               id="reportingDepartment"
               value={form.reportingDepartment}
               onChange={(e) =>
@@ -247,6 +248,7 @@ export default function IncidentModal({
           <Label htmlFor="reportingEmployee">Reporting Employee</Label>
           <Input
             id="reportingEmployee"
+            name="reportingEmployee"
             value={form.reportingEmployee}
             onChange={(e) => handleChange("reportingEmployee", e.target.value)}
             placeholder="Employee name"
@@ -260,7 +262,7 @@ export default function IncidentModal({
             value={form.natureOfException}
             onValueChange={(value) => handleChange("natureOfException", value)}
           >
-            <SelectTrigger className="w-full">
+            <SelectTrigger id="natureOfException" className="w-full">
               <SelectValue placeholder="Select exception type" />
             </SelectTrigger>
             <SelectContent>
@@ -289,7 +291,7 @@ export default function IncidentModal({
             value={form.auditFinding}
             onValueChange={(value) => handleChange("auditFinding", value)}
           >
-            <SelectTrigger className="w-full">
+            <SelectTrigger id="auditFinding" className="w-full">
               <SelectValue placeholder="Select audit finding" />
             </SelectTrigger>
             <SelectContent>
@@ -376,7 +378,7 @@ export default function IncidentModal({
             value={form.classification}
             onValueChange={(value) => handleChange("classification", value)}
           >
-            <SelectTrigger className="w-full">
+            <SelectTrigger id="classification" className="w-full">
               <SelectValue placeholder="Select classification" />
             </SelectTrigger>
             <SelectContent>
@@ -385,6 +387,7 @@ export default function IncidentModal({
             </SelectContent>
           </Select>
         </div>
+
         {/* Status */}
         <div className="space-y-2 w-full">
           <Label htmlFor="status">Status</Label>
@@ -392,7 +395,7 @@ export default function IncidentModal({
             value={form.status}
             onValueChange={(value) => handleChange("status", value)}
           >
-            <SelectTrigger className="w-full">
+            <SelectTrigger id="status" className="w-full">
               <SelectValue placeholder="Select status" />
             </SelectTrigger>
             <SelectContent>
@@ -431,6 +434,7 @@ export default function IncidentModal({
       <div className="space-y-2 w-full">
         <Label htmlFor="customerDepartment">Customer/Department</Label>
         <Input
+          name="customerDepartment"
           id="customerDepartment"
           value={form.customerDepartment}
           onChange={(e) => handleChange("customerDepartment", e.target.value)}
@@ -447,6 +451,7 @@ export default function IncidentModal({
             : "Department Name"}
         </Label>
         <Input
+          name="concernName"
           id="concernName"
           type="text"
           placeholder={`Enter ${form.concernType} name`}

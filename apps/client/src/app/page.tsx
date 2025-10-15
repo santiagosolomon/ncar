@@ -4,6 +4,7 @@
 
 import { useState, useEffect, useRef, useCallback } from "react";
 import useSWR from "swr";
+import { useDebounce } from "@/hooks/useDebounce";
 
 import IncidentMainTable from "@/features/incidents/components/IncidentMainTable";
 import IncidentModal from "@/features/incidentsModal/components/IncidentModal";
@@ -112,6 +113,9 @@ export default function HomePage() {
   >(null);
 
   const [form, setForm] = useState<IncidentForm>(defaultForm);
+  const [isModalDisabled, setIsModalDisabled] = useState(false);
+  const [search, setSearch] = useState("");
+  const debouncedSearch = useDebounce(search, 500); // Debounce search input
 
   // fetch user from /me
   const {
@@ -123,22 +127,15 @@ export default function HomePage() {
   const role = me?.user?.role ?? "user";
   const userOrg = me?.user?.organization ?? "PTC";
 
-  // ...existing code...
-
-  const [isModalDisabled, setIsModalDisabled] = useState(false);
-
   // Replace the existing handlePrint function
   const [printWindow, setPrintWindow] = useState<Window | null>(null);
   const componentRef = useRef<HTMLDivElement>(null);
   const dialogRef = useRef<HTMLDivElement>(null);
   const [isPrinting, setIsPrinting] = useState(false);
-  const [search, setSearch] = useState("");
-  const [debouncedSearch, setDebouncedSearch] = useState(search);
 
-  // Replace the handlePrint function
+  // ✅ Optimized print handler (memoized)
   const handlePrint = useCallback(() => {
     try {
-      // First ensure any existing print window is closed
       if (printWindow) {
         printWindow.close();
         setPrintWindow(null);
@@ -146,66 +143,54 @@ export default function HomePage() {
 
       setIsPrinting(true);
       const content = componentRef.current;
+      if (!content) return;
 
-      if (!content) {
-        console.error("No content to print");
-        setIsPrinting(false);
-        return;
-      }
-
-      // Small delay to ensure previous window is fully closed
       setTimeout(() => {
         const pw = window.open("", "_blank");
-        if (!pw) {
-          console.error("Failed to open print window");
-          setIsPrinting(false);
-          return;
-        }
-
+        if (!pw) return;
         setPrintWindow(pw);
 
         pw.document.write(`
-        <!DOCTYPE html>
-        <html>
-          <head>
-            <title>Print Report </title>
-            <style>
-              @page { size: A4; margin: 20mm; }
-              body { 
-                font-family: system-ui, -apple-system, sans-serif;
-                line-height: 1.5;
-                color: black;
-                background: white;
-                margin: 0;
-                padding: 20mm;
-              }
-              * {
-                print-color-adjust: exact !important;
-                -webkit-print-color-adjust: exact !important;
-              }
-              table { width: 100%; border-collapse: collapse; }
-              th, td { border: 1px solid black; padding: 8px; }
-              th { background-color: #f3f4f6 !important; }
-            </style>
-          </head>
-          <body>${content.outerHTML}</body>
-        </html>
-      `);
+          <!DOCTYPE html>
+          <html>
+            <head>
+              <title>Print Report</title>
+              <style>
+                @page { size: A4; margin: 20mm; }
+                body {
+                  font-family: system-ui, -apple-system, sans-serif;
+                  line-height: 1.5;
+                  color: black;
+                  background: white;
+                  margin: 0;
+                  padding: 20mm;
+                }
+                * {
+                  print-color-adjust: exact !important;
+                  -webkit-print-color-adjust: exact !important;
+                }
+                table { width: 100%; border-collapse: collapse; }
+                th, td { border: 1px solid black; padding: 8px; }
+                th { background-color: #f3f4f6 !important; }
+              </style>
+            </head>
+            <body>${content.outerHTML}</body>
+          </html>
+        `);
 
         pw.document.close();
-
         pw.onload = () => {
           pw.focus();
           pw.print();
         };
-      }, 100); // Small delay to ensure clean state
+      }, 100);
     } catch (error) {
       console.error("Print error:", error);
       setIsPrinting(false);
     }
-  }, [printWindow]); // Add printWindow to dependencies
+  }, [printWindow]);
 
-  // Add cleanup effect to avoid Preparing... state hanging
+  // ✅ Cleanup after print
   useEffect(() => {
     const cleanup = () => {
       if (printWindow) {
@@ -213,42 +198,16 @@ export default function HomePage() {
         setPrintWindow(null);
       }
       setIsPrinting(false);
-
-      // Re-enable form inputs
-      if (dialogRef.current) {
-        const inputs = dialogRef.current.querySelectorAll(
-          "input, textarea, select, button"
-        );
-        inputs.forEach((input) => {
-          (input as HTMLElement).removeAttribute("disabled");
-        });
-      }
     };
-
-    // Handle window focus changes
     const handleFocus = () => {
-      if (printWindow?.closed) {
-        cleanup();
-      }
+      if (printWindow?.closed) cleanup();
     };
-
     window.addEventListener("focus", handleFocus);
-
-    // Cleanup on unmount
     return () => {
       window.removeEventListener("focus", handleFocus);
       cleanup();
     };
   }, [printWindow]);
-
-  // Debounce effect — triggers 500ms after user stops typing
-  useEffect(() => {
-    const handler = setTimeout(() => {
-      setDebouncedSearch(search);
-    }, 500);
-
-    return () => clearTimeout(handler);
-  }, [search]);
 
   //  set org automatically for normal users
   useEffect(() => {
@@ -266,7 +225,7 @@ export default function HomePage() {
   }, [role, userOrg, meLoading, meError]);
 
   // fetch incidents based on selected org
-  // New (use debouncedSearch instead)
+  // ✅ Fetch incidents with debounced search
   const {
     data: incidents,
     isLoading,
@@ -277,29 +236,33 @@ export default function HomePage() {
     setForm((prev) => ({ ...prev, [field]: value }));
   };
 
-  const handleRowClick = (incident: IncidentForm & { _id: string }) => {
-    setEditingIncident(incident);
-    setForm({
-      ...incident,
-      date: incident.date ? new Date(incident.date) : undefined,
-      organization: incident.organization,
-    });
-    setIsOpen(true);
-  };
+  // ✅ Memoized handlers
+  const handleRowClick = useCallback(
+    (incident: IncidentForm & { _id: string }) => {
+      setEditingIncident(incident);
+      setForm({
+        ...incident,
+        date: incident.date ? new Date(incident.date) : undefined,
+        organization: incident.organization,
+      });
+      setIsOpen(true);
+    },
+    []
+  );
 
-  const handleCreate = () => {
+  const handleCreate = useCallback(() => {
     if (editingIncident) {
       setForm(defaultForm);
     }
     setEditingIncident(null);
     setIsOpen(true);
-  };
+  }, [editingIncident]);
 
-  const handleClose = () => {
+  const handleClose = useCallback(() => {
     setForm(defaultForm);
     setEditingIncident(null);
     setIsOpen(false);
-  };
+  }, []);
 
   if (meLoading) return <p>Loading user...</p>;
   if (meError) return <p className="text-red-500">Failed to fetch user info</p>;
@@ -384,6 +347,7 @@ export default function HomePage() {
                         ? "Edit Incident Report"
                         : "File Incident Report"}
                     </DialogTitle>
+
                     <div className="text-[0.84rem] text-gray-400 italic font-semibold flex items-center gap-2">
                       {editingIncident ? `(Ref No: ${form.refNo})` : null}
                       {selectedOrg === "ALL" && (
@@ -472,11 +436,7 @@ export default function HomePage() {
             currentPage={incidents.page}
             totalPages={incidents.totalPages}
             itemsPerPage={itemsPerPage}
-            onPageChange={(page) => {
-              if (page >= 1 && page <= incidents.totalPages) {
-                setCurrentPage(page);
-              }
-            }}
+            onPageChange={setCurrentPage}
             onItemsPerPageChange={(val) => {
               setItemsPerPage(val);
               setCurrentPage(1);
