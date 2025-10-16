@@ -1,3 +1,5 @@
+//incidents/components/IncidentMainTable.tsx
+
 "use client";
 
 import React, { useState, useCallback } from "react";
