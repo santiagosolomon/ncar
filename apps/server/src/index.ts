@@ -16,7 +16,7 @@ import authRoutes from "./routes/authRoutes"
 // console.log("Loaded OUTLOOK_PASS:", process.env.OUTLOOK_PASS ? "******" : "MISSING");
 
 const app = express()
-const PORT = process.env.PORT || 5000
+const PORT = process.env.PORT || 5200
 
 // Middleware
 app.use(cors({
