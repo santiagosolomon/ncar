@@ -20,11 +20,10 @@ export default function LoginPage() {
   useEffect(() => {
     const checkAuth = async () => {
       try {
-        const res = await fetch("http://localhost:5200/api/auth/me", {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/auth/me`, {
           credentials: "include",
         });
 
-        // If already logged in → redirect to home
         if (res.ok) {
           router.replace("/");
         }
@@ -53,21 +52,18 @@ export default function LoginPage() {
     setError("");
 
     try {
-      const res = await fetch("http://localhost:5000/api/auth/login", {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/auth/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }),
-        credentials: "include", // send cookies
+        credentials: "include",
       });
 
       const data = await res.json();
-      if (!res.ok) {
-        throw new Error(data.error || "Login failed");
-      }
+      if (!res.ok) throw new Error(data.error || "Login failed");
 
       // Broadcast login event to other tabs
       localStorage.setItem("auth-change", Date.now().toString());
-
       // Login success - use replace to prevent back navigation
       router.replace("/");
     } catch (err: any) {

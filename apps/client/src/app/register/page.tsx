@@ -1,22 +1,28 @@
 //app/register/page.tsx
 
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { useRouter } from 'next/navigation';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Select, SelectTrigger, SelectContent, SelectItem, SelectValue } from '@/components/ui/select';
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import {
+  Select,
+  SelectTrigger,
+  SelectContent,
+  SelectItem,
+  SelectValue,
+} from "@/components/ui/select";
 
 export default function RegisterPage() {
   const router = useRouter();
   const [formData, setFormData] = useState({
-    email: '',
-    password: '',
-    organization: 'PTC', // Set default value
+    email: "",
+    password: "",
+    organization: "PTC", // Set default value
   });
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -28,33 +34,38 @@ export default function RegisterPage() {
 
   const handleRegister = async (e: React.FormEvent) => {
     e.preventDefault();
-    setError('');
+    setError("");
 
     try {
-      const res = await fetch("http://localhost:5200/api/auth/register", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-        credentials: "include",
-      });
+      const res = await fetch(
+        `${process.env.NEXT_PUBLIC_API_URL}/auth/register`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(formData),
+          credentials: "include",
+        }
+      );
 
       const data = await res.json();
 
       if (res.ok) {
-        router.push('/login');
+        router.push("/login");
       } else {
-        setError(data.error || 'Registration failed');
+        setError(data.error || "Registration failed");
       }
     } catch (err) {
-      console.error('Registration error:', err);
-      setError('Registration failed. Please try again.');
+      console.error("Registration error:", err);
+      setError("Registration failed. Please try again.");
     }
   };
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-gray-50 dark:bg-sky-950">
       <div className="w-full max-w-md rounded-lg bg-white p-6 shadow dark:border-2 dark:bg-sky-900">
-        <h1 className="mb-6 text-2xl font-bold text-center">Create an Account</h1>
+        <h1 className="mb-6 text-2xl font-bold text-center">
+          Create an Account
+        </h1>
 
         <form onSubmit={handleRegister} className="space-y-4">
           {error && (
@@ -63,8 +74,6 @@ export default function RegisterPage() {
             </div>
           )}
           <div className="space-y-1">
-
-
             <Label htmlFor="email">Email</Label>
             <Input
               id="email"
@@ -91,7 +100,6 @@ export default function RegisterPage() {
           <div className="space-y-1">
             <Label htmlFor="organization">Organization</Label>
             <Select
-            
               value={formData.organization}
               onValueChange={handleOrganizationChange}
             >
@@ -123,13 +131,16 @@ export default function RegisterPage() {
             </Select>
           </div> */}
 
-          <Button type="submit" className="w-full bg-blue-600 hover:bg-blue-500 cursor-pointer">
+          <Button
+            type="submit"
+            className="w-full bg-blue-600 hover:bg-blue-500 cursor-pointer"
+          >
             Sign up
           </Button>
         </form>
 
         <p className="mt-6 text-center text-sm">
-          Already have an account?{' '}
+          Already have an account?{" "}
           <a href="/login" className="text-blue-600 hover:underline">
             Log in
           </a>

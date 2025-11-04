@@ -76,7 +76,7 @@ const defaultForm: IncidentForm = {
 
 // --- React Query: fetch user (/me) ---
 const fetchUser = async () => {
-  const res = await fetch("http://localhost:5200/api/auth/me", {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/auth/me`, {
     credentials: "include",
   });
 
@@ -90,6 +90,7 @@ const fetchUser = async () => {
   if (!res.ok) throw new Error(`Failed to fetch: ${res.status}`);
   return res.json();
 };
+
 
 // --- Main Component ---
 export default function HomePage() {
