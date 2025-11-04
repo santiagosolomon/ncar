@@ -43,12 +43,18 @@ export default function IncidentsHeader({
 
   const handleLogout = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/auth/logout", {
-        method: "POST",
-        credentials: "include",
-      });
+      const res = await fetch(
+        `${process.env.NEXT_PUBLIC_API_URL}/auth/logout`,
+        {
+          method: "POST",
+          credentials: "include",
+        }
+      );
+
       if (res.ok) {
         router.push("/login");
+      } else {
+        console.error("Logout failed:", await res.text());
       }
     } catch (err) {
       console.error("Logout error:", err);
