@@ -6,7 +6,8 @@
   "scripts": {
     "seed:admins": "ts-node src/scripts/seed-admins.ts",
     "dev": "ts-node-dev --respawn --transpile-only src/index.ts",
-    "start": "ts-node src/index.ts"
+    "start": "ts-node src/index.ts",
+    "build": "NODE_OPTIONS='--max-old-space-size=2048' npm install"
   },
   "dependencies": {
     "bcrypt": "^6.0.0",
