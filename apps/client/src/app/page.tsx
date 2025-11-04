@@ -76,7 +76,7 @@ const defaultForm: IncidentForm = {
 
 // --- React Query: fetch user (/me) ---
 const fetchUser = async () => {
-  const res = await fetch("http://localhost:5000/api/auth/me", {
+  const res = await fetch("http://localhost:5200/api/auth/me", {
     credentials: "include",
   });
 
